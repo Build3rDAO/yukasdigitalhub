@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="About YUKAS DIGITAL HUB - Learn about our mission, vision, and team. We're a premium digital agency based in Kano, Nigeria helping businesses grow online.">
+    <meta name="keywords" content="about us, digital agency, Kano, Nigeria, web development, mission, vision">
+    <meta name="author" content="YUKAS DIGITAL HUB">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .about-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Story Section */
+        .story-section {
+            padding: 80px 0;
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .story-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .story-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .story-image i {
+            font-size: 8rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .story-image h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-image p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Mission & Vision */
+        .mission-vision {
+            background: var(--gray-50);
+            padding: 80px 0;
+        }
+        
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .mv-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .mv-icon i {
+            font-size: 2rem;
+            color: var(--primary-accent);
+        }
+        
+        .mv-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .value-icon i {
+            font-size: 2rem;
+            color: var(--primary-accent);
+        }
+        
+        .value-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            font-size: 0.9375rem;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--gray-900));
+            padding: 80px 0;
+            color: var(--white);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .team-image {
+            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .team-image i {
+            font-size: 4rem;
+            color: var(--white);
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-info h3 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-role {
+            color: var(--primary-accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .team-bio {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background: var(--gray-50);
+            padding: 80px 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-category {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .skill-category h3 i {
+            color: var(--primary-accent);
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .skill-tag {
+            background: var(--gray-100);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background: var(--primary-accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 968px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .story-image {
+                order: -1;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB Logo" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span></span>'">
+                    <span class="logo-text">YUKAS<span>DIGITAL</span><span class="hub">HUB</span></span>
+                </a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero animate-fade-up">
+            <div class="container">
+                <h1>About <span class="accent-text">YUKAS DIGITAL HUB</span></h1>
+                <p>Your trusted partner in digital growth and innovation.</p>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="story-section">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-content animate-on-scroll">
+                        <h2>Our <span class="accent-text">Story</span></h2>
+                        <p>YUKAS DIGITAL HUB was founded with a simple mission: to help businesses in Nigeria and beyond harness the power of digital technology to grow and thrive. Based in Kano, we understand the unique challenges and opportunities facing businesses in our community.</p>
+                        <p>What started as a passion for web development and design has grown into a full-service digital agency serving clients across various industries. From small startups to established enterprises, we've helped over 120 businesses establish a strong online presence and achieve their digital goals.</p>
+                        <p>Our team combines creative design thinking with technical expertise to deliver solutions that not only look great but also drive real business results. We believe that every business deserves a premium digital presence, and we're committed to making that accessible and affordable.</p>
+                    </div>
+                    <div class="story-image animate-on-scroll delay-2">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Since 2020</h3>
+                        <p>Empowering businesses through digital innovation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="mission-vision">
+            <div class="container">
+                <div class="mv-grid">
+                    <div class="mv-card animate-on-scroll delay-1">
+                        <div class="mv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To empower businesses with innovative digital solutions that drive growth, enhance visibility, and create lasting value. We're committed to delivering exceptional quality and measurable results for every client.</p>
+                    </div>
+                    <div class="mv-card animate-on-scroll delay-2">
+                        <div class="mv-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To become the leading digital agency in Nigeria, recognized for excellence, innovation, and our unwavering commitment to client success. We envision a digital landscape where every business can thrive online.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Our Core Values</span>
+                    <h2>What Drives Us</h2>
+                    <p>The principles that guide everything we do.</p>
+                </div>
+                
+                <div class="values-grid">
+                    <div class="value-card animate-on-scroll delay-1">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Excellence</h3>
+                        <p>We strive for excellence in everything we do, delivering high-quality solutions that exceed expectations.</p>
+                    </div>
+                    <div class="value-card animate-on-scroll delay-2">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Integrity</h3>
+                        <p>We believe in honest communication, transparency, and building trust with our clients and partners.</p>
+                    </div>
+                    <div class="value-card animate-on-scroll delay-3">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>We stay ahead of digital trends, bringing fresh ideas and creative solutions to every project.</p>
+                    </div>
+                    <div class="value-card animate-on-scroll delay-4">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Client Focus</h3>
+                        <p>Our clients' success is our success. We're dedicated to understanding and achieving your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number">120+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-1">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-2">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Active Clients</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-3">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Our Expertise</span>
+                    <h2>Skills & Technologies</h2>
+                    <p>We master the tools and technologies needed to bring your vision to life.</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category animate-on-scroll delay-1">
+                        <h3><i class="fas fa-code"></i> Frontend Development</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category animate-on-scroll delay-2">
+                        <h3><i class="fas fa-server"></i> Backend Development</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category animate-on-scroll delay-3">
+                        <h3><i class="fas fa-palette"></i> Design Tools</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Photoshop</span>
+                            <span class="skill-tag">Illustrator</span>
+                            <span class="skill-tag">Canva Pro</span>
+                            <span class="skill-tag">After Effects</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category animate-on-scroll delay-4">
+                        <h3><i class="fas fa-chart-line"></i> Digital Marketing</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">SEO Strategy</span>
+                            <span class="skill-tag">Google Analytics</span>
+                            <span class="skill-tag">Facebook Ads</span>
+                            <span class="skill-tag">Instagram Marketing</span>
+                            <span class="skill-tag">Email Marketing</span>
+                            <span class="skill-tag">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Meet The Team</span>
+                    <h2>The People Behind YUKAS</h2>
+                    <p>Passionate professionals dedicated to your success.</p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-card animate-on-scroll delay-1">
+                        <div class="team-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Yuseef Kassim</h3>
+                            <div class="team-role">Founder & Lead Developer</div>
+                            <p class="team-bio">Full-stack developer with 7+ years of experience. Passionate about creating innovative digital solutions that help businesses grow.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card animate-on-scroll delay-2">
+                        <div class="team-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Aisha Muhammad</h3>
+                            <div class="team-role">Creative Director</div>
+                            <p class="team-bio">Expert graphic designer and branding specialist. Creates stunning visuals that capture brand identity and engage audiences.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card animate-on-scroll delay-3">
+                        <div class="team-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Ibrahim Umar</h3>
+                            <div class="team-role">Social Media Strategist</div>
+                            <p class="team-bio">Digital marketing expert specializing in social media growth, content strategy, and community engagement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card animate-on-scroll delay-4">
+                        <div class="team-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Fatima Sani</h3>
+                            <div class="team-role">Project Manager</div>
+                            <p class="team-bio">Ensures every project runs smoothly, on time, and exceeds client expectations with exceptional communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section animate-on-scroll">
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <h2>Ready to Work With Us?</h2>
+                    <p>Let's collaborate and take your business to the next level.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-large">Get in Touch <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://wa.me/2347043504297" class="btn btn-outline-light btn-large" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
+                    <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
+                </div>
+                <p>Premium digital agency based in Kano, helping businesses dominate online with innovative solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="services.html#smm">Social Media</a></li>
+                    <li><a href="services.html#design">Graphic Design</a></li>
+                    <li><a href="services.html#automation">Automation</a></li>
+                    <li><a href="services.html#vtu">VTU Website</a></li>
+                    <li><a href="services.html#school">School Management</a></li>
+                    <li><a href="services.html#realestate">Real Estate</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> yukasdigitalhub@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347043504297">0704 350 4297</a></li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kano, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online from Kano, Nigeria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20learning%20more%20about%20your%20agency!" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

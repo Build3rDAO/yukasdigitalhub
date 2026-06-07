@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Contact YUKAS DIGITAL HUB - Let's discuss your project. Get a free consultation for web development, social media management, and graphic design services.">
+    <meta name="keywords" content="contact, digital agency, web development, Nigeria, Kano, consultation">
+    <meta name="author" content="YUKAS DIGITAL HUB">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        /* Contact Info Cards */
+        .contact-info-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon i {
+            font-size: 1.75rem;
+            color: var(--primary-accent);
+        }
+        
+        .contact-info-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .contact-detail {
+            margin-top: 1rem;
+        }
+        
+        .contact-detail p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .contact-detail i {
+            color: var(--primary-accent);
+            width: 20px;
+        }
+        
+        .contact-detail a {
+            color: var(--text-medium);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-detail a:hover {
+            color: var(--primary-accent);
+        }
+        
+        /* Business Hours */
+        .business-hours {
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .business-hours h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .hour-item:last-child {
+            border-bottom: none;
+        }
+        
+        .hour-day {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .hour-time {
+            color: var(--text-medium);
+        }
+        
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+        
+        .contact-form-wrapper h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Pricing Options */
+        .pricing-options {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-options h4 {
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+        
+        .pricing-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .pricing-badge {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-badge:hover,
+        .pricing-badge.active {
+            background: var(--primary-accent);
+            color: var(--white);
+            border-color: var(--primary-accent);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0 0 80px 0;
+        }
+        
+        .map-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: var(--gray-50);
+            padding: 80px 0;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .faq-question i {
+            color: var(--primary-accent);
+            font-size: 1.25rem;
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+        
+        /* Success Message */
+        .form-success {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .form-success.show {
+            display: flex;
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .error-message {
+            color: #ff4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        input.error, textarea.error, select.error {
+            border-color: #ff4444;
+        }
+        
+        /* Loading Spinner */
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--white);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 0.5rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .btn.loading .btn-text {
+            opacity: 0.7;
+        }
+        
+        .btn.loading .loading-spinner {
+            display: inline-block;
+        }
+        
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-hero {
+                padding: 100px 0 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB Logo" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span></span>'">
+                    <span class="logo-text">YUKAS<span>DIGITAL</span><span class="hub">HUB</span></span>
+                </a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero animate-fade-up">
+            <div class="container">
+                <h1>Let's <span class="accent-text">Connect</span></h1>
+                <p>Ready to take your business to the next level? Let's discuss your project and create something amazing together.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Left Side - Contact Info -->
+                    <div class="contact-info animate-on-scroll">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3>Call Us</h3>
+                            <div class="contact-detail">
+                                <p><i class="fas fa-phone"></i> <a href="tel:+2347043504297">0704 350 4297</a></p>
+                                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:yukasdigitalhub@gmail.com">yukasdigitalhub@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Business Hours</h3>
+                            <div class="business-hours">
+                                <div class="hour-item">
+                                    <span class="hour-day">Monday - Friday</span>
+                                    <span class="hour-time">9:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="hour-day">Saturday</span>
+                                    <span class="hour-time">10:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="hour-day">Sunday</span>
+                                    <span class="hour-time">Closed (Chat support available)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Our Location</h3>
+                            <div class="contact-detail">
+                                <p><i class="fas fa-location-dot"></i> Kano, Nigeria</p>
+                                <p><i class="fas fa-globe"></i> Available nationwide - Remote & Onsite</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Contact Form -->
+                    <div class="contact-form-wrapper animate-on-scroll delay-2">
+                        <h2>Send us a <span class="accent-text">Message</span></h2>
+                        <p style="margin-bottom: 1.5rem;">Fill out the form below and we'll get back to you via WhatsApp within 24 hours.</p>
+                        
+                        <div class="form-success" id="formSuccess">
+                            <i class="fas fa-check-circle"></i> 
+                            <span>Redirecting to WhatsApp with your details...</span>
+                        </div>
+                        
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Interested In *</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="Social Media Management">Social Media Management</option>
+                                    <option value="Flyer & Graphic Design">Flyer & Graphic Design</option>
+                                    <option value="Business Automation">Business Automation</option>
+                                    <option value="VTU Website">VTU Website</option>
+                                    <option value="School Management System">School Management System</option>
+                                    <option value="Real Estate Website">Real Estate Website</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="pricing-options">
+                                <h4>Budget Range (Optional)</h4>
+                                <div class="pricing-badges">
+                                    <span class="pricing-badge" data-budget="₦100,000 - ₦250,000">₦100K - ₦250K</span>
+                                    <span class="pricing-badge" data-budget="₦250,000 - ₦500,000">₦250K - ₦500K</span>
+                                    <span class="pricing-badge" data-budget="₦500,000 - ₦1,000,000">₦500K - ₦1M</span>
+                                    <span class="pricing-badge" data-budget="₦1,000,000+">₦1M+</span>
+                                    <span class="pricing-badge" data-budget="Flexible - Let's discuss">Flexible</span>
+                                </div>
+                                <input type="hidden" id="budget" name="budget" value="">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message / Project Details *</label>
+                                <textarea id="message" name="message" placeholder="Tell us about your project, goals, and any specific requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large" id="submitBtn" style="width: 100%;">
+                                <span class="btn-text">Send via WhatsApp <i class="fab fa-whatsapp"></i></span>
+                                <span class="loading-spinner"></span>
+                            </button>
+                            
+                            <p style="font-size: 0.75rem; text-align: center; margin-top: 1rem; color: var(--text-light);">
+                                <i class="fas fa-lock"></i> Your information will be sent directly to our WhatsApp. We respect your privacy.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section - Updated to Kano -->
+        <section class="map-section">
+            <div class="container">
+                <div class="map-container animate-on-scroll">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15632.124567890123!2d8.5167!3d12.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10ae9b7c8c8c8c8d%3A0x8c8c8c8c8c8c8c8c!2sKano%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">FAQs</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Got questions? We've got answers. Here are some common questions we receive.</p>
+                </div>
+                
+                <div class="faq-grid">
+                    <div class="faq-item animate-on-scroll delay-1">
+                        <div class="faq-question">
+                            <i class="fas fa-clock"></i>
+                            <strong>How long does a project take?</strong>
+                        </div>
+                        <div class="faq-answer">
+                            Project timelines vary based on complexity. A typical website takes 2-4 weeks, while complex platforms like VTU or School Management systems take 4-8 weeks.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll delay-2">
+                        <div class="faq-question">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <strong>What's your payment structure?</strong>
+                        </div>
+                        <div class="faq-answer">
+                            We require 50% deposit to start, 25% on progress review, and 25% upon completion. All payments in Naira (₦) via bank transfer.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll delay-3">
+                        <div class="faq-question">
+                            <i class="fas fa-headset"></i>
+                            <strong>Do you provide post-launch support?</strong>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! All projects include 30 days free support. We also offer affordable maintenance packages for ongoing support.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll delay-4">
+                        <div class="faq-question">
+                            <i class="fas fa-mobile-alt"></i>
+                            <strong>Are your websites mobile-friendly?</strong>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! All our websites are fully responsive and optimized for all devices - mobile, tablet, and desktop.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll delay-1">
+                        <div class="faq-question">
+                            <i class="fas fa-chart-line"></i>
+                            <strong>Can you help with SEO?</strong>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We include basic SEO optimization in all websites. Advanced SEO packages are available for businesses wanting to rank higher.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll delay-2">
+                        <div class="faq-question">
+                            <i class="fas fa-edit"></i>
+                            <strong>Can I update the website myself?</strong>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We provide CMS solutions (WordPress, custom admin panels) that allow you to easily update content without technical knowledge.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section animate-on-scroll">
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <h2>Ready to start your project?</h2>
+                    <p>Let's discuss your ideas and create something amazing together.</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20starting%20a%20project!" class="btn btn-primary btn-large" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                        <a href="tel:+2347043504297" class="btn btn-outline-light btn-large">
+                            <i class="fas fa-phone"></i> Call Us Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
+                    <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
+                </div>
+                <p>Premium digital agency based in Kano, helping businesses dominate online with innovative solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="services.html#smm">Social Media</a></li>
+                    <li><a href="services.html#design">Graphic Design</a></li>
+                    <li><a href="services.html#automation">Automation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> yukasdigitalhub@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347043504297">0704 350 4297</a></li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kano, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online from Kano, Nigeria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20your%20services!" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Contact Form - Send to WhatsApp
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        // WhatsApp Business Number (International format without +)
+        const WHATSAPP_NUMBER = '2347043504297';
+        
+        // Budget selection
+        const budgetBadges = document.querySelectorAll('.pricing-badge');
+        const budgetInput = document.getElementById('budget');
+        
+        budgetBadges.forEach(badge => {
+            badge.addEventListener('click', () => {
+                budgetBadges.forEach(b => b.classList.remove('active'));
+                badge.classList.add('active');
+                budgetInput.value = badge.getAttribute('data-budget');
+            });
+        });
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value.trim();
+                const budget = document.getElementById('budget').value;
+                
+                let isValid = true;
+                
+                // Clear previous errors
+                clearErrors();
+                
+                // Validate Name
+                if (name === '') {
+                    showError('name', 'Please enter your full name');
+                    isValid = false;
+                } else if (name.length < 2) {
+                    showError('name', 'Name must be at least 2 characters');
+                    isValid = false;
+                }
+                
+                // Validate Email
+                if (email === '') {
+                    showError('email', 'Please enter your email address');
+                    isValid = false;
+                } else if (!isValidEmail(email)) {
+                    showError('email', 'Please enter a valid email address');
+                    isValid = false;
+                }
+                
+                // Validate Phone
+                if (phone === '') {
+                    showError('phone', 'Please enter your phone number');
+                    isValid = false;
+                } else if (phone.length < 10) {
+                    showError('phone', 'Please enter a valid phone number');
+                    isValid = false;
+                }
+                
+                // Validate Service
+                if (service === '') {
+                    showError('service', 'Please select a service');
+                    isValid = false;
+                }
+                
+                // Validate Message
+                if (message === '') {
+                    showError('message', 'Please enter your message');
+                    isValid = false;
+                } else if (message.length < 10) {
+                    showError('message', 'Message must be at least 10 characters');
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Show loading state
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+                    
+                    // Format current date and time
+                    const now = new Date();
+                    const formattedDate = now.toLocaleString('en-NG', {
+                        dateStyle: 'full',
+                        timeStyle: 'short'
+                    });
+                    
+                    // Build WhatsApp message with all details
+                    let whatsappMessage = `🟣 *NEW CLIENT INQUIRY* 🟣%0A`;
+                    whatsappMessage += `━━━━━━━━━━━━━━━━━━━━%0A`;
+                    whatsappMessage += `📅 *Date:* ${formattedDate}%0A`;
+                    whatsappMessage += `━━━━━━━━━━━━━━━━━━━━%0A%0A`;
+                    
+                    whatsappMessage += `👤 *CLIENT DETAILS*%0A`;
+                    whatsappMessage += `─────────────────%0A`;
+                    whatsappMessage += `*Name:* ${name}%0A`;
+                    whatsappMessage += `*Email:* ${email}%0A`;
+                    whatsappMessage += `*Phone:* ${phone}%0A%0A`;
+                    
+                    whatsappMessage += `🎯 *SERVICE REQUEST*%0A`;
+                    whatsappMessage += `─────────────────%0A`;
+                    whatsappMessage += `*Service:* ${service}%0A`;
+                    if (budget) {
+                        whatsappMessage += `*Budget:* ${budget}%0A`;
+                    }
+                    whatsappMessage += `%0A`;
+                    
+                    whatsappMessage += `💬 *PROJECT DETAILS*%0A`;
+                    whatsappMessage += `─────────────────%0A`;
+                    whatsappMessage += `${message}%0A%0A`;
+                    
+                    whatsappMessage += `━━━━━━━━━━━━━━━━━━━━%0A`;
+                    whatsappMessage += `📱 *Source:* Website Contact Form%0A`;
+                    whatsappMessage += `📍 *Location:* Kano, Nigeria%0A`;
+                    whatsappMessage += `━━━━━━━━━━━━━━━━━━━━%0A`;
+                    whatsappMessage += `⚡ *Action Required:* Please respond within 24 hours.`;
+                    
+                    // Encode the message for URL
+                    const encodedMessage = encodeURIComponent(whatsappMessage);
+                    
+                    // Create WhatsApp URL
+                    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+                    
+                    // Show success message
+                    formSuccess.classList.add('show');
+                    
+                    // Open WhatsApp in a new tab
+                    setTimeout(() => {
+                        window.open(whatsappUrl, '_blank');
+                        
+                        // Reset loading state
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+                        
+                        // Reset form after successful submission
+                        contactForm.reset();
+                        budgetBadges.forEach(b => b.classList.remove('active'));
+                        budgetInput.value = '';
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            formSuccess.classList.remove('show');
+                        }, 5000);
+                    }, 1000);
+                }
+            });
+        }
+        
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.classList.add('error');
+                
+                // Remove existing error message
+                const existingError = field.parentElement.querySelector('.error-message');
+                if (existingError) existingError.remove();
+                
+                // Create new error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = message;
+                field.parentElement.appendChild(errorDiv);
+            }
+        }
+        
+        function clearErrors() {
+            const errorFields = document.querySelectorAll('.error');
+            errorFields.forEach(field => field.classList.remove('error'));
+            
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(msg => msg.remove());
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Clear error on input
+        const formInputs = document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('error');
+                const errorMsg = this.parentElement.querySelector('.error-message');
+                if (errorMsg) errorMsg.remove();
+            });
+        });
+        
+        // Phone number formatting (optional)
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.startsWith('0') && value.length > 1) {
+                    // Keep as is for Nigerian numbers
+                }
+                if (value.length > 11) {
+                    value = value.slice(0, 11);
+                }
+                e.target.value = value;
+            });
+        }
+    </script>
+</body>
+</html>

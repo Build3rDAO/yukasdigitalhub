@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="YUKAS DIGITAL HUB Portfolio - See our amazing web development, social media management, and graphic design projects including VTU, School Management, and Real Estate websites.">
+    <title>Portfolio | YUKAS DIGITAL HUB</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/logo.png">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .portfolio-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .portfolio-hero h1 { color: var(--white); margin-bottom: 1rem; }
+        .portfolio-hero p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
+        
+        .portfolio-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-accent);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.75rem;
+            background: var(--gray-100);
+            border: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            background: linear-gradient(135deg, var(--gray-200), var(--gray-300));
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(108, 99, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay a {
+            color: var(--white);
+            font-size: 2rem;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-overlay a {
+            transform: scale(1);
+        }
+        
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-info p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tag {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--gray-100);
+            border-radius: var(--radius-full);
+            color: var(--primary-accent);
+            font-weight: 500;
+        }
+        
+        .portfolio-link {
+            color: var(--primary-accent);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            gap: 0.75rem;
+        }
+        
+        /* Modal Styles */
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .project-modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gray-800);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .modal-close:hover {
+            background: var(--primary-accent);
+            transform: rotate(90deg);
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .modal-info {
+            padding: 2rem;
+        }
+        
+        .modal-info h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-info .category {
+            color: var(--primary-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-stats {
+                gap: 1.5rem;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+            }
+            
+            .modal-image {
+                height: 200px;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB Logo" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span></span>'">
+                    <span class="logo-text">YUKAS<span>DIGITAL</span><span class="hub">HUB</span></span>
+                </a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-hero animate-fade-up">
+            <div class="container">
+                <h1>Our Creative <span class="accent-text">Portfolio</span></h1>
+                <p>Explore our latest projects and see how we've helped businesses grow online with innovative digital solutions.</p>
+                
+                <div class="portfolio-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-preview" style="padding-top: 60px;">
+            <div class="container">
+                <div class="portfolio-filter animate-on-scroll">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="social">Social Media</button>
+                    <button class="filter-btn" data-filter="design">Graphic Design</button>
+                </div>
+
+                <div class="portfolio-grid" id="portfolioGrid">
+                    
+                    <!-- ========== NEW: VTU WEBSITE ========== -->
+                    <div class="portfolio-card" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-vtu.jpg" alt="VTU Website - Virtual Top Up Platform" onerror="this.src='https://placehold.co/600x400/6C63FF/FFFFFF?text=VTU+Website+-+Airtime+&+Data+Platform'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="vtu"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Web Development</span>
+                            <h3>VTU Website - Airtime & Data Platform</h3>
+                            <p>Complete Virtual Top Up platform for buying airtime, data bundles, and bill payments with automated delivery.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">PHP/Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">API Integration</span>
+                                <span class="tech-tag">Payment Gateway</span>
+                            </div>
+                            <a href="#" class="portfolio-link view-project" data-project="vtu">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- ========== NEW: SCHOOL MANAGEMENT SYSTEM ========== -->
+                    <div class="portfolio-card" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-school.jpg" alt="School Management System" onerror="this.src='https://placehold.co/600x400/4A3BFF/FFFFFF?text=School+Management+System'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="school"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Web Development</span>
+                            <h3>School Management System</h3>
+                            <p>Comprehensive school management platform with student registration, results management, fee payment, and parent portal.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">REST API</span>
+                            </div>
+                            <a href="#" class="portfolio-link view-project" data-project="school">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- ========== NEW: REAL ESTATE WEBSITE ========== -->
+                    <div class="portfolio-card" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-realestate.jpg" alt="Real Estate Website" onerror="this.src='https://placehold.co/600x400/8B85FF/FFFFFF?text=Real+Estate+Platform'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="realestate"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Web Development</span>
+                            <h3>Real Estate Property Platform</h3>
+                            <p>Modern real estate website with property listings, virtual tours, mortgage calculator, and agent dashboard.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML5/CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Google Maps API</span>
+                                <span class="tech-tag">Responsive</span>
+                            </div>
+                            <a href="#" class="portfolio-link view-project" data-project="realestate">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Existing Projects Continue -->
+                    <div class="portfolio-card" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-1.jpg" alt="E-Commerce Website" onerror="this.src='https://placehold.co/600x400/6C63FF/FFFFFF?text=E-Commerce+Store'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="1"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Web Development</span>
+                            <h3>Modern E-Commerce Store</h3>
+                            <p>Fully responsive online store with seamless payment integration and user-friendly interface.</p>
+                            <a href="#" class="portfolio-link view-project" data-project="1">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-2.jpg" alt="Corporate Website" onerror="this.src='https://placehold.co/600x400/4A3BFF/FFFFFF?text=Corporate+Website'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="2"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Web Development</span>
+                            <h3>Corporate Business Platform</h3>
+                            <p>Professional corporate website with lead generation features and analytics integration.</p>
+                            <a href="#" class="portfolio-link view-project" data-project="2">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card" data-category="social">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-3.jpg" alt="Social Media Campaign" onerror="this.src='https://placehold.co/600x400/25D366/FFFFFF?text=Social+Media+Campaign'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="3"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Social Media Management</span>
+                            <h3>Instagram Growth Campaign</h3>
+                            <p>Strategic content that grew engagement by 245% in 3 months for a lifestyle brand.</p>
+                            <a href="#" class="portfolio-link view-project" data-project="3">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card" data-category="design">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-4.jpg" alt="Brand Identity" onerror="this.src='https://placehold.co/600x400/FF6B4A/FFFFFF?text=Brand+Identity'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="4"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Graphic Design</span>
+                            <h3>Complete Brand Identity Package</h3>
+                            <p>Logo design, business cards, letterheads, and brand guidelines for a luxury brand.</p>
+                            <a href="#" class="portfolio-link view-project" data-project="4">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card" data-category="design">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-6.jpg" alt="Flyer Design" onerror="this.src='https://placehold.co/600x400/FF9B4A/FFFFFF?text=Flyer+Design'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="6"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Graphic Design</span>
+                            <h3>Event Flyer & Promo Materials</h3>
+                            <p>Creative flyer designs that captured attention and drove event attendance.</p>
+                            <a href="#" class="portfolio-link view-project" data-project="6">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card" data-category="social">
+                        <div class="portfolio-image">
+                            <img src="../images/portfolio-7.jpg" alt="Facebook Ads" onerror="this.src='https://placehold.co/600x400/34C759/FFFFFF?text=Facebook+Ads'">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="view-project" data-project="7"><i class="fas fa-search-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-category">Social Media Management</span>
+                            <h3>Facebook Ad Campaign Strategy</h3>
+                            <p>Targeted campaigns that generated ₦2.5M in sales within 30 days for an e-commerce brand.</p>
+                            <a href="#" class="portfolio-link view-project" data-project="7">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section animate-on-scroll">
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <h2>Ready to build your custom website?</h2>
+                    <p>Whether you need a VTU platform, School Management System, or Real Estate website, we've got you covered.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-large">Start Your Project <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://wa.me/2347043504297" class="btn btn-outline-light" target="_blank">Chat on WhatsApp <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
+                    <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
+                </div>
+                <p>Premium digital agency helping businesses dominate online with innovative solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="services.html#smm">Social Media</a></li>
+                    <li><a href="services.html#design">Graphic Design</a></li>
+                    <li><a href="services.html#automation">Automation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> yukasdigitalhub@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347043504297">0704 350 4297</a></li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20your%20portfolio%20projects!" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.portfolio-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Modal Popup for Project Details
+        const modal = document.createElement('div');
+        modal.className = 'project-modal';
+        document.body.appendChild(modal);
+        
+        const projectData = {
+            vtu: {
+                title: "VTU Website - Airtime & Data Platform",
+                category: "Web Development",
+                description: "A complete Virtual Top Up (VTU) platform that allows users to purchase airtime, data bundles, and pay bills instantly. Features include automated delivery, transaction history, wallet system, and referral program.",
+                image: "https://placehold.co/900x400/6C63FF/FFFFFF?text=VTU+Website+Demo",
+                features: [
+                    "Airtime & Data Purchase Automation",
+                    "Multi-network Support (MTN, Glo, Airtel, 9mobile)",
+                    "Cable TV Subscription (DSTV, GOTV, Startimes)",
+                    "Electricity Bill Payment",
+                    "Wallet Funding & Withdrawal System",
+                    "Referral & Affiliate Program",
+                    "Admin Dashboard with Analytics",
+                    "SMS & Email Notifications"
+                ],
+                price: "₦350,000 - ₦500,000"
+            },
+            school: {
+                title: "School Management System",
+                category: "Web Development",
+                description: "A comprehensive school management platform that streamlines administrative tasks, manages student records, handles fee payments, and provides real-time communication between school and parents.",
+                image: "https://placehold.co/900x400/4A3BFF/FFFFFF?text=School+Management+System",
+                features: [
+                    "Student Registration & Admission Management",
+                    "Class & Subject Management",
+                    "Result Processing & Transcript Generation",
+                    "Fee Payment & Invoicing System",
+                    "Attendance Tracking",
+                    "Parent/Guardian Portal",
+                    "Teacher Dashboard & Timetable",
+                    "Exam & Assignment Management",
+                    "Library Management System"
+                ],
+                price: "₦500,000 - ₦800,000"
+            },
+            realestate: {
+                title: "Real Estate Property Platform",
+                category: "Web Development",
+                description: "A modern real estate website showcasing property listings with advanced search filters, virtual tours, mortgage calculator, and agent management system.",
+                image: "https://placehold.co/900x400/8B85FF/FFFFFF?text=Real+Estate+Platform",
+                features: [
+                    "Property Listings with Advanced Filters",
+                    "Interactive Google Maps Integration",
+                    "Virtual Tour & 360° View",
+                    "Mortgage & Affordability Calculator",
+                    "Agent Profile & Dashboard",
+                    "Property Comparison Tool",
+                    "Saved Searches & Alerts",
+                    "Blog & Market Insights",
+                    "Contact & Inquiry Forms"
+                ],
+                price: "₦400,000 - ₦600,000"
+            },
+            1: {
+                title: "Modern E-Commerce Store",
+                category: "Web Development",
+                description: "A fully responsive e-commerce platform with secure payment integration, product management system, and user-friendly interface.",
+                image: "https://placehold.co/900x400/6C63FF/FFFFFF?text=E-Commerce+Store",
+                features: ["Payment Gateway Integration", "Product Management", "Shopping Cart", "Order Tracking", "Customer Reviews"]
+            },
+            2: {
+                title: "Corporate Business Platform",
+                category: "Web Development",
+                description: "Professional corporate website with dynamic content management and lead generation features.",
+                image: "https://placehold.co/900x400/4A3BFF/FFFFFF?text=Corporate+Website",
+                features: ["CMS Integration", "Lead Generation", "Analytics Dashboard", "Blog System"]
+            },
+            3: {
+                title: "Instagram Growth Campaign",
+                category: "Social Media Management",
+                description: "Strategic content strategy that grew engagement by 245% in 3 months.",
+                image: "https://placehold.co/900x400/25D366/FFFFFF?text=Social+Media+Campaign",
+                features: ["Content Strategy", "Engagement Growth", "Analytics Reporting", "Community Management"]
+            },
+            4: {
+                title: "Complete Brand Identity Package",
+                category: "Graphic Design",
+                description: "Comprehensive brand identity including logo design, business cards, and brand guidelines.",
+                image: "https://placehold.co/900x400/FF6B4A/FFFFFF?text=Brand+Identity",
+                features: ["Logo Design", "Business Cards", "Brand Guidelines", "Stationery Design"]
+            },
+            6: {
+                title: "Event Flyer & Promo Materials",
+                category: "Graphic Design",
+                description: "Creative flyer designs that captured attention and drove event attendance.",
+                image: "https://placehold.co/900x400/FF9B4A/FFFFFF?text=Flyer+Design",
+                features: ["Flyer Design", "Social Media Graphics", "Print Ready Files", "Multiple Formats"]
+            },
+            7: {
+                title: "Facebook Ad Campaign Strategy",
+                category: "Social Media Management",
+                description: "Targeted campaigns that generated ₦2.5M in sales within 30 days.",
+                image: "https://placehold.co/900x400/34C759/FFFFFF?text=Facebook+Ads",
+                features: ["Audience Targeting", "Ad Creative Design", "Budget Optimization", "ROI Tracking"]
+            }
+        };
+        
+        function openModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+            
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <img src="${project.image}" alt="${project.title}" class="modal-image">
+                    <div class="modal-info">
+                        <span class="category">${project.category}</span>
+                        <h2>${project.title}</h2>
+                        <p>${project.description}</p>
+                        <h4 style="margin-top: 1.5rem; margin-bottom: 1rem;">Key Features:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            ${project.features.map(feature => `<li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle" style="color: var(--primary-accent); margin-right: 0.5rem;"></i>${feature}</li>`).join('')}
+                        </ul>
+                        ${project.price ? `<p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light);"><strong>Estimated Investment:</strong> ${project.price}</p>` : ''}
+                        <div class="modal-buttons">
+                            <a href="contact.html" class="btn btn-primary">Request Similar Project</a>
+                            <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20the%20${encodeURIComponent(project.title)}%20project!" class="btn btn-outline" target="_blank">Inquire via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            const closeBtn = modal.querySelector('.modal-close');
+            closeBtn.addEventListener('click', closeModal);
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        document.querySelectorAll('.view-project').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectId = btn.getAttribute('data-project');
+                if (projectId) openModal(projectId);
+            });
+        });
+    </script>
+</body>
+</html>

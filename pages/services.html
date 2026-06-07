@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="YUKAS DIGITAL HUB Services - Professional web development, social media management, graphic design, and business automation solutions in Nigeria.">
+    <meta name="keywords" content="web development Nigeria, social media management, graphic design, business automation, VTU website, school management system">
+    <meta name="author" content="YUKAS DIGITAL HUB">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* Services Page Specific Styles */
+        .services-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .services-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Service Detail Sections */
+        .service-detail {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .service-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .service-detail:nth-child(even) {
+            background: var(--gray-50);
+        }
+        
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .service-detail-content h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .service-badge {
+            display: inline-block;
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-accent);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .service-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-accent);
+            margin: 1.5rem 0;
+        }
+        
+        .service-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .feature-list li i {
+            color: var(--primary-accent);
+            width: 20px;
+        }
+        
+        .service-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .service-image i {
+            font-size: 6rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .service-image h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-image p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Pricing Plans */
+        .pricing-plans {
+            background: var(--gray-50);
+            padding: 80px 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid var(--border-light);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary-accent);
+            transform: scale(1.02);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.03) translateY(-5px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-accent);
+            color: var(--white);
+            padding: 0.25rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .pricing-header h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-accent);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .pricing-features li i {
+            color: var(--primary-accent);
+            width: 20px;
+        }
+        
+        .pricing-features li.disabled {
+            color: var(--text-light);
+            opacity: 0.6;
+        }
+        
+        .pricing-features li.disabled i {
+            color: var(--gray-400);
+        }
+        
+        .pricing-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .process-step h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 968px) {
+            .service-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .service-detail:nth-child(even) .service-detail-grid {
+                direction: ltr;
+            }
+            
+            .service-detail:nth-child(even) .service-image {
+                order: -1;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB Logo" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span></span>'">
+                    <span class="logo-text">YUKAS<span>DIGITAL</span><span class="hub">HUB</span></span>
+                </a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="services-hero animate-fade-up">
+            <div class="container">
+                <h1>Our <span class="accent-text">Services</span></h1>
+                <p>Comprehensive digital solutions to help your business grow and succeed online.</p>
+            </div>
+        </section>
+
+        <!-- Service Details -->
+        
+        <!-- 5. VTU Website -->
+        <section class="service-detail" id="vtu">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-content animate-on-scroll">
+                        <span class="service-badge">📱 Trending</span>
+                        <h2>VTU Website</h2>
+                        <p>Complete Virtual Top Up platform for airtime, data, and bill payments with automated delivery and wallet system.</p>
+                        <div class="service-price">₦150,000 – ₦300,000 <span>one-time setup</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Airtime & data purchase automation</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-network support (MTN, Glo, Airtel, 9mobile)</li>
+                            <li><i class="fas fa-check-circle"></i> Cable TV & electricity bill payment</li>
+                            <li><i class="fas fa-check-circle"></i> Wallet system with referral program</li>
+                            <li><i class="fas fa-check-circle"></i> Admin dashboard with analytics</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image animate-on-scroll delay-2">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>VTU Platform</h3>
+                        <p>Start your own VTU business</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- 7. Real Estate Website -->
+        <section class="service-detail" id="realestate">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-content animate-on-scroll">
+                        <span class="service-badge">🏠 Modern</span>
+                        <h2>Real Estate Website</h2>
+                        <p>Professional property listing platform with advanced search, virtual tours, and agent management features.</p>
+                        <div class="service-price">₦150,000 – ₦300,000 <span>one-time setup</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Property listings with advanced filters</li>
+                            <li><i class="fas fa-check-circle"></i> Interactive Google Maps integration</li>
+                            <li><i class="fas fa-check-circle"></i> Virtual tour & image gallery</li>
+                            <li><i class="fas fa-check-circle"></i> Mortgage calculator</li>
+                            <li><i class="fas fa-check-circle"></i> Agent dashboard & lead management</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image animate-on-scroll delay-2">
+                        <i class="fas fa-building"></i>
+                        <h3>Real Estate Platform</h3>
+                        <p>Showcase properties professionally</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Website Development -->
+        <section class="service-detail" id="web-dev">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-content animate-on-scroll">
+                        <span class="service-badge">⭐ Most Popular</span>
+                        <h2>Website Development</h2>
+                        <p>Professional, responsive, and high-performing websites that convert visitors into customers. From simple business sites to complex e-commerce platforms.</p>
+                        <div class="service-price">₦150,000 – ₦800,000 <span>depending on complexity</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Custom design tailored to your brand</li>
+                            <li><i class="fas fa-check-circle"></i> Mobile-responsive on all devices</li>
+                            <li><i class="fas fa-check-circle"></i> SEO optimized for search engines</li>
+                            <li><i class="fas fa-check-circle"></i> Content Management System (CMS)</li>
+                            <li><i class="fas fa-check-circle"></i> 30 days free technical support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image animate-on-scroll delay-2">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Web Development</h3>
+                        <p>Custom websites that drive results</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Social Media Management -->
+        <section class="service-detail" id="smm">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-image animate-on-scroll">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Social Media Management</h3>
+                        <p>Grow your brand presence online</p>
+                    </div>
+                    <div class="service-detail-content animate-on-scroll delay-2">
+                        <span class="service-badge"> High Engagement</span>
+                        <h2>Social Media Management</h2>
+                        <p>Strategic content creation, community engagement, and paid ad management to boost your brand's online presence.</p>
+                        <div class="service-price">₦80,000 – ₦300,000 <span>per month</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Content calendar & strategy</li>
+                            <li><i class="fas fa-check-circle"></i> Daily engagement & community management</li>
+                            <li><i class="fas fa-check-circle"></i> Professional graphic design for posts</li>
+                            <li><i class="fas fa-check-circle"></i> Monthly analytics & performance reports</li>
+                            <li><i class="fas fa-check-circle"></i> Ad campaign management (optional)</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Flyer & Graphic Design -->
+        <section class="service-detail" id="design">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-content animate-on-scroll">
+                        <span class="service-badge">🎨 Creative</span>
+                        <h2>Flyer & Graphic Design</h2>
+                        <p>Eye-catching visuals that capture attention and communicate your message effectively. Perfect for marketing, events, and branding.</p>
+                        <div class="service-price">₦15,000 <span>per 5 Design</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Professional flyer & poster design</li>
+                            <li><i class="fas fa-check-circle"></i> Logo & brand identity packages</li>
+                            <li><i class="fas fa-check-circle"></i> Business card & stationery design</li>
+                            <li><i class="fas fa-check-circle"></i> Social media graphics & banners</li>
+                            <li><i class="fas fa-check-circle"></i> Unlimited revisions until satisfaction</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image animate-on-scroll delay-2">
+                        <i class="fas fa-palette"></i>
+                        <h3>Graphic Design</h3>
+                        <p>Stunning visuals that stand out</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Business Automation -->
+        <section class="service-detail" id="automation">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-image animate-on-scroll">
+                        <i class="fas fa-robot"></i>
+                        <h3>Business Automation</h3>
+                        <p>Streamline your operations</p>
+                    </div>
+                    <div class="service-detail-content animate-on-scroll delay-2">
+                        <span class="service-badge">⚡ Efficiency</span>
+                        <h2>Business Automation</h2>
+                        <p>Automate repetitive tasks, streamline workflows, and integrate systems to save time and increase productivity.</p>
+                        <div class="service-price">₦200,000 – ₦600,000 <span>depending on scope</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Workflow automation & integration</li>
+                            <li><i class="fas fa-check-circle"></i> CRM setup & customization</li>
+                            <li><i class="fas fa-check-circle"></i> Email marketing automation</li>
+                            <li><i class="fas fa-check-circle"></i> Inventory & order management</li>
+                            <li><i class="fas fa-check-circle"></i> Custom dashboard & reporting</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. School Management System -->
+        <section class="service-detail" id="school">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-image animate-on-scroll">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>School Management</h3>
+                        <p>Streamline educational operations</p>
+                    </div>
+                    <div class="service-detail-content animate-on-scroll delay-2">
+                        <span class="service-badge">🏫 Complete Solution</span>
+                        <h2>School Management System</h2>
+                        <p>Comprehensive platform for managing students, staff, fees, results, and parent communication efficiently.</p>
+                        <div class="service-price">₦500,000 – ₦800,000 <span>one-time setup</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Student registration & admission management</li>
+                            <li><i class="fas fa-check-circle"></i> Class & subject allocation</li>
+                            <li><i class="fas fa-check-circle"></i> Result processing & transcript generation</li>
+                            <li><i class="fas fa-check-circle"></i> Fee payment & invoicing system</li>
+                            <li><i class="fas fa-check-circle"></i> Parent & teacher portals</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Plans Section -->
+        <section class="pricing-plans" id="pricing">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Pricing Plans</span>
+                    <h2>Choose the Perfect Plan</h2>
+                    <p>Flexible packages tailored to your business needs. All plans include 30-day support.</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <!-- Basic Plan -->
+                    <div class="pricing-card animate-on-scroll delay-1">
+                        <div class="pricing-header">
+                            <h3>Starter</h3>
+                            <div class="price">₦150,000 <span>one-time</span></div>
+                            <p>Perfect for small businesses</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 5-Page Responsive Website</li>
+                            <li><i class="fas fa-check"></i> Contact Form Integration</li>
+                            <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
+                            <li><i class="fas fa-check"></i> Mobile-Friendly Design</li>
+                            <li><i class="fas fa-check"></i> 30 Days Support</li>
+                            <li class="disabled"><i class="fas fa-times"></i> E-commerce Functionality</li>
+                            <li class="disabled"><i class="fas fa-times"></i> CMS Dashboard</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Get Started</a>
+                    </div>
+                    
+                    <!-- Professional Plan - Most Popular -->
+                    <div class="pricing-card popular animate-on-scroll delay-2">
+                        <div class="popular-badge">🔥 Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Professional</h3>
+                            <div class="price">₦350,000 <span>one-time</span></div>
+                            <p>Best for growing businesses</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 10-15 Page Custom Website</li>
+                            <li><i class="fas fa-check"></i> CMS Dashboard (Easy Updates)</li>
+                            <li><i class="fas fa-check"></i> Advanced SEO Strategy</li>
+                            <li><i class="fas fa-check"></i> E-commerce Ready</li>
+                            <li><i class="fas fa-check"></i> Social Media Integration</li>
+                            <li><i class="fas fa-check"></i> 3 Months Support</li>
+                            <li><i class="fas fa-check"></i> 5 Graphic Designs Included</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                    
+                    <!-- Premium Plan -->
+                    <div class="pricing-card animate-on-scroll delay-3">
+                        <div class="pricing-header">
+                            <h3>Enterprise</h3>
+                            <div class="price">₦600,000+ <span>custom</span></div>
+                            <p>For established businesses</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Unlimited Pages</li>
+                            <li><i class="fas fa-check"></i> Custom Web Application</li>
+                            <li><i class="fas fa-check"></i> Complete Branding Package</li>
+                            <li><i class="fas fa-check"></i> Advanced Automation Setup</li>
+                            <li><i class="fas fa-check"></i> Priority Support (12 Months)</li>
+                            <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                            <li><i class="fas fa-check"></i> Ongoing Maintenance Included</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">How We Work</span>
+                    <h2>Our Simple Process</h2>
+                    <p>We make it easy to get your project started and completed successfully.</p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step animate-on-scroll delay-1">
+                        <div class="step-number">1</div>
+                        <h3>Discovery Call</h3>
+                        <p>We discuss your goals, requirements, and timeline for the project.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll delay-2">
+                        <div class="step-number">2</div>
+                        <h3>Proposal & Quote</h3>
+                        <p>We provide a detailed proposal with timeline and pricing.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll delay-3">
+                        <div class="step-number">3</div>
+                        <h3>Design & Development</h3>
+                        <p>We create your project with regular updates and feedback sessions.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll delay-4">
+                        <div class="step-number">4</div>
+                        <h3>Launch & Support</h3>
+                        <p>We launch your project and provide ongoing support and training.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section animate-on-scroll">
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Let's discuss your project and find the perfect solution for your business.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-large">Request a Quote <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://wa.me/2347043504297" class="btn btn-outline-light btn-large" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
+                    <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
+                </div>
+                <p>Premium digital agency based in Kano, helping businesses dominate online with innovative solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#web-dev">Web Development</a></li>
+                    <li><a href="#smm">Social Media</a></li>
+                    <li><a href="#design">Graphic Design</a></li>
+                    <li><a href="#automation">Automation</a></li>
+                    <li><a href="#vtu">VTU Website</a></li>
+                    <li><a href="#school">School Management</a></li>
+                    <li><a href="#realestate">Real Estate</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> yukasdigitalhub@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347043504297">0704 350 4297</a></li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kano, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online from Kano, Nigeria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20your%20services!" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
