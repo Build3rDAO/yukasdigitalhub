@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <title>YUKAS DIGITAL HUB | Premium Digital Agency in Kano, Nigeria</title>
+    <meta name="description" content="YUKAS DIGITAL HUB - Premium digital agency in Kano, Nigeria. We build websites, manage social media, create stunning graphics, and automate business processes. Get a free consultation today!">
+    <meta name="keywords" content="digital agency Kano, web development Nigeria, social media management, graphic design, VTU website, school management system, real estate website, business automation">
+    <meta name="author" content="YUKAS DIGITAL HUB">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yukasdigitalhub.com/">
+    <meta property="og:title" content="YUKAS DIGITAL HUB | Premium Digital Agency">
+    <meta property="og:description" content="We build websites that bring you customers. Professional web development, social media management, and graphic design services in Nigeria.">
+    <meta property="og:image" content="https://yukasdigitalhub.com/images/og-image.jpg">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YUKAS DIGITAL HUB | Premium Digital Agency">
+    <meta name="twitter:description" content="We build websites that bring you customers. Professional digital services in Nigeria.">
+    <meta name="twitter:image" content="https://yukasdigitalhub.com/images/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yukasdigitalhub.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Hero Section with Particle Canvas */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0A0C10 0%, #1A1E2C 100%);
+        }
+        
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Hero Visual Card - Fixed Visibility */
+        .hero-visual {
+            position: relative;
+        }
+        
+        .hero-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Dashboard Mockup */
+        .dashboard-mockup {
+            background: rgba(10, 12, 16, 0.8);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .mockup-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .mockup-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .mockup-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f57;
+        }
+        
+        .mockup-dots span:nth-child(2) {
+            background: #ffbd2e;
+        }
+        
+        .mockup-dots span:nth-child(3) {
+            background: #28c840;
+        }
+        
+        .mockup-title {
+            color: #fff;
+            font-size: 0.875rem;
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 8px;
+        }
+        
+        .mockup-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-card {
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.75rem;
+            text-align: center;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            background: rgba(108, 99, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .stat-card i {
+            font-size: 1.5rem;
+            color: #6C63FF;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .stat-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .mockup-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            height: 180px;
+            padding-top: 1rem;
+        }
+        
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(180deg, #6C63FF, #4A3BFF);
+            border-radius: 8px 8px 4px 4px;
+            transition: height 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chart-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(108, 99, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #6C63FF;
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .elem-1 {
+            top: -20px;
+            right: -20px;
+            animation-delay: 0s;
+        }
+        
+        .elem-2 {
+            bottom: -20px;
+            left: -20px;
+            animation-delay: 0.5s;
+        }
+        
+        .elem-3 {
+            top: 40%;
+            right: -30px;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        /* Hero Content Text Visibility */
+        .hero-content h1 {
+            color: #fff;
+        }
+        
+        .hero-content p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .trust-badge {
+            border-top-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .trust-item {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .trust-item i {
+            color: #6C63FF;
+        }
+        
+        .hero-badge {
+            background: rgba(108, 99, 255, 0.2);
+            backdrop-filter: blur(5px);
+            color: #fff;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-card {
+                padding: 1rem;
+            }
+            
+            .dashboard-mockup {
+                padding: 1rem;
+            }
+            
+            .mockup-stats {
+                gap: 0.5rem;
+            }
+            
+            .stat-card {
+                padding: 0.5rem;
+            }
+            
+            .stat-value {
+                font-size: 1rem;
+            }
+            
+            .mockup-chart {
+                height: 120px;
+            }
+            
+            .floating-element {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.jpg" alt="YUKAS DIGITAL HUB Logo" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span></span>'">
+                    <span class="logo-text">YUKAS<span>DIGITAL</span><span class="hub">HUB</span></span>
+                </a>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/services.html">Services</a></li>
+                    <li><a href="pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION with Particle Animation -->
+        <section class="hero" id="home">
+            <canvas id="particle-canvas"></canvas>
+            <div class="container hero-grid">
+                <div class="hero-content animate-fade-up">
+                    <div class="hero-badge animate-slide-in">
+                        <span class="badge-pulse"></span>
+                        ✨ Award-winning digital agency
+                    </div>
+                    <h1>We Build Websites That Bring You <span class="accent-text">Customers</span> </h1>
+                    <p>Professional websites, branding & social media management for growing businesses. Transform your digital presence and scale with confidence.</p>
+                    <div class="hero-buttons">
+                        <a href="pages/portfolio.html" class="btn btn-primary animate-scale">
+                            View Our Work <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="pages/contact.html" class="btn btn-outline animate-scale">
+                            Get Started <i class="fas fa-calendar-alt"></i>
+                        </a>
+                    </div>
+                    <div class="trust-badge animate-fade-up delay-2">
+                        <div class="trust-item"><i class="fas fa-check-circle"></i> 120+ projects</div>
+                        <div class="trust-item"><i class="fas fa-star"></i> 4.9 rating</div>
+                        <div class="trust-item"><i class="fas fa-clock"></i> Fast turnaround</div>
+                    </div>
+                </div>
+                <div class="hero-visual animate-float">
+                    <div class="hero-card">
+                        <div class="floating-element elem-1"><i class="fas fa-code"></i></div>
+                        <div class="floating-element elem-2"><i class="fas fa-chart-line"></i></div>
+                        <div class="floating-element elem-3"><i class="fas fa-palette"></i></div>
+                        <div class="dashboard-mockup">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="mockup-title">yukasdigital.ng</div>
+                            </div>
+                            <div class="mockup-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div class="stat-info">
+                                        <span class="stat-value">+245%</span>
+                                        <span class="stat-label">Growth</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-users"></i>
+                                    <div class="stat-info">
+                                        <span class="stat-value">10K+</span>
+                                        <span class="stat-label">Clients</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-trophy"></i>
+                                    <div class="stat-info">
+                                        <span class="stat-value">Award</span>
+                                        <span class="stat-label">Winner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mockup-chart">
+                                <div class="chart-bar" style="height: 80px;"></div>
+                                <div class="chart-bar" style="height: 120px;"></div>
+                                <div class="chart-bar" style="height: 95px;"></div>
+                                <div class="chart-bar" style="height: 150px;"></div>
+                                <div class="chart-bar" style="height: 110px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES PREVIEW -->
+        <section class="services-preview">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Core services</span>
+                    <h2>What we deliver best</h2>
+                    <p>Tailored solutions to accelerate your business growth.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll delay-1">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Website Development</h3>
+                        <p>High-performance, responsive websites that convert visitors into loyal customers.</p>
+                        <a href="pages/services.html#web-dev" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="service-card animate-on-scroll delay-2">
+                        <div class="service-icon"><i class="fas fa-chart-simple"></i></div>
+                        <h3>Social Media Management</h3>
+                        <p>Strategic content & engagement to boost brand visibility and community growth.</p>
+                        <a href="pages/services.html#smm" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="service-card animate-on-scroll delay-3">
+                        <div class="service-icon"><i class="fas fa-paintbrush-fine"></i></div>
+                        <h3>Flyer & Graphic Design</h3>
+                        <p>Stunning visuals, flyers, and brand identities that capture attention instantly.</p>
+                        <a href="pages/services.html#design" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="service-card animate-on-scroll delay-4">
+                        <div class="service-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Business Automation</h3>
+                        <p>Streamline workflows with smart automations, saving time and increasing efficiency.</p>
+                        <a href="pages/services.html#automation" class="card-link">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="why-us">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Why partner with us</span>
+                    <h2>Driven by excellence & results</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature animate-on-scroll delay-1">
+                        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Fast Delivery</h3>
+                        <p>Agile sprints & dedicated teams — your project goes live ahead of schedule.</p>
+                    </div>
+                    <div class="feature animate-on-scroll delay-2">
+                        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Modern Design</h3>
+                        <p>Pixel-perfect, fully responsive interfaces that wow on any device.</p>
+                    </div>
+                    <div class="feature animate-on-scroll delay-3">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Business-Focused</h3>
+                        <p>We optimize for conversions, not just aesthetics — ROI matters.</p>
+                    </div>
+                    <div class="feature animate-on-scroll delay-4">
+                        <div class="feature-icon"><i class="fas fa-tag"></i></div>
+                        <h3>Affordable Pricing</h3>
+                        <p>Premium quality at fair rates with transparent packages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING PREVIEW -->
+        <section class="pricing-preview animate-on-scroll">
+            <div class="container">
+                <div class="preview-content">
+                    <span class="section-tag">Transparent Investment</span>
+                    <h3>Packages starting from <span class="accent-text">₦100,000</span></h3>
+                    <p>Flexible plans tailored to your business needs. All projects include 30-day support. Pay in Naira with confidence.</p>
+                    <a href="pages/services.html#pricing" class="btn btn-outline">View all plans →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section animate-on-scroll">
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <h2>Let's grow your business online today</h2>
+                    <p>Ready to scale? Join 100+ happy clients who trusted us with their digital success.</p>
+                    <div class="cta-buttons">
+                        <a href="pages/contact.html" class="btn btn-primary btn-large animate-pulse">
+                            Start a project <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="pages/portfolio.html" class="btn btn-outline-light">See our work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
+                    <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
+                </div>
+                <p>Premium digital agency based in Kano, helping businesses dominate online with innovative solutions.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/services.html">Services</a></li>
+                    <li><a href="pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="pages/services.html#web-dev">Web Development</a></li>
+                    <li><a href="pages/services.html#smm">Social Media</a></li>
+                    <li><a href="pages/services.html#design">Graphic Design</a></li>
+                    <li><a href="pages/services.html#automation">Automation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> yukasdigitalhub@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347043504297">0704 350 4297</a></li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kano, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online from Kano, Nigeria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20growing%20my%20business!" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Particle Animation Script (optimized for performance)
+        (function() {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            
+            let ctx = canvas.getContext('2d');
+            let particles = [];
+            let animationFrameId;
+            let mouseX = null;
+            let mouseY = null;
+            
+            // Performance optimization: throttle resize events
+            let resizeTimeout;
+            
+            function resizeCanvas() {
+                const hero = document.querySelector('.hero');
+                canvas.width = window.innerWidth;
+                canvas.height = hero ? hero.offsetHeight : 600;
+                initParticles();
+            }
+            
+            class Particle {
+                constructor(x, y, radius, color, velocity) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = radius;
+                    this.color = color;
+                    this.velocity = velocity;
+                    this.alpha = 0.5 + Math.random() * 0.5;
+                }
+                
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+                
+                update() {
+                    this.x += this.velocity.x;
+                    this.y += this.velocity.y;
+                    
+                    if (this.x - this.radius < 0 || this.x + this.radius > canvas.width) {
+                        this.velocity.x = -this.velocity.x;
+                    }
+                    if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) {
+                        this.velocity.y = -this.velocity.y;
+                    }
+                    
+                    // Mouse interaction
+                    if (mouseX !== null && mouseY !== null) {
+                        const dx = this.x - mouseX;
+                        const dy = this.y - mouseY;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 100) {
+                            const angle = Math.atan2(dy, dx);
+                            const force = (100 - distance) / 100;
+                            this.x += Math.cos(angle) * force * 1.5;
+                            this.y += Math.sin(angle) * force * 1.5;
+                        }
+                    }
+                    
+                    this.draw();
+                }
+            }
+            
+            function initParticles() {
+                particles = [];
+                const particleCount = Math.min(60, Math.floor(window.innerWidth / 25));
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const radius = 2 + Math.random() * 3;
+                    const x = Math.random() * canvas.width;
+                    const y = Math.random() * canvas.height;
+                    const color = Math.random() > 0.7 ? '#6C63FF' : 'rgba(255, 255, 255, 0.5)';
+                    const velocity = {
+                        x: (Math.random() - 0.5) * 0.3,
+                        y: (Math.random() - 0.5) * 0.3
+                    };
+                    particles.push(new Particle(x, y, radius, color, velocity));
+                }
+            }
+            
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(108, 99, 255, ${0.2 * (1 - distance / 120)})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            function animate() {
+                if (!ctx || !canvas) return;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                drawConnections();
+                particles.forEach(particle => particle.update());
+                
+                animationFrameId = requestAnimationFrame(animate);
+            }
+            
+            function onMouseMove(e) {
+                const rect = canvas.getBoundingClientRect();
+                mouseX = e.clientX - rect.left;
+                mouseY = e.clientY - rect.top;
+            }
+            
+            function onMouseLeave() {
+                mouseX = null;
+                mouseY = null;
+            }
+            
+            function onResize() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    resizeCanvas();
+                }, 150);
+            }
+            
+            window.addEventListener('resize', onResize);
+            canvas.addEventListener('mousemove', onMouseMove);
+            canvas.addEventListener('mouseleave', onMouseLeave);
+            
+            resizeCanvas();
+            animate();
+        })();
+    </script>
+</body>
+</html>
