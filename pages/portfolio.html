@@ -3,114 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="YUKAS DIGITAL HUB Portfolio - See our amazing web development, social media management, and graphic design projects including VTU, School Management, and Real Estate websites.">
-    <title>Portfolio | YUKAS DIGITAL HUB</title>
+    <meta name="description" content="YUKAS DIGITAL HUB Portfolio - See our amazing web development, social media management, and graphic design projects including VTU, School Management, and Real Estate websites in Nigeria.">
+    <meta name="keywords" content="portfolio, web development, VTU website, school management system, real estate website, Nigeria, Kano">
+    <meta name="author" content="YUKAS DIGITAL HUB">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Our Portfolio | YUKAS DIGITAL HUB">
+    <meta property="og:description" content="See our amazing web development, social media management, and graphic design projects.">
+    <meta property="og:image" content="../images/og-image.jpg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="../images/logo.png">
     
-    <!-- Fonts & Icons -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
     
     <style>
+        /* ========== RESET & BASE STYLES (Consistent with Index) ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-accent: #6C63FF;
+            --primary-accent-dark: #4A3BFF;
+            --primary-dark: #0A0C10;
+            --gray-900: #1A1E2C;
+            --gray-800: #121520;
+            --gray-700: #1F2430;
+            --gray-600: #2A2F3C;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --white: #FFFFFF;
+            --text-light: rgba(255, 255, 255, 0.7);
+            --text-medium: #9CA3AF;
+            --text-dark: #1F2937;
+            --border-light: rgba(108, 99, 255, 0.1);
+            --bg-light: #F9FAFB;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ========== SECTION SPACING (Mobile First) ========== */
+        section {
+            padding: 4rem 0;
+            margin: 0;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 6rem 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 8rem 0;
+            }
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-header {
+                margin-bottom: 4rem;
+            }
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-accent);
+            margin-bottom: 1rem;
+            background: rgba(108, 99, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--primary-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (min-width: 768px) {
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-header h2 {
+                font-size: 3rem;
+            }
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accent-text {
+            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ========== NAVBAR (Consistent with Index) ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.5rem;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        .logo-text span {
+            color: var(--primary-accent);
+        }
+
+        .logo-text .hub {
+            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            margin-left: 0.25rem;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 80%;
+            height: calc(100vh - 70px);
+            background: rgba(10, 12, 16, 0.98);
+            backdrop-filter: blur(20px);
+            transition: left 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .nav-links.active {
+            left: 0;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .nav-links ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links ul li a:hover,
+        .nav-links ul li a.active {
+            color: var(--primary-accent);
+        }
+
+        .hamburger {
+            display: block;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--white);
+            z-index: 1001;
+        }
+
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                position: static;
+                width: auto;
+                height: auto;
+                background: transparent;
+                backdrop-filter: none;
+                padding: 0;
+            }
+
+            .nav-links ul {
+                flex-direction: row;
+                gap: 2rem;
+            }
+
+            .nav-links ul li a {
+                font-size: 1rem;
+                padding: 0;
+            }
+        }
+
+        /* ========== PORTFOLIO HERO ========== */
         .portfolio-hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
-            padding: 140px 0 80px;
+            padding: 120px 0 60px;
             text-align: center;
-            color: var(--white);
+            position: relative;
+            overflow: hidden;
         }
-        .portfolio-hero h1 { color: var(--white); margin-bottom: 1rem; }
-        .portfolio-hero p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
-        
+
+        @media (min-width: 768px) {
+            .portfolio-hero {
+                padding: 140px 0 80px;
+            }
+        }
+
+        .portfolio-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        .portfolio-hero p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+        }
+
+        /* Portfolio Stats */
         .portfolio-stats {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
             margin-top: 3rem;
             flex-wrap: wrap;
         }
-        
+
+        @media (min-width: 768px) {
+            .portfolio-stats {
+                gap: 4rem;
+            }
+        }
+
         .stat-item {
             text-align: center;
         }
-        
+
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--primary-accent);
             display: block;
         }
-        
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
         .stat-label {
-            color: var(--gray-400);
+            color: var(--text-light);
             font-size: 0.875rem;
         }
-        
+
+        /* ========== PORTFOLIO SECTION ========== */
+        .portfolio-section {
+            background: var(--primary-dark);
+        }
+
+        /* Filter Buttons */
         .portfolio-filter {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
             margin-bottom: 3rem;
         }
-        
+
+        @media (min-width: 768px) {
+            .portfolio-filter {
+                gap: 1rem;
+                margin-bottom: 4rem;
+            }
+        }
+
         .filter-btn {
-            padding: 0.75rem 1.75rem;
-            background: var(--gray-100);
-            border: none;
+            padding: 0.625rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
             border-radius: var(--radius-full);
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: inherit;
+            color: var(--text-light);
+            font-size: 0.875rem;
         }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary-accent);
+
+        @media (min-width: 768px) {
+            .filter-btn {
+                padding: 0.75rem 1.75rem;
+                font-size: 1rem;
+            }
+        }
+
+        .filter-btn:hover {
+            background: rgba(108, 99, 255, 0.2);
+            border-color: var(--primary-accent);
             color: var(--white);
             transform: translateY(-2px);
         }
-        
+
+        .filter-btn.active {
+            background: var(--primary-accent);
+            color: var(--white);
+            border-color: var(--primary-accent);
+        }
+
+        /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
-        
+
+        @media (min-width: 640px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         .portfolio-card {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-md);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-light);
         }
-        
+
         .portfolio-card:hover {
             transform: translateY(-10px);
+            border-color: rgba(108, 99, 255, 0.3);
             box-shadow: var(--shadow-xl);
         }
-        
+
         .portfolio-image {
             position: relative;
             overflow: hidden;
-            height: 250px;
-            background: linear-gradient(135deg, var(--gray-200), var(--gray-300));
+            height: 220px;
+            background: linear-gradient(135deg, var(--gray-700), var(--gray-800));
         }
-        
+
+        @media (min-width: 768px) {
+            .portfolio-image {
+                height: 250px;
+            }
+        }
+
         .portfolio-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .portfolio-card:hover .portfolio-image img {
             transform: scale(1.1);
         }
-        
+
         .portfolio-overlay {
             position: absolute;
             top: 0;
@@ -124,26 +480,45 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .portfolio-card:hover .portfolio-overlay {
             opacity: 1;
         }
-        
+
         .portfolio-overlay a {
             color: var(--white);
-            font-size: 2rem;
+            font-size: 1.5rem;
             transform: scale(0);
             transition: transform 0.3s ease;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
-        
+
+        @media (min-width: 768px) {
+            .portfolio-overlay a {
+                font-size: 2rem;
+            }
+        }
+
         .portfolio-card:hover .portfolio-overlay a {
             transform: scale(1);
         }
-        
+
+        .portfolio-overlay a:hover {
+            background: var(--white);
+            color: var(--primary-accent);
+        }
+
         .portfolio-info {
             padding: 1.5rem;
         }
-        
+
         .portfolio-category {
             display: inline-block;
             font-size: 0.75rem;
@@ -153,35 +528,41 @@
             color: var(--primary-accent);
             margin-bottom: 0.5rem;
         }
-        
+
         .portfolio-info h3 {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             margin-bottom: 0.5rem;
         }
-        
+
+        @media (min-width: 768px) {
+            .portfolio-info h3 {
+                font-size: 1.25rem;
+            }
+        }
+
         .portfolio-info p {
             color: var(--text-light);
             font-size: 0.875rem;
             margin-bottom: 1rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
-        
+
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .tech-tag {
             font-size: 0.7rem;
             padding: 0.25rem 0.75rem;
-            background: var(--gray-100);
+            background: rgba(108, 99, 255, 0.1);
             border-radius: var(--radius-full);
             color: var(--primary-accent);
             font-weight: 500;
         }
-        
+
         .portfolio-link {
             color: var(--primary-accent);
             font-weight: 600;
@@ -189,13 +570,15 @@
             align-items: center;
             gap: 0.5rem;
             transition: gap 0.3s ease;
+            text-decoration: none;
+            font-size: 0.875rem;
         }
-        
+
         .portfolio-link:hover {
             gap: 0.75rem;
         }
-        
-        /* Modal Styles */
+
+        /* ========== MODAL STYLES ========== */
         .project-modal {
             display: none;
             position: fixed;
@@ -203,19 +586,19 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 2000;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1rem;
         }
-        
+
         .project-modal.active {
             display: flex;
         }
-        
+
         .modal-content {
-            background: var(--white);
+            background: var(--gray-800);
             border-radius: var(--radius-xl);
             max-width: 900px;
             width: 100%;
@@ -223,18 +606,19 @@
             overflow-y: auto;
             position: relative;
             animation: modalFadeIn 0.3s ease;
+            border: 1px solid var(--border-light);
         }
-        
+
         @keyframes modalFadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
-        
+
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: var(--gray-800);
+            background: rgba(0, 0, 0, 0.5);
             color: var(--white);
             width: 40px;
             height: 40px;
@@ -246,59 +630,434 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-        
+
         .modal-close:hover {
             background: var(--primary-accent);
             transform: rotate(90deg);
         }
-        
+
         .modal-image {
             width: 100%;
-            height: 300px;
+            height: 200px;
             object-fit: cover;
         }
-        
+
+        @media (min-width: 768px) {
+            .modal-image {
+                height: 300px;
+            }
+        }
+
         .modal-info {
-            padding: 2rem;
+            padding: 1.5rem;
         }
-        
-        .modal-info h2 {
-            margin-bottom: 0.5rem;
+
+        @media (min-width: 768px) {
+            .modal-info {
+                padding: 2rem;
+            }
         }
-        
+
         .modal-info .category {
             color: var(--primary-accent);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             display: inline-block;
         }
-        
+
+        .modal-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .modal-info h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        .modal-info p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .modal-info h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .modal-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-info ul li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .modal-info ul li i {
+            color: var(--primary-accent);
+            font-size: 0.875rem;
+        }
+
         .modal-buttons {
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
-        
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+
+        @media (max-width: 480px) {
+            .modal-buttons {
+                flex-direction: column;
             }
-            
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(108, 99, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .cta-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .cta-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .cta-content p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.125rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        @media (min-width: 480px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(108, 99, 255, 0.5);
+        }
+
+        .btn-outline:hover {
+            background: rgba(108, 99, 255, 0.1);
+            border-color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--primary-dark);
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            }
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+        }
+
+        .footer-logo span {
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        .footer-logo span span {
+            color: var(--primary-accent);
+        }
+
+        .brand-col p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h4 {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-accent);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-info li i {
+            color: var(--primary-accent);
+            width: 20px;
+        }
+
+        .contact-info li a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .contact-info li a:hover {
+            color: var(--primary-accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        /* ========== WHATSAPP FLOAT ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        @media (min-width: 768px) {
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 30px;
+                right: 30px;
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-float i {
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .whatsapp-float i {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .portfolio-hero h1 {
+                font-size: 2rem;
+            }
+
             .portfolio-stats {
                 gap: 1.5rem;
             }
-            
-            .modal-content {
-                margin: 1rem;
-            }
-            
-            .modal-image {
-                height: 200px;
-            }
-            
-            .modal-buttons {
-                flex-direction: column;
+
+            .stat-number {
+                font-size: 1.75rem;
             }
         }
     </style>
@@ -329,7 +1088,8 @@
     </header>
 
     <main>
-        <section class="portfolio-hero animate-fade-up">
+        <!-- Hero Section -->
+        <section class="portfolio-hero">
             <div class="container">
                 <h1>Our Creative <span class="accent-text">Portfolio</span></h1>
                 <p>Explore our latest projects and see how we've helped businesses grow online with innovative digital solutions.</p>
@@ -351,7 +1111,8 @@
             </div>
         </section>
 
-        <section class="services-preview" style="padding-top: 60px;">
+        <!-- Portfolio Section -->
+        <section class="portfolio-section">
             <div class="container">
                 <div class="portfolio-filter animate-on-scroll">
                     <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -362,10 +1123,10 @@
 
                 <div class="portfolio-grid" id="portfolioGrid">
                     
-                    <!-- ========== NEW: VTU WEBSITE ========== -->
-                    <div class="portfolio-card" data-category="web">
+                    <!-- VTU WEBSITE -->
+                    <div class="portfolio-card animate-on-scroll delay-1" data-category="web">
                         <div class="portfolio-image">
-                            <img src="../images/portfolio-vtu.jpg" alt="VTU Website - Virtual Top Up Platform" onerror="this.src='https://placehold.co/600x400/6C63FF/FFFFFF?text=VTU+Website+-+Airtime+&+Data+Platform'">
+                            <img src="../images/portfolio-vtu.jpg" alt="VTU Website - Virtual Top Up Platform" onerror="this.src='https://placehold.co/600x400/6C63FF/FFFFFF?text=VTU+Website'">
                             <div class="portfolio-overlay">
                                 <a href="#" class="view-project" data-project="vtu"><i class="fas fa-search-plus"></i></a>
                             </div>
@@ -384,10 +1145,10 @@
                         </div>
                     </div>
 
-                    <!-- ========== NEW: SCHOOL MANAGEMENT SYSTEM ========== -->
-                    <div class="portfolio-card" data-category="web">
+                    <!-- SCHOOL MANAGEMENT SYSTEM -->
+                    <div class="portfolio-card animate-on-scroll delay-2" data-category="web">
                         <div class="portfolio-image">
-                            <img src="../images/portfolio-school.jpg" alt="School Management System" onerror="this.src='https://placehold.co/600x400/4A3BFF/FFFFFF?text=School+Management+System'">
+                            <img src="../images/portfolio-school.jpg" alt="School Management System" onerror="this.src='https://placehold.co/600x400/4A3BFF/FFFFFF?text=School+Management'">
                             <div class="portfolio-overlay">
                                 <a href="#" class="view-project" data-project="school"><i class="fas fa-search-plus"></i></a>
                             </div>
@@ -395,7 +1156,7 @@
                         <div class="portfolio-info">
                             <span class="portfolio-category">Web Development</span>
                             <h3>School Management System</h3>
-                            <p>Comprehensive school management platform with student registration, results management, fee payment, and parent portal.</p>
+                            <p>Comprehensive school management platform with student registration, results management, and parent portal.</p>
                             <div class="tech-tags">
                                 <span class="tech-tag">React.js</span>
                                 <span class="tech-tag">Node.js</span>
@@ -406,10 +1167,10 @@
                         </div>
                     </div>
 
-                    <!-- ========== NEW: REAL ESTATE WEBSITE ========== -->
-                    <div class="portfolio-card" data-category="web">
+                    <!-- REAL ESTATE WEBSITE -->
+                    <div class="portfolio-card animate-on-scroll delay-3" data-category="web">
                         <div class="portfolio-image">
-                            <img src="../images/portfolio-realestate.jpg" alt="Real Estate Website" onerror="this.src='https://placehold.co/600x400/8B85FF/FFFFFF?text=Real+Estate+Platform'">
+                            <img src="../images/portfolio-realestate.jpg" alt="Real Estate Website" onerror="this.src='https://placehold.co/600x400/8B85FF/FFFFFF?text=Real+Estate'">
                             <div class="portfolio-overlay">
                                 <a href="#" class="view-project" data-project="realestate"><i class="fas fa-search-plus"></i></a>
                             </div>
@@ -428,8 +1189,8 @@
                         </div>
                     </div>
 
-                    <!-- Existing Projects Continue -->
-                    <div class="portfolio-card" data-category="web">
+                    <!-- E-COMMERCE STORE -->
+                    <div class="portfolio-card animate-on-scroll delay-1" data-category="web">
                         <div class="portfolio-image">
                             <img src="../images/portfolio-1.jpg" alt="E-Commerce Website" onerror="this.src='https://placehold.co/600x400/6C63FF/FFFFFF?text=E-Commerce+Store'">
                             <div class="portfolio-overlay">
@@ -440,11 +1201,17 @@
                             <span class="portfolio-category">Web Development</span>
                             <h3>Modern E-Commerce Store</h3>
                             <p>Fully responsive online store with seamless payment integration and user-friendly interface.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">WooCommerce</span>
+                                <span class="tech-tag">Paystack</span>
+                                <span class="tech-tag">SEO Optimized</span>
+                            </div>
                             <a href="#" class="portfolio-link view-project" data-project="1">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="portfolio-card" data-category="web">
+                    <!-- CORPORATE WEBSITE -->
+                    <div class="portfolio-card animate-on-scroll delay-2" data-category="web">
                         <div class="portfolio-image">
                             <img src="../images/portfolio-2.jpg" alt="Corporate Website" onerror="this.src='https://placehold.co/600x400/4A3BFF/FFFFFF?text=Corporate+Website'">
                             <div class="portfolio-overlay">
@@ -455,11 +1222,17 @@
                             <span class="portfolio-category">Web Development</span>
                             <h3>Corporate Business Platform</h3>
                             <p>Professional corporate website with lead generation features and analytics integration.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">Elementor</span>
+                                <span class="tech-tag">Analytics</span>
+                            </div>
                             <a href="#" class="portfolio-link view-project" data-project="2">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="portfolio-card" data-category="social">
+                    <!-- SOCIAL MEDIA CAMPAIGN -->
+                    <div class="portfolio-card animate-on-scroll delay-3" data-category="social">
                         <div class="portfolio-image">
                             <img src="../images/portfolio-3.jpg" alt="Social Media Campaign" onerror="this.src='https://placehold.co/600x400/25D366/FFFFFF?text=Social+Media+Campaign'">
                             <div class="portfolio-overlay">
@@ -470,11 +1243,17 @@
                             <span class="portfolio-category">Social Media Management</span>
                             <h3>Instagram Growth Campaign</h3>
                             <p>Strategic content that grew engagement by 245% in 3 months for a lifestyle brand.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Content Strategy</span>
+                                <span class="tech-tag">Engagement</span>
+                                <span class="tech-tag">Analytics</span>
+                            </div>
                             <a href="#" class="portfolio-link view-project" data-project="3">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="portfolio-card" data-category="design">
+                    <!-- BRAND IDENTITY -->
+                    <div class="portfolio-card animate-on-scroll delay-1" data-category="design">
                         <div class="portfolio-image">
                             <img src="../images/portfolio-4.jpg" alt="Brand Identity" onerror="this.src='https://placehold.co/600x400/FF6B4A/FFFFFF?text=Brand+Identity'">
                             <div class="portfolio-overlay">
@@ -485,11 +1264,17 @@
                             <span class="portfolio-category">Graphic Design</span>
                             <h3>Complete Brand Identity Package</h3>
                             <p>Logo design, business cards, letterheads, and brand guidelines for a luxury brand.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Logo Design</span>
+                                <span class="tech-tag">Brand Guidelines</span>
+                                <span class="tech-tag">Stationery</span>
+                            </div>
                             <a href="#" class="portfolio-link view-project" data-project="4">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="portfolio-card" data-category="design">
+                    <!-- FLYER DESIGN -->
+                    <div class="portfolio-card animate-on-scroll delay-2" data-category="design">
                         <div class="portfolio-image">
                             <img src="../images/portfolio-6.jpg" alt="Flyer Design" onerror="this.src='https://placehold.co/600x400/FF9B4A/FFFFFF?text=Flyer+Design'">
                             <div class="portfolio-overlay">
@@ -500,11 +1285,17 @@
                             <span class="portfolio-category">Graphic Design</span>
                             <h3>Event Flyer & Promo Materials</h3>
                             <p>Creative flyer designs that captured attention and drove event attendance.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Flyer Design</span>
+                                <span class="tech-tag">Social Media Graphics</span>
+                                <span class="tech-tag">Print Ready</span>
+                            </div>
                             <a href="#" class="portfolio-link view-project" data-project="6">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="portfolio-card" data-category="social">
+                    <!-- FACEBOOK ADS -->
+                    <div class="portfolio-card animate-on-scroll delay-3" data-category="social">
                         <div class="portfolio-image">
                             <img src="../images/portfolio-7.jpg" alt="Facebook Ads" onerror="this.src='https://placehold.co/600x400/34C759/FFFFFF?text=Facebook+Ads'">
                             <div class="portfolio-overlay">
@@ -515,6 +1306,11 @@
                             <span class="portfolio-category">Social Media Management</span>
                             <h3>Facebook Ad Campaign Strategy</h3>
                             <p>Targeted campaigns that generated ₦2.5M in sales within 30 days for an e-commerce brand.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Audience Targeting</span>
+                                <span class="tech-tag">Ad Creative</span>
+                                <span class="tech-tag">ROI Tracking</span>
+                            </div>
                             <a href="#" class="portfolio-link view-project" data-project="7">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -522,14 +1318,15 @@
             </div>
         </section>
 
-        <section class="cta-section animate-on-scroll">
+        <!-- CTA Section -->
+        <section class="cta-section">
             <div class="container cta-container">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll">
                     <h2>Ready to build your custom website?</h2>
                     <p>Whether you need a VTU platform, School Management System, or Real Estate website, we've got you covered.</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="btn btn-primary btn-large">Start Your Project <i class="fas fa-chevron-right"></i></a>
-                        <a href="https://wa.me/2347043504297" class="btn btn-outline-light" target="_blank">Chat on WhatsApp <i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/2347043504297" class="btn btn-outline-light btn-large" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -543,12 +1340,12 @@
                     <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
                     <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
                 </div>
-                <p>Premium digital agency helping businesses dominate online with innovative solutions.</p>
+                <p>Premium digital agency based in Kano, helping businesses dominate online with innovative solutions.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -576,12 +1373,13 @@
                     <li><i class="fas fa-envelope"></i> yukasdigitalhub@gmail.com</li>
                     <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347043504297">0704 350 4297</a></li>
                     <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kano, Nigeria</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online.</p>
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online from Kano, Nigeria.</p>
             </div>
         </div>
     </footer>
@@ -589,11 +1387,52 @@
     <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20your%20portfolio%20projects!" 
        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
-        <span>Chat with us</span>
     </a>
 
-    <script src="../js/script.js"></script>
     <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 12, 16, 0.98)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'rgba(10, 12, 16, 0.95)';
+            }
+        });
+
+        // Scroll Animation with Intersection Observer
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+
         // Filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const cards = document.querySelectorAll('.portfolio-card');
@@ -676,44 +1515,86 @@
             1: {
                 title: "Modern E-Commerce Store",
                 category: "Web Development",
-                description: "A fully responsive e-commerce platform with secure payment integration, product management system, and user-friendly interface.",
+                description: "A fully responsive e-commerce platform with secure payment integration, product management system, and user-friendly interface. Features include product search, cart functionality, and order tracking.",
                 image: "https://placehold.co/900x400/6C63FF/FFFFFF?text=E-Commerce+Store",
-                features: ["Payment Gateway Integration", "Product Management", "Shopping Cart", "Order Tracking", "Customer Reviews"]
+                features: [
+                    "Payment Gateway Integration (Paystack, Flutterwave)",
+                    "Product & Inventory Management",
+                    "Shopping Cart & Checkout",
+                    "Order Tracking & History",
+                    "Customer Reviews & Ratings",
+                    "Mobile Responsive Design"
+                ]
             },
             2: {
                 title: "Corporate Business Platform",
                 category: "Web Development",
-                description: "Professional corporate website with dynamic content management and lead generation features.",
+                description: "Professional corporate website with dynamic content management and lead generation features. Includes service showcase, team profiles, and contact forms.",
                 image: "https://placehold.co/900x400/4A3BFF/FFFFFF?text=Corporate+Website",
-                features: ["CMS Integration", "Lead Generation", "Analytics Dashboard", "Blog System"]
+                features: [
+                    "CMS Integration for Easy Updates",
+                    "Lead Generation Forms",
+                    "Analytics Dashboard Integration",
+                    "Blog & News Section",
+                    "SEO Optimized Structure",
+                    "Social Media Integration"
+                ]
             },
             3: {
                 title: "Instagram Growth Campaign",
                 category: "Social Media Management",
-                description: "Strategic content strategy that grew engagement by 245% in 3 months.",
+                description: "Strategic content strategy that grew engagement by 245% in 3 months for a lifestyle brand. Includes content calendar, community management, and analytics reporting.",
                 image: "https://placehold.co/900x400/25D366/FFFFFF?text=Social+Media+Campaign",
-                features: ["Content Strategy", "Engagement Growth", "Analytics Reporting", "Community Management"]
+                features: [
+                    "Content Strategy & Calendar",
+                    "Daily Engagement & Community Management",
+                    "Hashtag Research & Optimization",
+                    "Analytics & Performance Reporting",
+                    "Influencer Collaboration",
+                    "Story & Reel Creation"
+                ]
             },
             4: {
                 title: "Complete Brand Identity Package",
                 category: "Graphic Design",
-                description: "Comprehensive brand identity including logo design, business cards, and brand guidelines.",
+                description: "Comprehensive brand identity including logo design, business cards, letterheads, and brand guidelines for a luxury brand.",
                 image: "https://placehold.co/900x400/FF6B4A/FFFFFF?text=Brand+Identity",
-                features: ["Logo Design", "Business Cards", "Brand Guidelines", "Stationery Design"]
+                features: [
+                    "Primary & Secondary Logo Design",
+                    "Business Cards & Stationery",
+                    "Brand Guidelines Document",
+                    "Color Palette & Typography",
+                    "Social Media Kit",
+                    "All Source Files Included"
+                ]
             },
             6: {
                 title: "Event Flyer & Promo Materials",
                 category: "Graphic Design",
-                description: "Creative flyer designs that captured attention and drove event attendance.",
+                description: "Creative flyer designs that captured attention and drove event attendance. Includes social media graphics and print-ready files.",
                 image: "https://placehold.co/900x400/FF9B4A/FFFFFF?text=Flyer+Design",
-                features: ["Flyer Design", "Social Media Graphics", "Print Ready Files", "Multiple Formats"]
+                features: [
+                    "Event Flyer Design",
+                    "Social Media Graphics",
+                    "Banner & Poster Design",
+                    "Print-Ready Files",
+                    "Multiple Format Variations",
+                    "Unlimited Revisions"
+                ]
             },
             7: {
                 title: "Facebook Ad Campaign Strategy",
                 category: "Social Media Management",
-                description: "Targeted campaigns that generated ₦2.5M in sales within 30 days.",
+                description: "Targeted campaigns that generated ₦2.5M in sales within 30 days for an e-commerce brand. Includes audience targeting, ad creative, and ROI tracking.",
                 image: "https://placehold.co/900x400/34C759/FFFFFF?text=Facebook+Ads",
-                features: ["Audience Targeting", "Ad Creative Design", "Budget Optimization", "ROI Tracking"]
+                features: [
+                    "Audience Research & Targeting",
+                    "Ad Creative Design",
+                    "Budget Optimization",
+                    "A/B Testing",
+                    "Conversion Tracking",
+                    "Detailed ROI Reporting"
+                ]
             }
         };
         
@@ -731,9 +1612,9 @@
                         <span class="category">${project.category}</span>
                         <h2>${project.title}</h2>
                         <p>${project.description}</p>
-                        <h4 style="margin-top: 1.5rem; margin-bottom: 1rem;">Key Features:</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            ${project.features.map(feature => `<li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle" style="color: var(--primary-accent); margin-right: 0.5rem;"></i>${feature}</li>`).join('')}
+                        <h4>Key Features:</h4>
+                        <ul>
+                            ${project.features.map(feature => `<li><i class="fas fa-check-circle"></i> ${feature}</li>`).join('')}
                         </ul>
                         ${project.price ? `<p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light);"><strong>Estimated Investment:</strong> ${project.price}</p>` : ''}
                         <div class="modal-buttons">
