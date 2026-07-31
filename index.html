@@ -784,81 +784,279 @@
             }
         }
 
-        /* ========== ABOUT ========== */
+        /* ============================================================
+               ABOUT SECTION – GLOWING CARD (UPGRADED)
+               ============================================================ */
         .about {
             background: linear-gradient(180deg, #030712 0%, #111827 100%);
         }
 
-        .about-grid {
-            display: grid;
-            gap: 3rem;
-            align-items: center;
+        /* Glowing card wrapper */
+        .about-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 2.8rem 2.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.05) inset;
+            transition: box-shadow 0.4s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        @media (min-width: 992px) {
+        /* Animated glowing border */
+        .about-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 42px;
+            padding: 2px;
+            background: conic-gradient(from 0deg, #2563EB, #3B82F6, #60A5FA, #2563EB);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            animation: glowSpin 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes glowSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .about-card:hover {
+            box-shadow: 0 30px 80px rgba(37, 99, 235, 0.25), 0 0 0 2px rgba(37, 99, 235, 0.15) inset;
+            transform: translateY(-4px);
+        }
+
+        /* Inner grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 900px) {
             .about-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
 
-        .about-content h3 {
+        /* Left content – items with icons */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            border-left: 4px solid #2563EB;
+            transition: background 0.25s ease, transform 0.2s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .about-item:hover {
+            background: rgba(37, 99, 235, 0.06);
+            transform: translateX(4px);
+        }
+
+        .about-item h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
             color: #fff;
         }
 
-        .about-content h3 .accent-text {
-            -webkit-text-fill-color: #2563EB;
+        .about-item h3 i {
+            color: #2563EB;
+            font-size: 1.3rem;
+            width: 2rem;
+            text-align: center;
+            background: rgba(37, 99, 235, 0.12);
+            padding: 0.4rem;
+            border-radius: 12px;
         }
 
-        .about-content p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+        .about-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.98rem;
+            margin-left: 2.6rem;
+            line-height: 1.7;
         }
 
+        .about-item .highlight {
+            color: #60A5FA;
+            font-weight: 500;
+        }
+
+        /* Team icon row */
+        .team-icons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.4rem;
+            margin-left: 2.6rem;
+        }
+
+        .team-icons i {
+            background: rgba(37, 99, 235, 0.08);
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            color: #94a3b8;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            transition: all 0.2s;
+        }
+
+        .team-icons i:hover {
+            background: rgba(37, 99, 235, 0.15);
+            color: #fff;
+        }
+
+        /* Right side – visual grid + badge */
         .about-visual {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
         }
 
-        .about-graphic {
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
             width: 100%;
-            max-width: 400px;
-            aspect-ratio: 1/1;
-            background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.3), transparent 70%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 360px;
+        }
+
+        .visual-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(6px);
+            border-radius: 24px;
+            padding: 1.5rem 0.8rem;
+            text-align: center;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .visual-card:hover {
+            background: rgba(37, 99, 235, 0.08);
+            border-color: #2563EB;
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .visual-card i {
+            font-size: 2.4rem;
+            color: #2563EB;
+            margin-bottom: 0.4rem;
+            display: block;
+            filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
+        }
+
+        .visual-card span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .visual-badge {
+            background: rgba(37, 99, 235, 0.08);
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 0.6rem 1.8rem;
             border: 1px solid rgba(37, 99, 235, 0.2);
-            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #cbd5e1;
         }
 
-        .about-graphic .glow-node {
-            width: 20px;
-            height: 20px;
-            background: #2563EB;
-            border-radius: 50%;
-            box-shadow: 0 0 40px #2563EB;
-            animation: pulse 2s infinite;
+        .visual-badge i {
+            color: #3B82F6;
+            font-size: 1.2rem;
         }
 
-        .about-graphic .node {
+        .visual-badge strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* floating orbs (decorative) */
+        .glow-dot {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background: rgba(37, 99, 235, 0.5);
             border-radius: 50%;
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+            background: rgba(37, 99, 235, 0.12);
+            filter: blur(40px);
+            pointer-events: none;
+            z-index: 0;
         }
-        .about-graphic .node:nth-child(2) { top: 15%; right: 20%; }
-        .about-graphic .node:nth-child(3) { bottom: 20%; left: 15%; }
-        .about-graphic .node:nth-child(4) { top: 30%; left: 10%; }
-        .about-graphic .node:nth-child(5) { bottom: 30%; right: 10%; }
+        .glow-dot--1 {
+            width: 200px;
+            height: 200px;
+            top: -80px;
+            right: -60px;
+        }
+        .glow-dot--2 {
+            width: 150px;
+            height: 150px;
+            bottom: -40px;
+            left: -40px;
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        /* responsive fine-tune for about */
+        @media (max-width: 600px) {
+            .about-card {
+                padding: 1.5rem 1rem;
+            }
+            .about-item {
+                padding: 1rem;
+            }
+            .about-item h3 {
+                font-size: 1rem;
+            }
+            .about-item p {
+                font-size: 0.9rem;
+                margin-left: 0;
+            }
+            .about-item h3 i {
+                width: 1.6rem;
+                font-size: 1rem;
+            }
+            .visual-grid {
+                gap: 0.8rem;
+            }
+            .visual-card i {
+                font-size: 1.8rem;
+            }
+            .team-icons {
+                margin-left: 0;
+            }
+        }
+        /* ============================================================
+               END ABOUT GLOWING CARD
+               ============================================================ */
 
         /* ========== SERVICES PREVIEW ========== */
         .services-preview {
@@ -2132,27 +2330,106 @@
             </div>
         </section>
 
-        <!-- ==================== ABOUT ==================== -->
+        <!-- ==================== ABOUT (GLOWING CARD) ==================== -->
         <section class="about" id="about">
-            <div class="container about-grid">
-                <div class="about-content">
-                    <span class="section-tag">About YUKAS DIGITAL HUB</span>
-                    <h3>Our Mission: <span class="accent-text">Democratizing AI</span></h3>
-                    <p>To democratize AI and advanced technology for every African business, ensuring they have the tools to compete globally.</p>
-                    <h3>Our Vision</h3>
-                    <p>To be the leading force behind Africa's digital and AI-driven economy, creating a future where technology empowers all.</p>
-                    <h3>Who We Are</h3>
-                    <p>We are a team of AI engineers, designers, and digital strategists based in Kano, Nigeria. We are passionate about leveraging technology to solve real-world problems and drive growth across the continent.</p>
+            <div class="container">
+                <!-- section header (optional, but keeps consistency) -->
+                <div class="section-header">
+                    <span class="section-tag"><i class="fas fa-robot" style="margin-right: 6px;"></i> About YUKAS DIGITAL HUB</span>
+                    <h2>AI &amp; innovation <span style="color: #2563EB; background: none; -webkit-text-fill-color: #2563EB;">for Africa</span></h2>
                 </div>
-                <div class="about-visual">
-                    <div class="about-graphic">
-                        <div class="glow-node"></div>
-                        <div class="node"></div>
-                        <div class="node"></div>
-                        <div class="node"></div>
-                        <div class="node"></div>
+
+                <!-- GLOWING CARD -->
+                <div class="about-card">
+                    <!-- decorative glow orbs -->
+                    <div class="glow-dot glow-dot--1"></div>
+                    <div class="glow-dot glow-dot--2"></div>
+
+                    <div class="about-grid">
+                        <!-- LEFT: mission, vision, who we are -->
+                        <div class="about-content">
+                            <!-- Mission -->
+                            <div class="about-item">
+                                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                                <p>
+                                    <span class="highlight">Democratizing AI</span> — 
+                                    To democratize AI and advanced technology for every African business, 
+                                    ensuring they have the tools to compete globally.
+                                </p>
+                            </div>
+
+                            <!-- Vision -->
+                            <div class="about-item">
+                                <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                                <p>
+                                    To be the leading force behind Africa's digital and AI-driven economy, 
+                                    creating a future where technology empowers all.
+                                </p>
+                            </div>
+
+                            <!-- Who we are + team icons -->
+                            <div class="about-item">
+                                <h3><i class="fas fa-users"></i> Who We Are</h3>
+                                <p>
+                                    We are a team of <span class="highlight">AI engineers</span>, designers, and digital strategists 
+                                    based in Kano, Nigeria. We are passionate about leveraging technology 
+                                    to solve real-world problems and drive growth across the continent.
+                                </p>
+                                <!-- team icon row (extra visual) -->
+                                <div class="team-icons">
+                                    <i class="fas fa-microchip"></i>
+                                    <i class="fas fa-paint-brush"></i>
+                                    <i class="fas fa-chart-line"></i>
+                                    <i class="fas fa-code"></i>
+                                    <i class="fas fa-robot"></i>
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: visual icons + illustration -->
+                        <div class="about-visual">
+                            <div class="visual-grid">
+                                <div class="visual-card">
+                                    <i class="fas fa-robot"></i>
+                                    <span>AI Experts</span>
+                                </div>
+                                <div class="visual-card">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Kano, Nigeria</span>
+                                </div>
+                                <div class="visual-card">
+                                    <i class="fas fa-globe-africa"></i>
+                                    <span>Africa focus</span>
+                                </div>
+                                <div class="visual-card">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Growth driven</span>
+                                </div>
+                            </div>
+
+                            <!-- badge: team location + heart -->
+                            <div class="visual-badge">
+                                <i class="fas fa-heart" style="color: #ef4444;"></i>
+                                <span>Built with <strong>passion</strong> in <i class="fas fa-map-pin" style="margin: 0 4px;"></i> Kano</span>
+                                <i class="fas fa-arrow-right" style="color: #2563EB;"></i>
+                            </div>
+
+                            <!-- extra chip -->
+                            <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; margin-top: 0.2rem;">
+                                <span style="background: rgba(37,99,235,0.08); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.75rem; border: 1px solid rgba(37,99,235,0.1);">
+                                    <i class="fas fa-brain" style="color: #2563EB;"></i> AI first
+                                </span>
+                                <span style="background: rgba(37,99,235,0.08); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.75rem; border: 1px solid rgba(37,99,235,0.1);">
+                                    <i class="fas fa-handshake" style="color: #2563EB;"></i> 100+ partners
+                                </span>
+                            </div>
+                        </div>
+                        <!-- /right -->
                     </div>
+                    <!-- /about-grid -->
                 </div>
+                <!-- /about-card -->
             </div>
         </section>
 
