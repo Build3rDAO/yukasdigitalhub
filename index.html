@@ -1752,15 +1752,35 @@
             margin-top: 3rem;
         }
 
-        /* ========== WHY CHOOSE US ========== */
+        /* ============================================================
+               WHY CHOOSE US – PREMIUM UPGRADE
+               ============================================================ */
         .why-us {
             background: #111827;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle background pattern */
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.03), transparent 50%);
+            pointer-events: none;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         @media (min-width: 640px) {
@@ -1773,73 +1793,166 @@
         @media (min-width: 1024px) {
             .features-grid {
                 grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
             }
         }
 
         .feature {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.8rem 1.5rem;
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        /* Animated gradient border on hover */
+        .feature::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 21px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.08), rgba(37, 99, 235, 0.25));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .feature:hover::before {
+            opacity: 1;
+        }
+
+        /* Glow effect on hover */
+        .feature::after {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .feature:hover::after {
+            opacity: 1;
         }
 
         @media (min-width: 768px) {
             .feature {
                 text-align: left;
-                padding: 2rem;
+                padding: 2.2rem 2rem;
             }
         }
 
         .feature:hover {
-            transform: translateY(-5px);
-            background: rgba(37, 99, 235, 0.05);
+            transform: translateY(-8px);
             border-color: rgba(37, 99, 235, 0.2);
-            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.05);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             margin-left: auto;
             margin-right: auto;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            position: relative;
+        }
+
+        .feature:hover .feature-icon {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.1));
+            transform: scale(1.1) rotate(-4deg);
+            border-color: rgba(37, 99, 235, 0.25);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .feature-icon i {
+            font-size: 1.6rem;
+            color: #2563EB;
+            transition: all 0.4s ease;
+        }
+
+        .feature:hover .feature-icon i {
+            color: #3B82F6;
+            transform: scale(1.1);
         }
 
         @media (min-width: 768px) {
             .feature-icon {
                 margin-left: 0;
                 margin-right: 0;
+                width: 64px;
+                height: 64px;
+                border-radius: 18px;
+            }
+            .feature-icon i {
+                font-size: 1.8rem;
             }
         }
 
-        .feature:hover .feature-icon {
-            background: rgba(37, 99, 235, 0.2);
-            transform: scale(1.1);
-        }
-
-        .feature-icon i {
-            font-size: 1.5rem;
-            color: #2563EB;
-        }
-
         .feature h3 {
-            font-size: 1.125rem;
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
             font-family: 'Space Grotesk', sans-serif;
+            transition: color 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .feature:hover h3 {
+            color: #fff;
         }
 
         .feature p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.875rem;
-            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+
+        .feature:hover p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Feature number decoration */
+        .feature .feature-number {
+            position: absolute;
+            top: 0.8rem;
+            right: 1.2rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(37, 99, 235, 0.04);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        .feature:hover .feature-number {
+            color: rgba(37, 99, 235, 0.08);
+            transform: scale(1.1) translateX(-4px);
+        }
+
+        @media (max-width: 767px) {
+            .feature .feature-number {
+                display: none;
+            }
         }
 
         /* ========== PORTFOLIO ========== */
@@ -2578,6 +2691,10 @@
             .product-card {
                 padding: 1.2rem 1rem;
             }
+
+            .feature {
+                padding: 1.2rem 1rem;
+            }
         }
 
         @media (max-width: 767px) {
@@ -3024,40 +3141,53 @@
             </div>
         </section>
 
-        <!-- ==================== WHY CHOOSE US ==================== -->
+        <!-- ==================== WHY CHOOSE US (PREMIUM UPGRADE) ==================== -->
         <section class="why-us" id="why-us">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">Why Partner With Us</span>
                     <h2>Driven by Excellence &amp; <span class="accent-text">Results</span></h2>
+                    <p>Discover why businesses trust us to deliver exceptional digital solutions.</p>
                 </div>
                 <div class="features-grid">
+                    <!-- Feature 1 -->
                     <div class="feature">
+                        <span class="feature-number">01</span>
                         <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                         <h3>Fast Delivery</h3>
                         <p>Agile sprints &amp; dedicated teams — your project goes live ahead of schedule.</p>
                     </div>
+                    <!-- Feature 2 -->
                     <div class="feature">
+                        <span class="feature-number">02</span>
                         <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                         <h3>Modern Design</h3>
                         <p>Pixel-perfect, fully responsive interfaces that wow on any device.</p>
                     </div>
+                    <!-- Feature 3 -->
                     <div class="feature">
+                        <span class="feature-number">03</span>
                         <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                         <h3>Business-Focused</h3>
                         <p>We optimize for conversions, not just aesthetics — ROI matters.</p>
                     </div>
+                    <!-- Feature 4 -->
                     <div class="feature">
+                        <span class="feature-number">04</span>
                         <div class="feature-icon"><i class="fas fa-tag"></i></div>
                         <h3>Affordable Pricing</h3>
                         <p>Premium quality at fair rates with transparent packages.</p>
                     </div>
+                    <!-- Feature 5 -->
                     <div class="feature">
+                        <span class="feature-number">05</span>
                         <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
                         <h3>Professional Team</h3>
                         <p>Our team comprises certified experts in AI, design, and development.</p>
                     </div>
+                    <!-- Feature 6 -->
                     <div class="feature">
+                        <span class="feature-number">06</span>
                         <div class="feature-icon"><i class="fas fa-headset"></i></div>
                         <h3>Long-Term Support</h3>
                         <p>We're with you every step of the way with dedicated support and maintenance.</p>
