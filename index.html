@@ -78,6 +78,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #030712;
@@ -222,6 +226,19 @@
         .nav-links ul li a:hover,
         .nav-links ul li a.active {
             color: #2563EB;
+        }
+
+        /* Navigation link with external page indicator */
+        .nav-links ul li a .external-indicator {
+            font-size: 0.6rem;
+            opacity: 0.5;
+            margin-left: 0.25rem;
+        }
+
+        .nav-links ul li a .section-indicator {
+            font-size: 0.6rem;
+            opacity: 0.3;
+            margin-left: 0.25rem;
         }
 
         .hamburger {
@@ -536,9 +553,43 @@
             box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
         }
 
+        .btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
         .btn-large {
             padding: 1.1rem 2.5rem;
             font-size: 1.1rem;
+        }
+
+        /* View All Button - for hybrid navigation */
+        .btn-view-all {
+            background: transparent;
+            color: #2563EB;
+            border: 2px solid #2563EB;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-view-all:hover {
+            background: #2563EB;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
         }
 
         .trust-badge {
@@ -1193,9 +1244,14 @@
             background: rgba(59, 130, 246, 0.08);
         }
 
-        /* ============================================================
-               SERVICES SECTION – PREMIUM UPGRADE
-               ============================================================ */
+        .about-cta {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ========== SERVICES ========== */
         .services-preview {
             background: #030712;
             position: relative;
@@ -1432,9 +1488,12 @@
             }
         }
 
-        /* ============================================================
-               STATS SECTION – NEW
-               ============================================================ */
+        .services-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* ========== STATS ========== */
         .stats-section {
             background: linear-gradient(135deg, #2563EB, #3B82F6);
             position: relative;
@@ -1475,7 +1534,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--white);
+            color: #fff;
             display: block;
             margin-bottom: 0.5rem;
             font-family: 'Space Grotesk', sans-serif;
@@ -1494,9 +1553,7 @@
             letter-spacing: 1px;
         }
 
-        /* ============================================================
-               PORTFOLIO HIGHLIGHTS – NEW
-               ============================================================ */
+        /* ========== PORTFOLIO HIGHLIGHTS ========== */
         .portfolio-highlights {
             background: #111827;
             position: relative;
@@ -1701,9 +1758,12 @@
             transform: translateX(4px);
         }
 
-        /* ============================================================
-               FEATURED PRODUCTS
-               ============================================================ */
+        .portfolio-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* ========== FEATURED PRODUCTS ========== */
         .featured-products {
             background: linear-gradient(180deg, #111827 0%, #030712 100%);
             position: relative;
@@ -1898,9 +1958,7 @@
             font-size: 0.8rem;
         }
 
-        /* ============================================================
-               WHY CHOOSE US
-               ============================================================ */
+        /* ========== WHY CHOOSE US ========== */
         .why-us {
             background: #111827;
             position: relative;
@@ -2097,9 +2155,7 @@
             }
         }
 
-        /* ============================================================
-               WORK PROCESS
-               ============================================================ */
+        /* ========== WORK PROCESS ========== */
         .process {
             background: linear-gradient(180deg, #030712 0%, #111827 100%);
             position: relative;
@@ -2307,9 +2363,7 @@
             border-color: rgba(37, 99, 235, 0.15);
         }
 
-        /* ============================================================
-               TESTIMONIALS – NEW
-               ============================================================ */
+        /* ========== TESTIMONIALS ========== */
         .testimonials {
             background: #111827;
         }
@@ -2394,9 +2448,7 @@
             transform: scale(1.2);
         }
 
-        /* ============================================================
-               FAQ – NEW
-               ============================================================ */
+        /* ========== FAQ ========== */
         .faq {
             background: #030712;
         }
@@ -2454,9 +2506,7 @@
             padding: 0.5rem 0.5rem 1rem 0.5rem;
         }
 
-        /* ============================================================
-               CTA SECTION
-               ============================================================ */
+        /* ========== CTA SECTION ========== */
         .cta-section {
             background: linear-gradient(135deg, #030712 0%, #111827 100%);
             position: relative;
@@ -2515,9 +2565,7 @@
             }
         }
 
-        /* ============================================================
-               FOOTER
-               ============================================================ */
+        /* ========== FOOTER ========== */
         .footer {
             background: #030712;
             border-top: 1px solid rgba(37, 99, 235, 0.1);
@@ -2690,9 +2738,7 @@
             font-size: 0.875rem;
         }
 
-        /* ============================================================
-               WHATSAPP FLOAT
-               ============================================================ */
+        /* ========== WHATSAPP FLOAT ========== */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -2735,9 +2781,7 @@
             }
         }
 
-        /* ============================================================
-               ANIMATIONS
-               ============================================================ */
+        /* ========== ANIMATIONS ========== */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -2774,9 +2818,7 @@
         .delay-3 { transition-delay: 0.3s; }
         .delay-4 { transition-delay: 0.4s; }
 
-        /* ============================================================
-               RESPONSIVE FINE-TUNING
-               ============================================================ */
+        /* ========== RESPONSIVE FINE-TUNING ========== */
         @media (max-width: 480px) {
             .hero-content h1 {
                 font-size: 2.2rem;
@@ -2871,11 +2913,26 @@
             </div>
             <nav class="nav-links" id="navLinks">
                 <ul>
+                    <!-- Home stays on current page -->
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    
+                    <!-- About: Internal section + External page indicator -->
+                    <li><a href="#about">About <span class="section-indicator">▼</span></a></li>
+                    
+                    <!-- Services: Internal section + External page -->
+                    <li><a href="#services">Services <span class="section-indicator">▼</span></a></li>
+                    
+                    <!-- Portfolio: Internal section + External page -->
+                    <li><a href="#portfolio">Portfolio <span class="section-indicator">▼</span></a></li>
+                    
+                    <!-- Contact: Internal section + External page -->
+                    <li><a href="#contact">Contact <span class="section-indicator">▼</span></a></li>
+                    
+                    <!-- Full pages (external) -->
+                    <li><a href="pages/about.html">About <span class="external-indicator">↗</span></a></li>
+                    <li><a href="pages/services.html">Services <span class="external-indicator">↗</span></a></li>
+                    <li><a href="pages/portfolio.html">Portfolio <span class="external-indicator">↗</span></a></li>
+                    <li><a href="pages/contact.html">Contact <span class="external-indicator">↗</span></a></li>
                 </ul>
             </nav>
             <div class="hamburger" id="hamburger">
@@ -2990,7 +3047,7 @@
             </div>
         </section>
 
-        <!-- ==================== ABOUT ==================== -->
+        <!-- ==================== ABOUT (Internal Section) ==================== -->
         <section class="about" id="about">
             <div class="container">
                 <div class="section-header">
@@ -3076,10 +3133,16 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="about-cta" style="text-align: center; margin-top: 2rem;">
+                    <a href="pages/about.html" class="btn btn-outline">
+                        Learn More About Us <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- ==================== SERVICES ==================== -->
+        <!-- ==================== SERVICES (Internal Section) ==================== -->
         <section class="services-preview" id="services">
             <div class="container">
                 <div class="section-header">
@@ -3138,6 +3201,12 @@
                         <a href="pages/services.html#cloud" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                
+                <div class="services-cta">
+                    <a href="pages/services.html" class="btn btn-outline">
+                        View All Services <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -3165,7 +3234,7 @@
             </div>
         </section>
 
-        <!-- ==================== PORTFOLIO HIGHLIGHTS ==================== -->
+        <!-- ==================== PORTFOLIO (Internal Section) ==================== -->
         <section class="portfolio-highlights" id="portfolio">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -3226,6 +3295,12 @@
                             </a>
                         </div>
                     </div>
+                </div>
+                
+                <div class="portfolio-cta">
+                    <a href="pages/portfolio.html" class="btn btn-outline">
+                        View Full Portfolio <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
@@ -3463,7 +3538,7 @@
             </div>
         </section>
 
-        <!-- ==================== FINAL CTA ==================== -->
+        <!-- ==================== FINAL CTA (Internal Section) ==================== -->
         <section class="cta-section" id="contact">
             <div class="container cta-container">
                 <div class="cta-content">
@@ -3474,6 +3549,11 @@
                             Start Your Project <i class="fas fa-chevron-right"></i>
                         </a>
                         <a href="pages/contact.html" class="btn btn-outline-light">Book a Consultation</a>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="pages/contact.html" class="btn-view-all">
+                            Visit Full Contact Page <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
