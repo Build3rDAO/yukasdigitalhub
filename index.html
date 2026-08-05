@@ -228,7 +228,6 @@
             color: #2563EB;
         }
 
-        /* Navigation link with external page indicator */
         .nav-links ul li a .external-indicator {
             font-size: 0.6rem;
             opacity: 0.5;
@@ -570,7 +569,6 @@
             font-size: 1.1rem;
         }
 
-        /* View All Button - for hybrid navigation */
         .btn-view-all {
             background: transparent;
             color: #2563EB;
@@ -1553,7 +1551,7 @@
             letter-spacing: 1px;
         }
 
-        /* ========== PORTFOLIO HIGHLIGHTS ========== */
+        /* ========== PORTFOLIO HIGHLIGHTS WITH IMAGES ========== */
         .portfolio-highlights {
             background: #111827;
             position: relative;
@@ -1646,17 +1644,39 @@
         .portfolio-image {
             width: 100%;
             aspect-ratio: 16/10;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
         }
 
-        .portfolio-card:hover .portfolio-image {
-            transform: scale(1.02);
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.08);
+        }
+
+        /* Fallback icon when image fails to load */
+        .portfolio-image .fallback-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3.5rem;
+            color: rgba(37, 99, 235, 0.3);
+            transition: all 0.4s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .portfolio-card:hover .portfolio-image .fallback-icon {
+            color: rgba(37, 99, 235, 0.5);
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .portfolio-image::after {
@@ -1666,22 +1686,11 @@
             background: linear-gradient(180deg, transparent 50%, rgba(3, 7, 18, 0.7) 100%);
             opacity: 0;
             transition: opacity 0.4s ease;
+            z-index: 2;
         }
 
         .portfolio-card:hover .portfolio-image::after {
             opacity: 1;
-        }
-
-        .portfolio-image i {
-            font-size: 3.5rem;
-            color: rgba(37, 99, 235, 0.3);
-            transition: all 0.4s ease;
-            z-index: 1;
-        }
-
-        .portfolio-card:hover .portfolio-image i {
-            color: rgba(37, 99, 235, 0.5);
-            transform: scale(1.1);
         }
 
         .portfolio-image .project-badge {
@@ -1698,7 +1707,7 @@
             border-radius: 50px;
             border: 1px solid rgba(37, 99, 235, 0.15);
             backdrop-filter: blur(4px);
-            z-index: 2;
+            z-index: 3;
             transition: all 0.3s ease;
         }
 
@@ -2878,6 +2887,10 @@
             .testimonial-item .review {
                 font-size: 1rem;
             }
+
+            .portfolio-image {
+                height: 180px;
+            }
         }
 
         @media (max-width: 767px) {
@@ -2913,8 +2926,6 @@
             </div>
             <nav class="nav-links" id="navLinks">
                 <ul>
-                    
-                    <!-- Full pages (external) -->
                     <li><a href="pages/about.html">About <span class="external-indicator">↗</span></a></li>
                     <li><a href="pages/services.html">Services <span class="external-indicator">↗</span></a></li>
                     <li><a href="pages/portfolio.html">Portfolio <span class="external-indicator">↗</span></a></li>
@@ -3033,7 +3044,7 @@
             </div>
         </section>
 
-        <!-- ==================== ABOUT (Internal Section) ==================== -->
+        <!-- ==================== ABOUT ==================== -->
         <section class="about" id="about">
             <div class="container">
                 <div class="section-header">
@@ -3128,7 +3139,7 @@
             </div>
         </section>
 
-        <!-- ==================== SERVICES (Internal Section) ==================== -->
+        <!-- ==================== SERVICES ==================== -->
         <section class="services-preview" id="services">
             <div class="container">
                 <div class="section-header">
@@ -3220,7 +3231,7 @@
             </div>
         </section>
 
-        <!-- ==================== PORTFOLIO (Internal Section) ==================== -->
+        <!-- ==================== PORTFOLIO WITH REAL IMAGES ==================== -->
         <section class="portfolio-highlights" id="portfolio">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -3229,9 +3240,11 @@
                     <p>Explore some of the amazing websites and digital solutions we've delivered for our clients.</p>
                 </div>
                 <div class="portfolio-grid">
+                    <!-- Project 1 - Kwara Realtors -->
                     <div class="portfolio-card animate-on-scroll delay-1">
                         <div class="portfolio-image">
-                            <i class="fas fa-building"></i>
+                            <img src="images/portfolio/kwara-realtors.jpg" alt="Kwara Realtors - Real Estate Website" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-building fallback-icon" style="display: none;"></i>
                             <span class="project-badge">Real Estate</span>
                         </div>
                         <div class="portfolio-info">
@@ -3242,9 +3255,12 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Project 2 - Sassauci Enterprises -->
                     <div class="portfolio-card animate-on-scroll delay-2">
                         <div class="portfolio-image">
-                            <i class="fas fa-store"></i>
+                            <img src="images/portfolio/sassauci-enterprises.jpg" alt="Sassauci Enterprises - E-Commerce Website" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-store fallback-icon" style="display: none;"></i>
                             <span class="project-badge">E-Commerce</span>
                         </div>
                         <div class="portfolio-info">
@@ -3255,9 +3271,12 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Project 3 - AMAM Properties -->
                     <div class="portfolio-card animate-on-scroll delay-3">
                         <div class="portfolio-image">
-                            <i class="fas fa-home"></i>
+                            <img src="images/portfolio/amam-properties.jpg" alt="AMAM Properties - Real Estate Website" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-home fallback-icon" style="display: none;"></i>
                             <span class="project-badge">Real Estate</span>
                         </div>
                         <div class="portfolio-info">
@@ -3268,9 +3287,12 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Project 4 - Saraky Data Sub -->
                     <div class="portfolio-card animate-on-scroll delay-4">
                         <div class="portfolio-image">
-                            <i class="fas fa-database"></i>
+                            <img src="images/portfolio/saraky-data-sub.jpg" alt="Saraky Data Sub - Data Subscription Platform" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-database fallback-icon" style="display: none;"></i>
                             <span class="project-badge">Data Services</span>
                         </div>
                         <div class="portfolio-info">
@@ -3524,7 +3546,7 @@
             </div>
         </section>
 
-        <!-- ==================== FINAL CTA (Internal Section) ==================== -->
+        <!-- ==================== FINAL CTA ==================== -->
         <section class="cta-section" id="contact">
             <div class="container cta-container">
                 <div class="cta-content">
