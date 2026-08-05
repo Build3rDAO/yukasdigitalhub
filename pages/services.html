@@ -615,7 +615,7 @@
         }
 
         /* ============================================================
-               PAYMENT INTEGRATIONS – SAME STYLE AS OTHER SERVICES
+               PAYMENT INTEGRATIONS – UNIFIED SINGLE SECTION
                ============================================================ */
         .payment-integrations {
             background: var(--gray-900);
@@ -633,160 +633,152 @@
             pointer-events: none;
         }
 
-        .payment-integrations .service-detail {
-            border-bottom: 1px solid rgba(37, 99, 235, 0.08);
-        }
-
-        .payment-integrations .service-detail:last-child {
-            border-bottom: none;
-        }
-
-        .payment-integrations .service-detail:nth-child(even) {
-            background: rgba(17, 24, 39, 0.3);
-        }
-
-        .payment-integrations .service-detail-grid {
+        .payment-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
             position: relative;
             z-index: 1;
         }
 
-        @media (min-width: 968px) {
-            .payment-integrations .service-detail-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
+        @media (max-width: 640px) {
+            .payment-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
         }
 
-        .payment-integrations .service-detail-content h2 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        @media (min-width: 768px) {
-            .payment-integrations .service-detail-content h2 {
-                font-size: 2rem;
+        @media (min-width: 1024px) {
+            .payment-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
             }
         }
 
-        .payment-integrations .service-badge {
-            display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary-accent);
-            padding: 0.4rem 1rem;
-            border-radius: var(--radius-full);
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(37, 99, 235, 0.05);
-        }
-
-        .payment-integrations .service-detail-content p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .payment-integrations .service-price {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-accent);
-            margin: 1.5rem 0;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        @media (min-width: 768px) {
-            .payment-integrations .service-price {
-                font-size: 2rem;
-            }
-        }
-
-        .payment-integrations .service-price span {
-            font-size: 0.875rem;
-            font-weight: 400;
-            color: var(--text-light);
-        }
-
-        .payment-integrations .feature-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .payment-integrations .feature-list li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-light);
-        }
-
-        .payment-integrations .feature-list li i {
-            color: var(--primary-accent);
-            width: 20px;
-            font-size: 1rem;
-        }
-
-        .payment-integrations .service-image {
+        .payment-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-radius: var(--radius-xl);
-            padding: 2.5rem;
+            padding: 1.5rem;
             text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border: 1px solid rgba(37, 99, 235, 0.08);
-            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .payment-integrations .service-image::before {
+        @media (min-width: 768px) {
+            .payment-card {
+                padding: 2rem;
+            }
+        }
+
+        .payment-card::before {
             content: '';
             position: absolute;
             inset: -1px;
             border-radius: calc(var(--radius-xl) + 1px);
             padding: 1px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.15));
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.2));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
-            opacity: 0.5;
+            opacity: 0;
+            transition: opacity 0.5s ease;
             pointer-events: none;
         }
 
-        .payment-integrations .service-image:hover {
+        .payment-card:hover::before {
+            opacity: 1;
+        }
+
+        .payment-card::after {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .payment-card:hover::after {
+            opacity: 1;
+        }
+
+        .payment-card:hover {
             transform: translateY(-8px);
             border-color: rgba(37, 99, 235, 0.2);
             box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
             background: rgba(255, 255, 255, 0.05);
         }
 
-        .payment-integrations .service-image i {
-            font-size: 4rem;
+        .payment-card .payment-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.4s ease;
+            font-size: 1.6rem;
             color: var(--primary-accent);
-            margin-bottom: 1rem;
-            display: block;
         }
 
         @media (min-width: 768px) {
-            .payment-integrations .service-image i {
-                font-size: 5rem;
+            .payment-card .payment-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
             }
         }
 
-        .payment-integrations .service-image h3 {
-            color: var(--white);
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+        .payment-card:hover .payment-icon {
+            background: rgba(37, 99, 235, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .payment-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        .payment-integrations .service-image p {
+        @media (min-width: 768px) {
+            .payment-card h4 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .payment-card p {
             color: var(--text-light);
-            font-size: 0.875rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            .payment-card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .payment-card .payment-tag {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-accent);
+            background: rgba(37, 99, 235, 0.08);
+            padding: 0.2rem 0.7rem;
+            border-radius: var(--radius-full);
+            margin-top: 0.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.05);
         }
 
         /* ============================================================
@@ -817,7 +809,14 @@
             z-index: 1;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 640px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
             .pricing-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 2rem;
@@ -1436,11 +1435,34 @@
                 font-size: 3rem;
             }
 
-            .payment-integrations .service-image {
-                padding: 1.5rem;
+            .payment-card {
+                padding: 1.2rem;
             }
-            .payment-integrations .service-image i {
-                font-size: 3rem;
+            .payment-card .payment-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            .payment-card h4 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .service-detail-grid {
+                gap: 1.5rem;
+            }
+            .service-detail-content h2 {
+                font-size: 1.5rem;
+            }
+            .service-detail-content {
+                order: 1;
+            }
+            .service-image {
+                order: 2;
+            }
+            .pricing-grid {
+                gap: 1rem;
             }
         }
     </style>
@@ -1492,7 +1514,7 @@
             </div>
         </section>
 
-        <!-- ==================== PAYMENT INTEGRATIONS (SAME STYLE AS OTHER SERVICES) ==================== -->
+        <!-- ==================== PAYMENT INTEGRATIONS – UNIFIED SECTION ==================== -->
         <section class="payment-integrations" id="payments">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -1501,153 +1523,65 @@
                     <p>We integrate Africa's leading payment gateways to enable secure, fast, and reliable transactions for your business.</p>
                 </div>
 
-                <!-- Flutterwave -->
-                <div class="service-detail">
-                    <div class="service-detail-grid">
-                        <div class="service-detail-content animate-on-scroll">
-                            <span class="service-badge">💳 Leading Gateway</span>
-                            <h2>Flutterwave</h2>
-                            <p>Africa's leading payment technology company. Accept payments in multiple currencies with ease. Trusted by businesses across the continent.</p>
-                            <div class="service-price">Starting from ₦100,000 <span>integration setup</span></div>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check-circle"></i> Multi-currency support</li>
-                                <li><i class="fas fa-check-circle"></i> Card, bank, and mobile money</li>
-                                <li><i class="fas fa-check-circle"></i> Recurring billing &amp; subscriptions</li>
-                                <li><i class="fas fa-check-circle"></i> Instant settlement</li>
-                                <li><i class="fas fa-check-circle"></i> Advanced fraud protection</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="service-image animate-on-scroll delay-2">
+                <div class="payment-grid">
+                    <!-- Flutterwave -->
+                    <div class="payment-card animate-on-scroll delay-1">
+                        <div class="payment-icon">
                             <i class="fas fa-wave-square"></i>
-                            <h3>Flutterwave</h3>
-                            <p>Africa's leading payment gateway</p>
                         </div>
+                        <h4>Flutterwave</h4>
+                        <p>Africa's leading payment gateway with multi-currency support</p>
+                        <span class="payment-tag">🌍 Multi-Currency</span>
                     </div>
-                </div>
 
-                <!-- Paystack -->
-                <div class="service-detail">
-                    <div class="service-detail-grid">
-                        <div class="service-image animate-on-scroll">
+                    <!-- Paystack -->
+                    <div class="payment-card animate-on-scroll delay-2">
+                        <div class="payment-icon">
                             <i class="fas fa-stack-overflow"></i>
-                            <h3>Paystack</h3>
-                            <p>Nigeria's #1 payment gateway</p>
                         </div>
-                        <div class="service-detail-content animate-on-scroll delay-2">
-                            <span class="service-badge">⭐ Most Popular</span>
-                            <h2>Paystack</h2>
-                            <p>Nigeria's #1 payment gateway. Simple, secure, and trusted by thousands of businesses. Accept payments effortlessly.</p>
-                            <div class="service-price">Starting from ₦100,000 <span>integration setup</span></div>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check-circle"></i> Naira &amp; international cards</li>
-                                <li><i class="fas fa-check-circle"></i> Bank transfers &amp; USSD</li>
-                                <li><i class="fas fa-check-circle"></i> Recurring payments &amp; subscriptions</li>
-                                <li><i class="fas fa-check-circle"></i> Fraud protection</li>
-                                <li><i class="fas fa-check-circle"></i> Real-time transaction reports</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <h4>Paystack</h4>
+                        <p>Nigeria's #1 payment gateway trusted by thousands</p>
+                        <span class="payment-tag">⭐ Most Popular</span>
                     </div>
-                </div>
 
-                <!-- Monnify -->
-                <div class="service-detail">
-                    <div class="service-detail-grid">
-                        <div class="service-detail-content animate-on-scroll">
-                            <span class="service-badge">🏦 Bank-Backed</span>
-                            <h2>Monnify</h2>
-                            <p>Bank-backed payment solution with seamless integration and powerful features. Perfect for businesses requiring virtual accounts.</p>
-                            <div class="service-price">Starting from ₦120,000 <span>integration setup</span></div>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check-circle"></i> Bank transfer payments</li>
-                                <li><i class="fas fa-check-circle"></i> Virtual accounts</li>
-                                <li><i class="fas fa-check-circle"></i> Split payments</li>
-                                <li><i class="fas fa-check-circle"></i> Automated reconciliation</li>
-                                <li><i class="fas fa-check-circle"></i> Webhook integrations</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="service-image animate-on-scroll delay-2">
+                    <!-- Monnify -->
+                    <div class="payment-card animate-on-scroll delay-3">
+                        <div class="payment-icon">
                             <i class="fas fa-building-columns"></i>
-                            <h3>Monnify</h3>
-                            <p>Seamless bank-backed payments</p>
                         </div>
+                        <h4>Monnify</h4>
+                        <p>Bank-backed payment solution with virtual accounts</p>
+                        <span class="payment-tag">🏦 Bank-Backed</span>
                     </div>
-                </div>
 
-                <!-- Interswitch -->
-                <div class="service-detail">
-                    <div class="service-detail-grid">
-                        <div class="service-image animate-on-scroll">
+                    <!-- Interswitch -->
+                    <div class="payment-card animate-on-scroll delay-1">
+                        <div class="payment-icon">
                             <i class="fas fa-exchange-alt"></i>
-                            <h3>Interswitch</h3>
-                            <p>Africa's payment leader</p>
                         </div>
-                        <div class="service-detail-content animate-on-scroll delay-2">
-                            <span class="service-badge">🌍 Pan-African</span>
-                            <h2>Interswitch</h2>
-                            <p>One of Africa's largest payment processing and switching companies. Trusted by banks and businesses across the continent.</p>
-                            <div class="service-price">Starting from ₦150,000 <span>integration setup</span></div>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check-circle"></i> WebPay &amp; Quickteller</li>
-                                <li><i class="fas fa-check-circle"></i> POS &amp; mobile payments</li>
-                                <li><i class="fas fa-check-circle"></i> Tokenization &amp; security</li>
-                                <li><i class="fas fa-check-circle"></i> Bank &amp; card support</li>
-                                <li><i class="fas fa-check-circle"></i> Multi-channel payments</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <h4>Interswitch</h4>
+                        <p>Pan-African payment processing and switching</p>
+                        <span class="payment-tag">🌍 Pan-African</span>
                     </div>
-                </div>
 
-                <!-- Remita -->
-                <div class="service-detail">
-                    <div class="service-detail-grid">
-                        <div class="service-detail-content animate-on-scroll">
-                            <span class="service-badge">📋 Government &amp; Corporate</span>
-                            <h2>Remita</h2>
-                            <p>Government and corporate payment solution with extensive bank coverage. Ideal for organizations requiring bulk payments and invoicing.</p>
-                            <div class="service-price">Starting from ₦130,000 <span>integration setup</span></div>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check-circle"></i> Government &amp; corporate payments</li>
-                                <li><i class="fas fa-check-circle"></i> Multi-bank integration</li>
-                                <li><i class="fas fa-check-circle"></i> Invoice &amp; receipt generation</li>
-                                <li><i class="fas fa-check-circle"></i> Bulk payment processing</li>
-                                <li><i class="fas fa-check-circle"></i> Payment tracking &amp; reconciliation</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="service-image animate-on-scroll delay-2">
+                    <!-- Remita -->
+                    <div class="payment-card animate-on-scroll delay-2">
+                        <div class="payment-icon">
                             <i class="fas fa-receipt"></i>
-                            <h3>Remita</h3>
-                            <p>Government &amp; corporate payments</p>
                         </div>
+                        <h4>Remita</h4>
+                        <p>Government and corporate payment solution</p>
+                        <span class="payment-tag">📋 Corporate</span>
                     </div>
-                </div>
 
-                <!-- Paga -->
-                <div class="service-detail">
-                    <div class="service-detail-grid">
-                        <div class="service-image animate-on-scroll">
+                    <!-- Paga -->
+                    <div class="payment-card animate-on-scroll delay-3">
+                        <div class="payment-icon">
                             <i class="fas fa-mobile-screen"></i>
-                            <h3>Paga</h3>
-                            <p>Mobile payment platform</p>
                         </div>
-                        <div class="service-detail-content animate-on-scroll delay-2">
-                            <span class="service-badge">📱 Mobile-First</span>
-                            <h2>Paga</h2>
-                            <p>Mobile payment platform making financial services accessible across Nigeria. Perfect for businesses targeting mobile-first customers.</p>
-                            <div class="service-price">Starting from ₦100,000 <span>integration setup</span></div>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check-circle"></i> Mobile money transfers</li>
-                                <li><i class="fas fa-check-circle"></i> Bill payments &amp; airtime</li>
-                                <li><i class="fas fa-check-circle"></i> Agent banking network</li>
-                                <li><i class="fas fa-check-circle"></i> Micro-savings features</li>
-                                <li><i class="fas fa-check-circle"></i> USSD &amp; app integration</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <h4>Paga</h4>
+                        <p>Mobile-first payment platform for Africa</p>
+                        <span class="payment-tag">📱 Mobile-First</span>
                     </div>
                 </div>
             </div>
