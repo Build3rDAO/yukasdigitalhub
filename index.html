@@ -28,6 +28,33 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yukasdigitalhub.com/">
     
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "YUKAS DIGITAL HUB",
+        "description": "Premium AI technology company building Africa's AI future with innovative digital solutions.",
+        "url": "https://yukasdigitalhub.com/",
+        "logo": "https://yukasdigitalhub.com/images/logo.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kano",
+            "addressCountry": "Nigeria"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+2347043504297",
+            "contactType": "sales"
+        },
+        "sameAs": [
+            "https://facebook.com/yukasdigitalhub",
+            "https://instagram.com/yukasdigitalhub",
+            "https://linkedin.com/company/yukasdigitalhub"
+        ]
+    }
+    </script>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
@@ -242,7 +269,6 @@
             align-items: center;
         }
 
-        /* Animated gradient mesh background */
         .hero::before {
             content: '';
             position: absolute;
@@ -260,7 +286,6 @@
             100% { opacity: 1; transform: scale(1.05); }
         }
 
-        /* Glow orb decorations */
         .hero-orb {
             position: absolute;
             border-radius: 50%;
@@ -330,7 +355,6 @@
             }
         }
 
-        /* ----- HERO CONTENT (Left) ----- */
         .hero-content {
             text-align: center;
         }
@@ -517,7 +541,6 @@
             font-size: 1.1rem;
         }
 
-        /* Trust Badge */
         .trust-badge {
             display: flex;
             flex-wrap: wrap;
@@ -559,7 +582,6 @@
             font-size: 1.1rem;
         }
 
-        /* ----- HERO VISUAL (Right) ----- */
         .hero-visual {
             position: relative;
         }
@@ -751,7 +773,6 @@
             transform-origin: bottom;
         }
 
-        /* Floating Elements */
         .floating-element {
             position: absolute;
             width: 44px;
@@ -817,7 +838,7 @@
             }
         }
 
-        /* ========== SECTION HEADER (shared) ========== */
+        /* ========== SECTION HEADER ========== */
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -940,7 +961,7 @@
             }
         }
 
-        /* ========== ABOUT (GLOWING CARD) ========== */
+        /* ========== ABOUT ========== */
         .about {
             background: linear-gradient(180deg, #030712 0%, #111827 100%);
         }
@@ -1180,7 +1201,6 @@
             position: relative;
         }
 
-        /* Subtle background glow */
         .services-preview::before {
             content: '';
             position: absolute;
@@ -1228,7 +1248,6 @@
             cursor: default;
         }
 
-        /* Animated gradient border on hover */
         .service-card::before {
             content: '';
             position: absolute;
@@ -1248,7 +1267,6 @@
             opacity: 1;
         }
 
-        /* Glow effect on hover */
         .service-card::after {
             content: '';
             position: absolute;
@@ -1390,7 +1408,6 @@
             transform: translateX(4px);
         }
 
-        /* Service card number decoration */
         .service-card .service-number {
             position: absolute;
             top: 1rem;
@@ -1416,7 +1433,276 @@
         }
 
         /* ============================================================
-               FEATURED PRODUCTS – PREMIUM UPGRADE
+               STATS SECTION – NEW
+               ============================================================ */
+        .stats-section {
+            background: linear-gradient(135deg, #2563EB, #3B82F6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 640px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--white);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ============================================================
+               PORTFOLIO HIGHLIGHTS – NEW
+               ============================================================ */
+        .portfolio-highlights {
+            background: #111827;
+            position: relative;
+        }
+
+        .portfolio-highlights::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.04), transparent 60%);
+            pointer-events: none;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 640px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 21px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.3));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .portfolio-card:hover::before {
+            opacity: 1;
+        }
+
+        .portfolio-card::after {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .portfolio-card:hover::after {
+            opacity: 1;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.02);
+        }
+
+        .portfolio-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(3, 7, 18, 0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image::after {
+            opacity: 1;
+        }
+
+        .portfolio-image i {
+            font-size: 3.5rem;
+            color: rgba(37, 99, 235, 0.3);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .portfolio-card:hover .portfolio-image i {
+            color: rgba(37, 99, 235, 0.5);
+            transform: scale(1.1);
+        }
+
+        .portfolio-image .project-badge {
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(37, 99, 235, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            backdrop-filter: blur(4px);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover .project-badge {
+            background: rgba(37, 99, 235, 0.35);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .portfolio-info {
+            padding: 1.5rem 1.5rem 1.8rem;
+        }
+
+        .portfolio-info h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
+            transition: color 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .portfolio-card:hover .portfolio-info h3 {
+            color: #fff;
+        }
+
+        .portfolio-info p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-info p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .portfolio-info .btn-outline {
+            font-size: 0.8rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 10px;
+            border-color: rgba(37, 99, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-info .btn-outline:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
+            border-color: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+        }
+
+        .portfolio-info .btn-outline i {
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-info .btn-outline:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ============================================================
+               FEATURED PRODUCTS
                ============================================================ */
         .featured-products {
             background: linear-gradient(180deg, #111827 0%, #030712 100%);
@@ -1470,7 +1756,6 @@
             cursor: default;
         }
 
-        /* Animated gradient border on hover */
         .product-card::before {
             content: '';
             position: absolute;
@@ -1490,7 +1775,6 @@
             opacity: 1;
         }
 
-        /* Glow effect */
         .product-card::after {
             content: '';
             position: absolute;
@@ -1570,7 +1854,6 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Product card number decoration */
         .product-card .product-number {
             position: absolute;
             top: 0.8rem;
@@ -1595,7 +1878,6 @@
             }
         }
 
-        /* Product card button */
         .product-card .btn-outline {
             font-size: 0.85rem;
             padding: 0.6rem 1.5rem;
@@ -1616,144 +1898,8 @@
             font-size: 0.8rem;
         }
 
-        /* ========== DIGITAL LIBRARY ========== */
-        .digital-library {
-            background: #030712;
-            position: relative;
-        }
-
-        .digital-library::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.05), transparent 70%);
-            pointer-events: none;
-        }
-
-        .library-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        @media (min-width: 640px) {
-            .library-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .library-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        .book-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(5px);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .book-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            border-color: #2563EB;
-            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
-            background: rgba(37, 99, 235, 0.05);
-        }
-
-        .book-cover {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: linear-gradient(135deg, #1e293b, #2563EB);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .book-cover i {
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        .book-cover .book-title-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 0.5rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .book-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .book-card .author {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.75rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .book-card .book-meta {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0.5rem;
-        }
-
-        .book-card .book-meta .stars {
-            color: #fbbf24;
-        }
-
-        .book-card .price {
-            font-weight: 700;
-            font-size: 1.125rem;
-            color: #2563EB;
-            margin-bottom: 1rem;
-        }
-
-        .book-card .book-actions {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .book-card .book-actions .btn {
-            padding: 0.5rem 1rem;
-            font-size: 0.75rem;
-        }
-
-        .view-all-books {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
         /* ============================================================
-               WHY CHOOSE US – PREMIUM UPGRADE
+               WHY CHOOSE US
                ============================================================ */
         .why-us {
             background: #111827;
@@ -1761,7 +1907,6 @@
             overflow: hidden;
         }
 
-        /* Subtle background pattern */
         .why-us::before {
             content: '';
             position: absolute;
@@ -1811,7 +1956,6 @@
             cursor: default;
         }
 
-        /* Animated gradient border on hover */
         .feature::before {
             content: '';
             position: absolute;
@@ -1831,7 +1975,6 @@
             opacity: 1;
         }
 
-        /* Glow effect on hover */
         .feature::after {
             content: '';
             position: absolute;
@@ -1930,7 +2073,6 @@
             color: rgba(255, 255, 255, 0.85);
         }
 
-        /* Feature number decoration */
         .feature .feature-number {
             position: absolute;
             top: 0.8rem;
@@ -1956,7 +2098,7 @@
         }
 
         /* ============================================================
-               WORK PROCESS – PREMIUM UPGRADE
+               WORK PROCESS
                ============================================================ */
         .process {
             background: linear-gradient(180deg, #030712 0%, #111827 100%);
@@ -1964,7 +2106,6 @@
             overflow: hidden;
         }
 
-        /* Subtle background glow */
         .process::before {
             content: '';
             position: absolute;
@@ -2016,7 +2157,6 @@
             cursor: default;
         }
 
-        /* Animated gradient border on hover */
         .process-step::before {
             content: '';
             position: absolute;
@@ -2036,7 +2176,6 @@
             opacity: 1;
         }
 
-        /* Glow effect on hover */
         .process-step::after {
             content: '';
             position: absolute;
@@ -2058,7 +2197,6 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Step number - large decorative */
         .process-step .step-number {
             font-size: 2.8rem;
             font-weight: 800;
@@ -2083,7 +2221,6 @@
             }
         }
 
-        /* Step icon */
         .process-step .step-icon {
             width: 56px;
             height: 56px;
@@ -2125,7 +2262,6 @@
             }
         }
 
-        /* Step content */
         .process-step h4 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.1rem;
@@ -2150,7 +2286,6 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Step badge - small indicator */
         .process-step .step-badge {
             display: inline-block;
             font-size: 0.6rem;
@@ -2172,7 +2307,156 @@
             border-color: rgba(37, 99, 235, 0.15);
         }
 
-        /* ========== CTA SECTION ========== */
+        /* ============================================================
+               TESTIMONIALS – NEW
+               ============================================================ */
+        .testimonials {
+            background: #111827;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-item {
+            min-width: 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .testimonial-item .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563EB, #3B82F6);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .testimonial-item .review {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-item .client-name {
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .testimonial-item .client-company {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        .testimonial-item .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .slider-controls .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-controls .dot.active {
+            background: #2563EB;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+            transform: scale(1.2);
+        }
+
+        /* ============================================================
+               FAQ – NEW
+               ============================================================ */
+        .faq {
+            background: #030712;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #2563EB;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: #2563EB;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0 0.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0.5rem 0.5rem 1rem 0.5rem;
+        }
+
+        /* ============================================================
+               CTA SECTION
+               ============================================================ */
         .cta-section {
             background: linear-gradient(135deg, #030712 0%, #111827 100%);
             position: relative;
@@ -2231,7 +2515,9 @@
             }
         }
 
-        /* ========== FOOTER ========== */
+        /* ============================================================
+               FOOTER
+               ============================================================ */
         .footer {
             background: #030712;
             border-top: 1px solid rgba(37, 99, 235, 0.1);
@@ -2404,7 +2690,9 @@
             font-size: 0.875rem;
         }
 
-        /* ========== WHATSAPP FLOAT ========== */
+        /* ============================================================
+               WHATSAPP FLOAT
+               ============================================================ */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -2447,7 +2735,9 @@
             }
         }
 
-        /* ========== ANIMATIONS ========== */
+        /* ============================================================
+               ANIMATIONS
+               ============================================================ */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -2468,7 +2758,25 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        /* ========== RESPONSIVE FINE-TUNING ========== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        /* ============================================================
+               RESPONSIVE FINE-TUNING
+               ============================================================ */
         @media (max-width: 480px) {
             .hero-content h1 {
                 font-size: 2.2rem;
@@ -2517,6 +2825,17 @@
                 height: 48px;
                 font-size: 1.25rem;
             }
+
+            .stats-grid {
+                gap: 1rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .testimonial-item .review {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 767px) {
@@ -2555,8 +2874,8 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="pages/portfolio.html">Portfolio</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="hamburger" id="hamburger">
@@ -2566,9 +2885,8 @@
     </header>
 
     <main>
-        <!-- ==================== HERO (PREMIUM UPGRADE) ==================== -->
+        <!-- ==================== HERO ==================== -->
         <section class="hero" id="home">
-            <!-- Animated glow orbs -->
             <div class="hero-orb hero-orb--1"></div>
             <div class="hero-orb hero-orb--2"></div>
             <div class="hero-orb hero-orb--3"></div>
@@ -2584,7 +2902,7 @@
                     <h1>Building Africa's <span class="accent-text">AI Future</span></h1>
                     <p class="subtitle">We build AI solutions, intelligent automation, and modern digital products that help African businesses scale smarter and faster.</p>
                     <div class="hero-buttons">
-                        <a href="pages/contact.html" class="btn btn-primary btn-large">
+                        <a href="#contact" class="btn btn-primary btn-large">
                             <span>Start Your Project</span> <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="#services" class="btn btn-outline">
@@ -2672,7 +2990,7 @@
             </div>
         </section>
 
-        <!-- ==================== ABOUT (GLOWING CARD) ==================== -->
+        <!-- ==================== ABOUT ==================== -->
         <section class="about" id="about">
             <div class="container">
                 <div class="section-header">
@@ -2761,7 +3079,7 @@
             </div>
         </section>
 
-        <!-- ==================== SERVICES (PREMIUM UPGRADE) ==================== -->
+        <!-- ==================== SERVICES ==================== -->
         <section class="services-preview" id="services">
             <div class="container">
                 <div class="section-header">
@@ -2770,7 +3088,6 @@
                     <p>Tailored, intelligent solutions to accelerate your business growth.</p>
                 </div>
                 <div class="services-grid">
-                    <!-- Service 1 -->
                     <div class="service-card">
                         <span class="service-number">01</span>
                         <div class="service-icon"><i class="fas fa-robot"></i></div>
@@ -2778,7 +3095,6 @@
                         <p>Custom AI models and machine learning solutions for predictive analytics, automation, and more.</p>
                         <a href="pages/services.html#ai-dev" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service 2 -->
                     <div class="service-card">
                         <span class="service-number">02</span>
                         <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
@@ -2786,7 +3102,6 @@
                         <p>High-performance, AI-integrated websites that convert visitors into loyal customers.</p>
                         <a href="pages/services.html#web-dev" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service 3 -->
                     <div class="service-card">
                         <span class="service-number">03</span>
                         <div class="service-icon"><i class="fas fa-comment-dots"></i></div>
@@ -2794,7 +3109,6 @@
                         <p>Intelligent chatbot and automation systems for WhatsApp to enhance customer engagement.</p>
                         <a href="pages/services.html#whatsapp" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service 4 -->
                     <div class="service-card">
                         <span class="service-number">04</span>
                         <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
@@ -2802,7 +3116,6 @@
                         <p>Stunning visuals, logos, and brand identities that capture attention and build trust.</p>
                         <a href="pages/services.html#brand" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service 5 -->
                     <div class="service-card">
                         <span class="service-number">05</span>
                         <div class="service-icon"><i class="fas fa-gear"></i></div>
@@ -2810,7 +3123,6 @@
                         <p>Streamline workflows with smart automations, saving time and increasing efficiency.</p>
                         <a href="pages/services.html#automation" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service 6 -->
                     <div class="service-card">
                         <span class="service-number">06</span>
                         <div class="service-icon"><i class="fas fa-pen-ruler"></i></div>
@@ -2818,7 +3130,6 @@
                         <p>Human-centric design for digital products that deliver exceptional user experiences.</p>
                         <a href="pages/services.html#design" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service 7 -->
                     <div class="service-card">
                         <span class="service-number">07</span>
                         <div class="service-icon"><i class="fas fa-cloud"></i></div>
@@ -2830,7 +3141,96 @@
             </div>
         </section>
 
-        <!-- ==================== FEATURED PRODUCTS (PREMIUM UPGRADE) ==================== -->
+        <!-- ==================== STATS ==================== -->
+        <section class="stats-section" id="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number" data-count="120">120+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-1">
+                        <span class="stat-number" data-count="98">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-2">
+                        <span class="stat-number" data-count="15">15+</span>
+                        <span class="stat-label">Active Clients</span>
+                    </div>
+                    <div class="stat-item animate-on-scroll delay-3">
+                        <span class="stat-number" data-count="24">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PORTFOLIO HIGHLIGHTS ==================== -->
+        <section class="portfolio-highlights" id="portfolio">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Our Work</span>
+                    <h2>Featured <span class="accent-text">Projects</span></h2>
+                    <p>Explore some of the amazing websites and digital solutions we've delivered for our clients.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card animate-on-scroll delay-1">
+                        <div class="portfolio-image">
+                            <i class="fas fa-building"></i>
+                            <span class="project-badge">Real Estate</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Kwara Realtors</h3>
+                            <p>Premium real estate website with property listings and agent profiles.</p>
+                            <a href="https://kwararrelandagent.com" target="_blank" class="btn btn-outline">
+                                Visit Website <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card animate-on-scroll delay-2">
+                        <div class="portfolio-image">
+                            <i class="fas fa-store"></i>
+                            <span class="project-badge">E-Commerce</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Sassauci Enterprises</h3>
+                            <p>E-commerce platform with product catalog and seamless checkout.</p>
+                            <a href="https://sassauchienterprises.com" target="_blank" class="btn btn-outline">
+                                Visit Website <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card animate-on-scroll delay-3">
+                        <div class="portfolio-image">
+                            <i class="fas fa-home"></i>
+                            <span class="project-badge">Real Estate</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>AMAM Properties</h3>
+                            <p>Modern real estate website with property showcase and lead generation.</p>
+                            <a href="https://amampropertiess.com" target="_blank" class="btn btn-outline">
+                                Visit Website <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card animate-on-scroll delay-4">
+                        <div class="portfolio-image">
+                            <i class="fas fa-database"></i>
+                            <span class="project-badge">Data Services</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Saraky Data Sub</h3>
+                            <p>Data subscription platform with instant activation and user dashboard.</p>
+                            <a href="https://sarakydatasub.com" target="_blank" class="btn btn-outline">
+                                Visit Website <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FEATURED PRODUCTS ==================== -->
         <section class="featured-products" id="products">
             <div class="container">
                 <div class="section-header">
@@ -2839,7 +3239,6 @@
                     <p>Explore our innovative products designed to accelerate your digital transformation.</p>
                 </div>
                 <div class="products-grid">
-                    <!-- Product 1 -->
                     <div class="product-card">
                         <span class="product-number">01</span>
                         <div class="product-image"><i class="fas fa-network-wired"></i></div>
@@ -2847,7 +3246,6 @@
                         <p>A business networking platform connecting African entrepreneurs and innovators.</p>
                         <a href="#" class="btn btn-outline btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Product 2 -->
                     <div class="product-card">
                         <span class="product-number">02</span>
                         <div class="product-image"><i class="fas fa-graduation-cap"></i></div>
@@ -2855,7 +3253,6 @@
                         <p>A comprehensive AI training course designed to upskill professionals and businesses.</p>
                         <a href="#" class="btn btn-outline btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Product 3 -->
                     <div class="product-card">
                         <span class="product-number">03</span>
                         <div class="product-image"><i class="fas fa-globe"></i></div>
@@ -2863,7 +3260,6 @@
                         <p>A website-as-a-service product that gives you a high-converting site in days.</p>
                         <a href="#" class="btn btn-outline btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- Product 4 -->
                     <div class="product-card">
                         <span class="product-number">04</span>
                         <div class="product-image"><i class="fas fa-brain"></i></div>
@@ -2875,95 +3271,7 @@
             </div>
         </section>
 
-        <!-- ==================== DIGITAL LIBRARY ==================== -->
-        <section class="digital-library" id="library">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Coming Soon</span>
-                    <h2>YDH <span class="accent-text">Digital Library</span></h2>
-                    <p>Learn. Read. Download. Grow. Explore our upcoming library of premium books on AI, Technology, Business, and Digital Skills.</p>
-                </div>
-                <div class="library-grid">
-                    <div class="book-card">
-                        <div class="book-cover">
-                            <i class="fas fa-book-open"></i>
-                            <div class="book-title-overlay">AI for Business</div>
-                        </div>
-                        <h4>AI for Business</h4>
-                        <div class="author">By Dr. Yusuf K.</div>
-                        <div class="book-meta">
-                            <span>AI</span>
-                            <span class="stars">★★★★★</span>
-                            <span>4.8</span>
-                        </div>
-                        <div class="price">₦15,000</div>
-                        <div class="book-actions">
-                            <a href="#" class="btn btn-outline">Preview</a>
-                            <a href="#" class="btn btn-primary">Buy Book</a>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book-cover">
-                            <i class="fas fa-book-open"></i>
-                            <div class="book-title-overlay">Mastering Automation</div>
-                        </div>
-                        <h4>Mastering Automation</h4>
-                        <div class="author">By Aisha M.</div>
-                        <div class="book-meta">
-                            <span>Automation</span>
-                            <span class="stars">★★★★☆</span>
-                            <span>4.5</span>
-                        </div>
-                        <div class="price">₦12,500</div>
-                        <div class="book-actions">
-                            <a href="#" class="btn btn-outline">Preview</a>
-                            <a href="#" class="btn btn-primary">Buy Book</a>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book-cover">
-                            <i class="fas fa-book-open"></i>
-                            <div class="book-title-overlay">Digital Strategy 101</div>
-                        </div>
-                        <h4>Digital Strategy 101</h4>
-                        <div class="author">By Ibrahim B.</div>
-                        <div class="book-meta">
-                            <span>Business</span>
-                            <span class="stars">★★★★★</span>
-                            <span>5.0</span>
-                        </div>
-                        <div class="price">₦10,000</div>
-                        <div class="book-actions">
-                            <a href="#" class="btn btn-outline">Preview</a>
-                            <a href="#" class="btn btn-primary">Buy Book</a>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <div class="book-cover">
-                            <i class="fas fa-book-open"></i>
-                            <div class="book-title-overlay">The Future of Tech</div>
-                        </div>
-                        <h4>The Future of Tech</h4>
-                        <div class="author">By Zainab A.</div>
-                        <div class="book-meta">
-                            <span>Technology</span>
-                            <span class="stars">★★★★☆</span>
-                            <span>4.7</span>
-                        </div>
-                        <div class="price">₦18,000</div>
-                        <div class="book-actions">
-                            <a href="#" class="btn btn-outline">Preview</a>
-                            <a href="#" class="btn btn-primary">Buy Book</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="view-all-books">
-                    <a href="#" class="btn btn-primary btn-large">View All Books <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== WHY CHOOSE US (PREMIUM UPGRADE) ==================== -->
+        <!-- ==================== WHY CHOOSE US ==================== -->
         <section class="why-us" id="why-us">
             <div class="container">
                 <div class="section-header">
@@ -2972,42 +3280,36 @@
                     <p>Discover why businesses trust us to deliver exceptional digital solutions.</p>
                 </div>
                 <div class="features-grid">
-                    <!-- Feature 1 -->
                     <div class="feature">
                         <span class="feature-number">01</span>
                         <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                         <h3>Fast Delivery</h3>
                         <p>Agile sprints &amp; dedicated teams — your project goes live ahead of schedule.</p>
                     </div>
-                    <!-- Feature 2 -->
                     <div class="feature">
                         <span class="feature-number">02</span>
                         <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                         <h3>Modern Design</h3>
                         <p>Pixel-perfect, fully responsive interfaces that wow on any device.</p>
                     </div>
-                    <!-- Feature 3 -->
                     <div class="feature">
                         <span class="feature-number">03</span>
                         <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                         <h3>Business-Focused</h3>
                         <p>We optimize for conversions, not just aesthetics — ROI matters.</p>
                     </div>
-                    <!-- Feature 4 -->
                     <div class="feature">
                         <span class="feature-number">04</span>
                         <div class="feature-icon"><i class="fas fa-tag"></i></div>
                         <h3>Affordable Pricing</h3>
                         <p>Premium quality at fair rates with transparent packages.</p>
                     </div>
-                    <!-- Feature 5 -->
                     <div class="feature">
                         <span class="feature-number">05</span>
                         <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
                         <h3>Professional Team</h3>
                         <p>Our team comprises certified experts in AI, design, and development.</p>
                     </div>
-                    <!-- Feature 6 -->
                     <div class="feature">
                         <span class="feature-number">06</span>
                         <div class="feature-icon"><i class="fas fa-headset"></i></div>
@@ -3018,7 +3320,7 @@
             </div>
         </section>
 
-        <!-- ==================== WORK PROCESS (PREMIUM UPGRADE) ==================== -->
+        <!-- ==================== WORK PROCESS ==================== -->
         <section class="process" id="process">
             <div class="container">
                 <div class="section-header">
@@ -3027,7 +3329,6 @@
                     <p>We follow a proven methodology to deliver exceptional results for every project.</p>
                 </div>
                 <div class="process-timeline">
-                    <!-- Step 1 -->
                     <div class="process-step">
                         <span class="step-number">01</span>
                         <div class="step-icon"><i class="fas fa-search"></i></div>
@@ -3035,7 +3336,6 @@
                         <p>We dive deep to understand your goals, challenges, and market.</p>
                         <span class="step-badge">Phase 1</span>
                     </div>
-                    <!-- Step 2 -->
                     <div class="process-step">
                         <span class="step-number">02</span>
                         <div class="step-icon"><i class="fas fa-pencil-alt"></i></div>
@@ -3043,7 +3343,6 @@
                         <p>We craft a tailored, strategic roadmap for your success.</p>
                         <span class="step-badge">Phase 1</span>
                     </div>
-                    <!-- Step 3 -->
                     <div class="process-step">
                         <span class="step-number">03</span>
                         <div class="step-icon"><i class="fas fa-paint-brush"></i></div>
@@ -3051,7 +3350,6 @@
                         <p>We create stunning, user-centric designs that resonate.</p>
                         <span class="step-badge">Phase 2</span>
                     </div>
-                    <!-- Step 4 -->
                     <div class="process-step">
                         <span class="step-number">04</span>
                         <div class="step-icon"><i class="fas fa-code"></i></div>
@@ -3059,7 +3357,6 @@
                         <p>We build with precision, using the latest technologies.</p>
                         <span class="step-badge">Phase 2</span>
                     </div>
-                    <!-- Step 5 -->
                     <div class="process-step">
                         <span class="step-number">05</span>
                         <div class="step-icon"><i class="fas fa-rocket"></i></div>
@@ -3067,13 +3364,100 @@
                         <p>We launch your project, ensuring a smooth go-live.</p>
                         <span class="step-badge">Phase 3</span>
                     </div>
-                    <!-- Step 6 -->
                     <div class="process-step">
                         <span class="step-number">06</span>
                         <div class="step-icon"><i class="fas fa-heart"></i></div>
                         <h4>Support</h4>
                         <p>We provide ongoing support and maintenance for growth.</p>
                         <span class="step-badge">Phase 3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS ==================== -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Testimonials</span>
+                    <h2>What Our <span class="accent-text">Clients Say</span></h2>
+                </div>
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-item">
+                            <div class="client-image">JK</div>
+                            <div class="stars">★★★★★</div>
+                            <p class="review">"YUKAS DIGITAL HUB transformed our business operations with their AI solutions. Our efficiency has increased by over 200%."</p>
+                            <p class="client-name">Jamilu K.</p>
+                            <p class="client-company">CEO, M Tech Solutions</p>
+                        </div>
+                        <div class="testimonial-item">
+                            <div class="client-image">AM</div>
+                            <div class="stars">★★★★★</div>
+                            <p class="review">"The team is incredibly professional and forward-thinking. They didn't just build a website; they built a growth engine for us."</p>
+                            <p class="client-name">Aisha M.</p>
+                            <p class="client-company">Founder, Hausa Fashion</p>
+                        </div>
+                        <div class="testimonial-item">
+                            <div class="client-image">IO</div>
+                            <div class="stars">★★★★★</div>
+                            <p class="review">"Their understanding of automation has saved us countless hours. We are now able to focus on what truly matters — growing our business."</p>
+                            <p class="client-name">Ibrahim O.</p>
+                            <p class="client-company">Operations Director, Global Logistics</p>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="dot active" data-index="0" aria-label="Testimonial 1"></button>
+                        <button class="dot" data-index="1" aria-label="Testimonial 2"></button>
+                        <button class="dot" data-index="2" aria-label="Testimonial 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FAQ ==================== -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Questions?</span>
+                    <h2>Frequently Asked <span class="accent-text">Questions</span></h2>
+                </div>
+                <div class="faq-list" id="faqList">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>What AI solutions do you offer?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We offer a range of AI solutions including custom AI model development, chatbots, predictive analytics, and intelligent automation systems tailored to your business needs.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How can automation benefit my business?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Automation streamlines repetitive tasks, reduces errors, frees up your team for strategic work, and can significantly lower operational costs while improving efficiency.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What is the YDH Digital Library?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            The YDH Digital Library is our upcoming platform where you can purchase premium books and resources on AI, Technology, Business, and Digital Skills to help you grow professionally.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How much do your services cost?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Our services are competitively priced based on the scope and complexity of your project. We offer transparent pricing and custom quotes. Contact us for a free consultation.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3118,8 +3502,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="pages/portfolio.html">Portfolio</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -3332,6 +3716,81 @@
             animate();
         })();
 
+        // ==================== TESTIMONIAL SLIDER ====================
+        (function() {
+            const track = document.getElementById('testimonialTrack');
+            const dots = document.querySelectorAll('.dot');
+            let currentIndex = 0;
+            let interval;
+
+            function goToSlide(index) {
+                if (!track) return;
+                const items = track.querySelectorAll('.testimonial-item');
+                if (index >= items.length) index = 0;
+                if (index < 0) index = items.length - 1;
+                currentIndex = index;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function startSlider() {
+                if (interval) clearInterval(interval);
+                interval = setInterval(nextSlide, 5000);
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(interval);
+                    goToSlide(index);
+                    startSlider();
+                });
+            });
+
+            if (track) {
+                const items = track.querySelectorAll('.testimonial-item');
+                if (items.length > 1) {
+                    startSlider();
+                }
+            }
+
+            const slider = document.getElementById('testimonialSlider');
+            if (slider) {
+                slider.addEventListener('mouseenter', () => {
+                    clearInterval(interval);
+                });
+                slider.addEventListener('mouseleave', startSlider);
+            }
+        })();
+
+        // ==================== FAQ ACCORDION ====================
+        (function() {
+            const faqList = document.getElementById('faqList');
+            if (!faqList) return;
+
+            faqList.addEventListener('click', function(e) {
+                const question = e.target.closest('.faq-question');
+                if (!question) return;
+
+                const item = question.closest('.faq-item');
+                if (!item) return;
+
+                const isActive = item.classList.contains('active');
+
+                const allItems = faqList.querySelectorAll('.faq-item');
+                allItems.forEach(el => el.classList.remove('active'));
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        })();
+
         // ==================== SCROLL ANIMATIONS ====================
         document.addEventListener('DOMContentLoaded', () => {
             const heroContent = document.querySelector('.hero-content');
@@ -3343,6 +3802,50 @@
             if (heroVisual) {
                 heroVisual.classList.add('animate-fade-up');
                 heroVisual.style.animationDelay = '0.4s';
+            }
+
+            // Animate stats counters
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            const animateNumbers = () => {
+                statNumbers.forEach(stat => {
+                    const value = stat.getAttribute('data-count');
+                    if (value && !stat.classList.contains('animated')) {
+                        stat.classList.add('animated');
+                        let start = 0;
+                        const end = parseInt(value);
+                        if (isNaN(end)) return;
+                        
+                        const duration = 2000;
+                        const increment = end / (duration / 16);
+                        
+                        const updateCounter = () => {
+                            start += increment;
+                            if (start < end) {
+                                stat.textContent = Math.floor(start) + (value.includes('+') ? '+' : (value.includes('%') ? '%' : ''));
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                stat.textContent = value;
+                            }
+                        };
+                        
+                        updateCounter();
+                    }
+                });
+            };
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateNumbers();
+                            statsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                statsObserver.observe(statsSection);
             }
 
             const sectionHeaders = document.querySelectorAll('.section-header');
@@ -3359,7 +3862,7 @@
                 headerObserver.observe(header);
             });
 
-            const grids = document.querySelectorAll('.services-grid, .features-grid, .products-grid, .library-grid, .process-timeline');
+            const grids = document.querySelectorAll('.services-grid, .features-grid, .products-grid, .portfolio-grid, .process-timeline');
             const gridObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -3376,6 +3879,20 @@
 
             grids.forEach(grid => {
                 gridObserver.observe(grid);
+            });
+
+            // Animate-on-scroll
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const animateObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(element => {
+                animateObserver.observe(element);
             });
         });
     </script>
