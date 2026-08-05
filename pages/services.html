@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="YUKAS DIGITAL HUB Services - Professional web development, social media management, graphic design, and business automation solutions in Nigeria.">
-    <meta name="keywords" content="web development Nigeria, social media management, graphic design, business automation, VTU website, school management system">
+    <meta name="description" content="YUKAS DIGITAL HUB Services - AI development, web development, automation, and digital solutions for businesses in Nigeria and across Africa.">
+    <meta name="keywords" content="AI development Nigeria, web development, business automation, WhatsApp automation, cloud solutions, UI/UX design, digital agency Kano">
     <meta name="author" content="YUKAS DIGITAL HUB">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Our Services | YUKAS DIGITAL HUB">
-    <meta property="og:description" content="Professional web development, social media management, graphic design, and business automation solutions in Nigeria.">
+    <meta property="og:title" content="Our Services | YUKAS DIGITAL HUB - AI &amp; Digital Solutions">
+    <meta property="og:description" content="AI development, web development, automation, and digital solutions for businesses in Nigeria and across Africa.">
     <meta property="og:image" content="../images/og-image.jpg">
     
     <!-- Favicon -->
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* ========== RESET & BASE STYLES (Consistent with Index) ========== */
+        /* ========== RESET & BASE STYLES ========== */
         * {
             margin: 0;
             padding: 0;
@@ -34,18 +34,19 @@
         }
 
         :root {
-            --primary-accent: #6C63FF;
-            --primary-accent-dark: #4A3BFF;
-            --primary-dark: #0A0C10;
-            --gray-900: #1A1E2C;
-            --gray-800: #121520;
+            --primary-accent: #2563EB;
+            --primary-accent-dark: #3B82F6;
+            --primary-dark: #030712;
+            --gray-900: #111827;
+            --gray-800: #1A1E2C;
             --gray-700: #1F2430;
             --white: #FFFFFF;
             --text-light: rgba(255, 255, 255, 0.7);
-            --border-light: rgba(108, 99, 255, 0.1);
+            --border-light: rgba(37, 99, 235, 0.1);
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 20px;
+            --radius-xl: 24px;
             --radius-full: 50px;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -68,7 +69,7 @@
             padding: 0 1.5rem;
         }
 
-        /* ========== SECTION SPACING (Mobile First) ========== */
+        /* ========== SECTION SPACING ========== */
         section {
             padding: 4rem 0;
             margin: 0;
@@ -107,7 +108,7 @@
             letter-spacing: 2px;
             color: var(--primary-accent);
             margin-bottom: 1rem;
-            background: rgba(108, 99, 255, 0.1);
+            background: rgba(37, 99, 235, 0.1);
             padding: 0.5rem 1rem;
             border-radius: var(--radius-full);
         }
@@ -120,6 +121,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         @media (min-width: 768px) {
@@ -148,18 +150,18 @@
             background-clip: text;
         }
 
-        /* ========== NAVBAR (Consistent with Index) ========== */
+        /* ========== NAVBAR ========== */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(10, 12, 16, 0.95);
+            background: rgba(3, 7, 18, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
         }
 
         .nav-container {
@@ -208,7 +210,7 @@
             left: -100%;
             width: 80%;
             height: calc(100vh - 70px);
-            background: rgba(10, 12, 16, 0.98);
+            background: rgba(3, 7, 18, 0.98);
             backdrop-filter: blur(20px);
             transition: left 0.3s ease;
             z-index: 999;
@@ -274,42 +276,190 @@
             }
         }
 
-        /* ========== SERVICES HERO ========== */
+        /* ============================================================
+               SERVICES HERO – WITH BACKGROUND IMAGE
+               ============================================================ */
         .services-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
-            padding: 120px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            background: var(--primary-dark);
         }
 
         @media (min-width: 768px) {
             .services-hero {
-                padding: 140px 0 80px;
+                padding: 160px 0 100px;
+                min-height: 550px;
             }
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><rect fill="%23111827" width="800" height="800"/><circle cx="400" cy="400" r="300" fill="%232563EB" opacity="0.08"/><circle cx="600" cy="200" r="150" fill="%233B82F6" opacity="0.05"/><circle cx="200" cy="600" r="200" fill="%2360A5FA" opacity="0.04"/></svg>') no-repeat center center/cover,
+                linear-gradient(135deg, rgba(3, 7, 18, 0.75) 0%, rgba(17, 24, 39, 0.6) 50%, rgba(3, 7, 18, 0.8) 100%);
+            z-index: 0;
+            background-blend-mode: overlay;
+        }
+
+        .services-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.06) 0%, transparent 60%);
+            z-index: 0;
+            animation: meshPulse 8s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes meshPulse {
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .services-hero .container {
+            position: relative;
+            z-index: 2;
         }
 
         .services-hero h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            animation: fadeUp 0.8s ease forwards;
         }
 
         @media (min-width: 768px) {
             .services-hero h1 {
-                font-size: 3.5rem;
+                font-size: 3.8rem;
             }
         }
 
-        .services-hero p {
+        @media (min-width: 1024px) {
+            .services-hero h1 {
+                font-size: 4.2rem;
+            }
+        }
+
+        .services-hero .hero-subtitle {
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
             font-size: 1.125rem;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+            opacity: 0;
         }
 
-        /* ========== SERVICE DETAIL SECTIONS ========== */
+        @media (min-width: 768px) {
+            .services-hero .hero-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+
+        .services-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(37, 99, 235, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero-badge .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary-accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating particles */
+        .hero-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.08);
+            pointer-events: none;
+            z-index: 1;
+            animation: floatParticle 6s ease-in-out infinite;
+        }
+
+        .hero-particle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .hero-particle:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            right: 3%;
+            animation-delay: 1.5s;
+            background: rgba(59, 130, 246, 0.06);
+        }
+
+        .hero-particle:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            left: 50%;
+            animation-delay: 3s;
+            background: rgba(96, 165, 250, 0.04);
+        }
+
+        @keyframes floatParticle {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(20px, -20px) scale(1.1);
+            }
+            66% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+        }
+
+        /* ============================================================
+               SERVICE DETAIL SECTIONS – GLASSMORPHISM
+               ============================================================ */
         .service-detail {
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+            position: relative;
         }
 
         .service-detail:last-child {
@@ -317,7 +467,7 @@
         }
 
         .service-detail:nth-child(even) {
-            background: var(--gray-800);
+            background: rgba(17, 24, 39, 0.3);
         }
 
         .service-detail-grid {
@@ -325,6 +475,8 @@
             grid-template-columns: 1fr;
             gap: 2rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         @media (min-width: 968px) {
@@ -337,6 +489,7 @@
         .service-detail-content h2 {
             font-size: 1.75rem;
             margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         @media (min-width: 768px) {
@@ -347,13 +500,14 @@
 
         .service-badge {
             display: inline-block;
-            background: rgba(108, 99, 255, 0.1);
+            background: rgba(37, 99, 235, 0.1);
             color: var(--primary-accent);
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 1rem;
             border-radius: var(--radius-full);
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.05);
         }
 
         .service-detail-content p {
@@ -367,6 +521,7 @@
             font-weight: 800;
             color: var(--primary-accent);
             margin: 1.5rem 0;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         @media (min-width: 768px) {
@@ -401,22 +556,44 @@
         }
 
         .service-image {
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
-            border-radius: var(--radius-lg);
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
             text-align: center;
-            box-shadow: var(--shadow-xl);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: calc(var(--radius-xl) + 1px);
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.15));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            pointer-events: none;
         }
 
         .service-image:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .service-image i {
             font-size: 4rem;
-            color: var(--white);
+            color: var(--primary-accent);
             margin-bottom: 1rem;
+            display: block;
         }
 
         @media (min-width: 768px) {
@@ -429,16 +606,31 @@
             color: var(--white);
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .service-image p {
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-light);
             font-size: 0.875rem;
         }
 
-        /* ========== PRICING PLANS ========== */
+        /* ============================================================
+               PRICING PLANS – GLASSMORPHISM
+               ============================================================ */
         .pricing-plans {
-            background: var(--gray-800);
+            background: var(--gray-900);
+            position: relative;
+        }
+
+        .pricing-plans::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.04), transparent 60%);
+            pointer-events: none;
         }
 
         .pricing-grid {
@@ -446,6 +638,8 @@
             grid-template-columns: 1fr;
             gap: 1.5rem;
             margin-top: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         @media (min-width: 768px) {
@@ -456,19 +650,55 @@
         }
 
         .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius-xl);
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: calc(var(--radius-xl) + 1px);
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.15));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .pricing-card:hover::before {
+            opacity: 1;
+        }
+
+        .pricing-card::after {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .pricing-card:hover::after {
+            opacity: 1;
         }
 
         .pricing-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(108, 99, 255, 0.3);
-            box-shadow: var(--shadow-xl);
+            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .pricing-card.popular {
@@ -487,29 +717,32 @@
             transform: translateX(-50%);
             background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
             color: var(--white);
-            padding: 0.25rem 1rem;
+            padding: 0.25rem 1.5rem;
             border-radius: var(--radius-full);
             font-size: 0.75rem;
             font-weight: 600;
             white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
         .pricing-header {
             text-align: center;
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.08);
         }
 
         .pricing-header h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .price {
             font-size: 2rem;
             font-weight: 800;
             color: var(--primary-accent);
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         @media (min-width: 768px) {
@@ -545,7 +778,7 @@
         }
 
         .pricing-features li.disabled {
-            opacity: 0.5;
+            opacity: 0.4;
         }
 
         .pricing-features li.disabled i {
@@ -557,9 +790,25 @@
             justify-content: center;
         }
 
-        /* ========== PROCESS SECTION ========== */
+        /* ============================================================
+               PROCESS SECTION
+               ============================================================ */
         .process-section {
             background: var(--primary-dark);
+            position: relative;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 40%, rgba(37, 99, 235, 0.04), transparent 50%),
+                radial-gradient(circle at 80% 60%, rgba(37, 99, 235, 0.04), transparent 50%);
+            pointer-events: none;
         }
 
         .process-steps {
@@ -567,6 +816,8 @@
             grid-template-columns: 1fr;
             gap: 1.5rem;
             margin-top: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         @media (min-width: 640px) {
@@ -586,13 +837,18 @@
             text-align: center;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.03);
-            border-radius: var(--radius-lg);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius-xl);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(37, 99, 235, 0.08);
         }
 
         .process-step:hover {
             transform: translateY(-5px);
-            background: rgba(108, 99, 255, 0.05);
+            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.06);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .step-number {
@@ -607,11 +863,14 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
         .process-step h3 {
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .process-step p {
@@ -620,7 +879,9 @@
             line-height: 1.6;
         }
 
-        /* ========== CTA SECTION ========== */
+        /* ============================================================
+               CTA SECTION
+               ============================================================ */
         .cta-section {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
             position: relative;
@@ -634,7 +895,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(108, 99, 255, 0.1), transparent);
+            background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.12), transparent);
             pointer-events: none;
         }
 
@@ -652,6 +913,7 @@
         .cta-content h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         @media (min-width: 768px) {
@@ -679,13 +941,15 @@
             }
         }
 
-        /* ========== BUTTONS ========== */
+        /* ============================================================
+               BUTTONS
+               ============================================================ */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
+            gap: 0.6rem;
+            padding: 0.9rem 2rem;
             border-radius: var(--radius-md);
             font-weight: 600;
             text-decoration: none;
@@ -693,27 +957,49 @@
             cursor: pointer;
             border: none;
             font-size: 1rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, #2563EB, #3B82F6);
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+            box-shadow: 0 4px 25px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #3B82F6, #2563EB);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-primary span,
+        .btn-primary i {
+            position: relative;
+            z-index: 1;
         }
 
         .btn-outline {
             background: transparent;
             color: var(--white);
-            border: 2px solid rgba(108, 99, 255, 0.5);
+            border: 2px solid rgba(37, 99, 235, 0.4);
+            backdrop-filter: blur(4px);
         }
 
         .btn-outline:hover {
-            background: rgba(108, 99, 255, 0.1);
+            background: rgba(37, 99, 235, 0.1);
             border-color: var(--primary-accent);
             transform: translateY(-2px);
         }
@@ -722,6 +1008,7 @@
             background: transparent;
             color: var(--white);
             border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
         }
 
         .btn-outline-light:hover {
@@ -730,14 +1017,16 @@
         }
 
         .btn-large {
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
+            padding: 1.1rem 2.5rem;
+            font-size: 1.1rem;
         }
 
-        /* ========== FOOTER ========== */
+        /* ============================================================
+               FOOTER
+               ============================================================ */
         .footer {
             background: var(--primary-dark);
-            border-top: 1px solid var(--border-light);
+            border-top: 1px solid rgba(37, 99, 235, 0.1);
             padding: 3rem 0 1.5rem;
         }
 
@@ -798,7 +1087,7 @@
         .social-links a {
             width: 36px;
             height: 36px;
-            background: rgba(108, 99, 255, 0.1);
+            background: rgba(37, 99, 235, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -806,16 +1095,20 @@
             color: var(--white);
             text-decoration: none;
             transition: all 0.3s ease;
+            border: 1px solid transparent;
         }
 
         .social-links a:hover {
             background: var(--primary-accent);
             transform: translateY(-3px);
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
         }
 
         .footer-col h4 {
             font-size: 1.125rem;
             margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .footer-col ul {
@@ -863,15 +1156,17 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-bottom p {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.875rem;
         }
 
-        /* ========== WHATSAPP FLOAT ========== */
+        /* ============================================================
+               WHATSAPP FLOAT
+               ============================================================ */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -897,10 +1192,6 @@
                 bottom: 30px;
                 right: 30px;
             }
-
-            .whatsapp-float span {
-                display: none;
-            }
         }
 
         .whatsapp-float:hover {
@@ -918,26 +1209,9 @@
             }
         }
 
-        .whatsapp-float span {
-            display: none;
-        }
-
-        /* ========== ANIMATIONS ========== */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-up {
-            animation: fadeUp 0.6s ease forwards;
-        }
-
+        /* ============================================================
+               ANIMATIONS
+               ============================================================ */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -954,10 +1228,17 @@
         .delay-3 { transition-delay: 0.3s; }
         .delay-4 { transition-delay: 0.4s; }
 
-        /* Responsive adjustments */
+        /* ============================================================
+               RESPONSIVE ADJUSTMENTS
+               ============================================================ */
         @media (max-width: 480px) {
             .services-hero h1 {
                 font-size: 2rem;
+            }
+            
+            .services-hero {
+                padding: 100px 0 60px;
+                min-height: 400px;
             }
 
             .service-price {
@@ -971,6 +1252,13 @@
             .popular-badge {
                 font-size: 0.7rem;
                 white-space: nowrap;
+            }
+
+            .service-image {
+                padding: 1.5rem;
+            }
+            .service-image i {
+                font-size: 3rem;
             }
         }
     </style>
@@ -1001,206 +1289,220 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- ==================== SERVICES HERO WITH BACKGROUND ==================== -->
         <section class="services-hero">
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            
             <div class="container">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    🚀 AI-Powered Solutions
+                </div>
+                
                 <h1>Our <span class="accent-text">Services</span></h1>
-                <p>Comprehensive digital solutions to help your business grow and succeed online.</p>
+                
+                <p class="hero-subtitle">
+                    From AI development and automation to web solutions and design — 
+                    we deliver cutting-edge digital services that drive real business growth.
+                </p>
             </div>
         </section>
 
-        <!-- Service Details - Ordered by Core Services First -->
+        <!-- ==================== SERVICE DETAILS ==================== -->
         
-        <!-- 1. Website Development (Core Service - First) -->
+        <!-- 1. AI Development -->
+        <section class="service-detail" id="ai-dev">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-content animate-on-scroll">
+                        <span class="service-badge">🤖 AI-Powered</span>
+                        <h2>AI Development</h2>
+                        <p>Custom AI models and machine learning solutions for predictive analytics, automation, and intelligent decision-making. Transform your business with the power of artificial intelligence.</p>
+                        <div class="service-price">Starting from ₦500,000 <span>custom quote</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Custom AI Model Development</li>
+                            <li><i class="fas fa-check-circle"></i> Machine Learning & Predictive Analytics</li>
+                            <li><i class="fas fa-check-circle"></i> Natural Language Processing (NLP)</li>
+                            <li><i class="fas fa-check-circle"></i> Computer Vision Solutions</li>
+                            <li><i class="fas fa-check-circle"></i> AI Integration with Existing Systems</li>
+                            <li><i class="fas fa-check-circle"></i> Ongoing Model Training & Optimization</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image animate-on-scroll delay-2">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Development</h3>
+                        <p>Intelligent solutions for your business</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. AI Website Development -->
         <section class="service-detail" id="web-dev">
             <div class="container">
                 <div class="service-detail-grid">
-                    <div class="service-detail-content animate-on-scroll">
+                    <div class="service-image animate-on-scroll">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>AI Website Development</h3>
+                        <p>Smart websites that convert</p>
+                    </div>
+                    <div class="service-detail-content animate-on-scroll delay-2">
                         <span class="service-badge">⭐ Most Popular</span>
-                        <h2>Website Development</h2>
-                        <p>Professional, responsive, and high-performing websites that convert visitors into customers. From simple business sites to complex e-commerce platforms.</p>
+                        <h2>AI Website Development</h2>
+                        <p>High-performance, AI-integrated websites that convert visitors into customers. From simple business sites to complex AI-powered platforms.</p>
                         <div class="service-price">Starting from ₦150,000 <span>one-time setup</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Custom design tailored to your brand</li>
+                            <li><i class="fas fa-check-circle"></i> Custom design with AI integration</li>
                             <li><i class="fas fa-check-circle"></i> Mobile-responsive on all devices</li>
-                            <li><i class="fas fa-check-circle"></i> SEO optimized for search engines</li>
-                            <li><i class="fas fa-check-circle"></i> Content Management System (CMS)</li>
+                            <li><i class="fas fa-check-circle"></i> SEO optimized with AI insights</li>
+                            <li><i class="fas fa-check-circle"></i> AI-powered chatbots & recommendations</li>
                             <li><i class="fas fa-check-circle"></i> 30 days free technical support</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-image animate-on-scroll delay-2">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Web Development</h3>
-                        <p>Custom websites that drive results</p>
+                        <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Social Media Management -->
-        <section class="service-detail" id="smm">
+        <!-- 3. WhatsApp Automation -->
+        <section class="service-detail" id="whatsapp">
+            <div class="container">
+                <div class="service-detail-grid">
+                    <div class="service-detail-content animate-on-scroll">
+                        <span class="service-badge">💬 Conversational AI</span>
+                        <h2>WhatsApp Automation</h2>
+                        <p>Intelligent chatbot and automation systems for WhatsApp to enhance customer engagement, automate responses, and streamline communication.</p>
+                        <div class="service-price">Starting from ₦200,000 <span>custom quote</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> AI-powered WhatsApp Chatbots</li>
+                            <li><i class="fas fa-check-circle"></i> Automated Customer Responses</li>
+                            <li><i class="fas fa-check-circle"></i> Order & Delivery Confirmations</li>
+                            <li><i class="fas fa-check-circle"></i> Broadcast Messaging & Campaigns</li>
+                            <li><i class="fas fa-check-circle"></i> Analytics & Insights Dashboard</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image animate-on-scroll delay-2">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp Automation</h3>
+                        <p>Intelligent chat solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Brand Identity -->
+        <section class="service-detail" id="brand">
             <div class="container">
                 <div class="service-detail-grid">
                     <div class="service-image animate-on-scroll">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Social Media Management</h3>
-                        <p>Grow your brand presence online</p>
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Brand Identity</h3>
+                        <p>Stunning brand visuals</p>
                     </div>
                     <div class="service-detail-content animate-on-scroll delay-2">
-                        <span class="service-badge">📈 High Engagement</span>
-                        <h2>Social Media Management</h2>
-                        <p>Strategic content creation, community engagement, and paid ad management to boost your brand's online presence.</p>
-                        <div class="service-price">Starting from ₦80,000 <span>per month</span></div>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Content calendar & strategy</li>
-                            <li><i class="fas fa-check-circle"></i> Daily engagement & community management</li>
-                            <li><i class="fas fa-check-circle"></i> Professional graphic design for posts</li>
-                            <li><i class="fas fa-check-circle"></i> Monthly analytics & performance reports</li>
-                            <li><i class="fas fa-check-circle"></i> Ad campaign management (optional)</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Flyer & Graphic Design -->
-        <section class="service-detail" id="design">
-            <div class="container">
-                <div class="service-detail-grid">
-                    <div class="service-detail-content animate-on-scroll">
                         <span class="service-badge">🎨 Creative</span>
-                        <h2>Flyer & Graphic Design</h2>
-                        <p>Eye-catching visuals that capture attention and communicate your message effectively. Perfect for marketing, events, and branding.</p>
-                        <div class="service-price">₦15,000 <span>per 5 designs</span></div>
+                        <h2>Brand Identity</h2>
+                        <p>Stunning visuals, logos, and brand identities that capture attention and build trust. Make your brand unforgettable.</p>
+                        <div class="service-price">₦150,000 <span>complete package</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Professional flyer & poster design</li>
-                            <li><i class="fas fa-check-circle"></i> Logo & brand identity packages</li>
-                            <li><i class="fas fa-check-circle"></i> Business card & stationery design</li>
-                            <li><i class="fas fa-check-circle"></i> Social media graphics & banners</li>
-                            <li><i class="fas fa-check-circle"></i> Unlimited revisions until satisfaction</li>
+                            <li><i class="fas fa-check-circle"></i> Logo Design & Brandmark</li>
+                            <li><i class="fas fa-check-circle"></i> Brand Guidelines Document</li>
+                            <li><i class="fas fa-check-circle"></i> Business Card & Stationery Design</li>
+                            <li><i class="fas fa-check-circle"></i> Social Media Brand Kit</li>
+                            <li><i class="fas fa-check-circle"></i> Color Palette & Typography</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-image animate-on-scroll delay-2">
-                        <i class="fas fa-palette"></i>
-                        <h3>Graphic Design</h3>
-                        <p>Stunning visuals that stand out</p>
+                        <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Business Automation -->
+        <!-- 5. Business Automation -->
         <section class="service-detail" id="automation">
             <div class="container">
                 <div class="service-detail-grid">
-                    <div class="service-image animate-on-scroll">
-                        <i class="fas fa-robot"></i>
+                    <div class="service-detail-content animate-on-scroll">
+                        <span class="service-badge">⚡ Efficiency</span>
+                        <h2>Business Automation</h2>
+                        <p>Streamline workflows with smart automations, saving time and increasing efficiency. Automate repetitive tasks and focus on growth.</p>
+                        <div class="service-price">Starting from ₦250,000 <span>depending on scope</span></div>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Workflow Automation & Integration</li>
+                            <li><i class="fas fa-check-circle"></i> CRM Setup & Customization</li>
+                            <li><i class="fas fa-check-circle"></i> Email Marketing Automation</li>
+                            <li><i class="fas fa-check-circle"></i> Inventory & Order Management</li>
+                            <li><i class="fas fa-check-circle"></i> Custom Dashboard & Reporting</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image animate-on-scroll delay-2">
+                        <i class="fas fa-gear"></i>
                         <h3>Business Automation</h3>
                         <p>Streamline your operations</p>
                     </div>
-                    <div class="service-detail-content animate-on-scroll delay-2">
-                        <span class="service-badge">⚡ Efficiency</span>
-                        <h2>Business Automation</h2>
-                        <p>Automate repetitive tasks, streamline workflows, and integrate systems to save time and increase productivity.</p>
-                        <div class="service-price">Starting from ₦200,000 <span>depending on scope</span></div>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Workflow automation & integration</li>
-                            <li><i class="fas fa-check-circle"></i> CRM setup & customization</li>
-                            <li><i class="fas fa-check-circle"></i> Email marketing automation</li>
-                            <li><i class="fas fa-check-circle"></i> Inventory & order management</li>
-                            <li><i class="fas fa-check-circle"></i> Custom dashboard & reporting</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. VTU Website -->
-        <section class="service-detail" id="vtu">
-            <div class="container">
-                <div class="service-detail-grid">
-                    <div class="service-detail-content animate-on-scroll">
-                        <span class="service-badge">📱 Trending</span>
-                        <h2>VTU Website</h2>
-                        <p>Complete Virtual Top Up platform for airtime, data, and bill payments with automated delivery and wallet system.</p>
-                        <div class="service-price">₦150,000 – ₦300,000 <span>one-time setup</span></div>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Airtime & data purchase automation</li>
-                            <li><i class="fas fa-check-circle"></i> Multi-network support (MTN, Glo, Airtel, 9mobile)</li>
-                            <li><i class="fas fa-check-circle"></i> Cable TV & electricity bill payment</li>
-                            <li><i class="fas fa-check-circle"></i> Wallet system with referral program</li>
-                            <li><i class="fas fa-check-circle"></i> Admin dashboard with analytics</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-image animate-on-scroll delay-2">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>VTU Platform</h3>
-                        <p>Start your own VTU business</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. School Management System -->
-        <section class="service-detail" id="school">
+        <!-- 6. UI/UX Design -->
+        <section class="service-detail" id="design">
             <div class="container">
                 <div class="service-detail-grid">
                     <div class="service-image animate-on-scroll">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>School Management</h3>
-                        <p>Streamline educational operations</p>
+                        <i class="fas fa-pen-ruler"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Human-centric design</p>
                     </div>
                     <div class="service-detail-content animate-on-scroll delay-2">
-                        <span class="service-badge">🏫 Complete Solution</span>
-                        <h2>School Management System</h2>
-                        <p>Comprehensive platform for managing students, staff, fees, results, and parent communication efficiently.</p>
-                        <div class="service-price">₦500,000 – ₦800,000 <span>one-time setup</span></div>
+                        <span class="service-badge">🎯 User-Focused</span>
+                        <h2>UI/UX Design</h2>
+                        <p>Human-centric design for digital products that deliver exceptional user experiences. From wireframes to fully designed interfaces.</p>
+                        <div class="service-price">Starting from ₦200,000 <span>per project</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Student registration & admission management</li>
-                            <li><i class="fas fa-check-circle"></i> Class & subject allocation</li>
-                            <li><i class="fas fa-check-circle"></i> Result processing & transcript generation</li>
-                            <li><i class="fas fa-check-circle"></i> Fee payment & invoicing system</li>
-                            <li><i class="fas fa-check-circle"></i> Parent & teacher portals</li>
+                            <li><i class="fas fa-check-circle"></i> User Research & Personas</li>
+                            <li><i class="fas fa-check-circle"></i> Wireframing & Prototyping</li>
+                            <li><i class="fas fa-check-circle"></i> Visual Design & Design Systems</li>
+                            <li><i class="fas fa-check-circle"></i> User Flow & Information Architecture</li>
+                            <li><i class="fas fa-check-circle"></i> Usability Testing & Iteration</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                        <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. Real Estate Website -->
-        <section class="service-detail" id="realestate">
+        <!-- 7. Cloud Solutions -->
+        <section class="service-detail" id="cloud">
             <div class="container">
                 <div class="service-detail-grid">
                     <div class="service-detail-content animate-on-scroll">
-                        <span class="service-badge">🏠 Modern</span>
-                        <h2>Real Estate Website</h2>
-                        <p>Professional property listing platform with advanced search, virtual tours, and agent management features.</p>
-                        <div class="service-price">₦150,000 – ₦300,000 <span>one-time setup</span></div>
+                        <span class="service-badge">☁️ Cloud-Native</span>
+                        <h2>Cloud Solutions</h2>
+                        <p>Scalable, secure cloud infrastructure and migration services for modern businesses. Leverage the power of the cloud for growth.</p>
+                        <div class="service-price">Starting from ₦300,000 <span>custom quote</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Property listings with advanced filters</li>
-                            <li><i class="fas fa-check-circle"></i> Interactive Google Maps integration</li>
-                            <li><i class="fas fa-check-circle"></i> Virtual tour & image gallery</li>
-                            <li><i class="fas fa-check-circle"></i> Mortgage calculator</li>
-                            <li><i class="fas fa-check-circle"></i> Agent dashboard & lead management</li>
+                            <li><i class="fas fa-check-circle"></i> Cloud Migration & Strategy</li>
+                            <li><i class="fas fa-check-circle"></i> Infrastructure as Code (IaC)</li>
+                            <li><i class="fas fa-check-circle"></i> Scalable Architecture Design</li>
+                            <li><i class="fas fa-check-circle"></i> Security & Compliance Implementation</li>
+                            <li><i class="fas fa-check-circle"></i> Cost Optimization & Monitoring</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Service <i class="fas fa-arrow-right"></i></a>
+                        <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="service-image animate-on-scroll delay-2">
-                        <i class="fas fa-building"></i>
-                        <h3>Real Estate Platform</h3>
-                        <p>Showcase properties professionally</p>
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Solutions</h3>
+                        <p>Scalable infrastructure</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Plans Section -->
+        <!-- ==================== PRICING PLANS ==================== -->
         <section class="pricing-plans" id="pricing">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -1210,7 +1512,7 @@
                 </div>
                 
                 <div class="pricing-grid">
-                    <!-- Basic Plan -->
+                    <!-- Starter Plan -->
                     <div class="pricing-card animate-on-scroll delay-1">
                         <div class="pricing-header">
                             <h3>Starter</h3>
@@ -1218,13 +1520,13 @@
                             <p>Perfect for small businesses</p>
                         </div>
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> 5-Page Responsive Website</li>
+                            <li><i class="fas fa-check"></i> 5-Page AI-Ready Website</li>
                             <li><i class="fas fa-check"></i> Contact Form Integration</li>
                             <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
-                            <li><i class="fas fa-check"></i> Mobile-Friendly Design</li>
+                            <li><i class="fas fa-check"></i> Mobile-Responsive Design</li>
                             <li><i class="fas fa-check"></i> 30 Days Support</li>
+                            <li class="disabled"><i class="fas fa-times"></i> AI Chatbot Integration</li>
                             <li class="disabled"><i class="fas fa-times"></i> E-commerce Functionality</li>
-                            <li class="disabled"><i class="fas fa-times"></i> CMS Dashboard</li>
                         </ul>
                         <a href="contact.html" class="btn btn-outline">Get Started</a>
                     </div>
@@ -1239,17 +1541,17 @@
                         </div>
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> 10-15 Page Custom Website</li>
+                            <li><i class="fas fa-check"></i> AI Chatbot Integration</li>
+                            <li><i class="fas fa-check"></i> Advanced SEO with AI Insights</li>
                             <li><i class="fas fa-check"></i> CMS Dashboard (Easy Updates)</li>
-                            <li><i class="fas fa-check"></i> Advanced SEO Strategy</li>
                             <li><i class="fas fa-check"></i> E-commerce Ready</li>
-                            <li><i class="fas fa-check"></i> Social Media Integration</li>
                             <li><i class="fas fa-check"></i> 3 Months Support</li>
-                            <li><i class="fas fa-check"></i> 5 Graphic Designs Included</li>
+                            <li><i class="fas fa-check"></i> Brand Identity Package</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started</a>
                     </div>
                     
-                    <!-- Premium Plan -->
+                    <!-- Enterprise Plan -->
                     <div class="pricing-card animate-on-scroll delay-3">
                         <div class="pricing-header">
                             <h3>Enterprise</h3>
@@ -1257,10 +1559,10 @@
                             <p>For established businesses</p>
                         </div>
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> Unlimited Pages</li>
-                            <li><i class="fas fa-check"></i> Custom Web Application</li>
-                            <li><i class="fas fa-check"></i> Complete Branding Package</li>
+                            <li><i class="fas fa-check"></i> Custom AI Solution Development</li>
+                            <li><i class="fas fa-check"></i> Full-Stack Web Application</li>
                             <li><i class="fas fa-check"></i> Advanced Automation Setup</li>
+                            <li><i class="fas fa-check"></i> Cloud Infrastructure Setup</li>
                             <li><i class="fas fa-check"></i> Priority Support (12 Months)</li>
                             <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
                             <li><i class="fas fa-check"></i> Ongoing Maintenance Included</li>
@@ -1271,7 +1573,7 @@
             </div>
         </section>
 
-        <!-- Process Section -->
+        <!-- ==================== PROCESS SECTION ==================== -->
         <section class="process-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -1305,11 +1607,11 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- ==================== CTA SECTION ==================== -->
         <section class="cta-section">
             <div class="container cta-container">
                 <div class="cta-content animate-on-scroll">
-                    <h2>Ready to Get Started?</h2>
+                    <h2>Ready to Build <span class="accent-text">Africa's AI Future</span> Together?</h2>
                     <p>Let's discuss your project and find the perfect solution for your business.</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="btn btn-primary btn-large">Request a Quote <i class="fas fa-chevron-right"></i></a>
@@ -1327,7 +1629,7 @@
                     <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
                     <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
                 </div>
-                <p>Premium digital agency based in Kano, helping businesses dominate online with innovative solutions.</p>
+                <p>Premium AI &amp; digital solutions provider based in Kano, helping African businesses dominate with innovative technology.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1346,15 +1648,13 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
+                <h4>Products</h4>
                 <ul>
-                    <li><a href="#web-dev">Web Development</a></li>
-                    <li><a href="#smm">Social Media</a></li>
-                    <li><a href="#design">Graphic Design</a></li>
-                    <li><a href="#automation">Automation</a></li>
-                    <li><a href="#vtu">VTU Website</a></li>
-                    <li><a href="#school">School Management</a></li>
-                    <li><a href="#realestate">Real Estate</a></li>
+                    <li><a href="#">YDH Connect</a></li>
+                    <li><a href="#">AI Mastery</a></li>
+                    <li><a href="#">Business Websites</a></li>
+                    <li><a href="#">AI Automation</a></li>
+                    <li><a href="#">Digital Library</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1362,14 +1662,14 @@
                 <ul class="contact-info">
                     <li><i class="fas fa-envelope"></i> yukasdigitalhub@gmail.com</li>
                     <li><i class="fas fa-phone-alt"></i> <a href="tel:+2347043504297">0704 350 4297</a></li>
-                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297 (WhatsApp)</a></li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2347043504297" target="_blank">0704 350 4297</a></li>
                     <li><i class="fas fa-map-marker-alt"></i> Kano, Nigeria</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering business growth online from Kano, Nigeria.</p>
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering Africa's digital future from Kano, Nigeria.</p>
             </div>
         </div>
     </footer>
@@ -1377,11 +1677,10 @@
     <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20your%20services!" 
        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
-        <span>Chat with us</span>
     </a>
 
     <script>
-        // Mobile Menu Toggle
+        // ==================== MOBILE MENU ====================
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
 
@@ -1390,7 +1689,6 @@
                 navLinks.classList.toggle('active');
             });
 
-            // Close menu when clicking on a link
             const links = navLinks.querySelectorAll('a');
             links.forEach(link => {
                 link.addEventListener('click', () => {
@@ -1399,18 +1697,18 @@
             });
         }
 
-        // Navbar Scroll Effect
+        // ==================== NAVBAR SCROLL ====================
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(10, 12, 16, 0.98)';
+                navbar.style.background = 'rgba(3, 7, 18, 0.98)';
                 navbar.style.backdropFilter = 'blur(10px)';
             } else {
-                navbar.style.background = 'rgba(10, 12, 16, 0.95)';
+                navbar.style.background = 'rgba(3, 7, 18, 0.95)';
             }
         });
 
-        // Scroll Animation with Intersection Observer
+        // ==================== SCROLL ANIMATION ====================
         const animateElements = document.querySelectorAll('.animate-on-scroll');
         
         const observer = new IntersectionObserver((entries) => {
