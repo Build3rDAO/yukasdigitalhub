@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="YUKAS DIGITAL HUB Services - AI development, web development, automation, and digital solutions for businesses in Nigeria and across Africa.">
-    <meta name="keywords" content="AI development Nigeria, web development, business automation, WhatsApp automation, cloud solutions, UI/UX design, digital agency Kano">
+    <meta name="description" content="YUKAS DIGITAL HUB Services - AI development, web development, payment integrations, automation, and digital solutions for businesses in Nigeria and across Africa.">
+    <meta name="keywords" content="AI development Nigeria, web development, payment integration, Flutterwave, Paystack, Monnify, business automation, WhatsApp automation, cloud solutions">
     <meta name="author" content="YUKAS DIGITAL HUB">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Our Services | YUKAS DIGITAL HUB - AI &amp; Digital Solutions">
-    <meta property="og:description" content="AI development, web development, automation, and digital solutions for businesses in Nigeria and across Africa.">
+    <meta property="og:title" content="Our Services | YUKAS DIGITAL HUB - AI &amp; Payment Solutions">
+    <meta property="og:description" content="AI development, payment integrations, web development, automation, and digital solutions for businesses in Nigeria and across Africa.">
     <meta property="og:image" content="../images/og-image.jpg">
     
     <!-- Favicon -->
@@ -452,6 +452,158 @@
             66% {
                 transform: translate(-10px, 15px) scale(0.95);
             }
+        }
+
+        /* ============================================================
+               PAYMENT INTEGRATIONS SECTION
+               ============================================================ */
+        .payment-integrations {
+            background: var(--gray-900);
+            position: relative;
+        }
+
+        .payment-integrations::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.05), transparent 60%);
+            pointer-events: none;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 640px) {
+            .payment-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .payment-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .payment-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: calc(var(--radius-xl) + 1px);
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .payment-card:hover::before {
+            opacity: 1;
+        }
+
+        .payment-card::after {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .payment-card:hover::after {
+            opacity: 1;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .payment-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(37, 99, 235, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            transition: all 0.4s ease;
+            font-size: 2.2rem;
+            color: var(--primary-accent);
+        }
+
+        .payment-card:hover .payment-icon {
+            background: rgba(37, 99, 235, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .payment-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .payment-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .payment-card .payment-features {
+            list-style: none;
+            margin: 1rem 0 0;
+            text-align: left;
+        }
+
+        .payment-card .payment-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.4rem 0;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.05);
+        }
+
+        .payment-card .payment-features li:last-child {
+            border-bottom: none;
+        }
+
+        .payment-card .payment-features li i {
+            color: var(--primary-accent);
+            width: 20px;
+            font-size: 0.8rem;
         }
 
         /* ============================================================
@@ -1260,6 +1412,12 @@
             .service-image i {
                 font-size: 3rem;
             }
+
+            .payment-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -1298,15 +1456,118 @@
             <div class="container">
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    🚀 AI-Powered Solutions
+                    🚀 AI-Powered Solutions &amp; Payment Integrations
                 </div>
                 
                 <h1>Our <span class="accent-text">Services</span></h1>
                 
                 <p class="hero-subtitle">
-                    From AI development and automation to web solutions and design — 
+                    From AI development and payment integrations to automation and design — 
                     we deliver cutting-edge digital services that drive real business growth.
                 </p>
+            </div>
+        </section>
+
+        <!-- ==================== PAYMENT INTEGRATIONS ==================== -->
+        <section class="payment-integrations" id="payments">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">Payment Solutions</span>
+                    <h2>Seamless <span class="accent-text">Payment Integrations</span></h2>
+                    <p>We integrate Africa's leading payment gateways to enable secure, fast, and reliable transactions for your business.</p>
+                </div>
+
+                <div class="payment-grid">
+                    <!-- Flutterwave -->
+                    <div class="payment-card animate-on-scroll delay-1">
+                        <div class="payment-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <h3>Flutterwave</h3>
+                        <p>Africa's leading payment technology company. Accept payments in multiple currencies with ease.</p>
+                        <ul class="payment-features">
+                            <li><i class="fas fa-check-circle"></i> Multiple currency support</li>
+                            <li><i class="fas fa-check-circle"></i> Card, bank, mobile money</li>
+                            <li><i class="fas fa-check-circle"></i> Recurring billing</li>
+                            <li><i class="fas fa-check-circle"></i> Instant settlement</li>
+                        </ul>
+                    </div>
+
+                    <!-- Paystack -->
+                    <div class="payment-card animate-on-scroll delay-2">
+                        <div class="payment-icon">
+                            <i class="fas fa-stack-overflow"></i>
+                        </div>
+                        <h3>Paystack</h3>
+                        <p>Nigeria's #1 payment gateway. Simple, secure, and trusted by thousands of businesses.</p>
+                        <ul class="payment-features">
+                            <li><i class="fas fa-check-circle"></i> Naira &amp; international cards</li>
+                            <li><i class="fas fa-check-circle"></i> Bank transfers &amp; USSD</li>
+                            <li><i class="fas fa-check-circle"></i> Recurring payments</li>
+                            <li><i class="fas fa-check-circle"></i> Fraud protection</li>
+                        </ul>
+                    </div>
+
+                    <!-- Monnify -->
+                    <div class="payment-card animate-on-scroll delay-3">
+                        <div class="payment-icon">
+                            <i class="fas fa-building-columns"></i>
+                        </div>
+                        <h3>Monnify</h3>
+                        <p>Bank-backed payment solution with seamless integration and powerful features.</p>
+                        <ul class="payment-features">
+                            <li><i class="fas fa-check-circle"></i> Bank transfer payments</li>
+                            <li><i class="fas fa-check-circle"></i> Virtual accounts</li>
+                            <li><i class="fas fa-check-circle"></i> Split payments</li>
+                            <li><i class="fas fa-check-circle"></i> Automated reconciliation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Interswitch -->
+                    <div class="payment-card animate-on-scroll delay-1">
+                        <div class="payment-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Interswitch</h3>
+                        <p>One of Africa's largest payment processing and switching companies.</p>
+                        <ul class="payment-features">
+                            <li><i class="fas fa-check-circle"></i> WebPay &amp; Quickteller</li>
+                            <li><i class="fas fa-check-circle"></i> POS &amp; mobile payments</li>
+                            <li><i class="fas fa-check-circle"></i> Tokenization</li>
+                            <li><i class="fas fa-check-circle"></i> Bank &amp; card support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Remita -->
+                    <div class="payment-card animate-on-scroll delay-2">
+                        <div class="payment-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <h3>Remita</h3>
+                        <p>Government and corporate payment solution with extensive bank coverage.</p>
+                        <ul class="payment-features">
+                            <li><i class="fas fa-check-circle"></i> Government payments</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-bank integration</li>
+                            <li><i class="fas fa-check-circle"></i> Invoice generation</li>
+                            <li><i class="fas fa-check-circle"></i> Bulk payments</li>
+                        </ul>
+                    </div>
+
+                    <!-- Paga -->
+                    <div class="payment-card animate-on-scroll delay-3">
+                        <div class="payment-icon">
+                            <i class="fas fa-mobile-screen"></i>
+                        </div>
+                        <h3>Paga</h3>
+                        <p>Mobile payment platform making financial services accessible across Nigeria.</p>
+                        <ul class="payment-features">
+                            <li><i class="fas fa-check-circle"></i> Mobile money transfers</li>
+                            <li><i class="fas fa-check-circle"></i> Bill payments</li>
+                            <li><i class="fas fa-check-circle"></i> Agent banking</li>
+                            <li><i class="fas fa-check-circle"></i> Micro-savings</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1323,11 +1584,11 @@
                         <div class="service-price">Starting from ₦500,000 <span>custom quote</span></div>
                         <ul class="feature-list">
                             <li><i class="fas fa-check-circle"></i> Custom AI Model Development</li>
-                            <li><i class="fas fa-check-circle"></i> Machine Learning & Predictive Analytics</li>
+                            <li><i class="fas fa-check-circle"></i> Machine Learning &amp; Predictive Analytics</li>
                             <li><i class="fas fa-check-circle"></i> Natural Language Processing (NLP)</li>
                             <li><i class="fas fa-check-circle"></i> Computer Vision Solutions</li>
                             <li><i class="fas fa-check-circle"></i> AI Integration with Existing Systems</li>
-                            <li><i class="fas fa-check-circle"></i> Ongoing Model Training & Optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Ongoing Model Training &amp; Optimization</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1358,7 +1619,8 @@
                             <li><i class="fas fa-check-circle"></i> Custom design with AI integration</li>
                             <li><i class="fas fa-check-circle"></i> Mobile-responsive on all devices</li>
                             <li><i class="fas fa-check-circle"></i> SEO optimized with AI insights</li>
-                            <li><i class="fas fa-check-circle"></i> AI-powered chatbots & recommendations</li>
+                            <li><i class="fas fa-check-circle"></i> AI-powered chatbots &amp; recommendations</li>
+                            <li><i class="fas fa-check-circle"></i> Payment gateway integration included</li>
                             <li><i class="fas fa-check-circle"></i> 30 days free technical support</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
@@ -1379,9 +1641,9 @@
                         <ul class="feature-list">
                             <li><i class="fas fa-check-circle"></i> AI-powered WhatsApp Chatbots</li>
                             <li><i class="fas fa-check-circle"></i> Automated Customer Responses</li>
-                            <li><i class="fas fa-check-circle"></i> Order & Delivery Confirmations</li>
-                            <li><i class="fas fa-check-circle"></i> Broadcast Messaging & Campaigns</li>
-                            <li><i class="fas fa-check-circle"></i> Analytics & Insights Dashboard</li>
+                            <li><i class="fas fa-check-circle"></i> Order &amp; Delivery Confirmations</li>
+                            <li><i class="fas fa-check-circle"></i> Broadcast Messaging &amp; Campaigns</li>
+                            <li><i class="fas fa-check-circle"></i> Analytics &amp; Insights Dashboard</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1409,11 +1671,11 @@
                         <p>Stunning visuals, logos, and brand identities that capture attention and build trust. Make your brand unforgettable.</p>
                         <div class="service-price">₦150,000 <span>complete package</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Logo Design & Brandmark</li>
+                            <li><i class="fas fa-check-circle"></i> Logo Design &amp; Brandmark</li>
                             <li><i class="fas fa-check-circle"></i> Brand Guidelines Document</li>
-                            <li><i class="fas fa-check-circle"></i> Business Card & Stationery Design</li>
+                            <li><i class="fas fa-check-circle"></i> Business Card &amp; Stationery Design</li>
                             <li><i class="fas fa-check-circle"></i> Social Media Brand Kit</li>
-                            <li><i class="fas fa-check-circle"></i> Color Palette & Typography</li>
+                            <li><i class="fas fa-check-circle"></i> Color Palette &amp; Typography</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1431,11 +1693,11 @@
                         <p>Streamline workflows with smart automations, saving time and increasing efficiency. Automate repetitive tasks and focus on growth.</p>
                         <div class="service-price">Starting from ₦250,000 <span>depending on scope</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Workflow Automation & Integration</li>
-                            <li><i class="fas fa-check-circle"></i> CRM Setup & Customization</li>
+                            <li><i class="fas fa-check-circle"></i> Workflow Automation &amp; Integration</li>
+                            <li><i class="fas fa-check-circle"></i> CRM Setup &amp; Customization</li>
                             <li><i class="fas fa-check-circle"></i> Email Marketing Automation</li>
-                            <li><i class="fas fa-check-circle"></i> Inventory & Order Management</li>
-                            <li><i class="fas fa-check-circle"></i> Custom Dashboard & Reporting</li>
+                            <li><i class="fas fa-check-circle"></i> Inventory &amp; Order Management</li>
+                            <li><i class="fas fa-check-circle"></i> Custom Dashboard &amp; Reporting</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1463,11 +1725,11 @@
                         <p>Human-centric design for digital products that deliver exceptional user experiences. From wireframes to fully designed interfaces.</p>
                         <div class="service-price">Starting from ₦200,000 <span>per project</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> User Research & Personas</li>
-                            <li><i class="fas fa-check-circle"></i> Wireframing & Prototyping</li>
-                            <li><i class="fas fa-check-circle"></i> Visual Design & Design Systems</li>
-                            <li><i class="fas fa-check-circle"></i> User Flow & Information Architecture</li>
-                            <li><i class="fas fa-check-circle"></i> Usability Testing & Iteration</li>
+                            <li><i class="fas fa-check-circle"></i> User Research &amp; Personas</li>
+                            <li><i class="fas fa-check-circle"></i> Wireframing &amp; Prototyping</li>
+                            <li><i class="fas fa-check-circle"></i> Visual Design &amp; Design Systems</li>
+                            <li><i class="fas fa-check-circle"></i> User Flow &amp; Information Architecture</li>
+                            <li><i class="fas fa-check-circle"></i> Usability Testing &amp; Iteration</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1485,11 +1747,11 @@
                         <p>Scalable, secure cloud infrastructure and migration services for modern businesses. Leverage the power of the cloud for growth.</p>
                         <div class="service-price">Starting from ₦300,000 <span>custom quote</span></div>
                         <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Cloud Migration & Strategy</li>
+                            <li><i class="fas fa-check-circle"></i> Cloud Migration &amp; Strategy</li>
                             <li><i class="fas fa-check-circle"></i> Infrastructure as Code (IaC)</li>
                             <li><i class="fas fa-check-circle"></i> Scalable Architecture Design</li>
-                            <li><i class="fas fa-check-circle"></i> Security & Compliance Implementation</li>
-                            <li><i class="fas fa-check-circle"></i> Cost Optimization & Monitoring</li>
+                            <li><i class="fas fa-check-circle"></i> Security &amp; Compliance Implementation</li>
+                            <li><i class="fas fa-check-circle"></i> Cost Optimization &amp; Monitoring</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1521,6 +1783,7 @@
                         </div>
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> 5-Page AI-Ready Website</li>
+                            <li><i class="fas fa-check"></i> Basic Payment Integration</li>
                             <li><i class="fas fa-check"></i> Contact Form Integration</li>
                             <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
                             <li><i class="fas fa-check"></i> Mobile-Responsive Design</li>
@@ -1541,6 +1804,7 @@
                         </div>
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> 10-15 Page Custom Website</li>
+                            <li><i class="fas fa-check"></i> Multiple Payment Gateways</li>
                             <li><i class="fas fa-check"></i> AI Chatbot Integration</li>
                             <li><i class="fas fa-check"></i> Advanced SEO with AI Insights</li>
                             <li><i class="fas fa-check"></i> CMS Dashboard (Easy Updates)</li>
@@ -1560,6 +1824,7 @@
                         </div>
                         <ul class="pricing-features">
                             <li><i class="fas fa-check"></i> Custom AI Solution Development</li>
+                            <li><i class="fas fa-check"></i> Full Payment Ecosystem Integration</li>
                             <li><i class="fas fa-check"></i> Full-Stack Web Application</li>
                             <li><i class="fas fa-check"></i> Advanced Automation Setup</li>
                             <li><i class="fas fa-check"></i> Cloud Infrastructure Setup</li>
@@ -1590,17 +1855,17 @@
                     </div>
                     <div class="process-step animate-on-scroll delay-2">
                         <div class="step-number">2</div>
-                        <h3>Proposal & Quote</h3>
+                        <h3>Proposal &amp; Quote</h3>
                         <p>We provide a detailed proposal with timeline and pricing.</p>
                     </div>
                     <div class="process-step animate-on-scroll delay-3">
                         <div class="step-number">3</div>
-                        <h3>Design & Development</h3>
+                        <h3>Design &amp; Development</h3>
                         <p>We create your project with regular updates and feedback sessions.</p>
                     </div>
                     <div class="process-step animate-on-scroll delay-4">
                         <div class="step-number">4</div>
-                        <h3>Launch & Support</h3>
+                        <h3>Launch &amp; Support</h3>
                         <p>We launch your project and provide ongoing support and training.</p>
                     </div>
                 </div>
