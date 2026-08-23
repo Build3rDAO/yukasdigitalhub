@@ -301,7 +301,6 @@
             }
         }
 
-        /* Hero Background Image with Overlay */
         .contact-hero::before {
             content: '';
             position: absolute;
@@ -313,7 +312,6 @@
             background-blend-mode: overlay;
         }
 
-        /* Animated gradient mesh overlay */
         .contact-hero::after {
             content: '';
             position: absolute;
@@ -412,7 +410,6 @@
             }
         }
 
-        /* Floating particles */
         .hero-particle {
             position: absolute;
             border-radius: 50%;
@@ -494,7 +491,6 @@
             }
         }
 
-        /* Contact Info Cards */
         .contact-info-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
@@ -607,7 +603,6 @@
             color: var(--primary-accent);
         }
 
-        /* Business Hours */
         .business-hours {
             margin-top: 1rem;
         }
@@ -633,9 +628,6 @@
             font-size: 0.875rem;
         }
 
-        /* ============================================================
-               CONTACT FORM – GLASSMORPHISM
-               ============================================================ */
         .contact-form-wrapper {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
@@ -736,7 +728,6 @@
             min-height: 120px;
         }
 
-        /* Pricing Options */
         .pricing-options {
             background: rgba(37, 99, 235, 0.05);
             border-radius: var(--radius-md);
@@ -782,7 +773,6 @@
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
-        /* Success Message */
         .form-success {
             background: rgba(39, 174, 96, 0.1);
             border: 1px solid rgba(39, 174, 96, 0.3);
@@ -821,7 +811,6 @@
             border-color: #ff4444;
         }
 
-        /* Loading Spinner */
         .loading-spinner {
             display: none;
             width: 20px;
@@ -845,7 +834,6 @@
             display: inline-block;
         }
 
-        /* ========== MAP SECTION ========== */
         .map-section {
             background: var(--gray-900);
             position: relative;
@@ -884,9 +872,6 @@
             border: none;
         }
 
-        /* ============================================================
-               FAQ SECTION
-               ============================================================ */
         .faq-section {
             background: var(--primary-dark);
             position: relative;
@@ -980,9 +965,6 @@
             line-height: 1.6;
         }
 
-        /* ============================================================
-               CTA SECTION
-               ============================================================ */
         .cta-section {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--gray-900) 100%);
             position: relative;
@@ -1042,9 +1024,6 @@
             }
         }
 
-        /* ============================================================
-               BUTTONS
-               ============================================================ */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -1092,19 +1071,6 @@
             z-index: 1;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(37, 99, 235, 0.4);
-            backdrop-filter: blur(4px);
-        }
-
-        .btn-outline:hover {
-            background: rgba(37, 99, 235, 0.1);
-            border-color: var(--primary-accent);
-            transform: translateY(-2px);
-        }
-
         .btn-outline-light {
             background: transparent;
             color: var(--white);
@@ -1122,9 +1088,6 @@
             font-size: 1.1rem;
         }
 
-        /* ============================================================
-               FOOTER
-               ============================================================ */
         .footer {
             background: var(--primary-dark);
             border-top: 1px solid rgba(37, 99, 235, 0.1);
@@ -1266,62 +1229,539 @@
         }
 
         /* ============================================================
-               WHATSAPP FLOAT
+               YUKAS AI CHATBOT – GLOWING LAUNCHER & SMOOTH OPEN
                ============================================================ */
-        .whatsapp-float {
+
+        .yukas-chat-launcher {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #2563EB, #3B82F6);
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6),
+                        0 0 30px rgba(37, 99, 235, 0.3);
+            border: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation: glowPulse 2.5s ease-in-out infinite;
+            backdrop-filter: blur(4px);
+        }
+
+        @keyframes glowPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6),
+                            0 0 30px rgba(37, 99, 235, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 0 12px rgba(37, 99, 235, 0.15),
+                            0 0 50px rgba(37, 99, 235, 0.4);
+                transform: scale(1.03);
+            }
+        }
+
+        .yukas-chat-launcher:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.8),
+                        0 0 60px rgba(37, 99, 235, 0.5);
+            animation: none;
+        }
+
+        .yukas-chat-launcher.active {
+            opacity: 0.7;
+            transform: scale(0.95);
+            animation: none;
+        }
+
+        .yukas-chat-launcher .yukas-launcher-icon {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            font-size: 1.4rem;
+        }
+
+        .yukas-chat-launcher .yukas-launcher-label {
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .yukas-chat-launcher .yukas-launcher-badge {
+            display: none;
+            width: 12px;
+            height: 12px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            flex-shrink: 0;
+        }
+
+        .yukas-chat-launcher .yukas-launcher-badge.show {
+            display: block;
+        }
+
+        @media (max-width:480px) {
+            .yukas-chat-launcher {
+                bottom: 18px;
+                right: 16px;
+                padding: 10px 16px;
+                font-size: 0.8rem;
+                gap: 8px;
+                border-radius: 50px;
+            }
+            .yukas-chat-launcher .yukas-launcher-label {
+                font-size: 0.75rem;
+            }
+            .yukas-chat-launcher .yukas-launcher-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 1.1rem;
+            }
+        }
+
+        .yukas-chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 400px;
+            max-width: calc(100vw - 48px);
+            max-height: 580px;
+            height: 520px;
+            background: rgba(17, 24, 39, 0.96);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(37, 99, 235, 0.2) inset;
+            border: 1px solid rgba(37, 99, 235, 0.2);
             z-index: 1000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.9) translateY(20px);
+            opacity: 0;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.3s ease,
+                        visibility 0.3s ease;
+            visibility: hidden;
+            pointer-events: none;
         }
 
-        @media (min-width: 768px) {
-            .whatsapp-float {
-                width: 60px;
-                height: 60px;
-                bottom: 30px;
-                right: 30px;
+        .yukas-chat-window.open {
+            display: flex;
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        @keyframes yukasChatSlideIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.92) translateY(18px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
             }
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        .yukas-chat-window.open {
+            animation: yukasChatSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
-        .whatsapp-float i {
-            font-size: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .whatsapp-float i {
-                font-size: 1.75rem;
+        @media (max-width:480px) {
+            .yukas-chat-window {
+                bottom: 80px;
+                right: 10px;
+                left: 10px;
+                width: auto;
+                max-width: none;
+                height: 75vh;
+                max-height: 75vh;
+                border-radius: 20px;
             }
         }
 
-        /* ============================================================
-               ANIMATIONS
-               ============================================================ */
-        @keyframes fadeUp {
+        .yukas-chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            background: rgba(3, 7, 18, 0.85);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+            flex-shrink: 0;
+        }
+
+        .yukas-chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .yukas-chat-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563EB, #3B82F6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .yukas-chat-header-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .yukas-chat-header-title {
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #fff;
+        }
+
+        .yukas-chat-header-status {
+            font-size: 0.7rem;
+            color: #22c55e;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .yukas-chat-header-status::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .yukas-chat-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .yukas-chat-close:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .yukas-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px 18px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            scroll-behavior: smooth;
+        }
+
+        .yukas-chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .yukas-chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .yukas-chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(37, 99, 235, 0.3);
+            border-radius: 4px;
+        }
+
+        .yukas-chat-message {
+            display: flex;
+            gap: 10px;
+            animation: yukasMessageFade 0.3s ease;
+        }
+
+        @keyframes yukasMessageFade {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(8px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .yukas-chat-message-user {
+            flex-direction: row-reverse;
+        }
+
+        .yukas-chat-message-user .yukas-chat-avatar {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .yukas-chat-message-content {
+            max-width: 80%;
+            padding: 10px 16px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            word-wrap: break-word;
+        }
+
+        .yukas-chat-message-assistant .yukas-chat-message-content {
+            background: rgba(37, 99, 235, 0.12);
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            border-bottom-left-radius: 6px;
+        }
+
+        .yukas-chat-message-user .yukas-chat-message-content {
+            background: rgba(37, 99, 235, 0.25);
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            border-bottom-right-radius: 6px;
+        }
+
+        .yukas-chat-typing {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 16px;
+            background: rgba(37, 99, 235, 0.08);
+            border-radius: 16px;
+            border: 1px solid rgba(37, 99, 235, 0.05);
+            width: fit-content;
+            margin-bottom: 4px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .yukas-chat-typing span {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: yukasTypingDot 1.4s infinite both;
+        }
+
+        .yukas-chat-typing span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .yukas-chat-typing span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes yukasTypingDot {
+            0%,
+            80%,
+            100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .yukas-whatsapp-handoff {
+            background: rgba(37, 211, 102, 0.06);
+            border: 1px solid rgba(37, 211, 102, 0.15);
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin-top: 4px;
+            text-align: center;
+            animation: yukasMessageFade 0.4s ease;
+        }
+
+        .yukas-whatsapp-handoff p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin: 0 0 8px 0;
+        }
+
+        .yukas-whatsapp-handoff .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .yukas-whatsapp-handoff .btn-whatsapp:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .yukas-quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 8px 18px 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            flex-shrink: 0;
+            background: rgba(3, 7, 18, 0.3);
+        }
+
+        .yukas-quick-action {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+
+        .yukas-quick-action:hover {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: rgba(37, 99, 235, 0.3);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width:480px) {
+            .yukas-quick-actions {
+                padding: 6px 12px 10px;
+                gap: 4px;
+            }
+            .yukas-quick-action {
+                font-size: 0.65rem;
+                padding: 3px 10px;
+            }
+        }
+
+        .yukas-chat-footer {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            padding: 10px 16px 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(3, 7, 18, 0.3);
+            flex-shrink: 0;
+        }
+
+        .yukas-chat-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            border-radius: 14px;
+            padding: 10px 16px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            resize: none;
+            min-height: 42px;
+            max-height: 80px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            line-height: 1.5;
+        }
+
+        .yukas-chat-input:focus {
+            border-color: #2563EB;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .yukas-chat-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .yukas-chat-send {
+            background: linear-gradient(135deg, #2563EB, #3B82F6);
+            border: none;
+            border-radius: 14px;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .yukas-chat-send:hover:not(:disabled) {
+            transform: scale(1.06);
+            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.4);
+        }
+
+        .yukas-chat-send:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .yukas-chat-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(3, 7, 18, 0.6);
+            backdrop-filter: blur(2px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 24px;
+            z-index: 5;
+        }
+
+        .yukas-chat-loading span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: rgba(37, 99, 235, 0.5);
+            border-radius: 50%;
+            animation: yukasTypingDot 1.4s infinite both;
+        }
+
+        .yukas-chat-loading span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .yukas-chat-loading span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .yukas-chat-error {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            margin-top: 4px;
         }
 
         .animate-fade-up {
@@ -1344,9 +1784,6 @@
         .delay-3 { transition-delay: 0.3s; }
         .delay-4 { transition-delay: 0.4s; }
 
-        /* ============================================================
-               RESPONSIVE ADJUSTMENTS
-               ============================================================ */
         @media (max-width: 480px) {
             .contact-hero h1 {
                 font-size: 2rem;
@@ -1415,9 +1852,8 @@
     </header>
 
     <main>
-        <!-- ==================== CONTACT HERO WITH BACKGROUND ==================== -->
+        <!-- ==================== CONTACT HERO ==================== -->
         <section class="contact-hero">
-            <!-- Decorative floating particles -->
             <div class="hero-particle"></div>
             <div class="hero-particle"></div>
             <div class="hero-particle"></div>
@@ -1718,10 +2154,48 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20your%20services!" 
-       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- ============================================================
+    YUKAS AI CHATBOT – GLOWING LAUNCHER & FULL INTERACTIVE CHAT
+    ============================================================ -->
+    <div class="yukas-chat-launcher" id="chatLauncher">
+        <span class="yukas-launcher-icon"><i class="fas fa-comment-dots"></i></span>
+        <span class="yukas-launcher-label">Chat with AI</span>
+        <span class="yukas-launcher-badge show" id="chatBadge"></span>
+    </div>
+
+    <div class="yukas-chat-window" id="chatWindow">
+        <div class="yukas-chat-loading" id="chatLoading">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="yukas-chat-header">
+            <div class="yukas-chat-header-left">
+                <div class="yukas-chat-avatar">Y</div>
+                <div class="yukas-chat-header-info">
+                    <span class="yukas-chat-header-title">YUKAS AI</span>
+                    <span class="yukas-chat-header-status">Online</span>
+                </div>
+            </div>
+            <button class="yukas-chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="yukas-chat-messages" id="chatMessages">
+            <div class="yukas-chat-message yukas-chat-message-assistant">
+                <div class="yukas-chat-avatar">Y</div>
+                <div class="yukas-chat-message-content">
+                    👋 Hi there! I'm YUKAS AI. How can I help you with AI solutions, automation, or digital products today?
+                </div>
+            </div>
+        </div>
+        <div class="yukas-quick-actions" id="quickActions">
+            <button class="yukas-quick-action" data-msg="What AI services do you offer?">AI Services</button>
+            <button class="yukas-quick-action" data-msg="Tell me about your website development.">Web Dev</button>
+            <button class="yukas-quick-action" data-msg="How can automation help my business?">Automation</button>
+            <button class="yukas-quick-action" data-msg="I want to start a project.">Start Project</button>
+        </div>
+        <div class="yukas-chat-footer">
+            <textarea class="yukas-chat-input" id="chatInput" placeholder="Ask me anything..." rows="1"></textarea>
+            <button class="yukas-chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 
     <script>
         // ==================== MOBILE MENU ====================
@@ -1947,6 +2421,172 @@
                 e.target.value = value;
             });
         }
+
+        // ============================================================
+        // YUKAS AI CHATBOT – Full Interactive Logic
+        // ============================================================
+        (function() {
+            const launcher = document.getElementById('chatLauncher');
+            const windowEl = document.getElementById('chatWindow');
+            const closeBtn = document.getElementById('chatClose');
+            const messages = document.getElementById('chatMessages');
+            const input = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('chatSend');
+            const quickBtns = document.querySelectorAll('.yukas-quick-action');
+            const badge = document.getElementById('chatBadge');
+
+            let isOpen = false;
+            let isTyping = false;
+
+            function openChat() {
+                isOpen = true;
+                windowEl.classList.add('open');
+                launcher.classList.add('active');
+                badge.classList.remove('show');
+                setTimeout(() => input.focus(), 300);
+            }
+
+            function closeChat() {
+                isOpen = false;
+                windowEl.classList.remove('open');
+                launcher.classList.remove('active');
+                badge.classList.add('show');
+            }
+
+            launcher.addEventListener('click', () => {
+                if (isOpen) closeChat();
+                else openChat();
+            });
+            closeBtn.addEventListener('click', closeChat);
+
+            function sendMessage(text) {
+                if (!text || text.trim() === '') return;
+                const trimmed = text.trim();
+                addMessage(trimmed, 'user');
+                input.value = '';
+                input.style.height = 'auto';
+                simulateReply(trimmed);
+            }
+
+            function addMessage(text, sender) {
+                const div = document.createElement('div');
+                div.className = `yukas-chat-message yukas-chat-message-${sender}`;
+
+                const avatar = document.createElement('div');
+                avatar.className = 'yukas-chat-avatar';
+                avatar.textContent = sender === 'assistant' ? 'Y' : 'U';
+
+                const content = document.createElement('div');
+                content.className = 'yukas-chat-message-content';
+                content.textContent = text;
+
+                div.appendChild(avatar);
+                div.appendChild(content);
+                messages.appendChild(div);
+                messages.scrollTop = messages.scrollHeight;
+            }
+
+            function simulateReply(userText) {
+                if (isTyping) return;
+                isTyping = true;
+                showTyping();
+
+                const delay = 800 + Math.random() * 800;
+                setTimeout(() => {
+                    hideTyping();
+                    const reply = getAIResponse(userText);
+                    addMessage(reply, 'assistant');
+                    isTyping = false;
+                    if (userText.toLowerCase().includes('project') || userText.toLowerCase().includes('start') ||
+                        userText.toLowerCase().includes('price') || userText.toLowerCase().includes('cost') ||
+                        userText.toLowerCase().includes('consult')) {
+                        showWhatsAppHandoff();
+                    }
+                }, delay);
+            }
+
+            function getAIResponse(text) {
+                const lower = text.toLowerCase();
+                if (lower.includes('ai') || lower.includes('artificial') || lower.includes('machine') || lower.includes('service')) {
+                    return "We offer custom AI development, predictive analytics, NLP, computer vision, and AI-powered automation. Our solutions are tailored to your business needs. Would you like to book a free consultation?";
+                } else if (lower.includes('web') || lower.includes('website') || lower.includes('site') || lower.includes('development')) {
+                    return "Our web development service creates high-performance, AI-integrated websites that are fast, secure, and conversion-optimized. We use modern frameworks like React, Next.js, and custom CMS solutions. Need a quote?";
+                } else if (lower.includes('automation') || lower.includes('workflow') || lower.includes('efficiency')) {
+                    return "Business automation is our specialty! We build intelligent systems that automate repetitive tasks, integrate with your existing tools, and save you hours every week. From CRM automation to AI chatbots, we've got you covered.";
+                } else if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes('budget')) {
+                    return "Our pricing is competitive and transparent. Each project is customized, so the cost depends on scope and complexity. We offer flexible packages starting from $500. Would you like a free estimate?";
+                } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey') || lower.includes('good morning') || lower.includes('good afternoon')) {
+                    return "Hello! Great to hear from you. How can I assist you today? Feel free to ask about our AI solutions, web development, automation, or any of our digital products.";
+                } else if (lower.includes('thank') || lower.includes('thanks') || lower.includes('appreciate')) {
+                    return "You're very welcome! 😊 I'm here to help. Is there anything else you'd like to know about our AI solutions or digital services?";
+                } else {
+                    return "That's a great question! Our team specializes in AI, web development, automation, and digital products. Could you tell me more about your business needs so I can give you the best guidance?";
+                }
+            }
+
+            function showTyping() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'yukas-chat-typing';
+                typingDiv.id = 'typingIndicator';
+                for (let i = 0; i < 3; i++) {
+                    const span = document.createElement('span');
+                    typingDiv.appendChild(span);
+                }
+                messages.appendChild(typingDiv);
+                messages.scrollTop = messages.scrollHeight;
+            }
+
+            function hideTyping() {
+                const typing = document.getElementById('typingIndicator');
+                if (typing) typing.remove();
+            }
+
+            function showWhatsAppHandoff() {
+                const existing = document.querySelector('.yukas-whatsapp-handoff');
+                if (existing) return;
+
+                const div = document.createElement('div');
+                div.className = 'yukas-whatsapp-handoff';
+                div.innerHTML = `
+                    <p>💬 Want to speak with a human expert? Connect with us on WhatsApp for a personalized consultation.</p>
+                    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20AI%20and%20digital%20solutions!" 
+                       target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                `;
+                messages.appendChild(div);
+                messages.scrollTop = messages.scrollHeight;
+            }
+
+            sendBtn.addEventListener('click', () => {
+                sendMessage(input.value);
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage(input.value);
+                }
+            });
+
+            input.addEventListener('input', () => {
+                input.style.height = 'auto';
+                input.style.height = Math.min(input.scrollHeight, 80) + 'px';
+            });
+
+            quickBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const msg = btn.getAttribute('data-msg');
+                    sendMessage(msg);
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (isOpen && !windowEl.contains(e.target) && !launcher.contains(e.target)) {
+                    closeChat();
+                }
+            });
+        })();
     </script>
 </body>
 </html>
