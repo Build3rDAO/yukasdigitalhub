@@ -1,6 +1,4 @@
-// ============================================================
-// YUKAS AI CHATBOT - Frontend Module
-// ============================================================
+// js/chatbot.js - YUKAS AI Chatbot Frontend
 
 (function() {
     'use strict';
@@ -13,9 +11,9 @@
         launcherId: 'yukasChatLauncher',
         welcomeMessage: `👋 Hello! I'm YUKAS AI, the AI assistant for YUKAS DIGITAL HUB.
 
-    I can help you learn about our AI solutions, website development, automation, and more.
+I can help you learn about our AI solutions, website development, automation, and more.
 
-    How can I help you today?`,
+How can I help you today?`,
         quickActions: [
             { label: '🤖 AI Solutions', value: 'Tell me about your AI solutions.' },
             { label: '🌐 Website Development', value: 'Tell me about your website development services.' },
