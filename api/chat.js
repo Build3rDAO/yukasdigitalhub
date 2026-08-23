@@ -148,115 +148,134 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
     const userMessage = lastUserMessage.content;
 
     // ================================================================
-    // ✅ CORRECT GEMINI MODEL NAMES - Choose one:
+    // ✅ CORRECT GEMINI MODEL NAMES (ACTUALLY AVAILABLE)
     // ================================================================
     // 
-    // Model Name             | Best For
-    // -----------------------|----------------------------------------
-    // gemini-3-flash         | ✅ FASTEST, best for chat
-    // gemini-2.5-flash       | ✅ Good balance of speed and quality  
-    // gemini-3.1-flash-lite  | ✅ CHEAPEST, for simple tasks
-    // gemini-3-pro           | ✅ Best quality
-    // gemini-3.1-flash       | ✅ Newest model
+    // Model Name           | Best For
+    // ---------------------|----------------------------------------
+    // gemini-1.5-flash     | ✅ FASTEST, best for chat
+    // gemini-1.5-flash-8b  | ✅ Even faster, cheaper
+    // gemini-2.0-flash     | ✅ Newest flash model
+    // gemini-1.5-pro       | ✅ Best quality
     // 
     // ================================================================
 
-    const model = process.env.GEMINI_MODEL || 'gemini-3-flash';
+    // Try these models in order (fallback if one fails)
+    const MODEL_OPTIONS = [
+        process.env.GEMINI_MODEL || 'gemini-1.5-flash',
+        'gemini-1.5-flash',
+        'gemini-2.0-flash',
+        'gemini-1.5-flash-8b',
+        'gemini-1.5-pro'
+    ];
 
-    console.log('📡 Using Gemini model:', model);
-
-    // ========== CALL GEMINI API ==========
-    try {
-        const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: conversationContext + `\nUser: ${userMessage}\nAssistant:`
-                        }]
-                    }],
-                    generationConfig: {
-                        temperature: 0.7,
-                        maxOutputTokens: 500,
-                        topP: 0.9,
-                        topK: 40,
-                    },
-                    safetySettings: [
-                        {
-                            category: "HARM_CATEGORY_HARASSMENT",
-                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                        },
-                        {
-                            category: "HARM_CATEGORY_HATE_SPEECH",
-                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                        },
-                        {
-                            category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                        },
-                        {
-                            category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
-                        }
-                    ]
-                })
-            }
-        );
-
-        const data = await response.json();
-
-        // ========== HANDLE GEMINI API ERRORS ==========
-        if (!response.ok) {
-            console.error('❌ Gemini API Error:', data);
-            
-            // Check for model not found error
-            if (data.error?.message?.includes('not found')) {
-                return res.status(400).json({ 
-                    error: `The model "${model}" is not available. Please use one of: gemini-3-flash, gemini-2.5-flash, gemini-3.1-flash-lite, or gemini-3-pro.` 
-                });
-            }
-            
-            // Check for rate limiting or quota errors
-            if (data.error?.code === 429) {
-                return res.status(429).json({ 
-                    error: 'You have exceeded the free Gemini rate limit. Please try again in a moment.' 
-                });
-            }
-            
-            if (data.error?.message?.includes('quota')) {
-                return res.status(429).json({ 
-                    error: 'You have exceeded your Gemini daily quota. Please try again tomorrow.' 
-                });
-            }
-            
-            return res.status(response.status).json({ 
-                error: data.error?.message || 'Unable to process your request. Please try again later.' 
-            });
-        }
-
-        // ========== EXTRACT AND RETURN RESPONSE ==========
-        const assistantMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    // ================================================================
+    // TRY EACH MODEL UNTIL ONE WORKS
+    // ================================================================
+    
+    let lastError = null;
+    
+    for (const model of MODEL_OPTIONS) {
+        console.log(`📡 Trying Gemini model: ${model}`);
         
-        if (!assistantMessage) {
-            console.error('❌ No response from Gemini:', data);
-            return res.status(500).json({ 
-                error: 'Unable to generate a response. Please try again.' 
+        try {
+            const response = await fetch(
+                `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: conversationContext + `\nUser: ${userMessage}\nAssistant:`
+                            }]
+                        }],
+                        generationConfig: {
+                            temperature: 0.7,
+                            maxOutputTokens: 500,
+                            topP: 0.9,
+                            topK: 40,
+                        },
+                        safetySettings: [
+                            {
+                                category: "HARM_CATEGORY_HARASSMENT",
+                                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                            },
+                            {
+                                category: "HARM_CATEGORY_HATE_SPEECH",
+                                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                            },
+                            {
+                                category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                            },
+                            {
+                                category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                                threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                            }
+                        ]
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            // ========== HANDLE GEMINI API ERRORS ==========
+            if (!response.ok) {
+                // If model not found, try the next one
+                if (data.error?.message?.includes('not found')) {
+                    console.log(`⚠️ Model ${model} not available, trying next...`);
+                    lastError = data.error;
+                    continue; // Try next model
+                }
+                
+                console.error('❌ Gemini API Error:', data);
+                
+                // Check for rate limiting or quota errors
+                if (data.error?.code === 429) {
+                    return res.status(429).json({ 
+                        error: 'You have exceeded the free Gemini rate limit. Please try again in a moment.' 
+                    });
+                }
+                
+                if (data.error?.message?.includes('quota')) {
+                    return res.status(429).json({ 
+                        error: 'You have exceeded your Gemini daily quota. Please try again tomorrow.' 
+                    });
+                }
+                
+                return res.status(response.status).json({ 
+                    error: data.error?.message || 'Unable to process your request. Please try again later.' 
+                });
+            }
+
+            // ========== EXTRACT AND RETURN RESPONSE ==========
+            const assistantMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
+            
+            if (!assistantMessage) {
+                console.error('❌ No response from Gemini:', data);
+                return res.status(500).json({ 
+                    error: 'Unable to generate a response. Please try again.' 
+                });
+            }
+
+            console.log(`✅ Successfully used model: ${model}`);
+            return res.status(200).json({ 
+                message: assistantMessage.trim()
             });
+
+        } catch (error) {
+            console.error(`❌ Error with model ${model}:`, error.message);
+            lastError = error;
+            continue; // Try next model
         }
-
-        return res.status(200).json({ 
-            message: assistantMessage.trim()
-        });
-
-    } catch (error) {
-        console.error('❌ Error calling Gemini API:', error);
-        return res.status(500).json({ 
-            error: 'Something went wrong. Please try again or reach out via WhatsApp.' 
-        });
     }
+
+    // ========== ALL MODELS FAILED ==========
+    console.error('❌ All Gemini models failed. Last error:', lastError);
+    return res.status(500).json({ 
+        error: 'Unable to connect to AI service. Please try again or reach out via WhatsApp.' 
+    });
 }
