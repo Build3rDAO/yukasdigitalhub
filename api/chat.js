@@ -135,10 +135,8 @@ YUKAS DIGITAL HUB is a premium AI technology company based in Kano, Nigeria. We 
 Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustworthy.`;
 
     // ========== BUILD THE CONVERSATION CONTEXT ==========
-    // Gemini doesn't use the same role system as OpenAI, so we combine the conversation
     let conversationContext = systemPrompt + '\n\n';
     
-    // Add the conversation history (excluding system prompt)
     for (const msg of messages) {
         if (msg.role === 'user') {
             conversationContext += `User: ${msg.content}\n`;
@@ -147,13 +145,25 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
         }
     }
     
-    // Add the current user message at the end
     const userMessage = lastUserMessage.content;
 
-    // ========== GEMINI MODEL CONFIGURATION ==========
-    // Gemini 3 Flash is the fastest and cheapest model with generous free limits
-    // Alternative models: gemini-2.5-flash, gemini-3-flash, gemini-3.1-flash-lite
+    // ================================================================
+    // ✅ CORRECT GEMINI MODEL NAMES - Choose one:
+    // ================================================================
+    // 
+    // Model Name             | Best For
+    // -----------------------|----------------------------------------
+    // gemini-3-flash         | ✅ FASTEST, best for chat
+    // gemini-2.5-flash       | ✅ Good balance of speed and quality  
+    // gemini-3.1-flash-lite  | ✅ CHEAPEST, for simple tasks
+    // gemini-3-pro           | ✅ Best quality
+    // gemini-3.1-flash       | ✅ Newest model
+    // 
+    // ================================================================
+
     const model = process.env.GEMINI_MODEL || 'gemini-3-flash';
+
+    console.log('📡 Using Gemini model:', model);
 
     // ========== CALL GEMINI API ==========
     try {
@@ -202,7 +212,14 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
 
         // ========== HANDLE GEMINI API ERRORS ==========
         if (!response.ok) {
-            console.error('Gemini API Error:', data);
+            console.error('❌ Gemini API Error:', data);
+            
+            // Check for model not found error
+            if (data.error?.message?.includes('not found')) {
+                return res.status(400).json({ 
+                    error: `The model "${model}" is not available. Please use one of: gemini-3-flash, gemini-2.5-flash, gemini-3.1-flash-lite, or gemini-3-pro.` 
+                });
+            }
             
             // Check for rate limiting or quota errors
             if (data.error?.code === 429) {
@@ -213,7 +230,7 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
             
             if (data.error?.message?.includes('quota')) {
                 return res.status(429).json({ 
-                    error: 'You have exceeded your Gemini daily quota. Please try again tomorrow or add credits to your OpenAI account.' 
+                    error: 'You have exceeded your Gemini daily quota. Please try again tomorrow.' 
                 });
             }
             
@@ -226,7 +243,7 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
         const assistantMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
         
         if (!assistantMessage) {
-            console.error('No response from Gemini:', data);
+            console.error('❌ No response from Gemini:', data);
             return res.status(500).json({ 
                 error: 'Unable to generate a response. Please try again.' 
             });
@@ -237,7 +254,7 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
         });
 
     } catch (error) {
-        console.error('Error calling Gemini API:', error);
+        console.error('❌ Error calling Gemini API:', error);
         return res.status(500).json({ 
             error: 'Something went wrong. Please try again or reach out via WhatsApp.' 
         });
