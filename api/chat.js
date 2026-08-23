@@ -148,25 +148,25 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
     const userMessage = lastUserMessage.content;
 
     // ================================================================
-    // ✅ CORRECT GEMINI MODEL NAMES (ACTUALLY AVAILABLE)
+    // ✅ UPDATED GEMINI MODEL NAMES (August 2024)
     // ================================================================
     // 
     // Model Name           | Best For
     // ---------------------|----------------------------------------
-    // gemini-1.5-flash     | ✅ FASTEST, best for chat
-    // gemini-1.5-flash-8b  | ✅ Even faster, cheaper
-    // gemini-2.0-flash     | ✅ Newest flash model
-    // gemini-1.5-pro       | ✅ Best quality
+    // gemini-3.6-flash     | ✅ LATEST, FASTEST, best for chat
+    // gemini-2.5-flash     | ✅ Good balance
+    // gemini-3.6-flash-lite| ✅ Even faster, cheaper
+    // gemini-2.5-pro       | ✅ Best quality (slower)
     // 
     // ================================================================
 
     // Try these models in order (fallback if one fails)
     const MODEL_OPTIONS = [
-        process.env.GEMINI_MODEL || 'gemini-1.5-flash',
-        'gemini-1.5-flash',
-        'gemini-2.0-flash',
-        'gemini-1.5-flash-8b',
-        'gemini-1.5-pro'
+        process.env.GEMINI_MODEL || 'gemini-3.6-flash',
+        'gemini-3.6-flash',
+        'gemini-2.5-flash',
+        'gemini-3.6-flash-lite',
+        'gemini-2.5-pro'
     ];
 
     // ================================================================
@@ -225,7 +225,8 @@ Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustw
             // ========== HANDLE GEMINI API ERRORS ==========
             if (!response.ok) {
                 // If model not found, try the next one
-                if (data.error?.message?.includes('not found')) {
+                if (data.error?.message?.includes('not found') || 
+                    data.error?.message?.includes('no longer available')) {
                     console.log(`⚠️ Model ${model} not available, trying next...`);
                     lastError = data.error;
                     continue; // Try next model
