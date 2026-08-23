@@ -1,11 +1,8 @@
-// api/chat.js - Vercel Serverless Function for YUKAS AI Chatbot
-
-// This is a serverless function that securely handles AI chat requests
-// It never exposes the OpenAI API key to the browser
+// api/chat.js - Google Gemini AI Integration (FREE Tier)
+// Get your free API key at: https://aistudio.google.com/
 
 export default async function handler(req, res) {
     // ========== CORS HEADERS ==========
-    // Allow requests from your domain
     const allowedOrigins = [
         'https://yukasdigitalhub.vercel.app',
         'https://yukasdigitalhub.com',
@@ -34,10 +31,12 @@ export default async function handler(req, res) {
         });
     }
 
-    // ========== VALIDATE OPENAI API KEY ==========
-    const apiKey = process.env.OPENAI_API_KEY;
+    // ========== VALIDATE GEMINI API KEY ==========
+    const apiKey = process.env.GOOGLE_API_KEY;
+    
     if (!apiKey) {
-        console.error('OPENAI_API_KEY is not set in environment variables');
+        console.error('❌ GOOGLE_API_KEY is not set in environment variables');
+        console.log('💡 Get your free API key at: https://aistudio.google.com/');
         return res.status(500).json({ 
             error: 'Server configuration error. Please try again later.' 
         });
@@ -76,13 +75,20 @@ export default async function handler(req, res) {
     }
 
     // ========== LIMIT CONVERSATION HISTORY ==========
-    // Keep only the most recent 20 messages to prevent token overflow
     const MAX_HISTORY = 20;
     if (messages.length > MAX_HISTORY) {
         messages = messages.slice(-MAX_HISTORY);
     }
 
-    // ========== YUKAS AI SYSTEM PROMPT ==========
+    // ========== GET THE LAST USER MESSAGE ==========
+    const lastUserMessage = messages.filter(m => m.role === 'user').pop();
+    if (!lastUserMessage) {
+        return res.status(400).json({ 
+            error: 'No user message found.' 
+        });
+    }
+
+    // ========== GEMINI SYSTEM PROMPT ==========
     const systemPrompt = `You are YUKAS AI, the official AI assistant for YUKAS DIGITAL HUB.
 
 ## ABOUT YUKAS DIGITAL HUB
@@ -126,71 +132,112 @@ YUKAS DIGITAL HUB is a premium AI technology company based in Kano, Nigeria. We 
 - If the user writes in Hausa, respond in natural Hausa
 - If the user mixes languages, respond in the same mixed style naturally
 
-## WELCOME MESSAGE
-Start with: "👋 Hello! I'm YUKAS AI, the AI assistant for YUKAS DIGITAL HUB. I can help you learn about our AI solutions, website development, automation, and more. How can I help you today?"
-
 Remember: You represent YUKAS DIGITAL HUB - be professional, helpful, and trustworthy.`;
 
-    // ========== PREPARE MESSAGES FOR OPENAI ==========
-    const openAIMessages = [
-        { role: 'system', content: systemPrompt },
-        ...messages
-    ];
+    // ========== BUILD THE CONVERSATION CONTEXT ==========
+    // Gemini doesn't use the same role system as OpenAI, so we combine the conversation
+    let conversationContext = systemPrompt + '\n\n';
+    
+    // Add the conversation history (excluding system prompt)
+    for (const msg of messages) {
+        if (msg.role === 'user') {
+            conversationContext += `User: ${msg.content}\n`;
+        } else if (msg.role === 'assistant') {
+            conversationContext += `Assistant: ${msg.content}\n`;
+        }
+    }
+    
+    // Add the current user message at the end
+    const userMessage = lastUserMessage.content;
 
-    // ========== GET MODEL FROM ENVIRONMENT ==========
-    const model = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+    // ========== GEMINI MODEL CONFIGURATION ==========
+    // Gemini 3 Flash is the fastest and cheapest model with generous free limits
+    // Alternative models: gemini-2.5-flash, gemini-3-flash, gemini-3.1-flash-lite
+    const model = process.env.GEMINI_MODEL || 'gemini-3-flash';
 
-    // ========== CALL OPENAI API ==========
+    // ========== CALL GEMINI API ==========
     try {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-                model: model,
-                messages: openAIMessages,
-                temperature: 0.7,
-                max_tokens: 500,
-                stream: false
-            })
-        });
+        const response = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: conversationContext + `\nUser: ${userMessage}\nAssistant:`
+                        }]
+                    }],
+                    generationConfig: {
+                        temperature: 0.7,
+                        maxOutputTokens: 500,
+                        topP: 0.9,
+                        topK: 40,
+                    },
+                    safetySettings: [
+                        {
+                            category: "HARM_CATEGORY_HARASSMENT",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                        },
+                        {
+                            category: "HARM_CATEGORY_HATE_SPEECH",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                        },
+                        {
+                            category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                        },
+                        {
+                            category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                            threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                        }
+                    ]
+                })
+            }
+        );
 
         const data = await response.json();
 
-        // ========== HANDLE OPENAI API ERRORS ==========
+        // ========== HANDLE GEMINI API ERRORS ==========
         if (!response.ok) {
-            console.error('OpenAI API Error:', data);
+            console.error('Gemini API Error:', data);
             
-            // Handle rate limiting
-            if (response.status === 429) {
+            // Check for rate limiting or quota errors
+            if (data.error?.code === 429) {
                 return res.status(429).json({ 
-                    error: 'We are experiencing high traffic. Please try again in a moment.' 
+                    error: 'You have exceeded the free Gemini rate limit. Please try again in a moment.' 
                 });
             }
             
-            // Handle other API errors
+            if (data.error?.message?.includes('quota')) {
+                return res.status(429).json({ 
+                    error: 'You have exceeded your Gemini daily quota. Please try again tomorrow or add credits to your OpenAI account.' 
+                });
+            }
+            
             return res.status(response.status).json({ 
-                error: 'Unable to process your request. Please try again later.' 
+                error: data.error?.message || 'Unable to process your request. Please try again later.' 
             });
         }
 
         // ========== EXTRACT AND RETURN RESPONSE ==========
-        const assistantMessage = data.choices[0]?.message?.content;
+        const assistantMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
         
         if (!assistantMessage) {
+            console.error('No response from Gemini:', data);
             return res.status(500).json({ 
                 error: 'Unable to generate a response. Please try again.' 
             });
         }
 
         return res.status(200).json({ 
-            message: assistantMessage 
+            message: assistantMessage.trim()
         });
 
     } catch (error) {
-        console.error('Error calling OpenAI API:', error);
+        console.error('Error calling Gemini API:', error);
         return res.status(500).json({ 
             error: 'Something went wrong. Please try again or reach out via WhatsApp.' 
         });
