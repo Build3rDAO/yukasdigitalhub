@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <!-- SEO Meta Tags -->
-    <title>YUKAS DIGITAL HUB – AI &amp; Digital Solutions for Africa</title>
-    <meta name="description" content="YUKAS DIGITAL HUB is a premium AI technology company in Kano, Nigeria. We build AI solutions, automation systems, and digital products to help African businesses scale smarter.">
-    <meta name="keywords" content="AI development Nigeria, digital agency Kano, business automation, AI solutions, web development, YUKAS DIGITAL HUB, African tech company">
+
+    <!-- ===== SEO META TAGS ===== -->
+    <title>YUKAS DIGITAL HUB — AI &amp; Digital Systems for Modern Businesses</title>
+    <meta name="description" content="YUKAS DIGITAL HUB builds AI-powered digital systems, software products, automation solutions, and modern digital experiences for businesses in Nigeria and beyond.">
+    <meta name="keywords" content="AI development Nigeria, business automation, digital systems, software development, AI solutions, web development, YUKAS DIGITAL HUB, Nigerian tech company">
     <meta name="author" content="YUKAS DIGITAL HUB">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    <!-- Open Graph / Facebook Meta Tags -->
+
+    <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yukasdigitalhub.com/">
-    <meta property="og:title" content="YUKAS DIGITAL HUB – AI &amp; Digital Solutions for Africa">
-    <meta property="og:description" content="Building Africa's AI Future with premium AI solutions, automation, and digital products.">
+    <meta property="og:title" content="YUKAS DIGITAL HUB — AI &amp; Digital Systems for Modern Businesses">
+    <meta property="og:description" content="We build AI-powered digital systems, software products, automation solutions, and modern digital experiences for businesses.">
     <meta property="og:image" content="https://yukasdigitalhub.com/images/og-image.jpg">
-    <!-- Twitter Meta Tags -->
+
+    <!-- ===== TWITTER ===== -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="YUKAS DIGITAL HUB – AI &amp; Digital Solutions">
-    <meta name="twitter:description" content="Building Africa's AI Future with premium AI solutions, automation, and digital products.">
+    <meta name="twitter:title" content="YUKAS DIGITAL HUB — AI &amp; Digital Systems">
+    <meta name="twitter:description" content="We build AI-powered digital systems, software products, automation solutions, and modern digital experiences.">
     <meta name="twitter:image" content="https://yukasdigitalhub.com/images/og-image.jpg">
-    <!-- Canonical URL -->
+
+    <!-- ===== CANONICAL ===== -->
     <link rel="canonical" href="https://yukasdigitalhub.com/">
-    <!-- Structured Data / Schema.org -->
+
+    <!-- ===== STRUCTURED DATA ===== -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "YUKAS DIGITAL HUB",
-            "description": "Premium AI technology company building Africa's AI future with innovative digital solutions.",
+            "description": "We build AI-powered digital systems, software products, automation solutions, and modern digital experiences for businesses.",
             "url": "https://yukasdigitalhub.com/",
             "logo": "https://yukasdigitalhub.com/images/logo.png",
             "address": {
@@ -49,2933 +54,273 @@
             ]
         }
     </script>
-    <!-- Favicon -->
+
+    <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/logo.png">
-    <!-- Preconnect -->
+
+    <!-- ===== PRECONNECT ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Google Fonts -->
+
+    <!-- ===== GOOGLE FONTS ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+
+    <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===== YDH STYLESHEETS ===== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+    <link rel="stylesheet" href="css/projects.css">
+
     <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #030712;
-            color: #fff;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        section {
-            padding: 4rem 0;
-            position: relative;
-        }
-        @media (min-width:768px) { section { padding: 6rem 0; } }
-        @media (min-width:1024px) { section { padding: 8rem 0; } }
-        .hero {
-            padding: 5rem 0 4rem 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        @media (min-width:768px) { .hero { padding: 6rem 0 5rem 0; } }
-        @media (min-width:1024px) { .hero { padding: 0; } }
+        /* ===== INLINE OVERRIDES FOR HOMEPAGE SPECIFICS ===== */
+        /* These ensure compatibility with the new design system */
 
-        /* ===== NAVBAR ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(3, 7, 18, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-        .logo a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            gap: 0.5rem;
-        }
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            object-fit: cover;
-        }
-        .logo-text {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fff;
-            font-family: 'Space Grotesk', monospace;
-        }
-        .logo-text span {
-            color: #2563EB;
-        }
-        .logo-text .hub {
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            padding: 0.2rem 0.5rem;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            margin-left: 0.25rem;
-        }
-        .nav-links {
-            position: fixed;
-            top: 70px;
-            left: -100%;
-            width: 80%;
-            height: calc(100vh - 70px);
-            background: rgba(3, 7, 18, 0.98);
-            backdrop-filter: blur(20px);
-            transition: left 0.3s ease;
-            z-index: 999;
-            padding: 2rem;
-        }
-        .nav-links.active {
-            left: 0;
-        }
-        .nav-links ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .nav-links ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            display: block;
-            padding: 0.5rem 0;
-        }
-        .nav-links ul li a:hover,
-        .nav-links ul li a.active {
-            color: #2563EB;
-        }
-        .nav-links ul li a .external-indicator {
-            font-size: 0.6rem;
-            opacity: 0.5;
-            margin-left: 0.25rem;
-        }
-        .hamburger {
-            display: block;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #fff;
-            z-index: 1001;
-        }
-        @media (min-width:768px) {
-            .hamburger {
-                display: none;
-            }
-            .nav-links {
-                position: static;
-                width: auto;
-                height: auto;
-                background: transparent;
-                backdrop-filter: none;
-                padding: 0;
-            }
-            .nav-links ul {
-                flex-direction: row;
-                gap: 2rem;
-            }
-            .nav-links ul li a {
-                font-size: 1rem;
-                padding: 0;
-            }
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            position: relative;
-            overflow: hidden;
-            background: #030712;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 60%);
-            z-index: 0;
-            animation: meshPulse 8s ease-in-out infinite alternate;
-        }
-        @keyframes meshPulse {
-            0% { opacity: 0.6; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.05); }
-        }
-        .hero-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
-            z-index: 0;
-            animation: orbFloat 6s ease-in-out infinite alternate;
-        }
-        .hero-orb--1 {
-            width: 300px;
-            height: 300px;
-            background: rgba(37, 99, 235, 0.15);
-            top: -100px;
-            right: -100px;
-        }
-        .hero-orb--2 {
-            width: 200px;
-            height: 200px;
-            background: rgba(59, 130, 246, 0.1);
-            bottom: -50px;
-            left: -50px;
-            animation-delay: 2s;
-        }
-        .hero-orb--3 {
-            width: 150px;
-            height: 150px;
-            background: rgba(37, 99, 235, 0.08);
-            top: 40%;
-            left: 50%;
-            animation-delay: 4s;
-        }
-        @keyframes orbFloat {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(30px, -30px) scale(1.1); }
-        }
-        #particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-        .hero-grid {
-            display: grid;
-            gap: 3rem;
-            align-items: center;
-        }
-        @media (min-width:992px) {
-            .hero-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
-            }
-        }
-        .hero-content {
-            text-align: center;
-        }
-        @media (min-width:768px) {
-            .hero-content {
-                text-align: left;
-            }
-        }
+        /* Hero badge text color fix */
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(37, 99, 235, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            margin-bottom: 1.5rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.9) !important;
         }
-        .hero-badge:hover {
-            background: rgba(37, 99, 235, 0.25);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+
+        /* Ensure dark backgrounds work with new system */
+        .trust-bar .section-header h2 {
+            -webkit-text-fill-color: #FFFFFF !important;
+            background: none !important;
         }
-        .badge-pulse {
-            width: 8px;
-            height: 8px;
-            background: #2563EB;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+
+        /* Section header accent text fix */
+        .section-header h2 .accent {
+            background: linear-gradient(135deg, #2563EB, #60A5FA) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
-        @keyframes pulse {
-            0%,
-            100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.5); }
+
+        .section-header h2 .accent-text {
+            background: linear-gradient(135deg, #2563EB, #60A5FA) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
-        .hero-content h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.2rem;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.02em;
+
+        /* Fix for visual badge in about section */
+        .visual-badge {
+            color: #cbd5e1 !important;
         }
-        @media (min-width:768px) {
-            .hero-content h1 {
-                font-size: 3.8rem;
-            }
+
+        .visual-badge strong {
+            -webkit-text-fill-color: #FFFFFF !important;
+            color: #FFFFFF !important;
         }
-        @media (min-width:1024px) {
-            .hero-content h1 {
-                font-size: 4.5rem;
-            }
+
+        /* Ensure floating elements are visible */
+        .floating-element {
+            z-index: 10 !important;
         }
-        .hero-content h1 .accent-text {
-            background: linear-gradient(135deg, #2563EB, #60A5FA, #3B82F6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% 200%;
-            animation: gradientShift 4s ease-in-out infinite;
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .hero-content .subtitle {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.75);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            max-width: 540px;
-        }
-        @media (min-width:768px) {
-            .hero-content .subtitle {
-                font-size: 1.2rem;
-            }
-        }
-        .hero-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-        @media (min-width:480px) {
-            .hero-buttons {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-        @media (min-width:768px) {
-            .hero-buttons {
-                justify-content: flex-start;
-            }
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            padding: 0.9rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            color: #fff;
-            box-shadow: 0 4px 25px rgba(37, 99, 235, 0.35);
-        }
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #3B82F6, #2563EB);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .btn-primary:hover::before {
-            opacity: 1;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 35px rgba(37, 99, 235, 0.5);
-        }
-        .btn-primary span,
-        .btn-primary i {
-            position: relative;
-            z-index: 1;
-        }
-        .btn-outline {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(37, 99, 235, 0.4);
-            backdrop-filter: blur(4px);
-        }
-        .btn-outline:hover {
-            background: rgba(37, 99, 235, 0.1);
-            border-color: #2563EB;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
-        }
-        .btn-outline-light {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(4px);
-        }
-        .btn-outline-light:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-        .btn-large {
-            padding: 1.1rem 2.5rem;
-            font-size: 1.1rem;
-        }
-        .btn-view-all {
-            background: transparent;
-            color: #2563EB;
-            border: 2px solid #2563EB;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .btn-view-all:hover {
-            background: #2563EB;
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
-        }
-        .trust-badge {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        @media (min-width:768px) {
-            .trust-badge {
-                justify-content: flex-start;
-            }
-        }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.85);
-            transition: all 0.3s ease;
-        }
-        .trust-item:hover {
-            color: #fff;
-            transform: translateY(-2px);
-        }
+
+        /* Trust item stat number */
         .trust-item .stat-number {
             font-weight: 700;
-            font-size: 1.1rem;
-            color: #fff;
             font-family: 'Space Grotesk', sans-serif;
-        }
-        .trust-item i {
-            color: #2563EB;
-            font-size: 1.1rem;
-        }
-        .hero-visual {
-            position: relative;
-        }
-        .hero-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border-radius: 28px;
-            padding: 1.8rem;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(37, 99, 235, 0.1) inset;
-            border: 1px solid rgba(37, 99, 235, 0.15);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            position: relative;
-        }
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 29px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), transparent, rgba(37, 99, 235, 0.1));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-        .hero-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 40px 100px rgba(37, 99, 235, 0.15), 0 0 0 1px rgba(37, 99, 235, 0.2) inset;
-        }
-        @media (min-width:768px) {
-            .hero-card {
-                padding: 2.2rem;
-            }
-        }
-        .dashboard-mockup {
-            background: rgba(3, 7, 18, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 1.5rem;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-        }
-        .mockup-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.08);
-        }
-        .mockup-dots {
-            display: flex;
-            gap: 0.5rem;
-        }
-        .mockup-dots span {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        .mockup-dots span:nth-child(1) { background: #ff5f57; }
-        .mockup-dots span:nth-child(2) { background: #ffbd2e; }
-        .mockup-dots span:nth-child(3) { background: #28c840; }
-        .mockup-title {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.8rem;
-            font-family: 'Space Grotesk', monospace;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.3rem 0.8rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .mockup-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-        @media (min-width:480px) {
-            .mockup-stats {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        .stat-card {
-            background: rgba(37, 99, 235, 0.06);
-            border-radius: 14px;
-            padding: 0.8rem 0.5rem;
-            text-align: center;
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        .stat-card:hover {
-            background: rgba(37, 99, 235, 0.12);
-            transform: translateY(-3px);
-            border-color: rgba(37, 99, 235, 0.2);
-        }
-        .stat-card i {
-            font-size: 1.3rem;
-            color: #2563EB;
-            margin-bottom: 0.3rem;
-            display: block;
-            opacity: 0.8;
-        }
-        @media (min-width:768px) {
-            .stat-card i {
-                font-size: 1.5rem;
-            }
-        }
-        .stat-value {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #fff;
-            font-family: 'Space Grotesk', sans-serif;
-            display: block;
-        }
-        @media (min-width:768px) {
-            .stat-value {
-                font-size: 1.2rem;
-            }
-        }
-        .stat-label {
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .mockup-chart {
-            display: flex;
-            align-items: flex-end;
-            gap: 0.5rem;
-            height: 140px;
-            padding-top: 0.5rem;
-        }
-        @media (min-width:768px) {
-            .mockup-chart {
-                height: 170px;
-            }
-        }
-        .chart-bar {
-            flex: 1;
-            background: linear-gradient(180deg, #2563EB, #3B82F6);
-            border-radius: 6px 6px 4px 4px;
-            transition: height 0.6s ease;
-            position: relative;
-            overflow: hidden;
-            min-height: 20px;
-        }
-        .chart-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent);
-            animation: shimmer 3s infinite;
-        }
-        @keyframes shimmer {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-        .chart-bar:hover {
-            transform: scaleY(1.05);
-            transform-origin: bottom;
-        }
-        .floating-element {
-            position: absolute;
-            width: 44px;
-            height: 44px;
-            background: rgba(37, 99, 235, 0.12);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: #2563EB;
-            border: 1px solid rgba(37, 99, 235, 0.15);
-            animation: float 5s ease-in-out infinite;
-            box-shadow: 0 4px 30px rgba(37, 99, 235, 0.1);
-            transition: all 0.3s ease;
-            z-index: 5;
-        }
-        .floating-element:hover {
-            transform: scale(1.15);
-            background: rgba(37, 99, 235, 0.2);
-            border-color: #2563EB;
-            box-shadow: 0 0 40px rgba(37, 99, 235, 0.2);
-        }
-        @media (min-width:768px) {
-            .floating-element {
-                width: 56px;
-                height: 56px;
-                font-size: 1.6rem;
-                border-radius: 18px;
-            }
-        }
-        .elem-1 {
-            top: -15px;
-            right: -15px;
-            animation-delay: 0s;
-        }
-        .elem-2 {
-            bottom: -15px;
-            left: -15px;
-            animation-delay: 0.8s;
-        }
-        .elem-3 {
-            top: 35%;
-            right: -25px;
-            animation-delay: 1.6s;
-        }
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            33% {
-                transform: translateY(-12px) rotate(4deg);
-            }
-            66% {
-                transform: translateY(6px) rotate(-2deg);
-            }
+            color: #FFFFFF;
         }
 
-        /* ===== SECTION HEADER ===== */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        @media (min-width:768px) {
-            .section-header {
-                margin-bottom: 4rem;
-            }
-        }
-        .section-tag {
-            display: inline-block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #2563EB;
-            margin-bottom: 1rem;
-            background: rgba(37, 99, 235, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-        }
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff 0%, #2563EB 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        @media (min-width:768px) {
-            .section-header h2 {
-                font-size: 2.5rem;
-            }
-        }
-        @media (min-width:1024px) {
-            .section-header h2 {
-                font-size: 3rem;
-            }
-        }
-        .section-header p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .accent-text {
-            color: #2563EB;
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        /* Stats section text */
+        .stats-section .stat-label {
+            color: rgba(255, 255, 255, 0.9) !important;
         }
 
-        /* ===== TRUST BAR ===== */
-        .trust-bar {
-            background: #030712;
-            border-top: 1px solid rgba(37, 99, 235, 0.08);
-            border-bottom: 1px solid rgba(37, 99, 235, 0.08);
-            padding: 3rem 0;
-        }
-        .trust-bar .section-header h2 {
-            font-size: 1.5rem;
-            background: none;
-            -webkit-text-fill-color: #fff;
-            color: #fff;
-            font-weight: 400;
-        }
-        .trust-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-        .trust-item-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-            font-weight: 500;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        .trust-item-logo i {
-            font-size: 2rem;
-            color: #2563EB;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-        .trust-item-logo:hover {
-            color: #fff;
-        }
-        .trust-item-logo:hover i {
-            opacity: 1;
-        }
-        @media (min-width:768px) {
-            .trust-item-logo {
-                font-size: 1.25rem;
-                gap: 1rem;
-            }
-            .trust-item-logo i {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* ===== ABOUT ===== */
-        .about {
-            background: linear-gradient(180deg, #030712 0%, #111827 100%);
-        }
-        .about-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border-radius: 40px;
-            padding: 2.8rem 2.5rem;
-            border: 1px solid rgba(37, 99, 235, 0.25);
-            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.05) inset;
-            transition: box-shadow 0.4s ease, transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .about-card::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 42px;
-            padding: 2px;
-            background: conic-gradient(from 0deg, #2563EB, #3B82F6, #60A5FA, #2563EB);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0.5;
-            animation: glowSpin 8s linear infinite;
-            pointer-events: none;
-        }
-        @keyframes glowSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .about-card:hover {
-            box-shadow: 0 30px 80px rgba(37, 99, 235, 0.25), 0 0 0 2px rgba(37, 99, 235, 0.15) inset;
-            transform: translateY(-4px);
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-        @media (max-width:900px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .about-item {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            padding: 1.2rem 1.5rem;
-            border-left: 4px solid #2563EB;
-            transition: background 0.25s ease, transform 0.2s ease;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        .about-item:hover {
-            background: rgba(37, 99, 235, 0.06);
-            transform: translateX(4px);
-        }
-        .about-item h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: #fff;
-        }
-        .about-item h3 i {
-            color: #2563EB;
-            font-size: 1.3rem;
-            width: 2rem;
-            text-align: center;
-            background: rgba(37, 99, 235, 0.12);
-            padding: 0.4rem;
-            border-radius: 12px;
-        }
-        .about-item p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.98rem;
-            margin-left: 2.6rem;
-            line-height: 1.7;
-        }
-        .about-item .highlight {
-            color: #60A5FA;
-            font-weight: 500;
-        }
-        .team-icons {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 0.4rem;
-            margin-left: 2.6rem;
-        }
-        .team-icons i {
-            background: rgba(37, 99, 235, 0.08);
-            padding: 0.4rem 0.8rem;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            color: #94a3b8;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            transition: all 0.2s;
-        }
-        .team-icons i:hover {
-            background: rgba(37, 99, 235, 0.15);
-            color: #fff;
-        }
-        .about-visual {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-        .visual-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.2rem;
-            width: 100%;
-            max-width: 360px;
-        }
-        .visual-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(6px);
-            border-radius: 24px;
-            padding: 1.5rem 0.8rem;
-            text-align: center;
-            border: 1px solid rgba(37, 99, 235, 0.15);
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-        .visual-card:hover {
-            background: rgba(37, 99, 235, 0.08);
-            border-color: #2563EB;
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.15);
-        }
-        .visual-card i {
-            font-size: 2.4rem;
-            color: #2563EB;
-            margin-bottom: 0.4rem;
-            display: block;
-            filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
-        }
-        .visual-card span {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .visual-badge {
-            background: rgba(37, 99, 235, 0.08);
-            backdrop-filter: blur(4px);
-            border-radius: 60px;
-            padding: 0.6rem 1.8rem;
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #cbd5e1;
-        }
-        .visual-badge i {
-            color: #3B82F6;
-            font-size: 1.2rem;
-        }
-        .visual-badge strong {
-            color: #fff;
-            font-weight: 600;
-        }
-        .glow-dot {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(37, 99, 235, 0.12);
-            filter: blur(40px);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .glow-dot--1 {
-            width: 200px;
-            height: 200px;
-            top: -80px;
-            right: -60px;
-        }
-        .glow-dot--2 {
-            width: 150px;
-            height: 150px;
-            bottom: -40px;
-            left: -40px;
-            background: rgba(59, 130, 246, 0.08);
-        }
-        .about-cta {
-            margin-top: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* ===== SERVICES ===== */
-        .services-preview {
-            background: #030712;
-            position: relative;
-        }
-        .services-preview::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(37, 99, 235, 0.04), transparent 60%);
-            pointer-events: none;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        @media (min-width:640px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        @media (min-width:1024px) {
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-        .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
-            padding: 2rem 1.8rem;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 25px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.2));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        .service-card:hover::before {
-            opacity: 1;
-        }
-        .service-card::after {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
-        }
-        .service-card:hover::after {
-            opacity: 1;
-        }
-        @media (min-width:768px) {
-            .service-card {
-                text-align: left;
-                padding: 2.2rem 2rem;
-            }
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(37, 99, 235, 0.25);
-            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            margin-left: auto;
-            margin-right: auto;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            position: relative;
-        }
-        .service-card:hover .service-icon {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.1));
-            transform: scale(1.08) rotate(-4deg);
-            border-color: rgba(37, 99, 235, 0.3);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
-        }
-        .service-icon i {
-            font-size: 1.8rem;
-            color: #2563EB;
-            transition: all 0.4s ease;
-        }
-        .service-card:hover .service-icon i {
-            color: #3B82F6;
-            transform: scale(1.1);
-        }
-        @media (min-width:768px) {
-            .service-icon {
-                margin-left: 0;
-                margin-right: 0;
-                width: 70px;
-                height: 70px;
-                border-radius: 20px;
-            }
-            .service-icon i {
-                font-size: 2rem;
-            }
-        }
+        /* Service card heading */
         .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: color 0.3s ease;
-            letter-spacing: -0.01em;
-        }
-        .service-card:hover h3 {
-            color: #fff;
-        }
-        .service-card p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            margin-bottom: 1.25rem;
-            line-height: 1.7;
-            transition: color 0.3s ease;
-        }
-        .service-card:hover p {
-            color: rgba(255, 255, 255, 0.85);
-        }
-        .card-link {
-            color: #2563EB;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.4rem 0;
-            border-bottom: 2px solid transparent;
-            position: relative;
-        }
-        .card-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #2563EB, #3B82F6);
-            transition: width 0.3s ease;
-        }
-        .card-link:hover::after {
-            width: 100%;
-        }
-        .card-link:hover {
-            gap: 0.8rem;
-            color: #3B82F6;
-        }
-        .card-link i {
-            transition: transform 0.3s ease;
-        }
-        .card-link:hover i {
-            transform: translateX(4px);
-        }
-        .service-card .service-number {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 3rem;
-            font-weight: 800;
-            color: rgba(37, 99, 235, 0.04);
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1;
-            pointer-events: none;
-            transition: all 0.4s ease;
-        }
-        .service-card:hover .service-number {
-            color: rgba(37, 99, 235, 0.08);
-            transform: scale(1.1) translateX(-4px);
-        }
-        @media (max-width:767px) {
-            .service-card .service-number {
-                display: none;
-            }
-        }
-        .services-cta {
-            text-align: center;
-            margin-top: 3rem;
+            color: #FFFFFF !important;
         }
 
-        /* ===== STATS ===== */
-        .stats-section {
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            position: relative;
-            overflow: hidden;
-        }
-        .stats-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1), transparent);
-            pointer-events: none;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        @media (min-width:640px) {
-            .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-            }
-        }
-        .stat-item {
-            padding: 1rem;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #fff;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        @media (min-width:768px) {
-            .stat-number {
-                font-size: 3rem;
-            }
-        }
-        .stat-label {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* Portfolio card heading */
+        .portfolio-card .portfolio-info h3 {
+            color: #FFFFFF !important;
         }
 
-        /* ===== PORTFOLIO ===== */
-        .portfolio-highlights {
-            background: #111827;
-            position: relative;
-        }
-        .portfolio-highlights::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.04), transparent 60%);
-            pointer-events: none;
-        }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        @media (min-width:640px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        @media (min-width:1024px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-            }
-        }
-        .portfolio-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-        }
-        .portfolio-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 21px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.3));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        .portfolio-card:hover::before {
-            opacity: 1;
-        }
-        .portfolio-card::after {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.06), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
-        }
-        .portfolio-card:hover::after {
-            opacity: 1;
-        }
-        .portfolio-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            border-color: rgba(37, 99, 235, 0.2);
-            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .portfolio-image {
-            width: 100%;
-            aspect-ratio: 16/10;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-        }
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .portfolio-card:hover .portfolio-image img {
-            transform: scale(1.08);
-        }
-        .portfolio-image .fallback-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3.5rem;
-            color: rgba(37, 99, 235, 0.3);
-            transition: all 0.4s ease;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .portfolio-card:hover .portfolio-image .fallback-icon {
-            color: rgba(37, 99, 235, 0.5);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        .portfolio-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(3, 7, 18, 0.7) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 2;
-        }
-        .portfolio-card:hover .portfolio-image::after {
-            opacity: 1;
-        }
-        .portfolio-image .project-badge {
-            position: absolute;
-            top: 0.8rem;
-            left: 0.8rem;
-            font-size: 0.6rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.8);
-            background: rgba(37, 99, 235, 0.2);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            border: 1px solid rgba(37, 99, 235, 0.15);
-            backdrop-filter: blur(4px);
-            z-index: 3;
-            transition: all 0.3s ease;
-        }
-        .portfolio-card:hover .project-badge {
-            background: rgba(37, 99, 235, 0.35);
-            border-color: rgba(37, 99, 235, 0.3);
-        }
-        .portfolio-info {
-            padding: 1.5rem 1.5rem 1.8rem;
-        }
-        .portfolio-info h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            margin-bottom: 0.3rem;
-            transition: color 0.3s ease;
-            letter-spacing: -0.01em;
-        }
-        .portfolio-card:hover .portfolio-info h3 {
-            color: #fff;
-        }
-        .portfolio-info p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-            transition: color 0.3s ease;
-        }
-        .portfolio-card:hover .portfolio-info p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .portfolio-info .btn-outline {
-            font-size: 0.8rem;
-            padding: 0.5rem 1.2rem;
-            border-radius: 10px;
-            border-color: rgba(37, 99, 235, 0.2);
-            transition: all 0.3s ease;
-        }
-        .portfolio-info .btn-outline:hover {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
-            border-color: #2563EB;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
-        }
-        .portfolio-info .btn-outline i {
-            transition: transform 0.3s ease;
-        }
-        .portfolio-info .btn-outline:hover i {
-            transform: translateX(4px);
-        }
-        .portfolio-cta {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        /* ===== FEATURED PRODUCTS ===== */
-        .featured-products {
-            background: linear-gradient(180deg, #111827 0%, #030712 100%);
-            position: relative;
-        }
-        .featured-products::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 40%, rgba(37, 99, 235, 0.04), transparent 60%);
-            pointer-events: none;
-        }
-        .products-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        @media (min-width:640px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        @media (min-width:1024px) {
-            .products-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-            }
-        }
-        .product-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 1.8rem 1.5rem;
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-        .product-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 21px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.3));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        .product-card:hover::before {
-            opacity: 1;
-        }
-        .product-card::after {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.06), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
-        }
-        .product-card:hover::after {
-            opacity: 1;
-        }
-        .product-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            border-color: rgba(37, 99, 235, 0.25);
-            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.12);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .product-image {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        .product-card:hover .product-image {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.1));
-            border-color: rgba(37, 99, 235, 0.2);
-            transform: scale(1.02);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.1);
-        }
-        .product-image i {
-            font-size: 3.2rem;
-            color: #2563EB;
-            opacity: 0.8;
-            transition: all 0.4s ease;
-        }
-        .product-card:hover .product-image i {
-            color: #3B82F6;
-            transform: scale(1.1) rotate(-4deg);
-            opacity: 1;
-        }
+        /* Product card heading */
         .product-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-            letter-spacing: -0.01em;
-        }
-        .product-card:hover h3 {
-            color: #fff;
-        }
-        .product-card p {
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.875rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.6;
-            transition: color 0.3s ease;
-        }
-        .product-card:hover p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .product-card .product-number {
-            position: absolute;
-            top: 0.8rem;
-            right: 1.2rem;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: rgba(37, 99, 235, 0.04);
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1;
-            pointer-events: none;
-            transition: all 0.4s ease;
-        }
-        .product-card:hover .product-number {
-            color: rgba(37, 99, 235, 0.08);
-            transform: scale(1.1) translateX(-4px);
-        }
-        @media (max-width:767px) {
-            .product-card .product-number {
-                display: none;
-            }
-        }
-        .product-card .btn-outline {
-            font-size: 0.85rem;
-            padding: 0.6rem 1.5rem;
-            border-radius: 10px;
-            border-color: rgba(37, 99, 235, 0.25);
-            transition: all 0.3s ease;
-        }
-        .product-card .btn-outline:hover {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
-            border-color: #2563EB;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
-        }
-        .btn-small {
-            padding: 0.5rem 1.2rem;
-            font-size: 0.8rem;
+            color: #FFFFFF !important;
         }
 
-        /* ===== WHY CHOOSE US ===== */
-        .why-us {
-            background: #111827;
-            position: relative;
-            overflow: hidden;
-        }
-        .why-us::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03), transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.03), transparent 50%);
-            pointer-events: none;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        @media (min-width:640px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        @media (min-width:1024px) {
-            .features-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-        .feature {
-            text-align: center;
-            padding: 1.8rem 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-        .feature::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 21px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.08), rgba(37, 99, 235, 0.25));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        .feature:hover::before {
-            opacity: 1;
-        }
-        .feature::after {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
-        }
-        .feature:hover::after {
-            opacity: 1;
-        }
-        @media (min-width:768px) {
-            .feature {
-                text-align: left;
-                padding: 2.2rem 2rem;
-            }
-        }
-        .feature:hover {
-            transform: translateY(-8px);
-            border-color: rgba(37, 99, 235, 0.2);
-            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-            margin-left: auto;
-            margin-right: auto;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            position: relative;
-        }
-        .feature:hover .feature-icon {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.1));
-            transform: scale(1.1) rotate(-4deg);
-            border-color: rgba(37, 99, 235, 0.25);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
-        }
-        .feature-icon i {
-            font-size: 1.6rem;
-            color: #2563EB;
-            transition: all 0.4s ease;
-        }
-        .feature:hover .feature-icon i {
-            color: #3B82F6;
-            transform: scale(1.1);
-        }
-        @media (min-width:768px) {
-            .feature-icon {
-                margin-left: 0;
-                margin-right: 0;
-                width: 64px;
-                height: 64px;
-                border-radius: 18px;
-            }
-            .feature-icon i {
-                font-size: 1.8rem;
-            }
-        }
+        /* Feature heading */
         .feature h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: color 0.3s ease;
-            letter-spacing: -0.01em;
-        }
-        .feature:hover h3 {
-            color: #fff;
-        }
-        .feature p {
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            transition: color 0.3s ease;
-        }
-        .feature:hover p {
-            color: rgba(255, 255, 255, 0.85);
-        }
-        .feature .feature-number {
-            position: absolute;
-            top: 0.8rem;
-            right: 1.2rem;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: rgba(37, 99, 235, 0.04);
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1;
-            pointer-events: none;
-            transition: all 0.4s ease;
-        }
-        .feature:hover .feature-number {
-            color: rgba(37, 99, 235, 0.08);
-            transform: scale(1.1) translateX(-4px);
-        }
-        @media (max-width:767px) {
-            .feature .feature-number {
-                display: none;
-            }
+            color: #FFFFFF !important;
         }
 
-        /* ===== WORK PROCESS ===== */
-        .process {
-            background: linear-gradient(180deg, #030712 0%, #111827 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .process::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 40%, rgba(37, 99, 235, 0.04), transparent 50%),
-                radial-gradient(circle at 80% 60%, rgba(37, 99, 235, 0.04), transparent 50%);
-            pointer-events: none;
-        }
-        .process-timeline {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-            padding: 0.5rem 0;
-        }
-        @media (min-width:768px) {
-            .process-timeline {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-                padding: 1rem 0;
-            }
-        }
-        @media (min-width:1024px) {
-            .process-timeline {
-                grid-template-columns: repeat(6, 1fr);
-                gap: 1.5rem;
-            }
-        }
-        .process-step {
-            position: relative;
-            padding: 1.5rem 1.2rem;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border-radius: 18px;
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            text-align: center;
-            overflow: hidden;
-            cursor: default;
-        }
-        .process-step::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 19px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.08), rgba(37, 99, 235, 0.25));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        .process-step:hover::before {
-            opacity: 1;
-        }
-        .process-step::after {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
-        }
-        .process-step:hover::after {
-            opacity: 1;
-        }
-        .process-step:hover {
-            transform: translateY(-6px) scale(1.02);
-            border-color: rgba(37, 99, 235, 0.2);
-            box-shadow: 0 16px 48px rgba(37, 99, 235, 0.08);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .process-step .step-number {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: rgba(37, 99, 235, 0.06);
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1;
-            pointer-events: none;
-            transition: all 0.4s ease;
-            position: absolute;
-            top: 0.5rem;
-            right: 1rem;
-        }
-        .process-step:hover .step-number {
-            color: rgba(37, 99, 235, 0.12);
-            transform: scale(1.1) translateX(-4px);
-        }
-        @media (max-width:767px) {
-            .process-step .step-number {
-                display: none;
-            }
-        }
-        .process-step .step-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: #2563EB;
-            font-size: 1.5rem;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-        }
-        .process-step:hover .step-icon {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(59, 130, 246, 0.1));
-            transform: scale(1.1) rotate(-4deg);
-            border-color: rgba(37, 99, 235, 0.25);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
-        }
-        .process-step .step-icon i {
-            transition: all 0.4s ease;
-        }
-        .process-step:hover .step-icon i {
-            color: #60A5FA;
-            transform: scale(1.1);
-        }
-        @media (min-width:768px) {
-            .process-step .step-icon {
-                width: 64px;
-                height: 64px;
-                font-size: 1.75rem;
-                border-radius: 18px;
-            }
-        }
+        /* Process step heading */
         .process-step h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
-            transition: color 0.3s ease;
-            letter-spacing: -0.01em;
-        }
-        .process-step:hover h4 {
-            color: #fff;
-        }
-        .process-step p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.85rem;
-            line-height: 1.6;
-            transition: color 0.3s ease;
-            margin-bottom: 0;
-        }
-        .process-step:hover p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .process-step .step-badge {
-            display: inline-block;
-            font-size: 0.6rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(37, 99, 235, 0.5);
-            background: rgba(37, 99, 235, 0.06);
-            padding: 0.2rem 0.7rem;
-            border-radius: 50px;
-            margin-top: 0.5rem;
-            border: 1px solid rgba(37, 99, 235, 0.05);
-            transition: all 0.3s ease;
-        }
-        .process-step:hover .step-badge {
-            color: #2563EB;
-            background: rgba(37, 99, 235, 0.12);
-            border-color: rgba(37, 99, 235, 0.15);
+            color: #FFFFFF !important;
         }
 
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {
-            background: #111827;
-        }
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-        }
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .testimonial-item {
-            min-width: 100%;
-            padding: 2rem;
-            text-align: center;
-        }
-        .testimonial-item .client-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #fff;
-            font-weight: 700;
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
-        }
-        .testimonial-item .review {
-            font-size: 1.125rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1rem;
-            font-style: italic;
-            line-height: 1.8;
-        }
-        .testimonial-item .client-name {
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .testimonial-item .client-company {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
-        }
-        .testimonial-item .stars {
-            color: #fbbf24;
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        .slider-controls .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .slider-controls .dot.active {
-            background: #2563EB;
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
-            transform: scale(1.2);
-        }
-
-        /* ===== FAQ ===== */
-        .faq {
-            background: #030712;
-        }
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1rem 0;
-        }
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 0.5rem 0;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            color: #fff;
-            transition: color 0.3s ease;
-        }
-        .faq-question:hover {
-            color: #2563EB;
-        }
-        .faq-question i {
-            transition: transform 0.3s ease;
-            color: #2563EB;
-        }
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: rgba(255, 255, 255, 0.7);
-            padding: 0 0.5rem;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding: 0.5rem 0.5rem 1rem 0.5rem;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            background: linear-gradient(135deg, #030712 0%, #111827 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.15), transparent);
-            pointer-events: none;
-        }
-        .cta-container {
-            position: relative;
-            z-index: 1;
-        }
-        .cta-content {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .cta-content h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        @media (min-width:768px) {
-            .cta-content h2 {
-                font-size: 2.5rem;
-            }
-        }
-        .cta-content p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-        }
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-        }
-        @media (min-width:480px) {
-            .cta-buttons {
-                flex-direction: row;
-            }
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: #030712;
-            border-top: 1px solid rgba(37, 99, 235, 0.1);
-            padding: 3rem 0 1.5rem;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        @media (min-width:640px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width:1024px) {
-            .footer-grid {
-                grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            }
-        }
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        .footer-logo-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-        }
+        /* Footer logo text */
         .footer-logo span {
-            font-size: 1.25rem;
-            font-weight: 700;
-            font-family: 'Space Grotesk', monospace;
+            color: #FFFFFF !important;
         }
         .footer-logo span span {
-            color: #2563EB;
-        }
-        .brand-col p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-        .social-links a:hover {
-            background: #2563EB;
-            transform: translateY(-3px);
-            border-color: #2563EB;
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
-        }
-        .footer-col h4 {
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            margin-bottom: 0.75rem;
-        }
-        .footer-col ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s ease;
-        }
-        .footer-col ul li a:hover {
-            color: #2563EB;
-        }
-        .contact-info li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.875rem;
-        }
-        .contact-info li i {
-            color: #2563EB;
-            width: 20px;
-        }
-        .contact-info li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-        }
-        .newsletter-form {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            font-size: 0.875rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-        .newsletter-form input:focus {
-            border-color: #2563EB;
-        }
-        .newsletter-form button {
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .newsletter-form button:hover {
-            transform: scale(1.05);
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.875rem;
+            color: #2563EB !important;
         }
 
-        /* ============================================================
-           YUKAS AI CHATBOT STYLES – GLOWING LAUNCHER & SMOOTH OPEN
-           ============================================================ */
-
-        /* ----- Launcher Button with Glow ----- */
-        .yukas-chat-launcher {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            color: #fff;
-            padding: 14px 22px;
-            border-radius: 60px;
-            cursor: pointer;
-            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6),
-                        0 0 30px rgba(37, 99, 235, 0.3);
-            border: none;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            animation: glowPulse 2.5s ease-in-out infinite;
-            backdrop-filter: blur(4px);
+        /* Ensure CTA section text is visible */
+        .cta-content h2 {
+            color: #FFFFFF !important;
+        }
+        .cta-content h2 .accent-text {
+            background: linear-gradient(135deg, #2563EB, #60A5FA) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
         }
 
-        @keyframes glowPulse {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6),
-                            0 0 30px rgba(37, 99, 235, 0.3);
-                transform: scale(1);
-            }
-            50% {
-                box-shadow: 0 0 0 12px rgba(37, 99, 235, 0.15),
-                            0 0 50px rgba(37, 99, 235, 0.4);
-                transform: scale(1.03);
-            }
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.8) !important;
         }
 
-        .yukas-chat-launcher:hover {
-            transform: translateY(-4px) scale(1.04);
-            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.8),
-                        0 0 60px rgba(37, 99, 235, 0.5);
-            animation: none;
+        /* Fix for stat-number in stats section */
+        .stats-section .stat-number {
+            color: #FFFFFF !important;
         }
 
-        .yukas-chat-launcher.active {
-            opacity: 0.7;
-            transform: scale(0.95);
-            animation: none;
+        /* Trust badge in hero */
+        .trust-badge {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .yukas-chat-launcher .yukas-launcher-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
-            font-size: 1.4rem;
-        }
-
-        .yukas-chat-launcher .yukas-launcher-label {
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-        }
-
-        .yukas-chat-launcher .yukas-launcher-badge {
-            display: none;
-            width: 12px;
-            height: 12px;
-            background: #22c55e;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-            flex-shrink: 0;
-        }
-
-        .yukas-chat-launcher .yukas-launcher-badge.show {
-            display: block;
-        }
-
-        @media (max-width:480px) {
-            .yukas-chat-launcher {
-                bottom: 18px;
-                right: 16px;
-                padding: 10px 16px;
-                font-size: 0.8rem;
-                gap: 8px;
-                border-radius: 50px;
-            }
-            .yukas-chat-launcher .yukas-launcher-label {
-                font-size: 0.75rem;
-            }
-            .yukas-chat-launcher .yukas-launcher-icon {
-                width: 24px;
-                height: 24px;
-                font-size: 1.1rem;
-            }
-        }
-
-        /* ----- Chat Window with smooth open animation ----- */
-        .yukas-chat-window {
-            position: fixed;
-            bottom: 100px;
-            right: 24px;
-            width: 400px;
-            max-width: calc(100vw - 48px);
-            max-height: 580px;
-            height: 520px;
-            background: rgba(17, 24, 39, 0.96);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-radius: 24px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(37, 99, 235, 0.2) inset;
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            z-index: 1000;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            transform: scale(0.9) translateY(20px);
-            opacity: 0;
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        opacity 0.3s ease,
-                        visibility 0.3s ease;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .yukas-chat-window.open {
-            display: flex;
-            transform: scale(1) translateY(0);
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        @keyframes yukasChatSlideIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.92) translateY(18px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .yukas-chat-window.open {
-            animation: yukasChatSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        @media (max-width:480px) {
-            .yukas-chat-window {
-                bottom: 80px;
-                right: 10px;
-                left: 10px;
-                width: auto;
-                max-width: none;
-                height: 75vh;
-                max-height: 75vh;
-                border-radius: 20px;
-            }
-        }
-
-        /* ----- Chat Header ----- */
-        .yukas-chat-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 18px;
-            background: rgba(3, 7, 18, 0.85);
-            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
-            flex-shrink: 0;
-        }
-
-        .yukas-chat-header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .yukas-chat-avatar {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Project card actions */
+        .project-card-actions .btn {
             font-size: 0.8rem;
-            font-weight: 700;
-            color: #fff;
-            flex-shrink: 0;
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+            padding: var(--ydh-space-2) var(--ydh-space-4);
         }
 
-        .yukas-chat-header-info {
-            display: flex;
-            flex-direction: column;
+        /* Ensure hover states work */
+        .service-card:hover h3,
+        .feature:hover h3,
+        .product-card:hover h3,
+        .portfolio-card:hover .portfolio-info h3,
+        .process-step:hover h4 {
+            color: #FFFFFF !important;
         }
 
+        /* Trust bar heading */
+        .trust-bar h2 {
+            -webkit-text-fill-color: #FFFFFF !important;
+            background: none !important;
+            color: #FFFFFF !important;
+        }
+
+        /* Stats section text fixes */
+        .stats-section .stat-number {
+            -webkit-text-fill-color: #FFFFFF !important;
+        }
+
+        /* Visual card span */
+        .visual-card span {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* About item heading */
+        .about-item h3 {
+            color: #FFFFFF !important;
+        }
+        .about-item h3 i {
+            color: #2563EB !important;
+        }
+        .about-item p {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        /* FAQ styles */
+        .faq-question {
+            color: #FFFFFF !important;
+        }
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        .faq-item.active .faq-answer {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* Testimonial styles */
+        .testimonial-item .review {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .testimonial-item .client-name {
+            color: #FFFFFF !important;
+        }
+        .testimonial-item .client-company {
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        /* Chat styles */
         .yukas-chat-header-title {
-            font-size: 1rem;
-            font-weight: 700;
-            font-family: 'Space Grotesk', sans-serif;
-            color: #fff;
+            color: #FFFFFF !important;
         }
-
-        .yukas-chat-header-status {
-            font-size: 0.7rem;
-            color: #22c55e;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .yukas-chat-header-status::before {
-            content: '';
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            background: #22c55e;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        .yukas-chat-close {
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 6px 10px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .yukas-chat-close:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        /* ----- Messages ----- */
-        .yukas-chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 18px 18px 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            scroll-behavior: smooth;
-        }
-
-        .yukas-chat-messages::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .yukas-chat-messages::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .yukas-chat-messages::-webkit-scrollbar-thumb {
-            background: rgba(37, 99, 235, 0.3);
-            border-radius: 4px;
-        }
-
-        /* ----- Message Bubbles ----- */
-        .yukas-chat-message {
-            display: flex;
-            gap: 10px;
-            animation: yukasMessageFade 0.3s ease;
-        }
-
-        @keyframes yukasMessageFade {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .yukas-chat-message-user {
-            flex-direction: row-reverse;
-        }
-
-        .yukas-chat-message-user .yukas-chat-avatar {
-            background: rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-        }
-
         .yukas-chat-message-content {
-            max-width: 80%;
-            padding: 10px 16px;
-            border-radius: 16px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.95);
-            word-wrap: break-word;
+            color: rgba(255, 255, 255, 0.95) !important;
         }
 
-        .yukas-chat-message-assistant .yukas-chat-message-content {
-            background: rgba(37, 99, 235, 0.12);
-            border: 1px solid rgba(37, 99, 235, 0.08);
-            border-bottom-left-radius: 6px;
-        }
-
-        .yukas-chat-message-user .yukas-chat-message-content {
-            background: rgba(37, 99, 235, 0.25);
-            border: 1px solid rgba(37, 99, 235, 0.15);
-            border-bottom-right-radius: 6px;
-        }
-
-        /* ----- Typing Indicator ----- */
-        .yukas-chat-typing {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 10px 16px;
-            background: rgba(37, 99, 235, 0.08);
-            border-radius: 16px;
-            border: 1px solid rgba(37, 99, 235, 0.05);
-            width: fit-content;
-            margin-bottom: 4px;
-            border-bottom-left-radius: 6px;
-        }
-
-        .yukas-chat-typing span {
-            display: inline-block;
-            width: 9px;
-            height: 9px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-            animation: yukasTypingDot 1.4s infinite both;
-        }
-
-        .yukas-chat-typing span:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        .yukas-chat-typing span:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes yukasTypingDot {
-            0%,
-            80%,
-            100% { transform: scale(0.6); opacity: 0.4; }
-            40% { transform: scale(1); opacity: 1; }
-        }
-
-        /* ----- WhatsApp Handoff ----- */
-        .yukas-whatsapp-handoff {
-            background: rgba(37, 211, 102, 0.06);
-            border: 1px solid rgba(37, 211, 102, 0.15);
-            border-radius: 16px;
-            padding: 14px 16px;
-            margin-top: 4px;
-            text-align: center;
-            animation: yukasMessageFade 0.4s ease;
-        }
-
-        .yukas-whatsapp-handoff p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
-            margin: 0 0 8px 0;
-        }
-
-        .yukas-whatsapp-handoff .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #25D366;
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .yukas-whatsapp-handoff .btn-whatsapp:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        /* ----- Quick Actions ----- */
-        .yukas-quick-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            padding: 8px 18px 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            flex-shrink: 0;
-            background: rgba(3, 7, 18, 0.3);
-        }
-
-        .yukas-quick-action {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 5px 14px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            white-space: nowrap;
-        }
-
-        .yukas-quick-action:hover {
-            background: rgba(37, 99, 235, 0.15);
-            border-color: rgba(37, 99, 235, 0.3);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width:480px) {
-            .yukas-quick-actions {
-                padding: 6px 12px 10px;
-                gap: 4px;
-            }
-            .yukas-quick-action {
-                font-size: 0.65rem;
-                padding: 3px 10px;
-            }
-        }
-
-        /* ----- Chat Footer ----- */
-        .yukas-chat-footer {
-            display: flex;
-            align-items: flex-end;
-            gap: 10px;
-            padding: 10px 16px 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            background: rgba(3, 7, 18, 0.3);
-            flex-shrink: 0;
-        }
-
-        .yukas-chat-input {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(37, 99, 235, 0.1);
-            border-radius: 14px;
-            padding: 10px 16px;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            resize: none;
-            min-height: 42px;
-            max-height: 80px;
-            outline: none;
-            transition: border-color 0.3s ease;
-            line-height: 1.5;
-        }
-
-        .yukas-chat-input:focus {
-            border-color: #2563EB;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .yukas-chat-input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        .yukas-chat-send {
-            background: linear-gradient(135deg, #2563EB, #3B82F6);
-            border: none;
-            border-radius: 14px;
-            color: #fff;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .yukas-chat-send:hover:not(:disabled) {
-            transform: scale(1.06);
-            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.4);
-        }
-
-        .yukas-chat-send:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* ----- Chat Loading Overlay ----- */
-        .yukas-chat-loading {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(3, 7, 18, 0.6);
-            backdrop-filter: blur(2px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            border-radius: 24px;
-            z-index: 5;
-        }
-
-        .yukas-chat-loading span {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: rgba(37, 99, 235, 0.5);
-            border-radius: 50%;
-            animation: yukasTypingDot 1.4s infinite both;
-        }
-
-        .yukas-chat-loading span:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        .yukas-chat-loading span:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        /* ----- Error Message ----- */
-        .yukas-chat-error {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            border-radius: 12px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.85rem;
-            margin-top: 4px;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-up {
-            opacity: 0;
-            animation: fadeUp 0.6s ease forwards;
-        }
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width:480px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .section-header h2 { font-size: 1.75rem; }
-            .btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; }
-            .hero-card { padding: 1rem; }
-            .floating-element { width: 36px; height: 36px; font-size: 1rem; }
-            .service-card { padding: 1.5rem 1.2rem; }
-            .product-card { padding: 1.2rem 1rem; }
-            .feature { padding: 1.2rem 1rem; }
-            .process-step { padding: 1rem 0.8rem; }
-            .process-step .step-icon { width: 48px; height: 48px; font-size: 1.25rem; }
-            .stats-grid { gap: 1rem; }
-            .stat-number { font-size: 2rem; }
-            .testimonial-item .review { font-size: 1rem; }
-            .portfolio-image { height: 180px; }
-        }
-        @media (max-width:767px) {
-            .about-grid { gap: 2rem; }
-            .process-timeline { padding-left: 1rem; }
-            .process-step .step-number { font-size: 2rem; left: -1.5rem; top: -0.25rem; }
-            .mockup-stats { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        /* ===== REDUCED MOTION ===== */
-        @media (prefers-reduced-motion:reduce) {
-            .yukas-chat-window,
-            .yukas-chat-launcher,
-            .yukas-chat-message,
-            .yukas-chat-typing span,
-            .yukas-chat-loading span {
+        /* Fix for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-orb,
+            .hero-orb--1,
+            .hero-orb--2,
+            .hero-orb--3,
+            .floating-element,
+            .chart-bar::before {
                 animation: none !important;
-                transition: none !important;
+            }
+            .hero::before {
+                animation: none !important;
+            }
+            .hero-card::before {
+                animation: none !important;
+            }
+            .about-card::before {
+                animation: none !important;
+            }
+        }
+
+        /* Ensure proper display of project badges */
+        .project-type-badge {
+            position: absolute;
+            top: var(--ydh-space-3);
+            left: var(--ydh-space-3);
+            z-index: 3;
+        }
+
+        .project-status-badge {
+            position: absolute;
+            top: var(--ydh-space-3);
+            right: var(--ydh-space-3);
+            z-index: 3;
+        }
+
+        /* Quick fix for hero content alignment */
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+            }
+            .hero-content .subtitle {
+                margin: 0 auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .trust-badge {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
     <header class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -2992,47 +337,58 @@
                     <li><a href="pages/contact.html">Contact <span class="external-indicator">↗</span></a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- ===== HERO ===== -->
+        <!-- ============================================
+        HERO SECTION
+        ============================================ -->
         <section class="hero" id="home">
-            <div class="hero-orb hero-orb--1"></div>
-            <div class="hero-orb hero-orb--2"></div>
-            <div class="hero-orb hero-orb--3"></div>
-            <canvas id="particle-canvas"></canvas>
+            <!-- Background Orbs -->
+            <div class="hero-orb hero-orb--1 orb-animate"></div>
+            <div class="hero-orb hero-orb--2 orb-animate-alt"></div>
+            <div class="hero-orb hero-orb--3 orb-animate" style="animation-delay:4s;"></div>
+
+            <!-- Particle Canvas -->
+            <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <div class="hero-badge">
+                    <div class="hero-badge hero-entrance hero-entrance-1">
                         <span class="badge-pulse"></span>
-                        Powering Africa's AI Revolution
+                        AI &amp; Digital Systems Studio
                     </div>
-                    <h1>Building Africa's <span class="accent-text">AI Future</span></h1>
-                    <p class="subtitle">We build AI solutions, intelligent automation, and modern digital products that help African businesses scale smarter and faster.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary btn-large">
-                            <span>Start Your Project</span> <i class="fas fa-arrow-right"></i>
+                    <h1 class="hero-entrance hero-entrance-2">
+                        We Build <span class="accent-text">AI &amp; Digital</span> Systems for Modern Businesses
+                    </h1>
+                    <p class="subtitle hero-entrance hero-entrance-3">
+                        We design and build websites, software, AI systems, automation,
+                        and digital products that help businesses operate better.
+                    </p>
+                    <div class="hero-buttons hero-entrance hero-entrance-4">
+                        <a href="pages/contact.html" class="btn btn-primary btn-large">
+                            <span>Start a Project</span> <i class="fas fa-arrow-right btn-arrow"></i>
                         </a>
-                        <a href="#services" class="btn btn-outline">
-                            Explore AI Solutions <i class="fas fa-chevron-right"></i>
+                        <a href="pages/portfolio.html" class="btn btn-outline">
+                            Explore Our Work <i class="fas fa-chevron-right"></i>
                         </a>
                     </div>
-                    <div class="trust-badge">
+                    <div class="trust-badge hero-entrance hero-entrance-5">
+                        <div class="trust-item">
+                            <i class="fas fa-microchip"></i>
+                            <span><span class="stat-number">AI</span> Development</span>
+                        </div>
                         <div class="trust-item">
                             <i class="fas fa-robot"></i>
-                            <span><span class="stat-number">10+</span> AI Projects</span>
+                            <span><span class="stat-number">Automation</span> Solutions</span>
                         </div>
                         <div class="trust-item">
-                            <i class="fas fa-user-check"></i>
-                            <span><span class="stat-number">98%</span> Retention</span>
-                        </div>
-                        <div class="trust-item">
-                            <i class="fas fa-calendar-check"></i>
-                            <span><span class="stat-number">5+</span> Years</span>
+                            <i class="fas fa-code"></i>
+                            <span><span class="stat-number">Software</span> Products</span>
                         </div>
                         <div class="trust-item">
                             <i class="fas fa-headset"></i>
@@ -3040,21 +396,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-visual">
+                <div class="hero-visual hero-entrance hero-entrance-3">
                     <div class="hero-card">
                         <div class="floating-element elem-1"><i class="fas fa-brain"></i></div>
                         <div class="floating-element elem-2"><i class="fas fa-robot"></i></div>
                         <div class="floating-element elem-3"><i class="fas fa-cloud"></i></div>
                         <div class="dashboard-mockup">
                             <div class="mockup-header">
-                                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
                                 <div class="mockup-title">yukasdigital.ai</div>
                             </div>
                             <div class="mockup-stats">
-                                <div class="stat-card"><i class="fas fa-chart-line"></i><span class="stat-value">+245%</span><span class="stat-label">Growth</span></div>
-                                <div class="stat-card"><i class="fas fa-users"></i><span class="stat-value">10K+</span><span class="stat-label">Clients</span></div>
-                                <div class="stat-card"><i class="fas fa-robot"></i><span class="stat-value">AI</span><span class="stat-label">Solutions</span></div>
-                                <div class="stat-card"><i class="fas fa-trophy"></i><span class="stat-value">Award</span><span class="stat-label">Winner</span></div>
+                                <div class="stat-card">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span class="stat-value">AI</span>
+                                    <span class="stat-label">Powered</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-users"></i>
+                                    <span class="stat-value">Smart</span>
+                                    <span class="stat-label">Systems</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-robot"></i>
+                                    <span class="stat-value">Auto</span>
+                                    <span class="stat-label">Mation</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-rocket"></i>
+                                    <span class="stat-value">Scale</span>
+                                    <span class="stat-label">Growth</span>
+                                </div>
                             </div>
                             <div class="mockup-chart">
                                 <div class="chart-bar" style="height:80px;"></div>
@@ -3069,27 +443,297 @@
             </div>
         </section>
 
-        <!-- ===== TRUST BAR ===== -->
+        <!-- ============================================
+        TRUST BAR
+        ============================================ -->
         <section class="trust-bar">
             <div class="container">
                 <div class="section-header">
-                    <h2>Trusted by forward-thinking businesses across Africa</h2>
+                    <h2>Trusted by forward-thinking businesses across Nigeria</h2>
                 </div>
                 <div class="trust-grid">
-                    <div class="trust-item-logo"><i class="fas fa-microchip"></i> AI Solutions</div>
+                    <div class="trust-item-logo"><i class="fas fa-microchip"></i> AI Systems</div>
                     <div class="trust-item-logo"><i class="fas fa-laptop-code"></i> Web Development</div>
-                    <div class="trust-item-logo"><i class="fas fa-gears"></i> Business Automation</div>
-                    <div class="trust-item-logo"><i class="fas fa-lightbulb"></i> Digital Innovation</div>
+                    <div class="trust-item-logo"><i class="fas fa-gears"></i> Automation</div>
+                    <div class="trust-item-logo"><i class="fas fa-cubes"></i> Software Products</div>
+                    <div class="trust-item-logo"><i class="fas fa-cloud-upload-alt"></i> Digital Platforms</div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== ABOUT ===== -->
+        <!-- ============================================
+        CAPABILITIES / WHAT WE BUILD
+        ============================================ -->
+        <section class="services-preview" id="capabilities">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">What We Build</span>
+                    <h2>Our <span class="accent">Capabilities</span></h2>
+                    <p>We design and build technology solutions that help businesses operate better.</p>
+                </div>
+                <div class="services-grid reveal-stagger">
+                    <div class="service-card">
+                        <span class="service-number">01</span>
+                        <div class="service-icon"><i class="fas fa-microchip"></i></div>
+                        <h3>AI Systems</h3>
+                        <p>Custom AI models, predictive analytics, NLP, and intelligent automation.</p>
+                        <a href="pages/services.html#ai" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-number">02</span>
+                        <div class="service-icon"><i class="fas fa-cubes"></i></div>
+                        <h3>Software Products</h3>
+                        <p>End-to-end software development for web, mobile, and enterprise platforms.</p>
+                        <a href="pages/services.html#software" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-number">03</span>
+                        <div class="service-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Business Automation</h3>
+                        <p>Intelligent automation systems that streamline workflows and save time.</p>
+                        <a href="pages/services.html#automation" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-number">04</span>
+                        <div class="service-icon"><i class="fas fa-globe"></i></div>
+                        <h3>Web Experiences</h3>
+                        <p>High-performance, AI-integrated websites that convert visitors into customers.</p>
+                        <a href="pages/services.html#web" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-number">05</span>
+                        <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Digital Platforms</h3>
+                        <p>Scalable platforms for FinTech, e-commerce, and digital services.</p>
+                        <a href="pages/services.html#platforms" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-number">06</span>
+                        <div class="service-icon"><i class="fas fa-pen-ruler"></i></div>
+                        <h3>UI/UX Design</h3>
+                        <p>Human-centric design for digital products that deliver exceptional experiences.</p>
+                        <a href="pages/services.html#design" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="services-cta">
+                    <a href="pages/services.html" class="btn btn-outline">
+                        View All Services <i class="fas fa-arrow-right btn-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+        AI WORKFLOW ANIMATION — SIGNATURE YDH VISUAL
+        ============================================ -->
+        <section class="process" id="ai-workflow" style="background: linear-gradient(180deg, #05070B, #0B1220);">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">How It Works</span>
+                    <h2>The <span class="accent">AI Workflow</span></h2>
+                    <p>AI Agents don't just answer. They act.</p>
+                </div>
+
+                <div class="ai-workflow" style="max-width: 900px; margin: 0 auto; padding: var(--ydh-space-8) 0;">
+                    <!-- Workflow Nodes -->
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--ydh-space-4);">
+
+                        <!-- Node 1: Customer -->
+                        <div class="flow-node" style="display: flex; flex-direction: column; align-items: center; padding: var(--ydh-space-4) var(--ydh-space-6); background: rgba(255,255,255,0.03); border-radius: var(--ydh-radius-lg); border: 1px solid var(--ydh-border); min-width: 120px; transition: all 0.6s ease;">
+                            <i class="fas fa-user" style="font-size: 2rem; color: var(--ydh-blue-400);"></i>
+                            <span style="font-size: 0.85rem; font-weight: 500; margin-top: var(--ydh-space-2);">Customer</span>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div style="display: flex; align-items: center; color: rgba(255,255,255,0.2);">
+                            <i class="fas fa-arrow-right" style="font-size: 1.2rem;"></i>
+                        </div>
+
+                        <!-- Node 2: AI Agent -->
+                        <div class="flow-node" style="display: flex; flex-direction: column; align-items: center; padding: var(--ydh-space-4) var(--ydh-space-6); background: rgba(255,255,255,0.03); border-radius: var(--ydh-radius-lg); border: 1px solid var(--ydh-border); min-width: 120px; transition: all 0.6s ease;">
+                            <i class="fas fa-robot" style="font-size: 2rem; color: var(--ydh-blue-400);"></i>
+                            <span style="font-size: 0.85rem; font-weight: 500; margin-top: var(--ydh-space-2);">AI Agent</span>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div style="display: flex; align-items: center; color: rgba(255,255,255,0.2);">
+                            <i class="fas fa-arrow-right" style="font-size: 1.2rem;"></i>
+                        </div>
+
+                        <!-- Node 3: Reasoning -->
+                        <div class="flow-node" style="display: flex; flex-direction: column; align-items: center; padding: var(--ydh-space-4) var(--ydh-space-6); background: rgba(255,255,255,0.03); border-radius: var(--ydh-radius-lg); border: 1px solid var(--ydh-border); min-width: 120px; transition: all 0.6s ease;">
+                            <i class="fas fa-brain" style="font-size: 2rem; color: var(--ydh-blue-400);"></i>
+                            <span style="font-size: 0.85rem; font-weight: 500; margin-top: var(--ydh-space-2);">Reasoning</span>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div style="display: flex; align-items: center; color: rgba(255,255,255,0.2);">
+                            <i class="fas fa-arrow-right" style="font-size: 1.2rem;"></i>
+                        </div>
+
+                        <!-- Node 4: Tools -->
+                        <div class="flow-node" style="display: flex; flex-direction: column; align-items: center; padding: var(--ydh-space-4) var(--ydh-space-6); background: rgba(255,255,255,0.03); border-radius: var(--ydh-radius-lg); border: 1px solid var(--ydh-border); min-width: 120px; transition: all 0.6s ease;">
+                            <i class="fas fa-tools" style="font-size: 2rem; color: var(--ydh-blue-400);"></i>
+                            <span style="font-size: 0.85rem; font-weight: 500; margin-top: var(--ydh-space-2);">Tools</span>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div style="display: flex; align-items: center; color: rgba(255,255,255,0.2);">
+                            <i class="fas fa-arrow-right" style="font-size: 1.2rem;"></i>
+                        </div>
+
+                        <!-- Node 5: Action -->
+                        <div class="flow-node" style="display: flex; flex-direction: column; align-items: center; padding: var(--ydh-space-4) var(--ydh-space-6); background: rgba(255,255,255,0.03); border-radius: var(--ydh-radius-lg); border: 1px solid var(--ydh-border); min-width: 120px; transition: all 0.6s ease;">
+                            <i class="fas fa-bolt" style="font-size: 2rem; color: var(--ydh-blue-400);"></i>
+                            <span style="font-size: 0.85rem; font-weight: 500; margin-top: var(--ydh-space-2);">Action</span>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div style="display: flex; align-items: center; color: rgba(255,255,255,0.2);">
+                            <i class="fas fa-arrow-right" style="font-size: 1.2rem;"></i>
+                        </div>
+
+                        <!-- Node 6: Complete -->
+                        <div class="flow-node" style="display: flex; flex-direction: column; align-items: center; padding: var(--ydh-space-4) var(--ydh-space-6); background: rgba(255,255,255,0.03); border-radius: var(--ydh-radius-lg); border: 1px solid var(--ydh-border); min-width: 120px; transition: all 0.6s ease;">
+                            <i class="fas fa-check-circle" style="font-size: 2rem; color: #10B981;"></i>
+                            <span style="font-size: 0.85rem; font-weight: 500; margin-top: var(--ydh-space-2);">Complete</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Flow Completion Message -->
+                    <div class="flow-completion" style="text-align: center; margin-top: var(--ydh-space-8); opacity: 0; transition: opacity 0.8s ease;">
+                        <div style="display: inline-flex; align-items: center; gap: var(--ydh-space-3); padding: var(--ydh-space-4) var(--ydh-space-8); background: rgba(16, 185, 129, 0.1); border-radius: var(--ydh-radius-full); border: 1px solid rgba(16, 185, 129, 0.2);">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <span style="color: #34D399; font-weight: 600;">Task Completed — AI Agent Successfully Executed</span>
+                        </div>
+                    </div>
+
+                    <p style="text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: var(--ydh-space-6);">
+                        <i class="fas fa-arrow-right" style="color: var(--ydh-blue-600);"></i>
+                        Scroll to activate the workflow
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+        SELECTED WORK
+        ============================================ -->
+        <section class="portfolio-highlights" id="selected-work">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Selected Work</span>
+                    <h2>Featured <span class="accent">Projects</span></h2>
+                    <p>A selection of the digital systems, platforms, and products we've built.</p>
+                </div>
+
+                <div class="portfolio-grid reveal-stagger">
+                    <!-- Project 1: Kwararre Land Agent -->
+                    <div class="portfolio-card card-hover">
+                        <div class="portfolio-image hover-image">
+                            <img src="images/portfolio/kla.png" alt="Kwararre Land Agent - Real Estate Platform" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-building fallback-icon" style="display:none;"></i>
+                            <span class="project-badge">Real Estate</span>
+                            <span class="project-type-badge client">Client Project</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Kwararre Land Agent</h3>
+                            <p>Premium real estate platform with verified agent profiles and property listings.</p>
+                            <div class="project-card-actions">
+                                <a href="https://kwararrelandagent.com" target="_blank" class="btn btn-outline btn-small">
+                                    Visit <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="pages/case-study.html?project=kwararre-land-agent" class="btn btn-primary btn-small">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Sassauchi Enterprises -->
+                    <div class="portfolio-card card-hover">
+                        <div class="portfolio-image hover-image">
+                            <img src="images/portfolio/sassauchi.png" alt="Sassauchi Enterprises" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-store fallback-icon" style="display:none;"></i>
+                            <span class="project-badge">Business Website</span>
+                            <span class="project-type-badge client">Client Project</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Sassauchi Enterprises</h3>
+                            <p>Professional business website for a real estate enterprise.</p>
+                            <div class="project-card-actions">
+                                <a href="https://sassauchienterprises.com" target="_blank" class="btn btn-outline btn-small">
+                                    Visit <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="pages/case-study.html?project=sassauchi-enterprises" class="btn btn-primary btn-small">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: AMAM Properties -->
+                    <div class="portfolio-card card-hover">
+                        <div class="portfolio-image hover-image">
+                            <img src="images/portfolio/amam.png" alt="AMAM Properties" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-home fallback-icon" style="display:none;"></i>
+                            <span class="project-badge">Real Estate</span>
+                            <span class="project-type-badge client">Client Project</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>AMAM Properties</h3>
+                            <p>Modern real estate website with property showcase and lead generation.</p>
+                            <div class="project-card-actions">
+                                <a href="https://amampropertiess.com" target="_blank" class="btn btn-outline btn-small">
+                                    Visit <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="pages/case-study.html?project=amam-properties" class="btn btn-primary btn-small">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: SARAKY DATA SUB -->
+                    <div class="portfolio-card card-hover">
+                        <div class="portfolio-image hover-image">
+                            <img src="images/portfolio/sarakydatasub.png" alt="SARAKY DATA SUB" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
+                            <i class="fas fa-database fallback-icon" style="display:none;"></i>
+                            <span class="project-badge">FinTech</span>
+                            <span class="project-type-badge product">YDH Product</span>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>SARAKY DATA SUB</h3>
+                            <p>Digital services platform for airtime, data, cable TV, and electricity payments.</p>
+                            <div class="project-card-actions">
+                                <a href="https://sarakydatasub.com" target="_blank" class="btn btn-outline btn-small">
+                                    Visit <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="pages/case-study.html?project=saraky-data-sub" class="btn btn-primary btn-small">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-cta">
+                    <a href="pages/portfolio.html" class="btn btn-outline">
+                        View All Projects <i class="fas fa-arrow-right btn-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+        ABOUT / TRUST SECTION
+        ============================================ -->
         <section class="about" id="about">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag"><i class="fas fa-robot" style="margin-right:6px;"></i> About YUKAS DIGITAL HUB</span>
-                    <h2>AI &amp; innovation <span style="color:#2563EB; background:none; -webkit-text-fill-color:#2563EB;">for Africa</span></h2>
+                <div class="section-header reveal">
+                    <span class="section-tag">About YUKAS DIGITAL HUB</span>
+                    <h2>Building <span class="accent">Digital Systems</span> That Matter</h2>
                 </div>
                 <div class="about-card">
                     <div class="glow-dot glow-dot--1"></div>
@@ -3097,44 +741,44 @@
                     <div class="about-grid">
                         <div class="about-content">
                             <div class="about-item">
-                                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                                <p><span class="highlight">Democratizing AI</span> — To democratize AI and advanced technology for every African business, ensuring they have the tools to compete globally.</p>
+                                <h3><i class="fas fa-bullseye"></i> What We Do</h3>
+                                <p>We design and build AI-powered digital systems, software products, automation solutions, and modern digital experiences that help businesses operate better.</p>
                             </div>
                             <div class="about-item">
-                                <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                                <p>To be the leading force behind Africa's digital and AI-driven economy, creating a future where technology empowers all.</p>
+                                <h3><i class="fas fa-cogs"></i> Our Approach</h3>
+                                <p>We combine <span class="highlight">technical expertise</span> with a deep understanding of business needs to deliver solutions that actually solve problems.</p>
                             </div>
                             <div class="about-item">
                                 <h3><i class="fas fa-users"></i> Who We Are</h3>
-                                <p>We are a team of <span class="highlight">AI engineers</span>, designers, and digital strategists based in Kano, Nigeria. We are passionate about leveraging technology to solve real-world problems and drive growth across the continent.</p>
+                                <p>We are a team of <span class="highlight">AI engineers</span>, software developers, designers, and digital strategists based in Kano, Nigeria. We build technology that works.</p>
                                 <div class="team-icons">
                                     <i class="fas fa-microchip"></i>
-                                    <i class="fas fa-paint-brush"></i>
-                                    <i class="fas fa-chart-line"></i>
                                     <i class="fas fa-code"></i>
                                     <i class="fas fa-robot"></i>
+                                    <i class="fas fa-paint-brush"></i>
                                     <i class="fas fa-cloud-upload-alt"></i>
+                                    <i class="fas fa-chart-line"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="about-visual">
                             <div class="visual-grid">
-                                <div class="visual-card"><i class="fas fa-robot"></i><span>AI Experts</span></div>
+                                <div class="visual-card"><i class="fas fa-microchip"></i><span>AI Engineers</span></div>
                                 <div class="visual-card"><i class="fas fa-map-marker-alt"></i><span>Kano, Nigeria</span></div>
-                                <div class="visual-card"><i class="fas fa-globe-africa"></i><span>Africa focus</span></div>
-                                <div class="visual-card"><i class="fas fa-rocket"></i><span>Growth driven</span></div>
+                                <div class="visual-card"><i class="fas fa-cubes"></i><span>Product Builders</span></div>
+                                <div class="visual-card"><i class="fas fa-rocket"></i><span>Growth Focused</span></div>
                             </div>
                             <div class="visual-badge">
                                 <i class="fas fa-heart" style="color:#ef4444;"></i>
-                                <span>Built with <strong>passion</strong> in <i class="fas fa-map-pin" style="margin:0 4px;"></i> Kano</span>
+                                <span>Built with <strong>purpose</strong> in <i class="fas fa-map-pin" style="margin:0 4px;"></i> Kano</span>
                                 <i class="fas fa-arrow-right" style="color:#2563EB;"></i>
                             </div>
                             <div style="display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; margin-top:0.2rem;">
                                 <span style="background:rgba(37,99,235,0.08); padding:0.3rem 1rem; border-radius:40px; font-size:0.75rem; border:1px solid rgba(37,99,235,0.1);">
-                                    <i class="fas fa-brain" style="color:#2563EB;"></i> AI first
+                                    <i class="fas fa-brain" style="color:#2563EB;"></i> AI First
                                 </span>
                                 <span style="background:rgba(37,99,235,0.08); padding:0.3rem 1rem; border-radius:40px; font-size:0.75rem; border:1px solid rgba(37,99,235,0.1);">
-                                    <i class="fas fa-handshake" style="color:#2563EB;"></i> 100+ partners
+                                    <i class="fas fa-handshake" style="color:#2563EB;"></i> Trusted Partner
                                 </span>
                             </div>
                         </div>
@@ -3142,417 +786,88 @@
                 </div>
                 <div class="about-cta" style="text-align:center; margin-top:2rem;">
                     <a href="pages/about.html" class="btn btn-outline">
-                        Learn More About Us <i class="fas fa-arrow-right"></i>
+                        Learn More About Us <i class="fas fa-arrow-right btn-arrow"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== SERVICES ===== -->
-        <section class="services-preview" id="services">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">AI-Powered Solutions</span>
-                    <h2>Our <span class="accent-text">Core Services</span></h2>
-                    <p>Tailored, intelligent solutions to accelerate your business growth.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <span class="service-number">01</span>
-                        <div class="service-icon"><i class="fas fa-robot"></i></div>
-                        <h3>AI Development</h3>
-                        <p>Custom AI models and machine learning solutions for predictive analytics, automation, and more.</p>
-                        <a href="pages/services.html#ai-dev" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-number">02</span>
-                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                        <h3>Website Development</h3>
-                        <p>High-performance, AI-integrated websites that convert visitors into loyal customers.</p>
-                        <a href="pages/services.html#web-dev" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-number">03</span>
-                        <div class="service-icon"><i class="fas fa-comment-dots"></i></div>
-                        <h3>WhatsApp Automation</h3>
-                        <p>Intelligent chatbot and automation systems for WhatsApp to enhance customer engagement.</p>
-                        <a href="pages/services.html#whatsapp" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-number">04</span>
-                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                        <h3>Brand Identity</h3>
-                        <p>Stunning visuals, logos, and brand identities that capture attention and build trust.</p>
-                        <a href="pages/services.html#brand" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-number">05</span>
-                        <div class="service-icon"><i class="fas fa-gear"></i></div>
-                        <h3>Business Automation</h3>
-                        <p>Streamline workflows with smart automations, saving time and increasing efficiency.</p>
-                        <a href="pages/services.html#automation" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-number">06</span>
-                        <div class="service-icon"><i class="fas fa-pen-ruler"></i></div>
-                        <h3>UI/UX Design</h3>
-                        <p>Human-centric design for digital products that deliver exceptional user experiences.</p>
-                        <a href="pages/services.html#design" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-number">07</span>
-                        <div class="service-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>Cloud Solutions</h3>
-                        <p>Scalable, secure cloud infrastructure and migration services for modern businesses.</p>
-                        <a href="pages/services.html#cloud" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="services-cta">
-                    <a href="pages/services.html" class="btn btn-outline">
-                        View All Services <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== STATS ===== -->
-        <section class="stats-section" id="stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item animate-on-scroll">
-                        <span class="stat-number" data-count="120">120+</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                    <div class="stat-item animate-on-scroll delay-1">
-                        <span class="stat-number" data-count="98">98%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                    <div class="stat-item animate-on-scroll delay-2">
-                        <span class="stat-number" data-count="15">15+</span>
-                        <span class="stat-label">Active Clients</span>
-                    </div>
-                    <div class="stat-item animate-on-scroll delay-3">
-                        <span class="stat-number" data-count="24">24/7</span>
-                        <span class="stat-label">Support Available</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== PORTFOLIO ===== -->
-        <section class="portfolio-highlights" id="portfolio">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-tag">Our Work</span>
-                    <h2>Featured <span class="accent-text">Projects</span></h2>
-                    <p>Explore some of the amazing websites and digital solutions we've delivered for our clients.</p>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card animate-on-scroll delay-1">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio/kla.png" alt="Kwararre Land Agent" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
-                            <i class="fas fa-building fallback-icon" style="display:none;"></i>
-                            <span class="project-badge">Real Estate</span>
-                        </div>
-                        <div class="portfolio-info">
-                            <h3>Kwara Realtors</h3>
-                            <p>Premium real estate website with property listings and agent profiles.</p>
-                            <a href="https://kwararrelandagent.com" target="_blank" class="btn btn-outline">Visit Website <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card animate-on-scroll delay-2">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio/sassauchi.png" alt="Sassauchi Enterprises" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
-                            <i class="fas fa-store fallback-icon" style="display:none;"></i>
-                            <span class="project-badge">Real Estate Website</span>
-                        </div>
-                        <div class="portfolio-info">
-                            <h3>Sassauci Enterprises</h3>
-                            <p>Real Estate Website with property listings and agent profiles.</p>
-                            <a href="https://sassauchienterprises.com" target="_blank" class="btn btn-outline">Visit Website <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card animate-on-scroll delay-3">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio/amam.png" alt="AMAM Properties" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
-                            <i class="fas fa-home fallback-icon" style="display:none;"></i>
-                            <span class="project-badge">Real Estate</span>
-                        </div>
-                        <div class="portfolio-info">
-                            <h3>AMAM Properties</h3>
-                            <p>Modern real estate website with property showcase and lead generation.</p>
-                            <a href="https://amampropertiess.com" target="_blank" class="btn btn-outline">Visit Website <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card animate-on-scroll delay-4">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio/sarakydatasub.png" alt="Saraky Data Sub" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
-                            <i class="fas fa-database fallback-icon" style="display:none;"></i>
-                            <span class="project-badge">Data Services</span>
-                        </div>
-                        <div class="portfolio-info">
-                            <h3>Saraky Data Sub</h3>
-                            <p>Data subscription platform with instant activation and user dashboard.</p>
-                            <a href="https://sarakydatasub.com" target="_blank" class="btn btn-outline">Visit Website <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-cta">
-                    <a href="pages/portfolio.html" class="btn btn-outline">
-                        View Full Portfolio <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FEATURED PRODUCTS ===== -->
-        <section class="featured-products" id="products">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Our Ecosystem</span>
-                    <h2>Featured <span class="accent-text">Products</span></h2>
-                    <p>Explore our innovative products designed to accelerate your digital transformation.</p>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <span class="product-number">01</span>
-                        <div class="product-image"><i class="fas fa-network-wired"></i></div>
-                        <h3>YDH Connect</h3>
-                        <p>A business networking platform connecting African entrepreneurs and innovators.</p>
-                        <a href="#" class="btn btn-outline btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="product-card">
-                        <span class="product-number">02</span>
-                        <div class="product-image"><i class="fas fa-graduation-cap"></i></div>
-                        <h3>AI Mastery</h3>
-                        <p>A comprehensive AI training course designed to upskill professionals and businesses.</p>
-                        <a href="#" class="btn btn-outline btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="product-card">
-                        <span class="product-number">03</span>
-                        <div class="product-image"><i class="fas fa-globe"></i></div>
-                        <h3>Business Websites</h3>
-                        <p>A website-as-a-service product that gives you a high-converting site in days.</p>
-                        <a href="#" class="btn btn-outline btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="product-card">
-                        <span class="product-number">04</span>
-                        <div class="product-image"><i class="fas fa-brain"></i></div>
-                        <h3>AI Automation</h3>
-                        <p>An automation toolkit for businesses to streamline operations with AI.</p>
-                        <a href="#" class="btn btn-outline btn-small">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== WHY CHOOSE US ===== -->
-        <section class="why-us" id="why-us">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Why Partner With Us</span>
-                    <h2>Driven by Excellence &amp; <span class="accent-text">Results</span></h2>
-                    <p>Discover why businesses trust us to deliver exceptional digital solutions.</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature">
-                        <span class="feature-number">01</span>
-                        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                        <h3>Fast Delivery</h3>
-                        <p>Agile sprints &amp; dedicated teams — your project goes live ahead of schedule.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-number">02</span>
-                        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>Modern Design</h3>
-                        <p>Pixel-perfect, fully responsive interfaces that wow on any device.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-number">03</span>
-                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Business-Focused</h3>
-                        <p>We optimize for conversions, not just aesthetics — ROI matters.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-number">04</span>
-                        <div class="feature-icon"><i class="fas fa-tag"></i></div>
-                        <h3>Affordable Pricing</h3>
-                        <p>Premium quality at fair rates with transparent packages.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-number">05</span>
-                        <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
-                        <h3>Professional Team</h3>
-                        <p>Our team comprises certified experts in AI, design, and development.</p>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-number">06</span>
-                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
-                        <h3>Long-Term Support</h3>
-                        <p>We're with you every step of the way with dedicated support and maintenance.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== WORK PROCESS ===== -->
+        <!-- ============================================
+        PROCESS
+        ============================================ -->
         <section class="process" id="process">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <span class="section-tag">How We Work</span>
-                    <h2>Our <span class="accent-text">Process</span></h2>
-                    <p>We follow a proven methodology to deliver exceptional results for every project.</p>
+                    <h2>Our <span class="accent">Process</span></h2>
+                    <p>A proven methodology for building digital systems that deliver results.</p>
                 </div>
-                <div class="process-timeline">
+                <div class="process-timeline reveal-stagger">
                     <div class="process-step">
                         <span class="step-number">01</span>
                         <div class="step-icon"><i class="fas fa-search"></i></div>
                         <h4>Discover</h4>
-                        <p>We dive deep to understand your goals, challenges, and market.</p>
+                        <p>Understand your goals, challenges, and market context.</p>
                         <span class="step-badge">Phase 1</span>
                     </div>
                     <div class="process-step">
                         <span class="step-number">02</span>
                         <div class="step-icon"><i class="fas fa-pencil-alt"></i></div>
-                        <h4>Plan</h4>
-                        <p>We craft a tailored, strategic roadmap for your success.</p>
+                        <h4>Strategize</h4>
+                        <p>Craft a tailored, strategic roadmap for your success.</p>
                         <span class="step-badge">Phase 1</span>
                     </div>
                     <div class="process-step">
                         <span class="step-number">03</span>
                         <div class="step-icon"><i class="fas fa-paint-brush"></i></div>
                         <h4>Design</h4>
-                        <p>We create stunning, user-centric designs that resonate.</p>
+                        <p>Create user-centric designs that resonate with your audience.</p>
                         <span class="step-badge">Phase 2</span>
                     </div>
                     <div class="process-step">
                         <span class="step-number">04</span>
                         <div class="step-icon"><i class="fas fa-code"></i></div>
-                        <h4>Develop</h4>
-                        <p>We build with precision, using the latest technologies.</p>
+                        <h4>Build</h4>
+                        <p>Develop with precision using modern, scalable technologies.</p>
                         <span class="step-badge">Phase 2</span>
                     </div>
                     <div class="process-step">
                         <span class="step-number">05</span>
                         <div class="step-icon"><i class="fas fa-rocket"></i></div>
-                        <h4>Deploy</h4>
-                        <p>We launch your project, ensuring a smooth go-live.</p>
+                        <h4>Launch</h4>
+                        <p>Deploy your solution with a smooth, reliable go-live.</p>
                         <span class="step-badge">Phase 3</span>
                     </div>
                     <div class="process-step">
                         <span class="step-number">06</span>
                         <div class="step-icon"><i class="fas fa-heart"></i></div>
                         <h4>Support</h4>
-                        <p>We provide ongoing support and maintenance for growth.</p>
+                        <p>Provide ongoing support and maintenance for growth.</p>
                         <span class="step-badge">Phase 3</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== TESTIMONIALS ===== -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Testimonials</span>
-                    <h2>What Our <span class="accent-text">Clients Say</span></h2>
-                </div>
-                <div class="testimonial-slider" id="testimonialSlider">
-                    <div class="testimonial-track" id="testimonialTrack">
-                        <div class="testimonial-item">
-                            <div class="client-image">JK</div>
-                            <div class="stars">★★★★★</div>
-                            <p class="review">"YUKAS DIGITAL HUB transformed our business operations with their AI solutions. Our efficiency has increased by over 200%."</p>
-                            <p class="client-name">Jamilu K.</p>
-                            <p class="client-company">CEO, M Tech Solutions</p>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="client-image">AM</div>
-                            <div class="stars">★★★★★</div>
-                            <p class="review">"The team is incredibly professional and forward-thinking. They didn't just build a website; they built a growth engine for us."</p>
-                            <p class="client-name">Aisha M.</p>
-                            <p class="client-company">Founder, Hausa Fashion</p>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="client-image">IO</div>
-                            <div class="stars">★★★★★</div>
-                            <p class="review">"Their understanding of automation has saved us countless hours. We are now able to focus on what truly matters — growing our business."</p>
-                            <p class="client-name">Ibrahim O.</p>
-                            <p class="client-company">Operations Director, Global Logistics</p>
-                        </div>
-                    </div>
-                    <div class="slider-controls">
-                        <button class="dot active" data-index="0" aria-label="Testimonial 1"></button>
-                        <button class="dot" data-index="1" aria-label="Testimonial 2"></button>
-                        <button class="dot" data-index="2" aria-label="Testimonial 3"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FAQ ===== -->
-        <section class="faq" id="faq">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Questions?</span>
-                    <h2>Frequently Asked <span class="accent-text">Questions</span></h2>
-                </div>
-                <div class="faq-list" id="faqList">
-                    <div class="faq-item active">
-                        <div class="faq-question">
-                            <span>What AI solutions do you offer?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            We offer a range of AI solutions including custom AI model development, chatbots, predictive analytics, and intelligent automation systems tailored to your business needs.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How can automation benefit my business?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            Automation streamlines repetitive tasks, reduces errors, frees up your team for strategic work, and can significantly lower operational costs while improving efficiency.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What is the YDH Digital Library?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            The YDH Digital Library is our upcoming platform where you can purchase premium books and resources on AI, Technology, Business, and Digital Skills to help you grow professionally.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How much do your services cost?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            Our services are competitively priced based on the scope and complexity of your project. We offer transparent pricing and custom quotes. Contact us for a free consultation.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FINAL CTA ===== -->
+        <!-- ============================================
+        FINAL CTA
+        ============================================ -->
         <section class="cta-section" id="contact">
             <div class="container cta-container">
-                <div class="cta-content">
-                    <h2>Let's Build Africa's <span class="accent-text">AI Future</span> Together</h2>
-                    <p>Ready to transform your business with the power of AI and modern technology? Partner with us to create a digital ecosystem that drives growth and innovation.</p>
+                <div class="cta-content reveal">
+                    <h2>Have a <span class="accent-text">Business Problem</span> Worth Solving?</h2>
+                    <p>Tell us what you're trying to build. We'll help turn the idea into a practical digital solution.</p>
                     <div class="cta-buttons">
                         <a href="pages/contact.html" class="btn btn-primary btn-large">
-                            Start Your Project <i class="fas fa-chevron-right"></i>
+                            Start a Project <i class="fas fa-arrow-right btn-arrow"></i>
                         </a>
-                        <a href="pages/contact.html" class="btn btn-outline-light">Book a Consultation</a>
+                        <a href="pages/contact.html" class="btn btn-outline-light">
+                            Book a Consultation
+                        </a>
                     </div>
                     <div style="margin-top:1.5rem;">
                         <a href="pages/contact.html" class="btn-view-all">
-                            Visit Full Contact Page <i class="fas fa-arrow-right"></i>
+                            Visit Full Contact Page <i class="fas fa-arrow-right btn-arrow"></i>
                         </a>
                     </div>
                 </div>
@@ -3560,7 +875,9 @@
         </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col brand-col">
@@ -3568,7 +885,7 @@
                     <img src="images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
                     <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
                 </div>
-                <p>Premium AI &amp; digital solutions provider based in Kano, helping African businesses dominate with innovative technology.</p>
+                <p>We build AI-powered digital systems, software products, automation solutions, and modern digital experiences for businesses.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -3581,19 +898,17 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#selected-work">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Products</h4>
                 <ul>
-                    <li><a href="#">YDH Connect</a></li>
-                    <li><a href="#">AI Mastery</a></li>
-                    <li><a href="#">Business Websites</a></li>
-                    <li><a href="#">AI Automation</a></li>
-                    <li><a href="#">Digital Library</a></li>
+                    <li><a href="pages/case-study.html?project=ydh-connect">YDH Connect</a></li>
+                    <li><a href="pages/case-study.html?project=yukas-ai">YUKAS AI</a></li>
+                    <li><a href="pages/case-study.html?project=saraky-data-sub">SARAKY DATA SUB</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -3613,12 +928,14 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>© YUKAS DIGITAL HUB — All rights reserved. Empowering Africa's digital future from Kano, Nigeria.</p>
+                <p>© YUKAS DIGITAL HUB — All rights reserved. Building digital systems that matter.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ===== YUKAS AI CHATBOT ===== -->
+    <!-- ============================================
+    YUKAS AI CHATBOT
+    ============================================ -->
     <div class="yukas-chat-launcher" id="chatLauncher">
         <span class="yukas-launcher-icon"><i class="fas fa-comment-dots"></i></span>
         <span class="yukas-launcher-label">Chat with AI</span>
@@ -3637,59 +954,67 @@
                     <span class="yukas-chat-header-status">Online</span>
                 </div>
             </div>
-            <button class="yukas-chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+            <button class="yukas-chat-close" id="chatClose" aria-label="Close chat"><i class="fas fa-times"></i></button>
         </div>
         <div class="yukas-chat-messages" id="chatMessages">
             <div class="yukas-chat-message yukas-chat-message-assistant">
                 <div class="yukas-chat-avatar">Y</div>
                 <div class="yukas-chat-message-content">
-                    👋 Hi there! I'm YUKAS AI. How can I help you with AI solutions, automation, or digital products today?
+                    👋 Hi there! I'm YUKAS AI. How can I help you with AI systems, software products, automation, or digital solutions today?
                 </div>
             </div>
         </div>
         <div class="yukas-quick-actions" id="quickActions">
-            <button class="yukas-quick-action" data-msg="What AI services do you offer?">AI Services</button>
-            <button class="yukas-quick-action" data-msg="Tell me about your website development.">Web Dev</button>
+            <button class="yukas-quick-action" data-msg="What AI systems do you build?">AI Systems</button>
+            <button class="yukas-quick-action" data-msg="Tell me about your software products.">Software</button>
             <button class="yukas-quick-action" data-msg="How can automation help my business?">Automation</button>
             <button class="yukas-quick-action" data-msg="I want to start a project.">Start Project</button>
         </div>
         <div class="yukas-chat-footer">
-            <textarea class="yukas-chat-input" id="chatInput" placeholder="Ask me anything..." rows="1"></textarea>
-            <button class="yukas-chat-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            <textarea class="yukas-chat-input" id="chatInput" placeholder="Ask me anything..." rows="1" aria-label="Chat input"></textarea>
+            <button class="yukas-chat-send" id="chatSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="js/motion.js"></script>
+    <script src="js/portfolio.js"></script>
+
     <script>
-        // ===== MOBILE MENU =====
+        // ============================================
+        // MOBILE MENU
+        // ============================================
         (function() {
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('navLinks');
             if (hamburger && navLinks) {
-                hamburger.addEventListener('click', () => {
+                hamburger.addEventListener('click', function() {
                     navLinks.classList.toggle('active');
+                    const isOpen = navLinks.classList.contains('active');
+                    hamburger.setAttribute('aria-expanded', isOpen);
+                    hamburger.innerHTML = isOpen ?
+                        '<i class="fas fa-times"></i>' :
+                        '<i class="fas fa-bars"></i>';
                 });
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
+                navLinks.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
                         navLinks.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
                     });
                 });
             }
         })();
 
-        // ===== NAVBAR SCROLL =====
-        (function() {
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                navbar.style.background = window.scrollY > 50 ? 'rgba(3,7,18,0.98)' : 'rgba(3,7,18,0.95)';
-                navbar.style.backdropFilter = window.scrollY > 50 ? 'blur(10px)' : 'blur(10px)';
-            });
-        })();
-
-        // ===== PARTICLES =====
+        // ============================================
+        // PARTICLES
+        // ============================================
         (function() {
             const canvas = document.getElementById('particle-canvas');
             if (!canvas) return;
-            let ctx = canvas.getContext('2d');
+            const ctx = canvas.getContext('2d');
             let particles = [];
             let animationFrameId;
             let mouseX = null,
@@ -3723,8 +1048,10 @@
                 update() {
                     this.x += this.velocity.x;
                     this.y += this.velocity.y;
-                    if (this.x - this.radius < 0 || this.x + this.radius > canvas.width) this.velocity.x = -this.velocity.x;
-                    if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) this.velocity.y = -this.velocity.y;
+                    if (this.x - this.radius < 0 || this.x + this.radius > canvas.width) this.velocity.x = -this.velocity
+                        .x;
+                    if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) this.velocity.y = -this.velocity
+                        .y;
                     if (mouseX !== null && mouseY !== null) {
                         const dx = this.x - mouseX,
                             dy = this.y - mouseY,
@@ -3764,7 +1091,7 @@
                             ctx.beginPath();
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(37,99,235,${0.2 * (1 - dist / 120)})`;
+                            ctx.strokeStyle = 'rgba(37,99,235,' + (0.2 * (1 - dist / 120)) + ')';
                             ctx.lineWidth = 0.8;
                             ctx.stroke();
                         }
@@ -3776,7 +1103,7 @@
                 if (!ctx || !canvas) return;
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 drawConnections();
-                particles.forEach(p => p.update());
+                particles.forEach(function(p) { p.update(); });
                 animationFrameId = requestAnimationFrame(animate);
             }
 
@@ -3793,6 +1120,13 @@
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(resizeCanvas, 150);
             }
+
+            // Check for reduced motion
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                // Disable particles
+                return;
+            }
+
             window.addEventListener('resize', onResize);
             if (canvas) {
                 canvas.addEventListener('mousemove', onMouseMove);
@@ -3802,147 +1136,9 @@
             animate();
         })();
 
-        // ===== TESTIMONIAL SLIDER =====
-        (function() {
-            const track = document.getElementById('testimonialTrack');
-            const dots = document.querySelectorAll('.dot');
-            let currentIndex = 0,
-                interval;
-
-            function goToSlide(index) {
-                if (!track) return;
-                const items = track.querySelectorAll('.testimonial-item');
-                if (index >= items.length) index = 0;
-                if (index < 0) index = items.length - 1;
-                currentIndex = index;
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-            }
-
-            function nextSlide() { goToSlide(currentIndex + 1); }
-
-            function startSlider() {
-                if (interval) clearInterval(interval);
-                if (track && track.querySelectorAll('.testimonial-item').length > 1) {
-                    interval = setInterval(nextSlide, 5000);
-                }
-            }
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    clearInterval(interval);
-                    goToSlide(index);
-                    startSlider();
-                });
-            });
-            const slider = document.getElementById('testimonialSlider');
-            if (slider) {
-                slider.addEventListener('mouseenter', () => clearInterval(interval));
-                slider.addEventListener('mouseleave', startSlider);
-            }
-            startSlider();
-        })();
-
-        // ===== FAQ ACCORDION =====
-        (function() {
-            const faqList = document.getElementById('faqList');
-            if (!faqList) return;
-            faqList.addEventListener('click', function(e) {
-                const question = e.target.closest('.faq-question');
-                if (!question) return;
-                const item = question.closest('.faq-item');
-                if (!item) return;
-                const isActive = item.classList.contains('active');
-                faqList.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
-            });
-        })();
-
-        // ===== SCROLL ANIMATIONS =====
-        document.addEventListener('DOMContentLoaded', () => {
-            const heroContent = document.querySelector('.hero-content');
-            if (heroContent) { heroContent.classList.add('animate-fade-up');
-                heroContent.style.animationDelay = '0.2s'; }
-            const heroVisual = document.querySelector('.hero-visual');
-            if (heroVisual) { heroVisual.classList.add('animate-fade-up');
-                heroVisual.style.animationDelay = '0.4s'; }
-
-            const statNumbers = document.querySelectorAll('.stat-number');
-            const animateNumbers = () => {
-                statNumbers.forEach(stat => {
-                    const value = stat.getAttribute('data-count');
-                    if (value && !stat.classList.contains('animated')) {
-                        stat.classList.add('animated');
-                        let start = 0;
-                        const end = parseInt(value);
-                        if (isNaN(end)) return;
-                        const duration = 2000,
-                            increment = end / (duration / 16);
-                        const updateCounter = () => {
-                            start += increment;
-                            if (start < end) {
-                                stat.textContent = Math.floor(start) + (value.includes('+') ? '+' : (value.includes(
-                                '%') ? '%' : ''));
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                stat.textContent = value;
-                            }
-                        };
-                        updateCounter();
-                    }
-                });
-            };
-            const statsSection = document.querySelector('.stats-section');
-            if (statsSection) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            animateNumbers();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                observer.observe(statsSection);
-            }
-
-            const sectionHeaders = document.querySelectorAll('.section-header');
-            const headerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-up');
-                        headerObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            sectionHeaders.forEach(header => headerObserver.observe(header));
-
-            const grids = document.querySelectorAll('.services-grid, .features-grid, .products-grid, .portfolio-grid, .process-timeline');
-            const gridObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const items = entry.target.children;
-                        Array.from(items).forEach((item, index) => {
-                            item.style.opacity = '0';
-                            item.style.animation = `fadeUp 0.6s ease forwards`;
-                            item.style.animationDelay = `${index * 0.1}s`;
-                        });
-                        gridObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            grids.forEach(grid => gridObserver.observe(grid));
-
-            const animateElements = document.querySelectorAll('.animate-on-scroll');
-            const animateObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            }, { threshold: 0.1 });
-            animateElements.forEach(el => animateObserver.observe(el));
-        });
-
-        // ============================================================
-        // YUKAS AI CHATBOT – Full Interactive Logic
-        // ============================================================
+        // ============================================
+        // CHATBOT
+        // ============================================
         (function() {
             const launcher = document.getElementById('chatLauncher');
             const windowEl = document.getElementById('chatWindow');
@@ -3951,19 +1147,17 @@
             const input = document.getElementById('chatInput');
             const sendBtn = document.getElementById('chatSend');
             const quickBtns = document.querySelectorAll('.yukas-quick-action');
-            const loading = document.getElementById('chatLoading');
             const badge = document.getElementById('chatBadge');
 
             let isOpen = false;
             let isTyping = false;
 
-            // ----- Open/Close -----
             function openChat() {
                 isOpen = true;
                 windowEl.classList.add('open');
                 launcher.classList.add('active');
                 badge.classList.remove('show');
-                setTimeout(() => input.focus(), 300);
+                setTimeout(function() { input.focus(); }, 300);
             }
 
             function closeChat() {
@@ -3973,33 +1167,30 @@
                 badge.classList.add('show');
             }
 
-            launcher.addEventListener('click', () => {
+            launcher.addEventListener('click', function() {
                 if (isOpen) closeChat();
                 else openChat();
             });
             closeBtn.addEventListener('click', closeChat);
 
-            // ----- Send Message -----
             function sendMessage(text) {
                 if (!text || text.trim() === '') return;
-                const trimmed = text.trim();
-                // User message
+                var trimmed = text.trim();
                 addMessage(trimmed, 'user');
                 input.value = '';
                 input.style.height = 'auto';
-                // Simulate assistant reply
                 simulateReply(trimmed);
             }
 
             function addMessage(text, sender) {
-                const div = document.createElement('div');
-                div.className = `yukas-chat-message yukas-chat-message-${sender}`;
+                var div = document.createElement('div');
+                div.className = 'yukas-chat-message yukas-chat-message-' + sender;
 
-                const avatar = document.createElement('div');
+                var avatar = document.createElement('div');
                 avatar.className = 'yukas-chat-avatar';
                 avatar.textContent = sender === 'assistant' ? 'Y' : 'U';
 
-                const content = document.createElement('div');
+                var content = document.createElement('div');
                 content.className = 'yukas-chat-message-content';
                 content.textContent = text;
 
@@ -4014,13 +1205,12 @@
                 isTyping = true;
                 showTyping();
 
-                const delay = 800 + Math.random() * 800;
-                setTimeout(() => {
+                var delay = 800 + Math.random() * 800;
+                setTimeout(function() {
                     hideTyping();
-                    const reply = getAIResponse(userText);
+                    var reply = getAIResponse(userText);
                     addMessage(reply, 'assistant');
                     isTyping = false;
-                    // Show handoff for certain keywords
                     if (userText.toLowerCase().includes('project') || userText.toLowerCase().includes('start') ||
                         userText.toLowerCase().includes('price') || userText.toLowerCase().includes('cost') ||
                         userText.toLowerCase().includes('consult')) {
@@ -4030,34 +1220,32 @@
             }
 
             function getAIResponse(text) {
-                const lower = text.toLowerCase();
-                if (lower.includes('ai') || lower.includes('artificial') || lower.includes('machine') || lower.includes(
-                    'service')) {
-                    return "We offer custom AI development, predictive analytics, NLP, computer vision, and AI-powered automation. Our solutions are tailored to your business needs. Would you like to book a free consultation?";
-                } else if (lower.includes('web') || lower.includes('website') || lower.includes('site') || lower.includes(
-                    'development')) {
-                    return "Our web development service creates high-performance, AI-integrated websites that are fast, secure, and conversion-optimized. We use modern frameworks like React, Next.js, and custom CMS solutions. Need a quote?";
+                var lower = text.toLowerCase();
+                if (lower.includes('ai') || lower.includes('artificial') || lower.includes('system')) {
+                    return "We build custom AI systems including predictive analytics, NLP, computer vision, and intelligent automation. Our solutions are tailored to your business needs. Would you like to book a consultation?";
+                } else if (lower.includes('software') || lower.includes('product') || lower.includes('platform')) {
+                    return "We develop end-to-end software products — from FinTech platforms to business automation tools. We handle everything from design to deployment. Need a quote?";
+                } else if (lower.includes('web') || lower.includes('website') || lower.includes('site')) {
+                    return "Our web development service creates high-performance, AI-integrated websites that are fast, secure, and conversion-optimized. We build with modern technologies.";
                 } else if (lower.includes('automation') || lower.includes('workflow') || lower.includes('efficiency')) {
-                    return "Business automation is our specialty! We build intelligent systems that automate repetitive tasks, integrate with your existing tools, and save you hours every week. From CRM automation to AI chatbots, we've got you covered.";
-                } else if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes(
-                    'budget')) {
-                    return "Our pricing is competitive and transparent. Each project is customized, so the cost depends on scope and complexity. We offer flexible packages starting from $500. Would you like a free estimate?";
-                } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey') || lower.includes(
-                    'good morning') || lower.includes('good afternoon')) {
-                    return "Hello! Great to hear from you. How can I assist you today? Feel free to ask about our AI solutions, web development, automation, or any of our digital products.";
-                } else if (lower.includes('thank') || lower.includes('thanks') || lower.includes('appreciate')) {
-                    return "You're very welcome! 😊 I'm here to help. Is there anything else you'd like to know about our AI solutions or digital services?";
+                    return "Business automation is one of our core specialties. We build intelligent systems that automate repetitive tasks, integrate with your tools, and save you hours every week.";
+                } else if (lower.includes('price') || lower.includes('cost') || lower.includes('how much')) {
+                    return "Our pricing is competitive and transparent. Each project is customized, so the cost depends on scope and complexity. Would you like a free estimate?";
+                } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
+                    return "Hello! Great to hear from you. How can I assist you today? Feel free to ask about our AI systems, software products, automation, or digital solutions.";
+                } else if (lower.includes('thank')) {
+                    return "You're very welcome! 😊 I'm here to help. Is there anything else you'd like to know?";
                 } else {
-                    return "That's a great question! Our team specializes in AI, web development, automation, and digital products. Could you tell me more about your business needs so I can give you the best guidance?";
+                    return "That's a great question! Our team specializes in AI systems, software products, automation, and digital solutions. Could you tell me more about your business needs?";
                 }
             }
 
             function showTyping() {
-                const typingDiv = document.createElement('div');
+                var typingDiv = document.createElement('div');
                 typingDiv.className = 'yukas-chat-typing';
                 typingDiv.id = 'typingIndicator';
-                for (let i = 0; i < 3; i++) {
-                    const span = document.createElement('span');
+                for (var i = 0; i < 3; i++) {
+                    var span = document.createElement('span');
                     typingDiv.appendChild(span);
                 }
                 messages.appendChild(typingDiv);
@@ -4065,19 +1253,19 @@
             }
 
             function hideTyping() {
-                const typing = document.getElementById('typingIndicator');
+                var typing = document.getElementById('typingIndicator');
                 if (typing) typing.remove();
             }
 
             function showWhatsAppHandoff() {
-                const existing = document.querySelector('.yukas-whatsapp-handoff');
+                var existing = document.querySelector('.yukas-whatsapp-handoff');
                 if (existing) return;
 
-                const div = document.createElement('div');
+                var div = document.createElement('div');
                 div.className = 'yukas-whatsapp-handoff';
                 div.innerHTML = `
                     <p>💬 Want to speak with a human expert? Connect with us on WhatsApp for a personalized consultation.</p>
-                    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20AI%20and%20digital%20solutions!" 
+                    <a href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB,%20I'm%20interested%20in%20your%20digital%20solutions!" 
                        target="_blank" class="btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                     </a>
@@ -4086,46 +1274,30 @@
                 messages.scrollTop = messages.scrollHeight;
             }
 
-            // ----- Event Listeners -----
-            sendBtn.addEventListener('click', () => {
-                sendMessage(input.value);
-            });
-
-            input.addEventListener('keydown', (e) => {
+            sendBtn.addEventListener('click', function() { sendMessage(input.value); });
+            input.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
                     sendMessage(input.value);
                 }
             });
-
-            // Auto-resize textarea
-            input.addEventListener('input', () => {
+            input.addEventListener('input', function() {
                 input.style.height = 'auto';
                 input.style.height = Math.min(input.scrollHeight, 80) + 'px';
             });
-
-            // Quick actions
-            quickBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const msg = btn.getAttribute('data-msg');
+            quickBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var msg = btn.getAttribute('data-msg');
                     sendMessage(msg);
                 });
             });
-
-            // Close on outside click (optional)
-            document.addEventListener('click', (e) => {
+            document.addEventListener('click', function(e) {
                 if (isOpen && !windowEl.contains(e.target) && !launcher.contains(e.target)) {
                     closeChat();
                 }
             });
-
-            // Initial greeting with slight delay
-            setTimeout(() => {
-                if (messages.children.length === 1) {
-                    // Already has greeting from HTML
-                }
-            }, 500);
         })();
     </script>
+
 </body>
 </html>
