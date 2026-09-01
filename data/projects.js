@@ -1,20 +1,16 @@
-/**
- * ============================================================
- * YUKAS DIGITAL HUB — Project Data Layer
- * ============================================================
- * Version: 2.0.0
- * 
- * This file contains all project data for the portfolio.
- * All information should be verified before publishing.
- * ============================================================
- */
+/* ============================================
+   YUKAS DIGITAL HUB — PROJECT DATA
+   Version: 2.0.0
+   Central source of truth for all portfolio projects
+   ============================================ */
 
-const PROJECTS = {
-    // ============================================================
+const YDH_PROJECTS = [
+    // ============================================
     // CLIENT PROJECTS
-    // ============================================================
-    
-    kwararre: {
+    // ============================================
+
+    {
+        id: 'kwararre-land-agent',
         slug: 'kwararre-land-agent',
         title: 'Kwararre Land Agent',
         category: 'Real Estate',
@@ -25,88 +21,86 @@ const PROJECTS = {
         location: 'Nigeria',
         role: 'Web Design & Development',
         featured: true,
-        
-        description: 'A premium real estate platform connecting property seekers with verified agents. The website features property listings, agent profiles, and a modern UI designed to build trust and showcase properties effectively.',
-        
-        problem: 'The real estate market in Nigeria suffers from fragmented listings and untrustworthy agents. Kwararre Land Agent needed a platform that would establish credibility and provide a seamless property search experience.',
-        
-        solution: 'YDH designed and built a modern real estate website with advanced property search, agent verification, and a clean interface that prioritizes user experience and trust.',
-        
+        featuredOrder: 1,
+        description: 'A premium real estate platform connecting property buyers with verified agents. Features property listings, agent profiles, and lead generation tools.',
+        problem: 'The real estate market lacked a trusted digital platform where buyers could find verified properties and agents. Existing solutions were fragmented and lacked credibility.',
+        solution: 'We built a comprehensive real estate platform with verified agent profiles, property listings with high-quality imagery, and an intuitive lead generation system.',
         features: [
-            'Property listings with advanced search filters',
-            'Agent profiles with verification badges',
-            'Property comparison tool',
-            'Contact & inquiry forms',
+            'Property listings with advanced search',
+            'Verified agent profiles with ratings',
+            'Lead generation and inquiry system',
+            'Property showcase with high-res imagery',
             'Mobile-responsive design',
-            'Modern UI/UX with dark theme'
+            'SEO-optimized architecture'
         ],
-        
+        workflow: 'Users can browse properties, filter by location and price, view agent profiles, and submit inquiries directly through the platform.',
         technology: [
-            'HTML5/CSS3',
+            'HTML5',
+            'CSS3',
             'JavaScript',
-            'Responsive Design',
-            'Modern UI/UX'
+            'PHP',
+            'MySQL',
+            'Responsive Design'
         ],
-        
-        services: [
-            'UI/UX Design',
-            'Web Development',
-            'Brand Identity'
-        ],
-        
-        outcome: 'A premium real estate platform that positions Kwararre Land Agent as a trusted name in the Nigerian property market.',
-        
-        image: 'images/portfolio/kwararre.jpg',
-        images: [
-            'images/portfolio/kwararre-1.jpg',
-            'images/portfolio/kwararre-2.jpg'
-        ],
-        
+        services: ['Web Design', 'Web Development', 'UI/UX Design', 'SEO'],
+        outcome: 'A trusted real estate platform that has facilitated numerous property transactions and built a community of verified agents.',
+        images: {
+            hero: '/images/projects/kwararre-hero.jpg',
+            thumbnail: '/images/portfolio/kla.png',
+            gallery: [
+                '/images/projects/kwararre-1.jpg',
+                '/images/projects/kwararre-2.jpg'
+            ]
+        },
         liveUrl: 'https://kwararrelandagent.com',
-        githubUrl: null
+        githubUrl: null,
+        testimonial: null
     },
 
-    sassauchi: {
+    {
+        id: 'sassauchi-enterprises',
         slug: 'sassauchi-enterprises',
         title: 'Sassauchi Enterprises',
-        category: 'Business',
-        subcategory: 'Web Development',
+        category: 'Real Estate',
+        subcategory: 'Business Website',
         type: 'Client Project',
         status: 'Launched',
         year: '2024',
         location: 'Nigeria',
         role: 'Web Design & Development',
         featured: true,
-        
-        description: 'A professional business website for Sassauchi Enterprises, showcasing their services and building credibility in the market.',
-        
-        problem: 'Sassauchi Enterprises needed a professional online presence that would establish credibility and attract potential clients.',
-        
-        solution: 'YDH delivered a clean, professional website with a focus on clear messaging and user experience.',
-        
+        featuredOrder: 2,
+        description: 'A professional business website for a real estate enterprise, showcasing their portfolio and services.',
+        problem: 'The enterprise needed a modern digital presence to establish credibility and attract clients in the competitive real estate market.',
+        solution: 'We designed and developed a professional website that communicates trust, showcases property portfolios, and generates leads.',
         features: [
-            'Professional layout',
-            'Service showcase',
-            'Contact forms',
-            'Mobile-responsive design'
+            'Professional business branding',
+            'Property portfolio showcase',
+            'Service pages',
+            'Contact and inquiry forms',
+            'Mobile-first design'
         ],
-        
+        workflow: 'Visitors can explore the company\'s services, view property listings, and contact the team directly.',
         technology: [
-            'HTML5/CSS3',
+            'HTML5',
+            'CSS3',
             'JavaScript',
             'Responsive Design'
         ],
-        
-        services: [
-            'Web Development',
-            'UI/UX Design'
-        ],
-        
-        image: 'images/portfolio/sassauchi.jpg',
-        liveUrl: 'https://sassauchienterprises.com'
+        services: ['Web Design', 'Web Development', 'Brand Identity'],
+        outcome: 'A professional digital presence that has enhanced the company\'s credibility and attracted new clients.',
+        images: {
+            hero: '/images/projects/sassauchi-hero.jpg',
+            thumbnail: '/images/portfolio/sassauchi.png',
+            gallery: []
+        },
+        liveUrl: 'https://sassauchienterprises.com',
+        githubUrl: null,
+        testimonial: null
     },
 
-    amam: {
+    {
+        id: 'amam-properties',
         slug: 'amam-properties',
         title: 'AMAM Properties',
         category: 'Real Estate',
@@ -117,40 +111,42 @@ const PROJECTS = {
         location: 'Nigeria',
         role: 'Web Design & Development',
         featured: true,
-        
-        description: 'A modern real estate website for AMAM Properties, featuring property showcase, lead generation, and professional design.',
-        
-        problem: 'AMAM Properties needed to establish a strong online presence to attract property buyers and investors.',
-        
-        solution: 'YDH built a modern real estate platform with a focus on visual storytelling and lead generation.',
-        
+        featuredOrder: 3,
+        description: 'A modern real estate website with property showcase and lead generation capabilities.',
+        problem: 'AMAM Properties needed a digital platform to showcase their property portfolio and generate qualified leads.',
+        solution: 'We built a visually compelling real estate website with property galleries, agent profiles, and integrated lead capture.',
         features: [
-            'Property showcase',
+            'Property showcase with galleries',
+            'Agent profiles',
             'Lead generation forms',
-            'Investment calculator',
-            'Mobile-responsive design'
+            'Property search',
+            'Responsive design'
         ],
-        
+        workflow: 'Users can browse properties, view agent details, and submit inquiries through the platform.',
         technology: [
-            'HTML5/CSS3',
+            'HTML5',
+            'CSS3',
             'JavaScript',
             'Responsive Design'
         ],
-        
-        services: [
-            'Web Development',
-            'UI/UX Design'
-        ],
-        
-        image: 'images/portfolio/amam.jpg',
-        liveUrl: 'https://amampropertiess.com'
+        services: ['Web Design', 'Web Development', 'Lead Generation'],
+        outcome: 'An effective digital platform that has increased property inquiries and brand visibility.',
+        images: {
+            hero: '/images/projects/amam-hero.jpg',
+            thumbnail: '/images/portfolio/amam.png',
+            gallery: []
+        },
+        liveUrl: 'https://amampropertiess.com',
+        githubUrl: null,
+        testimonial: null
     },
 
-    // ============================================================
+    // ============================================
     // YDH PRODUCTS
-    // ============================================================
+    // ============================================
 
-    saraky: {
+    {
+        id: 'saraky-data-sub',
         slug: 'saraky-data-sub',
         title: 'SARAKY DATA SUB',
         category: 'FinTech',
@@ -161,209 +157,221 @@ const PROJECTS = {
         location: 'Nigeria',
         role: 'Product Development',
         featured: true,
-        
-        description: 'A comprehensive VTU and digital services platform enabling users to purchase airtime, data, and pay bills instantly. A full-featured fintech product built from the ground up.',
-        
-        problem: 'Users need a reliable, fast, and easy-to-use platform for purchasing airtime, data, and paying bills without hassle.',
-        
-        solution: 'YDH developed SARAKY DATA SUB as a complete digital services platform with user accounts, wallet, and seamless payment integration.',
-        
+        featuredOrder: 4,
+        description: 'A comprehensive digital services platform offering airtime, data, cable TV, electricity payments, and VTU services.',
+        problem: 'Users needed a single platform to access multiple digital services including airtime, data subscriptions, and utility payments.',
+        solution: 'We built SARAKY DATA SUB as a unified platform with user accounts, wallets, and integrated payment systems.',
         features: [
-            'User accounts & authentication',
-            'Wallet system',
-            'Airtime & data purchases',
-            'Cable TV & electricity bill payment',
-            'Transaction history',
-            'Referral system'
+            'User accounts and authentication',
+            'Digital wallet system',
+            'Airtime and data purchases',
+            'Cable TV subscriptions',
+            'Electricity bill payments',
+            'VTU API integration',
+            'Transaction history'
         ],
-        
+        workflow: 'Users create accounts, fund their wallets, and purchase services instantly. All transactions are tracked in real-time.',
         technology: [
             'PHP',
             'MySQL',
-            'Monnify Integration',
-            'VTU API Integration',
-            'Responsive Frontend'
+            'Monnify',
+            'VTU APIs',
+            'HTML5',
+            'CSS3',
+            'JavaScript'
         ],
-        
-        services: [
-            'Product Development',
-            'UI/UX Design',
-            'Payment Integration'
-        ],
-        
-        image: 'images/portfolio/saraky.jpg',
-        liveUrl: 'https://sarakydatasub.com'
+        services: ['Product Development', 'UI/UX Design', 'FinTech Solutions'],
+        outcome: 'A fully functional digital services platform serving thousands of users with reliable service delivery.',
+        images: {
+            hero: '/images/projects/saraky-hero.jpg',
+            thumbnail: '/images/portfolio/sarakydatasub.png',
+            gallery: [
+                '/images/projects/saraky-1.jpg',
+                '/images/projects/saraky-2.jpg'
+            ]
+        },
+        liveUrl: 'https://sarakydatasub.com',
+        githubUrl: null,
+        testimonial: null
     },
 
-    ydhConnect: {
+    {
+        id: 'ydh-connect',
         slug: 'ydh-connect',
         title: 'YDH Connect',
         category: 'AI & Automation',
         subcategory: 'Business Automation',
         type: 'YDH Product',
         status: 'In Development',
-        year: '2024',
+        year: '2025',
         location: 'Nigeria',
-        role: 'Product Development',
+        role: 'Product Development & Architecture',
         featured: true,
-        
-        description: 'A business communication and automation platform that helps companies manage customer interactions across multiple channels using AI and workflow automation.',
-        
-        problem: 'Businesses struggle to manage customer communications across multiple channels while maintaining context and providing timely responses.',
-        
-        solution: 'YDH Connect provides a unified platform for managing customer communications with AI-powered responses, workflow automation, and seamless channel integration.',
-        
+        featuredOrder: 5,
+        description: 'An AI-powered business communication and automation platform that connects customer interactions to intelligent actions.',
+        problem: 'Businesses struggle to manage customer communications across multiple channels and automate responses effectively.',
+        solution: 'YDH Connect integrates AI and rules-based automation to handle customer interactions, providing intelligent responses and triggering actions.',
         features: [
-            'Multi-channel communication (WhatsApp, Web, Email)',
+            'Multi-channel communication',
             'AI-powered responses',
-            'Customer context management',
-            'Workflow automation',
-            'Tool integration',
+            'Rules-based automation',
+            'Context-aware interactions',
+            'Action execution engine',
             'Analytics dashboard'
         ],
-        
+        workflow: 'Customer → Communication Channel → YDH Connect → Context → AI/Rules → Tools → Action → Customer',
         technology: [
             'Python',
             'FastAPI',
             'SQLAlchemy',
             'Alembic',
-            'AI API Integration',
-            'WhatsApp API'
+            'SQLite',
+            'AI APIs',
+            'WhatsApp Integration'
         ],
-        
-        services: [
-            'Product Development',
-            'AI Integration',
-            'System Architecture'
-        ],
-        
-        image: 'images/portfolio/ydh-connect.jpg'
+        services: ['AI Development', 'Business Automation', 'Product Development'],
+        outcome: 'A scalable automation platform that helps businesses streamline customer communications.',
+        images: {
+            hero: '/images/projects/ydh-connect-hero.jpg',
+            thumbnail: '/images/projects/ydh-connect-thumb.jpg',
+            gallery: []
+        },
+        liveUrl: null,
+        githubUrl: null,
+        testimonial: null
     },
 
-    yukasAI: {
+    {
+        id: 'yukas-ai',
         slug: 'yukas-ai',
         title: 'YUKAS AI',
-        category: 'AI & Automation',
-        subcategory: 'AI Assistant',
+        category: 'AI',
+        subcategory: 'Business Assistant',
         type: 'YDH Product',
-        status: 'Launched',
-        year: '2024',
+        status: 'In Development',
+        year: '2025',
         location: 'Nigeria',
         role: 'Product Development',
         featured: true,
-        
-        description: 'An intelligent AI assistant that helps businesses automate customer interactions, qualify leads, and provide instant support across multiple channels.',
-        
-        problem: 'Businesses need a way to handle customer inquiries 24/7 without hiring expensive round-the-clock support teams.',
-        
-        solution: 'YUKAS AI is a smart AI assistant that handles customer inquiries, qualifies leads, and can be integrated into websites, WhatsApp, and other platforms.',
-        
+        featuredOrder: 6,
+        description: 'An AI business assistant designed to help businesses with intelligent insights, automation, and decision support.',
+        problem: 'Businesses needed an intelligent assistant to help with data analysis, customer insights, and automated decision-making.',
+        solution: 'YUKAS AI is built as an AI assistant layer that provides business intelligence, automation, and decision support.',
         features: [
-            'Natural language understanding',
-            'Multi-language support (English & Hausa)',
-            'Lead qualification',
-            'WhatsApp integration',
-            'Website widget',
-            'Handoff to human agents'
+            'Natural language interface',
+            'Business intelligence insights',
+            'Automation recommendations',
+            'Customer analysis',
+            'Integration with YDH Connect'
         ],
-        
+        workflow: 'Users interact with YUKAS AI through natural language, receiving insights and recommendations for business decisions.',
         technology: [
-            'Google Gemini AI',
-            'JavaScript',
-            'Python (API)',
-            'WhatsApp API',
-            'Vercel Deployment'
+            'AI APIs',
+            'Python',
+            'Natural Language Processing',
+            'Business Intelligence'
         ],
-        
-        services: [
-            'AI Development',
-            'Product Development',
-            'System Integration'
-        ],
-        
-        image: 'images/portfolio/yukas-ai.jpg'
+        services: ['AI Development', 'Business Intelligence'],
+        outcome: 'An intelligent business assistant that helps businesses make data-driven decisions.',
+        images: {
+            hero: '/images/projects/yukas-ai-hero.jpg',
+            thumbnail: '/images/projects/yukas-ai-thumb.jpg',
+            gallery: []
+        },
+        liveUrl: null,
+        githubUrl: null,
+        testimonial: null
     },
 
-    // ============================================================
+    // ============================================
     // CONCEPT / EXPERIMENTAL
-    // ============================================================
+    // ============================================
 
-    paragon: {
+    {
+        id: 'paragon-protocol',
         slug: 'paragon-protocol',
         title: 'Paragon Protocol',
         category: 'Web3',
-        subcategory: 'Experimental',
+        subcategory: 'DeFi',
         type: 'Concept / Experimental',
         status: 'Concept',
         year: '2024',
         location: 'Nigeria',
-        role: 'Product Design',
+        role: 'UI/UX Design & Product Design',
         featured: false,
-        
-        description: 'A Web3 UI/UX concept exploring decentralized finance interfaces and blockchain interactions. This project demonstrates YDH\'s ability to design for emerging technologies.',
-        
-        problem: 'Web3 interfaces are often complex and confusing for mainstream users. Paragon Protocol explores how to make DeFi more accessible.',
-        
-        solution: 'A clean, modern interface that demystifies blockchain interactions and makes decentralized finance more approachable.',
-        
+        featuredOrder: null,
+        description: 'A conceptual Web3 DeFi interface exploring the intersection of decentralized finance and modern user experience design.',
+        problem: 'Web3 interfaces often suffer from poor user experience, making DeFi inaccessible to non-technical users.',
+        solution: 'Paragon Protocol explores how Web3 DeFi interfaces can be designed with modern UX principles for accessibility and usability.',
         features: [
-            'Clean Web3 UI/UX',
-            'DeFi interface design',
-            'Blockchain transaction visualization',
-            'Wallet connectivity design'
+            'DeFi dashboard design',
+            'Liquidity pool visualization',
+            'Token swap interface',
+            'Portfolio tracking',
+            'Modern Web3 UX'
         ],
-        
+        workflow: 'Users interact with the DeFi interface to manage assets, provide liquidity, and execute swaps.',
         technology: [
-            'Web3 Design Patterns',
-            'UI/UX Design'
+            'React',
+            'TypeScript',
+            'Web3',
+            'Design Systems'
         ],
-        
-        services: [
-            'UI/UX Design',
-            'Product Strategy'
-        ],
-        
-        image: 'images/portfolio/paragon.jpg'
+        services: ['UI/UX Design', 'Product Design', 'Web3'],
+        outcome: 'A design exploration that demonstrates how Web3 can be made accessible through great design.',
+        images: {
+            hero: '/images/projects/paragon-hero.jpg',
+            thumbnail: '/images/projects/paragon-thumb.jpg',
+            gallery: []
+        },
+        liveUrl: null,
+        githubUrl: null,
+        testimonial: null
     }
-};
+];
 
-// ============================================================
-// UTILITY FUNCTIONS
-// ============================================================
+// ============================================
+// HELPER FUNCTIONS
+// ============================================
 
-function getProject(slug) {
-    return PROJECTS[slug] || null;
-}
-
-function getAllProjects() {
-    return Object.values(PROJECTS);
+function getProjectsByType(type) {
+    return YDH_PROJECTS.filter(p => p.type === type);
 }
 
 function getFeaturedProjects() {
-    return Object.values(PROJECTS).filter(p => p.featured === true);
+    return YDH_PROJECTS
+        .filter(p => p.featured)
+        .sort((a, b) => (a.featuredOrder || 999) - (b.featuredOrder || 999));
 }
 
-function getProjectsByType(type) {
-    return Object.values(PROJECTS).filter(p => p.type === type);
+function getProjectBySlug(slug) {
+    return YDH_PROJECTS.find(p => p.slug === slug);
 }
 
 function getProjectsByCategory(category) {
-    return Object.values(PROJECTS).filter(p => p.category === category);
+    return YDH_PROJECTS.filter(p => p.category === category);
 }
 
-// ============================================================
-// EXPOSE
-// ============================================================
+function getFilterOptions() {
+    const types = [...new Set(YDH_PROJECTS.map(p => p.type))];
+    const categories = [...new Set(YDH_PROJECTS.map(p => p.category))];
+    return { types, categories };
+}
 
+function getProjectStatuses() {
+    const statuses = [...new Set(YDH_PROJECTS.map(p => p.status))];
+    return statuses;
+}
+
+// Export for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        PROJECTS,
-        getProject,
-        getAllProjects,
-        getFeaturedProjects,
+        YDH_PROJECTS,
         getProjectsByType,
-        getProjectsByCategory
+        getFeaturedProjects,
+        getProjectBySlug,
+        getProjectsByCategory,
+        getFilterOptions,
+        getProjectStatuses
     };
 }
-
-console.log('✅ YUKAS DIGITAL HUB — Project data loaded');
