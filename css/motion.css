@@ -1,0 +1,323 @@
+/* ============================================================
+   YUKAS DIGITAL HUB — Motion System
+   ============================================================
+   Version: 2.0.0
+   ============================================================ */
+
+/* ============================================================
+   01 — KEYFRAMES
+   ============================================================ */
+
+/* Fade Up */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade In With Blur */
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(37, 99, 235, 0.4);
+    }
+}
+
+/* Float */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Shimmer */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Connection Line (AI Workflow) */
+@keyframes connectionPulse {
+    0%, 100% {
+        stroke-width: 1;
+        opacity: 0.3;
+    }
+    50% {
+        stroke-width: 2;
+        opacity: 0.8;
+    }
+}
+
+@keyframes dotTravel {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -100;
+        opacity: 0;
+    }
+}
+
+/* ============================================================
+   02 — ANIMATION CLASSES
+   ============================================================ */
+
+/* Entrance Animations */
+.animate-fade-up {
+    opacity: 0;
+    animation: fadeUp var(--motion-slow) var(--ease-out) forwards;
+}
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn var(--motion-base) var(--ease-out) forwards;
+}
+
+.animate-fade-in-blur {
+    opacity: 0;
+    animation: fadeInBlur var(--motion-slow) var(--ease-out) forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    animation: slideUp var(--motion-slow) var(--ease-out) forwards;
+}
+
+.animate-scale-in {
+    opacity: 0;
+    animation: scaleIn var(--motion-base) var(--ease-spring) forwards;
+}
+
+/* Stagger Delays */
+.delay-1 { animation-delay: 100ms; }
+.delay-2 { animation-delay: 200ms; }
+.delay-3 { animation-delay: 300ms; }
+.delay-4 { animation-delay: 400ms; }
+.delay-5 { animation-delay: 500ms; }
+.delay-6 { animation-delay: 600ms; }
+.delay-7 { animation-delay: 700ms; }
+.delay-8 { animation-delay: 800ms; }
+
+/* Infinite Animations */
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float 5s ease-in-out infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   03 — SCROLL REVEALS (Intersection Observer)
+   ============================================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all var(--motion-slow) var(--ease-out);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all var(--motion-slow) var(--ease-out);
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all var(--motion-slow) var(--ease-out);
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all var(--motion-slow) var(--ease-spring);
+}
+
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger Children */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--motion-slow) var(--ease-out);
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 80ms; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 160ms; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 240ms; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 320ms; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 400ms; }
+
+.stagger-children.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   04 — HOVER TRANSITIONS
+   ============================================================ */
+
+.hover-lift {
+    transition: transform var(--motion-base) var(--ease-out),
+                box-shadow var(--motion-base) var(--ease-out);
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+}
+
+.hover-glow {
+    transition: box-shadow var(--motion-base) var(--ease-out);
+}
+
+.hover-glow:hover {
+    box-shadow: var(--shadow-blue);
+}
+
+.hover-scale {
+    transition: transform var(--motion-base) var(--ease-spring);
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* ============================================================
+   05 — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .stagger-children > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .animate-float,
+    .animate-float-slow,
+    .animate-pulse,
+    .animate-glow {
+        animation: none !important;
+    }
+}
