@@ -88,7 +88,6 @@
             }
         }
 
-        /* Section Header */
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -150,7 +149,7 @@
             background-clip: text;
         }
 
-        /* ========== NAVBAR ========== */
+        /* ========== NAVBAR (Phase 1 — synced) ========== */
         .navbar {
             position: fixed;
             top: 0;
@@ -215,6 +214,7 @@
             transition: left 0.3s ease;
             z-index: 999;
             padding: 2rem;
+            overflow-y: auto;
         }
 
         .nav-links.active {
@@ -243,6 +243,38 @@
             color: var(--primary-accent);
         }
 
+        /* Desktop nav CTA — hidden below 992px */
+        .nav-cta {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .nav-cta {
+                display: inline-flex;
+            }
+        }
+
+        /* Mobile-only CTA inside hamburger */
+        .mobile-only-cta {
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            .mobile-only-cta {
+                display: block;
+                margin-top: 0.75rem;
+                padding-top: 0.75rem;
+                border-top: 1px solid var(--border-light);
+            }
+            .mobile-only-cta a {
+                display: inline-flex;
+                width: 100%;
+                justify-content: center;
+                font-size: 1.05rem;
+                padding: 0.85rem 1.5rem;
+            }
+        }
+
         .hamburger {
             display: block;
             font-size: 1.5rem;
@@ -251,7 +283,7 @@
             z-index: 1001;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .hamburger {
                 display: none;
             }
@@ -263,16 +295,23 @@
                 background: transparent;
                 backdrop-filter: none;
                 padding: 0;
+                left: 0;
             }
 
             .nav-links ul {
                 flex-direction: row;
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
             .nav-links ul li a {
-                font-size: 1rem;
+                font-size: 0.95rem;
                 padding: 0;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .nav-links ul {
+                gap: 2rem;
             }
         }
 
@@ -1217,8 +1256,14 @@
             font-size: 1.1rem;
         }
 
+        /* Compact nav CTA size */
+        .btn-small {
+            padding: 0.55rem 1.1rem;
+            font-size: 0.875rem;
+        }
+
         /* ============================================================
-               FOOTER
+               FOOTER — Phase 1: Brand / Products / Company / Contact
                ============================================================ */
         .footer {
             background: var(--primary-dark);
@@ -1275,6 +1320,7 @@
             line-height: 1.6;
         }
 
+        /* Social links CSS retained for future use — markup removed in Phase 1 */
         .social-links {
             display: flex;
             gap: 1rem;
@@ -1361,7 +1407,7 @@
         }
 
         /* ============================================================
-               YUKAS AI CHATBOT – GLOWING LAUNCHER & SMOOTH OPEN
+               YUKAS AI CHATBOT – UNCHANGED
                ============================================================ */
 
         .yukas-chat-launcher {
@@ -1992,13 +2038,17 @@
             </div>
             <nav class="nav-links" id="navLinks">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html" class="active">Solutions</a></li>
+                    <li><a href="portfolio.html">Work</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="academy.html">Academy</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li class="mobile-only-cta"><a href="contact.html" class="btn btn-primary">Start a Project</a></li>
                 </ul>
             </nav>
+            <a href="contact.html" class="btn btn-primary btn-small nav-cta">Start a Project</a>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -2393,6 +2443,7 @@
         </section>
     </main>
 
+    <!-- ==================== FOOTER — Phase 1 ==================== -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col brand-col">
@@ -2400,32 +2451,25 @@
                     <img src="../images/logo.jpg" alt="YUKAS DIGITAL HUB" class="footer-logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='YUKAS<span>DIGITAL</span><span>HUB</span>'">
                     <span>YUKAS<span>DIGITAL</span><span>HUB</span></span>
                 </div>
-                <p>Premium AI &amp; digital solutions provider based in Kano, helping African businesses dominate with innovative technology.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <p>AI-powered digital systems, software products, automation solutions, and modern digital experiences.</p>
             </div>
             <div class="footer-col">
                 <h4>Products</h4>
                 <ul>
-                    <li><a href="#">YDH Connect</a></li>
-                    <li><a href="#">AI Mastery</a></li>
-                    <li><a href="#">Business Websites</a></li>
-                    <li><a href="#">AI Automation</a></li>
-                    <li><a href="#">Digital Library</a></li>
+                    <li><a href="products.html">AikiConnect</a></li>
+                    <li><a href="products.html">ArewaGPT</a></li>
+                    <li><a href="products.html">YDH Connect</a></li>
+                    <li><a href="library.html">Digital Library</a></li>
+                    <li><a href="academy.html">YUKAS Academy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Work</a></li>
+                    <li><a href="services.html">Solutions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -2446,7 +2490,7 @@
     </footer>
 
     <!-- ============================================================
-    YUKAS AI CHATBOT – GLOWING LAUNCHER & FULL INTERACTIVE CHAT
+    YUKAS AI CHATBOT – UNCHANGED
     ============================================================ -->
     <div class="yukas-chat-launcher" id="chatLauncher">
         <span class="yukas-launcher-icon"><i class="fas fa-comment-dots"></i></span>
@@ -2533,7 +2577,7 @@
         });
 
         // ============================================================
-        // YUKAS AI CHATBOT – Full Interactive Logic
+        // YUKAS AI CHATBOT – UNCHANGED
         // ============================================================
         (function() {
             const launcher = document.getElementById('chatLauncher');
