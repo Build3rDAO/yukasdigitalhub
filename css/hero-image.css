@@ -1,0 +1,87 @@
+/* =========================================================
+   YUKAS — hero-image.css
+   Only applies when the .hero-photo div is injected by JS
+   (i.e. when images/hero.jpg loads successfully).
+   ========================================================= */
+
+.hero-card .hero-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--ydh-radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  margin-bottom: calc(-1 * var(--ydh-space-6));
+  background: #0B1220;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-card .hero-photo {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--ydh-radius-lg);
+    margin-bottom: calc(-1 * var(--ydh-space-8));
+  }
+}
+
+.hero-card .hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Bottom gradient fade so dashboard overlaps cleanly */
+.hero-card .hero-photo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(5, 7, 11, 0.55) 60%,
+    rgba(5, 7, 11, 0.95) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Make dashboard panel overlap cleanly */
+.hero-card .dashboard-mockup {
+  position: relative;
+  z-index: 2;
+  background: rgba(5, 7, 11, 0.72) !important;
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+/* Gentle fade/zoom-in on load (motion-safe only) */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-card .hero-photo {
+    opacity: 0;
+    animation: heroPhotoFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+  }
+  .hero-card .hero-photo img {
+    transform: scale(1.04);
+    animation: heroPhotoZoomOut 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+  }
+}
+@keyframes heroPhotoFadeIn {
+  to { opacity: 1; }
+}
+@keyframes heroPhotoZoomOut {
+  to { transform: scale(1); }
+}
+
+/* Reduced motion — show instantly, no animation */
+@media (prefers-reduced-motion: reduce) {
+  .hero-card .hero-photo { opacity: 1; }
+  .hero-card .hero-photo img { transform: none; }
+}
