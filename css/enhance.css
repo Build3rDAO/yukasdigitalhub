@@ -1,0 +1,577 @@
+/* =========================================================
+   YUKAS — enhance.css
+   Polish layer. Purely additive. Deleting this file
+   restores the original site.
+   ========================================================= */
+
+/* ---------- 1. Selection + Scrollbar ---------- */
+::selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: #ffffff;
+}
+::-moz-selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: #ffffff;
+}
+
+html {
+  scrollbar-color: #2563EB #05070B;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05070B;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2563EB, #3B82F6);
+  border-radius: 8px;
+  border: 2px solid #05070B;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3B82F6, #60A5FA);
+}
+
+/* ---------- 2. Navbar scrolled state ---------- */
+.navbar.is-scrolled {
+  background: rgba(3, 5, 9, 0.96) !important;
+  border-bottom-color: rgba(37, 99, 235, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55),
+              0 1px 0 rgba(37, 99, 235, 0.15) inset;
+}
+
+/* Desktop nav underline */
+@media (min-width: 992px) {
+  .nav-links ul li a {
+    position: relative;
+    overflow: hidden;
+  }
+  .nav-links ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2563EB, #60A5FA, #D4AF37, #2563EB);
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 2px;
+  }
+  .nav-links ul li a:hover::after,
+  .nav-links ul li a:focus-visible::after {
+    transform: scaleX(1);
+    animation: navUnderlineSlide 2.4s linear infinite;
+  }
+  .mobile-only-cta a::after {
+    display: none !important;
+  }
+}
+@keyframes navUnderlineSlide {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ---------- 3. Primary button — light sweep ---------- */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary:hover::after {
+    animation: btnShineSweep 0.85s ease-out;
+  }
+}
+@keyframes btnShineSweep {
+  0%   { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* ---------- 4. Hero ---------- */
+
+/* Faint grid via ::after (::before already used by the page) */
+@media (prefers-reduced-motion: no-preference) {
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(37, 99, 235, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 70%);
+            mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: heroGridFadeIn 1.4s ease 0.2s forwards;
+  }
+}
+@keyframes heroGridFadeIn {
+  to { opacity: 1; }
+}
+
+/* Larger headline */
+.hero-content h1 {
+  font-size: clamp(2.1rem, 6vw, 4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+/* Trust items as pills */
+.trust-item {
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  border-radius: 9999px;
+  padding: 0.28rem 0.75rem;
+  backdrop-filter: blur(4px);
+}
+.trust-item i {
+  font-size: 0.8rem;
+}
+
+/* Hero card — gradient border + glow behind */
+.hero-card {
+  isolation: isolate;
+}
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(var(--ydh-radius-lg) + 1px);
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.55),
+    rgba(59, 130, 246, 0.15) 40%,
+    rgba(212, 175, 55, 0.35) 70%,
+    rgba(37, 99, 235, 0.5)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+@media (min-width: 768px) {
+  .hero-card::before {
+    border-radius: calc(var(--ydh-radius-xl) + 1px);
+  }
+}
+/* Blurred glow behind */
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(37, 99, 235, 0.28),
+    rgba(37, 99, 235, 0) 65%
+  );
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Floating element bob */
+@media (prefers-reduced-motion: no-preference) {
+  .floating-element.elem-1 { animation: floatBob 5.2s ease-in-out infinite; }
+  .floating-element.elem-2 { animation: floatBob 6.1s ease-in-out infinite 0.4s; }
+  .floating-element.elem-3 { animation: floatBob 5.8s ease-in-out infinite 0.8s; }
+}
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+/* Chart bars — grow from bottom + stagger */
+@media (prefers-reduced-motion: no-preference) {
+  .chart-bar {
+    transform-origin: bottom;
+    animation: chartGrow 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .mockup-chart .chart-bar:nth-child(1) { animation-delay: 0.35s; }
+  .mockup-chart .chart-bar:nth-child(2) { animation-delay: 0.5s; }
+  .mockup-chart .chart-bar:nth-child(3) { animation-delay: 0.65s; }
+  .mockup-chart .chart-bar:nth-child(4) { animation-delay: 0.8s; }
+  .mockup-chart .chart-bar:nth-child(5) { animation-delay: 0.95s; }
+}
+@keyframes chartGrow {
+  from { transform: scaleY(0); opacity: 0.4; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+/* 4th bar gold */
+.mockup-chart .chart-bar:nth-child(4) {
+  background: linear-gradient(180deg, #D4AF37, #F5D67A) !important;
+}
+.mockup-chart .chart-bar:nth-child(4)::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent);
+}
+
+/* Hero entrance sequence */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-badge,
+  .hero-content h1,
+  .hero-content .subtitle,
+  .hero-buttons,
+  .trust-badge,
+  .hero-visual {
+    opacity: 0;
+    animation: heroEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-badge       { animation-delay: 0.05s; }
+  .hero-content h1  { animation-delay: 0.18s; }
+  .hero-content .subtitle { animation-delay: 0.32s; }
+  .hero-buttons     { animation-delay: 0.46s; }
+  .trust-badge      { animation-delay: 0.6s; }
+  .hero-visual      { animation-delay: 0.5s; }
+}
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 5. Accent gradient shimmer ---------- */
+.accent-text,
+.section-header h2 .accent {
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+          background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .accent-text,
+  .section-header h2 .accent {
+    animation: accentShift 6s ease-in-out infinite;
+  }
+}
+@keyframes accentShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* ---------- 6. Section tag — glowing dot ---------- */
+.section-tag {
+  position: relative;
+  padding-left: 1.55rem;
+}
+.section-tag::before {
+  content: "";
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #60A5FA;
+  box-shadow: 0 0 8px #3B82F6, 0 0 16px rgba(59, 130, 246, 0.6);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-tag::before {
+    animation: tagDotPulse 2.4s ease-in-out infinite;
+  }
+}
+@keyframes tagDotPulse {
+  0%, 100% { box-shadow: 0 0 8px #3B82F6, 0 0 16px rgba(59, 130, 246, 0.6); }
+  50%      { box-shadow: 0 0 12px #60A5FA, 0 0 28px rgba(96, 165, 250, 0.85); }
+}
+
+/* Slightly larger section h2 */
+.section-header h2 {
+  font-size: clamp(1.65rem, 4.4vw, 2.5rem);
+}
+
+/* ---------- 7. Trust-bar items as bordered pills ---------- */
+.trust-item-logo {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.015);
+  transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+.trust-item-logo:hover {
+  border-color: rgba(37, 99, 235, 0.4);
+  background: rgba(37, 99, 235, 0.06);
+  color: #ffffff;
+}
+
+/* ---------- 8. Service card — cursor spotlight ---------- */
+.service-card {
+  --mx: 50%;
+  --my: 50%;
+}
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    380px circle at var(--mx) var(--my),
+    rgba(37, 99, 235, 0.16),
+    rgba(37, 99, 235, 0.04) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.service-card:hover::before {
+  opacity: 1;
+}
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft hover glow — box-shadow (safe, doesn't touch transform/opacity) */
+.service-card:hover {
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.12),
+    0 0 0 1px rgba(37, 99, 235, 0.15);
+}
+
+/* Stronger service-number */
+@media (min-width: 1024px) {
+  .service-number {
+    color: rgba(37, 99, 235, 0.14) !important;
+    text-shadow: 0 0 24px rgba(37, 99, 235, 0.15);
+  }
+}
+
+/* ---------- 9. Portfolio card — equal heights + fade + glow ---------- */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+.portfolio-info .project-card-actions {
+  margin-top: auto;
+  padding-top: var(--ydh-space-2);
+}
+.portfolio-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(5, 7, 11, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+.portfolio-card:hover {
+  box-shadow:
+    0 14px 40px rgba(37, 99, 235, 0.15),
+    0 0 0 1px rgba(37, 99, 235, 0.18);
+}
+
+/* ---------- 10. Workflow pulse ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .workflow-node:nth-of-type(1) { animation: workflowPulse 5.4s ease-in-out infinite 0s; }
+  .workflow-node:nth-of-type(2) { animation: workflowPulse 5.4s ease-in-out infinite 0.9s; }
+  .workflow-node:nth-of-type(3) { animation: workflowPulse 5.4s ease-in-out infinite 1.8s; }
+  .workflow-node:nth-of-type(4) { animation: workflowPulse 5.4s ease-in-out infinite 2.7s; }
+  .workflow-node:nth-of-type(5) { animation: workflowPulse 5.4s ease-in-out infinite 3.6s; }
+  .workflow-node:nth-of-type(6) { animation: workflowPulse 5.4s ease-in-out infinite 4.5s; }
+
+  .workflow-arrow:nth-of-type(1) { animation: arrowPulse 5.4s ease-in-out infinite 0.45s; }
+  .workflow-arrow:nth-of-type(2) { animation: arrowPulse 5.4s ease-in-out infinite 1.35s; }
+  .workflow-arrow:nth-of-type(3) { animation: arrowPulse 5.4s ease-in-out infinite 2.25s; }
+  .workflow-arrow:nth-of-type(4) { animation: arrowPulse 5.4s ease-in-out infinite 3.15s; }
+  .workflow-arrow:nth-of-type(5) { animation: arrowPulse 5.4s ease-in-out infinite 4.05s; }
+}
+@keyframes workflowPulse {
+  0%, 15%  {
+    border-color: rgba(59, 130, 246, 0.85);
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.3),
+                0 0 20px rgba(59, 130, 246, 0.55),
+                inset 0 0 12px rgba(59, 130, 246, 0.25);
+  }
+  30%, 100% {
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+  }
+}
+/* Workflow-complete: animate ONLY box-shadow (background/border use !important) */
+@media (prefers-reduced-motion: no-preference) {
+  .workflow-node.workflow-complete {
+    animation: workflowCompletePulse 5.4s ease-in-out infinite 4.95s !important;
+  }
+}
+@keyframes workflowCompletePulse {
+  0%, 15%  {
+    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.4),
+                0 0 22px rgba(16, 185, 129, 0.6),
+                inset 0 0 12px rgba(16, 185, 129, 0.25);
+  }
+  30%, 100% {
+    box-shadow: none;
+  }
+}
+@keyframes arrowPulse {
+  0%, 15%  { color: #60A5FA; text-shadow: 0 0 10px rgba(96, 165, 250, 0.8); }
+  30%, 100% { color: rgba(255, 255, 255, 0.1); text-shadow: none; }
+}
+
+/* ---------- 11. Process — gradient step numbers + contrast ---------- */
+@media (min-width: 768px) {
+  .step-number {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.55), rgba(96, 165, 250, 0.25)) !important;
+    -webkit-background-clip: text !important;
+            background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 800;
+  }
+}
+/* Raise contrast of faint bits */
+.process-step p {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+.stat-label {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.hero-content .subtitle {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* ---------- 12. CTA — glowing bordered panel ---------- */
+.cta-content {
+  position: relative;
+  padding: var(--ydh-space-8) var(--ydh-space-5);
+  border-radius: var(--ydh-radius-xl);
+  isolation: isolate;
+}
+@media (min-width: 768px) {
+  .cta-content { padding: var(--ydh-space-10) var(--ydh-space-8); }
+}
+.cta-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.55),
+    rgba(212, 175, 55, 0.25) 50%,
+    rgba(37, 99, 235, 0.55)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+.cta-content::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(37, 99, 235, 0.14),
+    transparent 65%
+  );
+  filter: blur(30px);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* ---------- 13. Footer — gradient hairline on top ---------- */
+.footer {
+  border-top: none !important;
+  position: relative;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(37, 99, 235, 0.6) 20%,
+    rgba(96, 165, 250, 0.85) 50%,
+    rgba(37, 99, 235, 0.6) 80%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* ---------- 14. Chat launcher pulse ring ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .yukas-chat-launcher:not(.active)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid rgba(37, 99, 235, 0.55);
+    pointer-events: none;
+    animation: launcherRing 3s ease-out infinite;
+  }
+}
+@keyframes launcherRing {
+  0%   { transform: scale(1);    opacity: 0.7; }
+  100% { transform: scale(1.55); opacity: 0;   }
+}
+
+/* ---------- 15. Scroll progress bar ---------- */
+.ydh-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2563EB, #60A5FA 45%, #D4AF37 100%);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ydh-scroll-progress { display: none; }
+}
