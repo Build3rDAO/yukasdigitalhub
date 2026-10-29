@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YUKAS DIGITAL HUB — AI, Automation & Digital Systems for Business</title>
+<meta name="description" content="We build digital systems that make businesses smarter — AI systems, automation, software, digital products, and practical technology solutions for modern businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070B;--b6:#2563EB;--b5:#3B82F6;--b4:#60A5FA;--cy:#22D3EE;--in:#6366F1;--vi:#8B5CF6;--glass:rgba(15,23,42,.55);--line:rgba(96,165,250,.28);--txt:#fff;--mut:rgba(255,255,255,.72);--hd:'Space Grotesk',system-ui,sans-serif;--bd:'Inter',system-ui,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bd);overflow:hidden}
+body{background:radial-gradient(ellipse at 50% 40%,#0b1430 0,var(--bg) 65%)}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px;border-radius:12px}
+canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+header{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,40px)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--hd);font-weight:700;letter-spacing:.02em;font-size:1rem}
+.mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--b6),var(--vi));display:grid;place-items:center;box-shadow:0 0 18px rgba(59,130,246,.55);font-size:.95rem}
+.hbtns{display:flex;gap:10px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:.9rem;font-weight:500;transition:border-color .25s,box-shadow .25s,transform .25s}
+.pill:hover{border-color:var(--cy);box-shadow:0 0 22px rgba(34,211,238,.25)}
+.pill:active{transform:scale(.97)}
+#stage{position:fixed;inset:0;z-index:5;transition:opacity .28s,transform .28s}
+#stage.out{opacity:0;transform:scale(.985)}
+.screen{position:absolute;inset:0;display:none}
+.screen.on{display:block}
+/* hero */
+#home{display:none;place-items:center;text-align:center}
+#home.on{display:grid}
+.core{position:relative;z-index:2;max-width:min(560px,88vw);padding:0 8px}
+.core .tag{font-size:.85rem;color:var(--cy);margin-bottom:14px}
+h1{font-family:var(--hd);font-size:clamp(1.9rem,4.6vw,3.4rem);line-height:1.1;letter-spacing:-.025em;margin-bottom:16px}
+.core p{color:var(--mut);font-size:clamp(.95rem,1.4vw,1.1rem);line-height:1.6;margin-bottom:26px}
+.cta{display:inline-flex;align-items:center;min-height:50px;padding:0 28px;border-radius:999px;background:linear-gradient(135deg,var(--b6),var(--in));font-weight:600;box-shadow:0 0 30px rgba(59,130,246,.45);transition:box-shadow .25s,transform .25s}
+.cta:hover{box-shadow:0 0 44px rgba(34,211,238,.5)}.cta:active{transform:scale(.97)}
+#orbit{position:absolute;inset:0;display:none}
+.node{position:absolute;left:50%;top:50%;display:flex;align-items:center;gap:10px;min-height:48px;padding:0 18px 0 12px;border-radius:999px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-weight:500;font-size:.95rem;white-space:nowrap;transition:border-color .25s,box-shadow .25s;translate:-50% -50%}
+.node svg{width:22px;height:22px;stroke:var(--b4);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.node:hover,.node:focus-visible{border-color:var(--cy);box-shadow:0 0 26px rgba(34,211,238,.3)}
+.node:hover svg{stroke:var(--cy)}
+.node.pulse{animation:pl 1.2s ease 2}
+@keyframes pl{50%{box-shadow:0 0 36px rgba(34,211,238,.6);border-color:var(--cy)}}
+.foot{position:absolute;left:0;right:0;bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,4vw,40px);color:var(--mut);font-size:.85rem;gap:12px}
+@media(min-width:960px){#orbit{display:block}.cta-m{display:none}}
+@media(max-width:959px){.foot span{display:none}.foot{justify-content:center}}
+/* views */
+.view{overflow-y:auto;padding:84px clamp(16px,5vw,64px) 40px;-webkit-overflow-scrolling:touch}
+.wrap{max-width:1080px;margin:0 auto}
+.back{margin-bottom:22px}
+.view h2{font-family:var(--hd);font-size:clamp(1.7rem,4vw,2.6rem);letter-spacing:-.02em;margin-bottom:10px}
+.lead{color:var(--mut);max-width:62ch;line-height:1.65;margin-bottom:26px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr))}
+.card{display:block;text-align:left;padding:20px;border-radius:18px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:border-color .25s,transform .25s,box-shadow .25s}
+a.card:hover,button.card:hover{border-color:var(--cy);transform:translateY(-3px);box-shadow:0 8px 30px rgba(34,211,238,.14)}
+.card h3{font-family:var(--hd);font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--mut);font-size:.93rem;line-height:1.55}
+.card small{display:block;margin-top:12px;color:var(--b4);font-weight:500;font-size:.88rem}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:14px;background:#0b1430}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+/* menu */
+#panel{position:fixed;inset:0;z-index:40;background:rgba(5,7,11,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:calc(18px + env(safe-area-inset-top,0px)) 20px 24px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,transform .3s,visibility .3s}
+#panel.open{opacity:1;visibility:visible;transform:none}
+#panel .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+#panel ul{list-style:none;display:grid;gap:10px;max-width:520px;margin:0 auto}
+#panel .node{position:static;translate:none;width:100%;min-height:58px;font-size:1.05rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+
+/* Updated immersive hero: aligned to the approved mobile-first visual proposal */
+:root{--bg:#020817;--glass:rgba(3,15,43,.76);--line:rgba(71,119,255,.62)}
+html,body{min-height:100%;background:#020817}
+body{background:radial-gradient(ellipse at 50% 38%,#071b4a 0,#020817 60%,#01040d 100%)}
+header{padding:calc(18px + env(safe-area-inset-top,0px)) clamp(18px,5vw,44px) 12px;align-items:center}
+.brand{gap:10px;font-size:clamp(1.05rem,3vw,1.65rem);letter-spacing:.04em;line-height:1.05}
+.mark{width:44px;height:48px;border-radius:0;background:linear-gradient(135deg,#22d3ee 0%,#2563eb 48%,#8b5cf6 100%);clip-path:polygon(0 0,42% 0,62% 38%,100% 0,100% 34%,66% 100%,48% 66%,32% 100%,0 20%);color:transparent;box-shadow:0 0 26px rgba(34,211,238,.4)}
+.brand::after{content:'DIGITAL HUB';display:none}
+.menu-icon{width:52px;height:52px;border-radius:17px;border:1px solid rgba(34,211,238,.9);background:rgba(4,21,56,.78);box-shadow:0 0 22px rgba(0,153,255,.35),inset 0 0 15px rgba(34,211,238,.08);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.menu-icon span{width:24px;height:2px;border-radius:2px;background:#f7fbff;display:block}
+#home{display:none;overflow:hidden;text-align:center;align-items:stretch;justify-content:flex-start}
+#home.on{display:flex;flex-direction:column}
+#orbit{display:block;position:absolute;left:0;right:0;top:15%;height:43%;inset-inline:0;z-index:1;pointer-events:none}
+#orbit::before{content:'';position:absolute;left:50%;top:50%;width:clamp(190px,47vw,340px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(35,213,255,.18),rgba(18,49,158,.18) 35%,rgba(4,10,37,.8) 68%,rgba(1,5,18,.95) 73%);border:1px solid rgba(57,181,255,.88);box-shadow:0 0 14px #087cff,0 0 34px rgba(0,115,255,.75),inset 0 0 32px rgba(0,204,255,.34),inset 0 0 70px rgba(93,56,255,.22);animation:sphere-glow 4s ease-in-out infinite}
+#orbit::after{content:'Y';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--hd);font-size:clamp(3rem,10vw,5.5rem);font-weight:700;line-height:1;color:#21d9ff;text-shadow:0 0 12px #18cfff,0 0 32px #345cff,0 0 48px #7c3aed;pointer-events:none}
+@keyframes sphere-glow{50%{box-shadow:0 0 22px #087cff,0 0 48px rgba(0,115,255,.9),inset 0 0 42px rgba(0,204,255,.42),inset 0 0 85px rgba(93,56,255,.3)}}
+.node{pointer-events:auto;z-index:2;min-height:44px;padding:0 12px;border-color:rgba(37,174,255,.8);background:rgba(3,12,38,.84);box-shadow:0 0 15px rgba(0,115,255,.14),inset 0 0 12px rgba(29,78,216,.08);font-size:clamp(.72rem,2.5vw,.95rem);gap:7px}
+.node svg{width:20px;height:20px;flex-shrink:0;stroke:#b8dcff}
+.core{position:absolute;z-index:3;left:0;right:0;bottom:calc(3.5% + env(safe-area-inset-bottom,0px));width:100%;max-width:780px;margin:0 auto;padding:0 clamp(18px,5vw,40px);}
+.hero-wordmark{display:flex;flex-direction:column;align-items:center;margin:0 auto 18px;line-height:1}
+.hero-wordmark strong{font-family:var(--hd);font-size:clamp(2.6rem,10vw,4.8rem);font-weight:700;letter-spacing:.02em;background:linear-gradient(100deg,#fff 5%,#e8f4ff 48%,#17c9ff 73%,#7c3aed 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-wordmark span{font-size:clamp(.9rem,3.2vw,1.45rem);font-weight:700;letter-spacing:.28em;color:#17c9ed;margin-top:7px}
+.core .tag{display:none}
+h1{font-size:clamp(1.65rem,5.5vw,2.7rem);line-height:1.12;letter-spacing:-.025em;margin:0 auto 12px;max-width:690px}
+h1 em{font-style:normal;background:linear-gradient(90deg,#1edfff,#5e7dff,#9b4dff);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.core p{font-size:clamp(.78rem,2.6vw,1rem);line-height:1.5;margin:0 auto 20px;max-width:680px;color:#d0ddff}
+.core p b{color:#14d9ff;padding:0 3px}
+.cta{min-height:54px;padding:0 clamp(20px,5vw,38px);gap:18px;border:1px solid #39ddff;background:linear-gradient(105deg,#05bce9 0%,#215cf0 55%,#7c20e8 100%);box-shadow:0 0 24px rgba(0,181,255,.42),0 0 42px rgba(108,48,255,.25),inset 0 0 10px rgba(255,255,255,.12);font-size:clamp(.88rem,2.8vw,1.05rem)}
+.tagline{display:flex;align-items:center;justify-content:center;gap:14px;margin:20px auto 14px;color:#b7c8ff;font-size:clamp(.8rem,2.8vw,1rem);line-height:1.4}
+.tagline span{width:24px;height:1px;background:linear-gradient(90deg,transparent,#21cfff)}
+.tagline span:last-child{background:linear-gradient(90deg,#21cfff,transparent)}
+.assistant-pill{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid #8a55ff;background:linear-gradient(100deg,rgba(0,180,255,.17),rgba(82,38,210,.32));box-shadow:0 0 20px rgba(0,177,255,.25),inset 0 0 12px rgba(107,68,255,.14);font-size:.9rem}
+.bot-icon{font-size:1.2rem;color:#72f4ff;text-shadow:0 0 12px #14cfff}
+.foot{display:none}
+#panel{background:rgba(2,7,23,.97)}
+#panel .node{position:static;transform:none;translate:none;width:100%;min-height:58px}
+@media(min-width:960px){
+ #orbit{top:12%;height:48%}
+ #orbit::before{width:min(30vw,390px)}
+ .core{bottom:4%;}
+ .hero-wordmark strong{font-size:4.3rem}
+ h1{font-size:clamp(2.2rem,3.3vw,3.2rem)}
+ .node{font-size:.95rem;min-height:48px;padding:0 18px}
+}
+@media(max-width:520px){
+ header{padding-top:calc(16px + env(safe-area-inset-top,0px));padding-inline:18px}
+ .brand{font-size:1rem;max-width:68%;}
+ .mark{width:36px;height:40px;flex-shrink:0}
+ .menu-icon{width:46px;height:46px;border-radius:15px}
+ #orbit{top:15%;height:40%}
+ #orbit::before{width:clamp(170px,48vw,230px)}
+ .node{min-height:39px;padding:0 9px;gap:5px;font-size:.72rem}
+ .node svg{width:17px;height:17px}
+ .core{bottom:calc(2.2% + env(safe-area-inset-bottom,0px));padding-inline:18px}
+ .hero-wordmark{margin-bottom:12px}
+ .hero-wordmark strong{font-size:clamp(2.55rem,11vw,3.2rem)}
+ .hero-wordmark span{font-size:.9rem;letter-spacing:.24em}
+ h1{font-size:clamp(1.5rem,5.5vw,1.9rem);margin-bottom:10px}
+ .core p{font-size:.76rem;margin-bottom:14px}
+ .cta{min-height:48px;padding:0 20px;gap:12px}
+ .tagline{margin:14px auto 10px;font-size:.78rem}
+ .assistant-pill{min-height:44px;font-size:.82rem;padding:0 18px}
+}
+@media(max-height:760px){
+ #orbit{top:14%;height:37%}
+ .core{bottom:1.5%;}
+ .hero-wordmark{margin-bottom:8px}
+ .hero-wordmark strong{font-size:clamp(2rem,8vw,3.3rem)}
+ h1{font-size:clamp(1.35rem,4.8vw,2rem);margin-bottom:8px}
+ .core p{margin-bottom:10px}
+ .tagline{margin:10px auto 8px}
+ .assistant-pill{min-height:40px}
+}
+@media(prefers-reduced-motion:reduce){#orbit::before{animation:none}}
+
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<header>
+  <a class="brand" href="#home" aria-label="YUKAS DIGITAL HUB home"><span class="mark" aria-hidden="true">Y</span>YUKAS DIGITAL HUB</a>
+  <div class="hbtns">
+    <button class="menu-icon" id="menuBtn" aria-label="Open navigation menu" aria-haspopup="dialog" aria-controls="panel" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="stage">
+  <section id="home" class="screen on" aria-labelledby="h1">
+    <nav id="orbit" aria-label="Primary navigation"></nav>
+    <div class="core">
+      <div class="hero-wordmark" aria-label="YUKAS Digital Hub"><strong>YUKAS</strong><span>DIGITAL HUB</span></div>
+      <h1 id="h1">We Build Digital Systems That Make Businesses <em>Smarter.</em></h1>
+      <p>AI Solutions <b>•</b> Automation <b>•</b> Web Development <b>•</b> UI/UX Design</p>
+      <button class="cta" id="ctaBtn">Explore Our Universe <span aria-hidden="true">→</span></button>
+      <div class="tagline"><span></span>Your Gateway to Seamless<br>Digital Services<span></span></div>
+      <a class="assistant-pill" href="https://yukasdigitalhub.vercel.app/" aria-label="Open YUKAS AI Assistant"><span class="bot-icon" aria-hidden="true">✦</span> YUKAS AI Assistant <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="foot"><span>Building digital systems that matter.</span><span>Kano, Nigeria</span></div>
+  </section>
+  <section id="view" class="screen view" aria-live="polite"></section>
+</main>
+
+<div id="panel" role="dialog" aria-modal="true" aria-label="Site navigation">
+  <div class="top"><span class="brand"><span class="mark" aria-hidden="true">Y</span>YUKAS DIGITAL HUB</span><button class="pill" id="closeBtn">Close</button></div>
+  <ul id="plist"></ul>
+</div>
+
+<script>
+(function(){
+'use strict';
+var W='https://yukasdigitalhub.vercel.app/pages/';
+var IC={about:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>',services:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',products:'<path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/>',work:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 13h18"/>',academy:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/>',library:'<path d="M4 4h6a2 2 0 012 2v14a2 2 0 00-2-2H4zM20 4h-6a2 2 0 00-2 2v14a2 2 0 012-2h6z"/>',contact:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>'};
+var NAV=[['about','About Us'],['services','Services'],['products','Products'],['work','Our Work'],['academy','Academy'],['library','Library'],['contact','Contact']];
+var SV=[['ai','AI Systems','Custom AI models, predictive analytics, NLP, and intelligent automation.'],['software','Software Products','End-to-end software development for web, mobile, and enterprise platforms.'],['automation','Business Automation','Intelligent automation systems that streamline workflows and save time.'],['web','Web Experiences','High-performance, AI-integrated websites that convert visitors into customers.'],['platforms','Digital Platforms','Scalable platforms for FinTech, e-commerce, and digital services.'],['design','UI/UX Design','Human-centric design for digital products that deliver exceptional experiences.']];
+var PJ=[['Kwararre Land Agent','Real estate platform with verified agent profiles and property listings.','kla','https://kwararrelandagent.com','kwararre-land-agent'],['Sassauchi Enterprises','Professional business website for a real estate enterprise.','sassauchi','https://sassauchienterprises.com','sassauchi-enterprises'],['AMAM Properties','Modern real estate website with property showcase and lead generation.','amam','https://amampropertiess.com','amam-properties'],['SARAKY DATA SUB','Digital services for airtime, data, cable TV, and electricity payments.','sarakydatasub','https://sarakydatasub.com','saraky-data-sub']];
+var PR=['AikiConnect','ArewaGPT','YDH Connect'];
+var $=function(s){return document.querySelector(s)};
+var svg=function(k){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+IC[k]+'</svg>'};
+var cta=function(h,t,x){return '<a class="cta" href="'+h+'"'+(x?' target="_blank" rel="noopener"':'')+'>'+t+'</a>'};
+var back=function(h,t){return '<a class="pill back" href="'+h+'">&larr; '+t+'</a>'};
+
+/* nav nodes */
+var orbit=$('#orbit'),plist=$('#plist');
+NAV.forEach(function(n){
+  orbit.insertAdjacentHTML('beforeend','<a class="node" data-k="'+n[0]+'" href="#'+n[0]+'">'+svg(n[0])+n[1]+'</a>');
+  plist.insertAdjacentHTML('beforeend','<li><a class="node" href="#'+n[0]+'">'+svg(n[0])+n[1]+'</a></li>');
+});
+function place(){
+  var w=innerWidth,h=innerHeight,rx=Math.min(w*.33,360),ry=Math.min(h*.145,210);
+  var points=[[-.56,-.42],[.56,-.42],[-.82,.03],[.82,.08],[-.68,.55],[.68,.55],[0,.88]];
+  orbit.querySelectorAll('.node').forEach(function(el,i){
+    var p=points[i];
+    el.style.transform='translate('+Math.round(p[0]*rx)+'px,'+Math.round(p[1]*ry*2)+'px)';
+  });
+}
+addEventListener('resize',place);place();
+
+/* views */
+var V={
+ about:function(){return back('#home','Home')+'<h2>About Us</h2><p class="lead">We design and build AI-powered digital systems, software products, automation solutions, and modern digital experiences. We combine technical expertise with business understanding to deliver solutions that actually solve problems. We are a team of AI engineers, developers, designers, and strategists based in Kano, Nigeria.</p>'+cta(W+'about.html','Read the full story',1)},
+ services:function(){return back('#home','Home')+'<h2>Services</h2><p class="lead">Technology solutions that help businesses operate better. Choose a service to see more.</p><div class="grid">'+SV.map(function(s){return '<a class="card" href="#services/'+s[0]+'"><h3>'+s[1]+'</h3><p>'+s[2]+'</p><small>View service</small></a>'}).join('')+'</div>'},
+ service:function(id){var s=SV.filter(function(x){return x[0]===id})[0];if(!s)return V.services();return back('#services','Services')+'<h2>'+s[1]+'</h2><p class="lead">'+s[2]+'</p><div class="row">'+cta('#contact','Start a project')+'<a class="pill" href="'+W+'services.html#'+s[0]+'" target="_blank" rel="noopener">Full details on current site</a></div>'},
+ products:function(){return back('#home','Home')+'<h2>Products</h2><p class="lead">Digital products built by YUKAS DIGITAL HUB.</p><div class="grid">'+PR.map(function(p){return '<a class="card" href="'+W+'products.html" target="_blank" rel="noopener"><h3>'+p+'</h3><small>Open product page</small></a>'}).join('')+'</div>'},
+ work:function(){return back('#home','Home')+'<h2>Our Work</h2><p class="lead">Digital systems, platforms, and products we&rsquo;ve built.</p><div class="grid">'+PJ.map(function(p){return '<article class="card"><img src="https://yukasdigitalhub.vercel.app/images/portfolio/'+p[2]+'.png" alt="'+p[0]+' website" loading="lazy"><h3>'+p[0]+'</h3><p>'+p[1]+'</p><div class="row" style="margin-top:14px"><a class="pill" href="'+p[3]+'" target="_blank" rel="noopener">Visit</a><a class="pill" href="'+W+'case-study.html?project='+p[4]+'" target="_blank" rel="noopener">Case study</a></div></article>'}).join('')+'</div>'},
+ academy:function(){return back('#home','Home')+'<h2>Academy</h2><p class="lead">YUKAS Academy learning content lives on the current site.</p>'+cta(W+'academy.html','Open the Academy',1)},
+ library:function(){return back('#home','Home')+'<h2>Library</h2><p class="lead">The Digital Library resources live on the current site.</p>'+cta(W+'library.html','Open the Library',1)},
+ contact:function(){return back('#home','Home')+'<h2>Contact</h2><p class="lead">Tell us what you&rsquo;re trying to build. We&rsquo;ll help turn the idea into a practical solution.</p><div class="grid"><a class="card" href="https://wa.me/2347043504297?text=Hi%20YUKAS%20DIGITAL%20HUB" target="_blank" rel="noopener"><h3>WhatsApp</h3><p>0704 350 4297</p></a><a class="card" href="mailto:yukasdigitalhub@gmail.com"><h3>Email</h3><p>yukasdigitalhub@gmail.com</p></a><a class="card" href="'+W+'contact.html" target="_blank" rel="noopener"><h3>Project form</h3><p>Use the existing contact form and booking options.</p></a></div><p class="lead" style="margin-top:20px">Kano, Nigeria</p>'}
+};
+
+/* router with transition lock */
+var stage=$('#stage'),home=$('#home'),view=$('#view'),busy=false,pending=null,warp=0;
+function route(){
+  var h=(location.hash||'#home').slice(1).split('/'),k=h[0],sub=h[1];
+  if(busy){pending=true;return}
+  busy=true;warp=1;stage.classList.add('out');
+  setTimeout(function(){
+    if(k==='home'||!V[k]){home.classList.add('on');view.classList.remove('on')}
+    else{home.classList.remove('on');view.innerHTML=k==='services'&&sub?V.service(sub):V[k]();view.classList.add('on');view.scrollTop=0;
+      var hd=view.querySelector('h2');if(hd){hd.setAttribute('tabindex','-1');hd.focus({preventScroll:true})}}
+    stage.classList.remove('out');
+    setTimeout(function(){busy=false;warp=0;if(pending){pending=null;route()}},420);
+  },300);
+}
+addEventListener('hashchange',function(){closeMenu(true);route()});
+if(location.hash&&location.hash!=='#home'){home.classList.remove('on')}route();
+
+/* menu */
+var panel=$('#panel'),mb=$('#menuBtn'),last=null;
+function openMenu(){last=document.activeElement;panel.classList.add('open');mb.setAttribute('aria-expanded','true');setTimeout(function(){panel.querySelector('a').focus()},50)}
+function closeMenu(q){if(!panel.classList.contains('open'))return;panel.classList.remove('open');mb.setAttribute('aria-expanded','false');if(!q&&last)last.focus()}
+mb.onclick=openMenu;$('#closeBtn').onclick=function(){closeMenu()};
+addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeMenu();
+  if(e.key==='Tab'&&panel.classList.contains('open')){var f=panel.querySelectorAll('a,button'),a=f[0],z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+});
+$('#ctaBtn').onclick=function(){
+  if(innerWidth<960){openMenu();return}
+  orbit.querySelectorAll('.node').forEach(function(n,i){n.classList.remove('pulse');void n.offsetWidth;n.style.animationDelay=(i*90)+'ms';n.classList.add('pulse')});
+  orbit.querySelector('.node').focus();
+};
+
+/* particle field */
+var cv=$('#bg'),cx=cv.getContext('2d'),P=[],mx=0,my=0,tx=0,ty=0,run=true,W0,H0,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){var d=Math.min(devicePixelRatio||1,2);W0=innerWidth;H0=innerHeight;cv.width=W0*d;cv.height=H0*d;cx.setTransform(d,0,0,d,0,0)}
+function init(){size();P=[];var n=W0<700?55:W0<1200?90:130,m=Math.min(W0,H0);
+  for(var i=0;i<n;i++)P.push({r:(.12+Math.random()*.62)*m*1.1,a:Math.random()*6.283,s:(.00018+Math.random()*.0004)*(Math.random()<.5?-1:1),k:.55+Math.random()*.25,c:Math.random()<.6?'96,165,250':Math.random()<.5?'34,211,238':'139,92,246'})}
+function frame(){
+  if(!run)return;
+  tx+=(mx-tx)*.05;ty+=(my-ty)*.05;
+  var cxn=W0/2+tx*18,cyn=H0/2+ty*12,sp=warp?9:1;
+  cx.clearRect(0,0,W0,H0);
+  for(var i=0;i<P.length;i++){var p=P[i];if(!rm)p.a+=p.s*sp*16;p.x=cxn+Math.cos(p.a)*p.r;p.y=cyn+Math.sin(p.a)*p.r*p.k}
+  for(i=0;i<P.length;i++){var a=P[i];
+    for(var j=i+1;j<P.length;j++){var b=P[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;
+      if(d<9000){cx.strokeStyle='rgba(96,165,250,'+(.16*(1-d/9000))+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+    cx.fillStyle='rgba('+a.c+',.85)';cx.beginPath();cx.arc(a.x,a.y,1.6,0,6.283);cx.fill()}
+  if(!rm)requestAnimationFrame(frame);
+}
+init();frame();
+addEventListener('resize',function(){init();if(rm)frame()});
+addEventListener('pointermove',function(e){if(e.pointerType==='mouse'){mx=e.clientX/W0-.5;my=e.clientY/H0-.5}});
+document.addEventListener('visibilitychange',function(){run=!document.hidden;if(run&&!rm)requestAnimationFrame(frame)});
+})();
+</script>
+</body>
+</html>
